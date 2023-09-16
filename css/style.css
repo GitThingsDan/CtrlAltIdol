@@ -1,0 +1,408 @@
+/* @MEDIA QUERIES */
+/* Mobile - para considerar: 360px es un ancho muy frecuente en teléfonos móviles */
+@media only screen and (max-width: 428px) {
+	#header {
+		flex-direction: column;
+	}
+	.headerTituloPrincipal-Titulo {
+		text-align: center;
+		font-size: smaller;
+	}
+	.headerTituloPrincipal-Slogan {
+		text-align: center;
+		font-size: 10px;
+	}
+	.header-Navbar {
+		width: 100%;
+	}
+	.headerNavbar-List {
+		width: 100%;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	.headerNavbar-List li {
+		/* 5.95px parece ser el mayor margin horizontal en que (para un ancho de dispositivo de 360px) los ítems de la lista se ven en 1 fila/renglón */
+		margin: 0 5.95px;
+		font-size: smaller;
+	}
+	.portadaBis {
+		margin: 0.5% 10%;
+	}
+	.mainTextoLlamativo-Bienvenida {
+		font-size: calc(0.9em + 1vw);
+	}
+	.mainTextoLlamativo-Bienvenida,
+	.mainTextoLlamativo-Solucion {
+		margin: 4% 0;
+	}
+	.main-Videos {
+		grid-template-areas:
+			"bis-Video"
+			"bellring-Video"
+			"babymetal-Video"
+			"atarashii-Video";
+		gap: 3%;
+		/* Curiosamente, en mobile este Grid Container se ve parcialmente cubierto por el siguiente (.footer-Navzone), así que la solución que se me ocurrió fue ponerle estos margins que encontré aceptables */
+		margin: 12.5% 0 35% 0;
+	}
+	/* Versión YouTube: */
+	/* .mainVideos-Figuras {
+		height: calc(50px + 50vw);
+	} */
+	.footer-Navzone {
+		grid-template-areas:
+			"bis"
+			"wack"
+			"otrosGrupos"
+			"quiz";
+	}
+	.footer-DatosPersonales {
+		grid-template-areas:
+			"textoDP	textoDP"
+			"fotoDP		socialDP";
+		grid-template-columns: 3fr 1fr;
+		margin: 7.5% 0;
+	}
+	.footerDatosPersonales-Texto {
+		margin-bottom: 8%;
+	}
+	.footerDatosPersonales-IconosSociales {
+		flex-direction: column;
+	}
+}
+/* Desktop - originalmente, min-width: 1184px */
+@media only screen and (min-width: 429px) {
+	/* Mínimo ancho con que el título y el slogan se muestran en 1 solo renglón */
+	.header-TituloPrincipal {
+		width: calc(40% + 1vw);
+	}
+	.headerTituloPrincipal-Titulo {
+		text-align: center;
+		font-size: calc(0.3em + 2vw);
+	}
+	.headerTituloPrincipal-Slogan {
+		text-align: center;
+		font-size: calc(0.05em + 1vw);
+	}
+	.header-Navbar {
+		/* width: 75%; */
+		/* text-align: right; */
+		width: 55%;
+	}
+	.headerNavbar-List {
+		width: 100%;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+		margin-bottom: 0;
+	}
+	.headerNavbar-List li {
+		margin: 0 12px;
+	}
+	.headerNavbar-List li a {
+		font-size: calc(8px + 1vw);
+	}
+	.portadaBis {
+		margin: 1% 20%;
+	}
+	.mainTextoLlamativo-Bienvenida,
+	.mainTextoLlamativo-Solucion {
+		margin: 1.5% 0;
+	}
+	.mainTextoLlamativo-Solucion {
+		font-size: calc(1rem + 0.5vw);
+	}
+	.main-Videos {
+		grid-template-areas:
+			"bis-Video			bellring-Video"
+			"babymetal-Video	atarashii-Video";
+		gap: 3%;
+		margin: 5% 0;
+	}
+	/* Versión YouTube: */
+	/* .mainVideos-Figuras {
+		height: 25vw;
+	} */
+	.footer-Navzone {
+		grid-template-areas:
+			"bis			wack"
+			"otrosGrupos	quiz";
+	}
+	.footer-DatosPersonales {
+		/* grid-template-areas: "textoDP fotoDP socialDP"; */
+		grid-template-areas:
+			"textoDP	fotoDP"
+			"textoDP	socialDP";
+		/* grid-template-columns: 70% 2fr 1fr; */
+		grid-template-columns: 4fr 1fr;
+		grid-template-rows: 2fr 1fr;
+		align-items: center;
+		margin: 2% 0 1% 0;
+	}
+	.footerDatosPersonales-Texto {
+		/* font-size: 2vw, la solución que se me ocurrió para que el texto sea medianamente responsive */
+		font-size: 2vw;
+	}
+	.footerDatosPersonales-IconosSociales a {
+		width: 30%;
+	}
+}
+
+/* REGLAS @FONT-FACE (familias de fuentes descargadas desde Google Fonts) */
+/* "Roboto Mono" */
+@font-face {
+	font-family: "Roboto Mono";
+	src: url(../fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
+}
+/* "Courier Prime" */
+@font-face {
+	font-family: "Courier Prime";
+	src: url(../fonts/Courier_Prime/CourierPrime-Regular.ttf);
+}
+
+/* RESETEO DE ESTILOS */
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: white;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration-line: underline;
+}
+#body {
+	background-color: rgb(43, 43, 43);
+	color: white;
+	font-family: "Roboto Mono", monospace;
+	padding: 0 5%;
+}
+ul {
+	list-style: none;
+}
+
+/* FIN DEL RESETEO DE ESTILOS */
+/* FIN DEL RESETEO DE ESTILOS */
+/* FIN DEL RESETEO DE ESTILOS */
+
+/* HEADER */
+#header {
+	background-color: rgb(62, 0, 143);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: sticky;
+	top: 0px;
+	z-index: 1;
+	padding: 0 5%;
+	border-radius: 25px;
+}
+
+.header-TituloPrincipal {
+	font-family: "Courier Prime", monospace;
+}
+/* .headerTituloPrincipal-Link {
+	display: flex;
+	flex-direction: column;
+} */
+.headerTituloPrincipal-Link:hover {
+	text-decoration: none;
+}
+.headerTituloPrincipal-Titulo,
+.headerTituloPrincipal-Slogan {
+	font-variant: small-caps;
+	margin-bottom: 0;
+}
+.headerTituloPrincipal-Slogan {
+	font-weight: lighter;
+}
+.headerTituloPrincipalTitulo-IdolTachado {
+	text-decoration-line: line-through;
+}
+
+.header-Navbar {
+	display: flex;
+}
+.headerNavbar-List {
+	display: flex;
+	padding-left: 0;
+}
+.headerNavbar-List a:hover {
+	text-decoration-line: underline;
+}
+
+/* Hero Image (Imagen de portada)*/
+.portadaBis {
+	position: relative;
+}
+
+.portadaBis-Imagen {
+	width: 100%;
+	border-radius: 10px;
+}
+.portadaBis-Logo {
+	position: absolute;
+	top: 5%;
+	left: 7%;
+	width: 15%;
+	filter: invert();
+}
+
+/* MAIN */
+.mainTextoLlamativo-Problema,
+.mainTextoLlamativo-Esperanza {
+	text-align: center;
+}
+.mainTextoLlamativo-Bienvenida,
+.mainTextoLlamativo-Solucion {
+	font-family: "Courier Prime", monospace;
+	font-variant: small-caps;
+	background-color: rgb(62, 0, 143);
+	font-weight: bold;
+	text-align: center;
+	border-radius: 25px;
+	padding: 1% 3%;
+}
+.mainTextoLlamativo-Problema,
+.mainTextoLlamativo-Esperanza,
+.mainTextoLlamativo-DefinicionAltIdol {
+	font-size: calc(11px + 1vw);
+}
+.mainTextoLlamativo-DefinicionAltIdol {
+	text-align: justify;
+}
+/* Definiciones de "Alt Idol"/"Anti Idol" (.mainTextoLlamativo-DefinicionAltIdol) */
+#dfnAlt,
+#dfnAnti {
+	font-family: "Courier Prime", monospace;
+}
+/* .main-Videos: estoy probando con display:flex y display:grid...por ahora, aunque yo hubiera preferido flex, parece funcionar mejor grid */
+.main-Videos {
+	display: grid;
+	/* display: flex; */
+	/* flex-wrap: wrap; */
+}
+/* .mainVideos-Figuras {
+	max-width: 48%;
+	margin: 1%;
+} */
+.mainVideos-Figuras figcaption {
+	text-align: center;
+}
+.mainVideos-BisPaprika {
+	grid-area: bis-Video;
+}
+.mainVideos-BellringShoujoHeartGigabite {
+	grid-area: bellring-Video;
+}
+.mainVideos-BabymetalKarate {
+	grid-area: babymetal-Video;
+}
+.mainVideos-AtarashiiGakkoKoiGeba {
+	grid-area: atarashii-Video;
+}
+.main-Videos video {
+	max-width: 100%;
+}
+
+/* FOOTER */
+.footer-Navzone {
+	background-color: rgb(62, 0, 143);
+	display: grid;
+	border-radius: 25px;
+	justify-items: center;
+}
+.footerNavzone-Contenedores {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 3%;
+}
+.footer-Navzone img {
+	height: 100%;
+	max-width: 100%;
+	border-radius: 25px;
+}
+.footerNavzone-Bis {
+	grid-area: bis;
+}
+.footerNavzone-Wack {
+	grid-area: wack;
+}
+/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso, respecto a que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height:85.901% */
+.footerNavzoneWack-ImgLink {
+	height: 85.901%;
+}
+.footerNavzone-OtrosGrupos {
+	grid-area: otrosGrupos;
+}
+.footerNavzone-Quiz {
+	grid-area: quiz;
+	justify-content: space-between;
+	width: 55%;
+}
+.footerNavzoneOtrosGrupos-ImgLink {
+	display: grid;
+	grid-template-areas:
+		"bisBikini		bellringPlaya"
+		"babymetalFuego	atarashiiGakkoFormacion";
+}
+.bisBikini-Img {
+	grid-area: bisBikini;
+}
+.bellringPlaya-Img {
+	grid-area: bellringPlaya;
+}
+.babymetalFuego-Img {
+	grid-area: babymetalFuego;
+}
+.atarashiiGakkoFormacion-Img {
+	grid-area: atarashiiGakkoFormacion;
+}
+.footerNavzone-Botones {
+	background-color: black;
+	width: fit-content;
+	padding: 15px;
+	margin-top: 1.5%;
+	border-radius: 25px;
+	font-size: larger;
+}
+.footerNavzone-Botones:hover {
+	text-decoration-line: underline;
+}
+
+.footer-DatosPersonales {
+	display: grid;
+}
+.footerDatosPersonales-Texto {
+	grid-area: textoDP;
+	hyphens: auto;
+}
+.footerDatosPersonalesTexto-Curiosidades {
+	list-style: disc;
+	/* Lo siguiente fue comentado para que mi hoja de estilos sea más compatible con el recién añadido Bootstrap Framework */
+	/* margin-left: 7.5%; */
+}
+.footerDatosPersonalesTexto-EmailYUbicacion {
+	font-style: italic;
+}
+.footerDatosPersonales-FotoPersonal,
+.footerDatosPersonales-IconosSociales img {
+	max-width: 100%;
+}
+.footerDatosPersonales-FotoPersonal {
+	grid-area: fotoDP;
+	border-radius: 100%;
+}
+.footerDatosPersonales-IconosSociales {
+	grid-area: socialDP;
+	display: flex;
+	justify-content: space-around;
+}
+
+.footer-Derechos {
+	background-color: rgb(62, 0, 143);
+	text-align: center;
+	display: block;
+	border-radius: 25px;
+}
