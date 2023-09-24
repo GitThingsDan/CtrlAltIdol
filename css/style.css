@@ -1,6 +1,6 @@
 /* Algunas VARIABLES, para no tener que ir a buscar el púrpura que uso siempre, cada vez que lo necesite */
 :root {
-	--purple:  rgb(62, 0, 143);
+	--purple: rgb(62, 0, 143);
 }
 /* @MEDIA QUERIES - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
@@ -310,7 +310,11 @@ ul {
 /* PORTADA */
 /* index.html */
 .portadaBis {
+	/* background: url(../images/bis/bisIdolIsDead-2012.png); */
 	position: relative;
+	/* top: -1cm;
+	height: 130vh;
+	width: 100%; */
 }
 
 .portadaBis-Imagen {
@@ -400,7 +404,7 @@ legend {
 	padding: 20%;
 	background-color: var(--purple);
 	color: white;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: "Courier New", Courier, monospace;
 	font-weight: bold;
 }
 
