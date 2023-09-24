@@ -54,10 +54,10 @@
 		</nav>
 	</header>
 	<div class="portada-Quiz d-flex justify-content-center">
-		<img src="../icons/musica.png" alt="Dos notas musicales corcheas, unidas; versión de color negro" class="portadaQuiz-Icono w-25" />
+		<img src="../icons/musica.png" alt="Dos notas musicales corcheas, unidas; versión de color negro"
+			class="portadaQuiz-Icono w-25" />
 	</div>
-	<main class="main main-Quiz d-flex flex-column align-items-center"
-	id="main-Quiz">
+	<main class="main main-Quiz d-flex flex-column align-items-center" id="main-Quiz">
 		<h1 class="mainQuiz-Titulo">Quiz</h1>
 		<p class="mainQuiz-Pregunta">
 			Ahora que leíste mi sitio, ¿qué tanto aprendiste de ALT IDOL?
@@ -66,11 +66,11 @@
 			¡Ponte a prueba con este cuestionario!
 		</p>
 
-		<form action="" class="mainQuiz-Form needs-validation d-flex align-items-baseline justify-content-between w-75"
+		<form action="" class="mainQuiz-Form needs-validation d-flex flex-column flex-md-row align-items-baseline justify-content-around w-100"
 			id="mainQuiz-Form" method="get" novalidate>
 			<!-- BiS - sección -->
-			<fieldset class="mainQuizForm-Bis d-flex flex-column w-50 mx-3">
-				<legend class="mainQuizFormBis-Legend fs-5 fw-bold mt-2 text-center">
+			<fieldset class="mainQuizForm-Bis d-flex flex-column col-md-5">
+				<legend class="mainQuizFormBis-Legend fw-bold mt-2 text-center">
 					BiS
 				</legend>
 				<!-- ¿En qué año se formó BiS? "2010" -->
@@ -116,7 +116,7 @@
 				<!-- De estas 3 canciones de BiS, ¿cuál es la que yo
 						considero la más legendaria? "primal." -->
 				<fieldset class="bis-Legendaria d-flex flex-column align-items-center">
-					<legend class="bisLegendaria-Legend fs-6">
+					<legend class="bisLegendaria-Legend">
 						De estas 3 canciones de BiS, ¿cuál es la que yo
 						considero la más legendaria?
 					</legend>
@@ -152,8 +152,8 @@
 			</fieldset>
 
 			<!-- WACK - sección -->
-			<fieldset class="mainQuizForm-Wack d-flex flex-column w-50 mx-3">
-				<legend class="mainQuizFormWack-Legend fs-5 fw-bold mt-4 text-center">
+			<fieldset class="mainQuizForm-Wack d-flex flex-column col-md-5">
+				<legend class="mainQuizFormWack-Legend fw-bold mt-4 text-center">
 					WACK
 				</legend>
 				<!-- ¿En qué año se fundó WACK? "2014" -->
@@ -199,7 +199,7 @@
 				</label>
 				<!-- De estos 3 grupos, 1 NO forma parte de WACK. ¿Cuál es? "PIGGS" -->
 				<fieldset class="wack-Impostoras d-flex flex-column align-items-center">
-					<legend class="wackImpostoras-Legend fs-6">
+					<legend class="wackImpostoras-Legend">
 						De estos 3 grupos, 1 NO forma parte de WACK. ¿Cuál
 						es?
 					</legend>
@@ -233,13 +233,12 @@
 					</div>
 				</fieldset>
 			</fieldset>
-
-			<!-- ¡ENVIAR! -->
 		</form>
 
+		<!-- ¡ENVIAR! -->
 		<div class="mainQuiz-BotonContenedor my-5 d-flex justify-content-center">
 			<button class="fs-4" form="mainQuiz-Form" id="submit" type="submit">
-				Enviar
+				¡Enviar!
 			</button>
 		</div>
 	</main>

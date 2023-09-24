@@ -1,3 +1,7 @@
+/* Algunas VARIABLES, para no tener que ir a buscar el púrpura que uso siempre, cada vez que lo necesite */
+:root {
+	--purple:  rgb(62, 0, 143);
+}
 /* @MEDIA QUERIES - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
 @media only screen and (width <= 429px) {
@@ -245,9 +249,7 @@
 a {
 	color: white;
 	text-decoration: none;
-}
-a:hover {
-	text-decoration-line: underline;
+	transition: 0.25s ease-in-out;
 }
 #body {
 	background-color: rgb(43, 43, 43);
@@ -281,9 +283,6 @@ ul {
 	text-align: center;
 	font-family: "Courier Prime", monospace;
 }
-.headerTituloPrincipal-Link:hover {
-	text-decoration: none;
-}
 .headerTituloPrincipal-Titulo,
 .headerTituloPrincipal-Slogan {
 	font-variant: small-caps;
@@ -303,10 +302,13 @@ ul {
 	padding-left: 0;
 }
 .headerNavbar-List a:hover {
-	text-decoration-line: underline;
+	color: black;
+	font-weight: 900;
+	transition: all 0.25s ease-in-out;
 }
 
-/* Hero Image (Imagen de portada)*/
+/* PORTADA */
+/* index.html */
 .portadaBis {
 	position: relative;
 }
@@ -322,8 +324,24 @@ ul {
 	width: 15%;
 	filter: invert();
 }
+/* bis.html */
+.carousel-caption h5,
+.carousel-caption p {
+	color: rgba(255, 255, 255, 0);
+	transition: all 0.25s ease-in-out;
+}
+.carousel-caption:hover h5,
+.carousel-caption:hover p {
+	color: rgb(255, 255, 255);
+	background-color: rgba(62, 0, 143, 0.5);
+	border-radius: 20px;
+}
 
 /* MAIN */
+/* index.html */
+.main {
+	font-size: calc(0.7rem + 1vw);
+}
 .mainTextoLlamativo-Problema,
 .mainTextoLlamativo-Esperanza {
 	text-align: center;
@@ -373,6 +391,17 @@ ul {
 }
 .main-Videos video {
 	max-width: 100%;
+}
+/* quiz.html */
+legend {
+	font-size: calc(0.7rem + 1vw);
+}
+#submit {
+	padding: 20%;
+	background-color: var(--purple);
+	color: white;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
 }
 
 /* FOOTER */
