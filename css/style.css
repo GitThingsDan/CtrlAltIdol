@@ -61,6 +61,10 @@
 	.carousel-item {
 		height: 60vw;
 	}
+	.carousel-caption h5,
+	.carousel-caption p {
+	font-size: calc(1px + 2vw);
+}
 	.mainBis-Videos {
 		height: 50vw;
 		width: 100%;
@@ -151,6 +155,10 @@
 	.carousel-item {
 		height: 50vw;
 	}
+	.carousel-caption h5,
+	.carousel-caption p {
+	font-size: initial;
+}
 	.mainBis-Videos {
 		height: 50vw;
 		width: 100%;
@@ -239,6 +247,10 @@
 	.carousel-item {
 		height: 40vw;
 	}
+	.carousel-caption h5,
+	.carousel-caption p {
+	font-size: initial;
+}
 	.mainBis-Videos {
 		padding: 0 20%;
 		height: 30vw;
@@ -436,8 +448,8 @@ ul {
 .carousel-caption h5,
 .carousel-caption p {
 	color: rgba(255, 255, 255, 0);
-	transition: all 0.25s ease-in-out;
-	font-size: initial;
+	padding: 2%;
+	transition: 0.25s ease-in-out;
 }
 .carousel-caption:hover h5,
 .carousel-caption:hover p {
