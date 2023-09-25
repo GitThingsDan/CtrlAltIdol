@@ -1,6 +1,8 @@
 /* Algunas VARIABLES, para no tener que ir a buscar el púrpura que uso siempre, cada vez que lo necesite */
 :root {
 	--purple: rgb(62, 0, 143);
+	--purple-transparent: rgba(62, 0, 143, 0.5);
+	--bondi-blue: #0095b6;
 }
 /* @MEDIA QUERIES - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
@@ -51,6 +53,19 @@
 		/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan mantengan su PROPORCIÓN de tamaño  */
 		height: calc(50px + 50vw);
 	}
+
+	/* bis.html */
+	.mainBis-Galería {
+		padding: 0;
+	}
+	.carousel-item {
+		height: 60vw;
+	}
+	.mainBis-Videos {
+		height: 50vw;
+		width: 100%;
+	}
+
 	.footer-Navzone {
 		grid-template-areas:
 			"bis"
@@ -128,6 +143,19 @@
 		/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan mantengan su PROPORCIÓN de tamaño  */
 		height: 25vw;
 	}
+
+	/* bis.html */
+	.mainBis-Galería {
+		padding: 0 10%;
+	}
+	.carousel-item {
+		height: 50vw;
+	}
+	.mainBis-Videos {
+		height: 50vw;
+		width: 100%;
+	}
+
 	.footer-Navzone {
 		grid-template-areas:
 			"bis			wack"
@@ -203,6 +231,20 @@
 		/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan mantengan su PROPORCIÓN de tamaño  */
 		height: 25vw;
 	}
+
+	/* bis.html */
+	.mainBis-Galería {
+		padding: 0 20%;
+	}
+	.carousel-item {
+		height: 40vw;
+	}
+	.mainBis-Videos {
+		padding: 0 20%;
+		height: 30vw;
+		width: 100%;
+	}
+
 	.footer-Navzone {
 		grid-template-areas:
 			"bis			wack"
@@ -252,7 +294,8 @@ a {
 	transition: 0.25s ease-in-out;
 }
 #body {
-	background-color: rgb(43, 43, 43);
+	background: linear-gradient(90deg, var(--purple), black, var(--purple));
+	/* background-image: url(../images/dark-grey-terrazzo.png); */
 	color: white;
 	font-family: "Roboto Mono", monospace;
 	padding: 0 5%;
@@ -267,7 +310,8 @@ ul {
 
 /* HEADER */
 #header {
-	background-color: rgb(62, 0, 143);
+	background-color: var(--purple);
+	/* background: linear-gradient(darkblue, var(--purple), darkblue); */
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -316,7 +360,6 @@ ul {
 	height: 130vh;
 	width: 100%; */
 }
-
 .portadaBis-Imagen {
 	width: 100%;
 	border-radius: 10px;
@@ -328,17 +371,9 @@ ul {
 	width: 15%;
 	filter: invert();
 }
-/* bis.html */
-.carousel-caption h5,
-.carousel-caption p {
-	color: rgba(255, 255, 255, 0);
-	transition: all 0.25s ease-in-out;
-}
-.carousel-caption:hover h5,
-.carousel-caption:hover p {
-	color: rgb(255, 255, 255);
-	background-color: rgba(62, 0, 143, 0.5);
-	border-radius: 20px;
+/* quiz.html */
+.portadaQuiz-Icono {
+	filter: invert();
 }
 
 /* MAIN */
@@ -354,7 +389,7 @@ ul {
 .mainTextoLlamativo-Solucion {
 	font-family: "Courier Prime", monospace;
 	font-variant: small-caps;
-	background-color: rgb(62, 0, 143);
+	background-color: var(--purple);
 	font-weight: 600;
 	letter-spacing: 0.15vw;
 	text-align: center;
@@ -396,6 +431,26 @@ ul {
 .main-Videos video {
 	max-width: 100%;
 }
+/* bis.html */
+/* Tamaño en que el carrusel se ve bien: 683.65px X 500px */
+.carousel-caption h5,
+.carousel-caption p {
+	color: rgba(255, 255, 255, 0);
+	transition: all 0.25s ease-in-out;
+	font-size: initial;
+}
+.carousel-caption:hover h5,
+.carousel-caption:hover p {
+	color: rgb(255, 255, 255);
+	background-color: var(--purple-transparent);
+	border-radius: 20px;
+}
+.carousel-item img {
+	height: 100%;
+}
+.mainBis-Presente ul {
+	list-style: square;
+}
 /* quiz.html */
 legend {
 	font-size: calc(0.7rem + 1vw);
@@ -410,7 +465,7 @@ legend {
 
 /* FOOTER */
 .footer-Navzone {
-	background-color: rgb(62, 0, 143);
+	background-color: var(--purple);
 	display: grid;
 	border-radius: 25px;
 	justify-items: center;
@@ -501,7 +556,7 @@ legend {
 }
 
 .footer-Derechos {
-	background-color: rgb(62, 0, 143);
+	background-color: var(--purple);
 	text-align: center;
 	display: block;
 	border-radius: 25px;
