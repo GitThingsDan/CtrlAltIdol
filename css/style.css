@@ -319,7 +319,7 @@
 	}
 	.carousel-caption h5,
 	.carousel-caption p {
-		font-size: initial;
+		font-size: calc(3.3px + 1vw);
 	}
 	.mainBis-Videos {
 		padding: 0 20%;
