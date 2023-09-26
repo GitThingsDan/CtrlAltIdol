@@ -266,10 +266,10 @@
 		width: calc(35% + 1vw);
 	}
 	.headerTituloPrincipal-Titulo {
-		font-size: calc(0.5em + 2.5vw);
+		font-size: calc(0.3em + 2.5vw);
 	}
 	.headerTituloPrincipal-Slogan {
-		font-size: calc(0.1em + 1.2vw);
+		font-size: calc(0.1em + 1vw);
 	}
 	.header-Navbar {
 		width: 55%;
@@ -279,7 +279,7 @@
 		margin-bottom: 0;
 	}
 	.headerNavbar-List li {
-		margin: 0 calc(0.1px + 1vw);
+		margin: 0 calc(0.1px + 0.9vw);
 	}
 	.headerNavbar-List li a {
 		font-size: calc(4px + 1.5vw);
