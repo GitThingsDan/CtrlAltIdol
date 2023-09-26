@@ -3,7 +3,8 @@
 	--purple: rgb(62, 0, 143);
 	--purple-transparent: rgba(62, 0, 143, 0.5);
 }
-/* @MEDIA QUERIES - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
+
+/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
 @media only screen and (width <= 429px) {
 	/* Abreviación de @media only screen and (max-width: 429px) { */
@@ -494,7 +495,6 @@ ul {
 	border: solid black thin;
 	border-radius: 25px;
 }
-
 .header-TituloPrincipal {
 	text-align: center;
 	font-family: "Courier Prime", monospace;
@@ -507,7 +507,6 @@ ul {
 .headerTituloPrincipalTitulo-IdolTachado {
 	text-decoration-line: line-through;
 }
-
 .header-Navbar {
 	display: flex;
 }
@@ -619,6 +618,10 @@ ul {
 	max-width: 100%;
 }
 /* MAIN - bis.html */
+.carousel-item img {
+	border-radius: 20px;
+	height: 100%;
+}
 .carousel-caption h5,
 .carousel-caption p {
 	color: rgba(255, 255, 255, 0);
@@ -631,9 +634,35 @@ ul {
 	background-color: var(--purple-transparent);
 	border-radius: 20px;
 }
-.carousel-item img {
-	border-radius: 20px;
+.carousel-control-prev-icon {
+	background-image: url("../icons/flecha-Izquierda.svg");
+	transition: all 0.25s ease-in-out;
+}
+.carousel-control-prev-icon:hover {
 	height: 100%;
+	width: 50%;
+	filter: invert();
+}
+.carousel-control-next-icon {
+	background-image: url("../icons/flecha-Derecha.svg");
+	transition: all 0.25s ease-in-out;
+}
+.carousel-control-next-icon:hover {
+	height: 100%;
+	width: 50%;
+	filter: invert();
+}
+.carousel-indicators [data-bs-target] {
+	background-color: var(--purple-transparent);
+	transition: 0.5s ease-in-out;
+}
+.carousel-indicators .active {
+	background-color: var(--purple);
+	height: 6px;
+}
+.carousel-indicators [data-bs-target]:hover {
+	background-color: var(--purple);
+	height: 6px;
 }
 .mainBis-Presente ul {
 	list-style: square;
@@ -716,10 +745,28 @@ legend {
 .mainQuiz-BotonContenedor {
 	display: flex;
 	justify-content: center;
-	margin: 3vw 0;
+	margin: 25px 0;
+}
+/* Respuesta correcta: nueva imagen */
+.form-select.is-valid:not([multiple]):not([size]),
+.form-select.is-valid:not([multiple])[size="1"],
+.was-validated .form-select:valid:not([multiple]):not([size]),
+.was-validated .form-select:valid:not([multiple])[size="1"],
+.form-control.is-valid,
+.was-validated .form-control:valid {
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%2375b798" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>');
+}
+/* Respuesta incorrecta: nueva imagen */
+.form-select.is-invalid:not([multiple]):not([size]),
+.form-select.is-invalid:not([multiple])[size="1"],
+.was-validated .form-select:invalid:not([multiple]):not([size]),
+.was-validated .form-select:invalid:not([multiple])[size="1"],
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ea868f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>');
 }
 #submit {
-	padding: 20%;
+	padding: 5%;
 	background-color: var(--purple);
 	color: white;
 	font-family: "Courier New", Courier, monospace;
@@ -804,7 +851,6 @@ legend {
 	font-weight: 900;
 	transition: all 0.25s ease-in-out;
 }
-
 .footer-DatosPersonales {
 	display: grid;
 }
@@ -835,7 +881,6 @@ legend {
 	width: 50%;
 	transition: 0.5s ease-in-out;
 }
-
 .footer-Derechos {
 	background-color: var(--purple);
 	text-align: center;
