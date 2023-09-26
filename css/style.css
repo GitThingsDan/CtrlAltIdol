@@ -2,7 +2,6 @@
 :root {
 	--purple: rgb(62, 0, 143);
 	--purple-transparent: rgba(62, 0, 143, 0.5);
-	--bondi-blue: #0095b6;
 }
 /* @MEDIA QUERIES - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
@@ -32,7 +31,19 @@
 	}
 	/* PORTADA - index.html */
 	.portadaBis {
-		margin: 0.5% 10%;
+		margin: 0.5% 0;
+	}
+	/* PORTADA - wack.html */
+	.portadaWack-Icono {
+		width: 100%;
+	}
+	/* PORTADA - otrosGrupos.html */
+	.portada-OtrosGrupos {
+		width: 100%;
+	}
+	/* PORTADA - quiz.html */
+	.portadaQuiz-Icono {
+		width: 50%;
 	}
 	/* MAIN - index.html */
 	.mainTextoLlamativo-Bienvenida {
@@ -162,6 +173,18 @@
 	.portadaBis {
 		margin: 1% 20%;
 	}
+	/* PORTADA - wack.html */
+	.portadaWack-Icono {
+		width: 75%;
+	}
+	/* PORTADA - otrosGrupos.html */
+	.portada-OtrosGrupos {
+		width: 75%;
+	}
+	/* PORTADA - quiz.html */
+	.portadaQuiz-Icono {
+		width: 25%;
+	}
 	/* MAIN - index.html */
 	.mainTextoLlamativo-Bienvenida {
 		font-size: calc(4px + 2.5vw);
@@ -287,6 +310,18 @@
 	/* PORTADA - index.html */
 	.portadaBis {
 		margin: 1% 25%;
+	}
+	/* PORTADA - wack.html */
+	.portadaWack-Icono {
+		width: 50%;
+	}
+	/* PORTADA - otrosGrupos.html */
+	.portada-OtrosGrupos {
+		width: 50%;
+	}
+	/* PORTADA - quiz.html */
+	.portadaQuiz-Icono {
+		width: 25%;
 	}
 	/* MAIN - index.html */
 	.mainTextoLlamativo-Bienvenida,
@@ -658,8 +693,8 @@ legend {
 	font-size: calc(0.7rem + 1vw);
 }
 .mainQuiz-BotonContenedor {
-	display: flex; 
-	justify-content:center;
+	display: flex;
+	justify-content: center;
 	margin: 3vw 0;
 }
 #submit {
