@@ -8,6 +8,7 @@
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
 @media only screen and (width <= 429px) {
 	/* Abreviación de @media only screen and (max-width: 429px) { */
+	/* HEADER */
 	#header {
 		flex-direction: column;
 	}
@@ -29,9 +30,11 @@
 		margin: 0 calc(1px + 1vw);
 		font-size: calc(1px + 3vw);
 	}
+	/* PORTADA - index.html */
 	.portadaBis {
 		margin: 0.5% 10%;
 	}
+	/* MAIN - index.html */
 	.mainTextoLlamativo-Bienvenida {
 		font-size: calc(0.9em + 1vw);
 	}
@@ -53,8 +56,7 @@
 		/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan mantengan su PROPORCIÓN de tamaño  */
 		height: calc(50px + 50vw);
 	}
-
-	/* bis.html */
+	/* MAIN - bis.html */
 	.mainBis-Galería {
 		padding: 0;
 	}
@@ -63,13 +65,48 @@
 	}
 	.carousel-caption h5,
 	.carousel-caption p {
-	font-size: calc(1px + 2vw);
-}
+		font-size: calc(1px + 2vw);
+	}
 	.mainBis-Videos {
 		height: 50vw;
 		width: 100%;
 	}
-
+	/* MAIN - wack.html */
+	.mainWack-Grupos {
+		grid-template-areas:
+			"titulo"
+			"asp-Texto"
+			"asp-ToxicInvasion"
+			"asp-TheManCalling"
+			"exwhyz-Texto"
+			"exwhyz-Iza"
+			"exwhyz-FurachinaSummer"
+			"gangParade-Texto"
+			"gpPla2me-Plastic2Mercy"
+			"gpPop-PrettyPrettyGood"
+			"gangParade-BeyondTheMountain"
+			"gangParade-LoveCommunication"
+			"bis3-Texto"
+			"bis3-SmokingBilly"
+			"bis3-Tsuyogarisan"
+			"bish-Texto"
+			"bish-Otnk"
+			"bish-Tomorrow";
+		margin: 10vw 0;
+	}
+	.mainWack-Grupos p {
+		margin-top: 15%;
+	}
+	.mainWack-Grupos iframe {
+		height: calc(50px + 50vw);
+		margin: 1vw 0;
+	}
+	/* MAIN - otrosGrupos.html */
+	.mainOtrosGrupos-Iframes iframe {
+		height: calc(50px + 50vw);
+		margin: 1vw 0;
+	}
+	/* FOOTER */
 	.footer-Navzone {
 		grid-template-areas:
 			"bis"
@@ -95,6 +132,7 @@
 /* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
 @media only screen and (430px <= width <= 835px) {
 	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+	/* HEADER */
 	.header-TituloPrincipal {
 		/* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN TABLET*/
 		width: calc(40% + 1vw);
@@ -120,9 +158,11 @@
 	.headerNavbar-List li a {
 		font-size: calc(3.5px + 2.2vw);
 	}
+	/* PORTADA - index.html */
 	.portadaBis {
 		margin: 1% 20%;
 	}
+	/* MAIN - index.html */
 	.mainTextoLlamativo-Bienvenida {
 		font-size: calc(4px + 2.5vw);
 	}
@@ -147,8 +187,7 @@
 		/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan mantengan su PROPORCIÓN de tamaño  */
 		height: 25vw;
 	}
-
-	/* bis.html */
+	/* MAIN - bis.html */
 	.mainBis-Galería {
 		padding: 0 10%;
 	}
@@ -157,13 +196,42 @@
 	}
 	.carousel-caption h5,
 	.carousel-caption p {
-	font-size: initial;
-}
+		font-size: calc(1px + 1.9vw);
+	}
 	.mainBis-Videos {
 		height: 50vw;
 		width: 100%;
 	}
-
+	/* MAIN - wack.html */
+	.mainWack-Grupos {
+		grid-template-areas:
+			"titulo							titulo"
+			"asp-Texto						asp-Texto"
+			"asp-ToxicInvasion				asp-TheManCalling"
+			"exwhyz-Texto					exwhyz-Texto"
+			"exwhyz-Iza						exwhyz-FurachinaSummer"
+			"gangParade-Texto				gangParade-Texto"
+			"gpPla2me-Plastic2Mercy			gpPop-PrettyPrettyGood"
+			"gangParade-BeyondTheMountain	gangParade-LoveCommunication"
+			"bis3-Texto						bis3-Texto"
+			"bis3-SmokingBilly				bis3-Tsuyogarisan"
+			"bish-Texto						bish-Texto"
+			"bish-Otnk						bish-Tomorrow";
+		margin: 7.5vw 0;
+		gap: 5px;
+	}
+	.mainWack-Grupos p {
+		margin-top: 5%;
+	}
+	.mainWack-Grupos iframe {
+		height: 25vw;
+	}
+	/* MAIN - otrosGrupos.html */
+	.mainOtrosGrupos-Iframes iframe {
+		height: 25vw;
+		margin: 1vw 0;
+	}
+	/* FOOTER */
 	.footer-Navzone {
 		grid-template-areas:
 			"bis			wack"
@@ -192,6 +260,7 @@
 /* DESKTOP */
 @media only screen and (836px <= width) {
 	/* Abreviación de @media only screen and (min-width:836px) { */
+	/* HEADER */
 	.header-TituloPrincipal {
 		/* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN DESKTOP */
 		width: calc(35% + 1vw);
@@ -215,9 +284,11 @@
 	.headerNavbar-List li a {
 		font-size: calc(4px + 1.5vw);
 	}
+	/* PORTADA - index.html */
 	.portadaBis {
-		margin: 1% 20%;
+		margin: 1% 25%;
 	}
+	/* MAIN - index.html */
 	.mainTextoLlamativo-Bienvenida,
 	.mainTextoLlamativo-Solucion {
 		margin: 1.5% 0;
@@ -239,24 +310,52 @@
 		/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan mantengan su PROPORCIÓN de tamaño  */
 		height: 25vw;
 	}
-
-	/* bis.html */
+	/* MAIN - bis.html */
 	.mainBis-Galería {
-		padding: 0 20%;
+		padding: 0 25%;
 	}
 	.carousel-item {
-		height: 40vw;
+		height: 30vw;
 	}
 	.carousel-caption h5,
 	.carousel-caption p {
-	font-size: initial;
-}
+		font-size: initial;
+	}
 	.mainBis-Videos {
 		padding: 0 20%;
 		height: 30vw;
 		width: 100%;
 	}
-
+	/* MAIN - wack.html */
+	.mainWack-Grupos {
+		grid-template-areas:
+			"titulo							titulo"
+			"asp-Texto						asp-Texto"
+			"asp-ToxicInvasion				asp-TheManCalling"
+			"exwhyz-Texto					exwhyz-Texto"
+			"exwhyz-Iza						exwhyz-FurachinaSummer"
+			"gangParade-Texto				gangParade-Texto"
+			"gpPla2me-Plastic2Mercy			gpPop-PrettyPrettyGood"
+			"gangParade-BeyondTheMountain	gangParade-LoveCommunication"
+			"bis3-Texto						bis3-Texto"
+			"bis3-SmokingBilly				bis3-Tsuyogarisan"
+			"bish-Texto						bish-Texto"
+			"bish-Otnk						bish-Tomorrow";
+		margin: 5vw 0;
+		gap: 5px;
+	}
+	.mainWack-Grupos p {
+		margin-top: 5%;
+	}
+	.mainWack-Grupos iframe {
+		height: 25vw;
+	}
+	/* MAIN - otrosGrupos.html */
+	.mainOtrosGrupos-Iframes iframe {
+		height: 25vw;
+		margin: 1vw 0;
+	}
+	/* FOOTER */
 	.footer-Navzone {
 		grid-template-areas:
 			"bis			wack"
@@ -312,6 +411,11 @@ a {
 	font-family: "Roboto Mono", monospace;
 	padding: 0 5%;
 }
+h2,
+h3,
+h4 {
+	margin: 2vw 0 1vw 0;
+}
 ul {
 	list-style: none;
 }
@@ -363,8 +467,7 @@ ul {
 	transition: all 0.25s ease-in-out;
 }
 
-/* PORTADA */
-/* index.html */
+/* PORTADA - index.html */
 .portadaBis {
 	/* background: url(../images/bis/bisIdolIsDead-2012.png); */
 	position: relative;
@@ -374,7 +477,7 @@ ul {
 }
 .portadaBis-Imagen {
 	width: 100%;
-	border-radius: 10px;
+	border-radius: 20px;
 }
 .portadaBis-Logo {
 	position: absolute;
@@ -383,16 +486,31 @@ ul {
 	width: 15%;
 	filter: invert();
 }
-/* quiz.html */
+/* PORTADA - otrosGrupos.html */
+.portada-OtrosGrupos {
+	margin: 0 auto;
+}
+.portada-OtrosGrupos img {
+	padding: 0;
+}
+/* PORTADA - quiz.html */
 .portadaQuiz-Icono {
 	filter: invert();
 }
 
 /* MAIN */
-/* index.html */
 .main {
 	font-size: calc(0.7rem + 1vw);
 }
+.main a {
+	font-weight: bold;
+}
+.main a:hover {
+	color: black;
+	font-weight: 900;
+	transition: all 0.25s ease-in-out;
+}
+/* MAIN - index.html */
 .mainTextoLlamativo-Problema,
 .mainTextoLlamativo-Esperanza {
 	text-align: center;
@@ -443,7 +561,7 @@ ul {
 .main-Videos video {
 	max-width: 100%;
 }
-/* bis.html */
+/* MAIN - bis.html */
 /* Tamaño en que el carrusel se ve bien: 683.65px X 500px */
 .carousel-caption h5,
 .carousel-caption p {
@@ -458,14 +576,91 @@ ul {
 	border-radius: 20px;
 }
 .carousel-item img {
+	border-radius: 20px;
 	height: 100%;
 }
 .mainBis-Presente ul {
 	list-style: square;
 }
-/* quiz.html */
+/* MAIN - wack.html */
+.mainWack-Grupos {
+	display: grid;
+}
+.mainWack-Grupos p {
+	text-align: justify;
+}
+.mainWack-Grupos iframe {
+	max-width: 100%;
+}
+.mainWackGrupos-Titulo {
+	grid-area: titulo;
+}
+.asp-Texto {
+	grid-area: asp-Texto;
+}
+.asp-ToxicInvasion {
+	grid-area: asp-ToxicInvasion;
+}
+.asp-TheManCalling {
+	grid-area: asp-TheManCalling;
+}
+.exwhyz-Texto {
+	grid-area: exwhyz-Texto;
+}
+.exwhyz-Iza {
+	grid-area: exwhyz-Iza;
+}
+.exwhyz-FurachinaSummer {
+	grid-area: exwhyz-FurachinaSummer;
+}
+.gangParade-Texto {
+	grid-area: gangParade-Texto;
+}
+.gpPla2me-Plastic2Mercy {
+	grid-area: gpPla2me-Plastic2Mercy;
+}
+.gpPop-PrettyPrettyGood {
+	grid-area: gpPop-PrettyPrettyGood;
+}
+.gangParade-BeyondTheMountain {
+	grid-area: gangParade-BeyondTheMountain;
+}
+.gangParade-LoveCommunication {
+	grid-area: gangParade-LoveCommunication;
+}
+.bis3-Texto {
+	grid-area: bis3-Texto;
+}
+.bis3-SmokingBilly {
+	grid-area: bis3-SmokingBilly;
+}
+.bis3-Tsuyogarisan {
+	grid-area: bis3-Tsuyogarisan;
+}
+.bish-Texto {
+	grid-area: bish-Texto;
+}
+.bish-Otnk {
+	grid-area: bish-Otnk;
+}
+.bish-Tomorrow {
+	grid-area: bish-Tomorrow;
+}
+/* MAIN - otrosGrupos.html */
+.mainOtrosGrupos-Titulo {
+	text-align: center;
+}
+.mainOtrosGrupos-Iframes {
+	margin: 1vw 0;
+}
+/* MAIN - quiz.html */
 legend {
 	font-size: calc(0.7rem + 1vw);
+}
+.mainQuiz-BotonContenedor {
+	display: flex; 
+	justify-content:center;
+	margin: 3vw 0;
 }
 #submit {
 	padding: 20%;
@@ -473,6 +668,12 @@ legend {
 	color: white;
 	font-family: "Courier New", Courier, monospace;
 	font-weight: bold;
+	transition: 0.25s ease-in-out;
+}
+#submit:hover {
+	color: black;
+	font-size: 1.5em;
+	transition: 0.25s ease-in-out;
 }
 
 /* FOOTER */
@@ -487,6 +688,12 @@ legend {
 	flex-direction: column;
 	align-items: center;
 	padding: 3%;
+	margin: 0;
+	transition: padding 0.25s ease-in-out;
+}
+.footerNavzone-Contenedores:hover {
+	padding: 0;
+	transition: padding 0.25s ease-in-out;
 }
 .footer-Navzone img {
 	height: 100%;
@@ -537,7 +744,9 @@ legend {
 	border-radius: 25px;
 }
 .footerNavzone-Botones:hover {
-	text-decoration-line: underline;
+	color: var(--purple);
+	font-weight: 900;
+	transition: all 0.25s ease-in-out;
 }
 
 .footer-DatosPersonales {
@@ -565,6 +774,10 @@ legend {
 	grid-area: socialDP;
 	display: flex;
 	justify-content: space-around;
+}
+.footerDatosPersonales-IconosSociales a:hover {
+	width: 50%;
+	transition: 0.5s ease-in-out;
 }
 
 .footer-Derechos {

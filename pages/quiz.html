@@ -53,20 +53,21 @@
 			</ul>
 		</nav>
 	</header>
+	<h2 class="mainQuiz-Titulo text-center">Quiz</h2>
 	<div class="portada-Quiz d-flex justify-content-center">
 		<img src="../icons/musica.png" alt="Dos notas musicales corcheas, unidas; versión de color negro"
 			class="portadaQuiz-Icono w-25" />
 	</div>
 	<main class="main main-Quiz d-flex flex-column align-items-center" id="main-Quiz">
-		<h1 class="mainQuiz-Titulo">Quiz</h1>
 		<p class="mainQuiz-Pregunta">
 			Ahora que leíste mi sitio, ¿qué tanto aprendiste de ALT IDOL?
 		</p>
 		<p class="mainQuiz-Exclamacion">
 			¡Ponte a prueba con este cuestionario!
 		</p>
-
-		<form action="" class="mainQuiz-Form needs-validation d-flex flex-column flex-md-row align-items-baseline justify-content-around w-100"
+		<!-- QUIZ: cuestionario -->
+		<form action=""
+			class="mainQuiz-Form needs-validation d-flex flex-column flex-md-row align-items-baseline justify-content-around w-100"
 			id="mainQuiz-Form" method="get" novalidate>
 			<!-- BiS - sección -->
 			<fieldset class="mainQuizForm-Bis d-flex flex-column col-md-5">
@@ -84,8 +85,8 @@
 				<!-- ¿Cómo se llama la líder de BiS (1° generación)? "Pour Lui" -->
 				<label class="form-label" for="bis-Lider" id="bisLider-Label">¿Cómo se llama la líder de BiS (1°
 					generación)?
-					<input class="form-control" id="bis-Lider" pattern="Pour Lui" placeholder="Sus iniciales son P.L."
-						required type="text" />
+					<input class="form-control" id="bis-Lider" pattern="Pour Lui" placeholder="Sus iniciales son P.L." required
+						type="text" />
 					<div class="invalid-feedback">
 						Respuesta correcta: Pour Lui
 					</div>
@@ -95,8 +96,8 @@
 				<label class="form-label" for="bis-Maraton" id="bisMaraton-Label">¿De cuántos kilómetros fue la maratón
 					que corrieron
 					Pour Lui y Wakisaka Yurika?
-					<input class="form-control" id="bis-Maraton" max="100" min="100"
-						placeholder="Pista: son más de 2..." required type="number" />
+					<input class="form-control" id="bis-Maraton" max="100" min="100" placeholder="Pista: son más de 2..." required
+						type="number" />
 					<div class="invalid-feedback">
 						Respuesta correcta: 100
 					</div>
@@ -122,24 +123,22 @@
 					</legend>
 					<div class="d-flex w-50 flex-column">
 						<div class="bisLegendaria-Stupig form-check">
-							<input class="form-check-input" id="bisLegendariaStupig-Input" name="bis-Legendaria"
-								required type="radio" value="STUPiG" />
-							<label class="form-check-label" for="bisLegendariaStupig-Input"
-								id="bisLegendariaStupig-Label">
+							<input class="form-check-input" id="bisLegendariaStupig-Input" name="bis-Legendaria" required type="radio"
+								value="STUPiG" />
+							<label class="form-check-label" for="bisLegendariaStupig-Input" id="bisLegendariaStupig-Label">
 								STUPiG
 							</label>
 						</div>
 						<div class="bisLegendaria-Primal form-check">
-							<input class="form-check-input" id="bisLegendariaPrimal-Input" name="bis-Legendaria"
-								required type="radio" value="primal." />
-							<label class="form-check-label" for="bisLegendariaPrimal-Input"
-								id="bisLEgendariaPrimal-Label">
+							<input class="form-check-input" id="bisLegendariaPrimal-Input" name="bis-Legendaria" required type="radio"
+								value="primal." />
+							<label class="form-check-label" for="bisLegendariaPrimal-Input" id="bisLEgendariaPrimal-Label">
 								primal.
 							</label>
 						</div>
 						<div class="bisLegendaria-Die form-check">
-							<input class="form-check-input" id="bisLegendariaDie-Input" name="bis-Legendaria" required
-								type="radio" value="DiE" />
+							<input class="form-check-input" id="bisLegendariaDie-Input" name="bis-Legendaria" required type="radio"
+								value="DiE" />
 							<label class="form-check-label" for="bisLegendariaDie-Input" id="bisLegendariaDie-Label">
 								DiE
 							</label>
@@ -176,8 +175,8 @@
 				</label>
 				<!-- ¿Cuántas idols forman parte de WACK? "50" -->
 				<label class="form-label" for="wack-Idols" id="wackIdols-Label">¿Cuántas idols forman parte de WACK?
-					<input class="form-control" id="wack-Idols" max="50" min="50" placeholder="Pista: son más de 2..."
-						required type="number" />
+					<input class="form-control" id="wack-Idols" max="50" min="50" placeholder="Pista: son más de 2..." required
+						type="number" />
 					<div class="invalid-feedback">
 						Respuesta correcta: 50
 					</div>
@@ -205,25 +204,23 @@
 					</legend>
 					<div class="d-flex w-50 flex-column">
 						<div class="wackImpostoras-Piggs form-check">
-							<input class="form-check-input" id="wackImpostorasPiggs-Input" name="wack-Impostoras"
-								required type="radio" value="PIGGS" />
-							<label class="form-check-label" for="wackImpostorasPiggs-Input"
-								id="wackImpostorasPiggs-Label">
+							<input class="form-check-input" id="wackImpostorasPiggs-Input" name="wack-Impostoras" required
+								type="radio" value="PIGGS" />
+							<label class="form-check-label" for="wackImpostorasPiggs-Input" id="wackImpostorasPiggs-Label">
 								PIGGS
 							</label>
 						</div>
 						<div class="wackImpostoras-Asp form-check">
-							<input class="form-check-input" id="wackImpostorasAsp-Input" name="wack-Impostoras" required
-								type="radio" value="ASP" />
+							<input class="form-check-input" id="wackImpostorasAsp-Input" name="wack-Impostoras" required type="radio"
+								value="ASP" />
 							<label class="form-check-label" for="wackImpostorasAsp-Input" id="wackImpostorasAsp-Label">
 								ASP
 							</label>
 						</div>
 						<div class="wackImpostoras-Exwhyz form-check">
-							<input class="form-check-input" id="wackImpostorasExwhyz-Input" name="wack-Impostoras"
-								required type="radio" value="ExWHYZ" />
-							<label class="form-check-label" for="wackImpostorasExwhyz-Input"
-								id="wackImpostorasExwhyz-Label">
+							<input class="form-check-input" id="wackImpostorasExwhyz-Input" name="wack-Impostoras" required
+								type="radio" value="ExWHYZ" />
+							<label class="form-check-label" for="wackImpostorasExwhyz-Input" id="wackImpostorasExwhyz-Label">
 								ExWHYZ
 							</label>
 							<div class="valid-feedback">
@@ -236,8 +233,8 @@
 		</form>
 
 		<!-- ¡ENVIAR! -->
-		<div class="mainQuiz-BotonContenedor my-5 d-flex justify-content-center">
-			<button class="fs-4" form="mainQuiz-Form" id="submit" type="submit">
+		<div class="mainQuiz-BotonContenedor">
+			<button form="mainQuiz-Form" id="submit" type="submit">
 				¡Enviar!
 			</button>
 		</div>
