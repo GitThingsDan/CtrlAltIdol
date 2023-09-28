@@ -1,0 +1,146 @@
+@use "../reset" as G;
+
+/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
+/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 429px) {
+	/* Abreviación de @media only screen and (max-width: 429px) { */
+	/* HEADER */
+	#header {
+		flex-direction: column;
+	}
+	.headerTituloPrincipal-Titulo {
+		font-size: smaller;
+	}
+	.headerTituloPrincipal-Slogan {
+		font-size: 10px;
+	}
+	.header-Navbar {
+		width: 100%;
+	}
+	.headerNavbar-List {
+		justify-content: space-around;
+		margin-bottom: 8px;
+	}
+	.headerNavbar-List li {
+		/* calc(1px + 1vw) parece ser el mayor margin horizontal en que (para un ancho de dispositivo de 320px) los ítems de la lista del Navbar se ven en 1 fila/renglón */
+		margin: 0 calc(1px + 1vw);
+		font-size: calc(1px + 3vw);
+	}
+	/* PORTADA - index.html */
+	.portadaBis {
+		margin: 0.5% 0;
+	}
+	/* PORTADA - wack.html */
+	.portadaWack-Icono {
+		width: 100%;
+	}
+	/* PORTADA - otrosGrupos.html */
+	.portada-OtrosGrupos {
+		width: 100%;
+	}
+	/* PORTADA - quiz.html */
+	.portadaQuiz-Icono {
+		width: 50%;
+	}
+	/* MAIN - index.html */
+	.mainTextoLlamativo-Bienvenida,
+	.mainTextoLlamativo-Solucion {
+		margin: 4% 0;
+		padding: 12.5px;
+	}
+	.mainTextoLlamativo-Bienvenida {
+		font-size: calc(0.9em + 1vw);
+	}
+	.main-Videos {
+		grid-template-areas:
+			"bis-Video"
+			"bellring-Video"
+			"babymetal-Video"
+			"atarashii-Video";
+		/* Curiosamente, en mobile este Grid Container se ve parcialmente cubierto por el siguiente (.footer-Navzone tapa el figcaption de la última figura de .main-Videos), así que la solución que se me ocurrió fue ponerle estos margins que encontré aceptables para resolver el problema de la forma más armónica posible */
+		margin: 12.5% 0 35% 0;
+	}
+	.mainVideos-Iframes {
+		/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan mantengan su PROPORCIÓN de tamaño  */
+		height: calc(50px + 50vw);
+	}
+	/* MAIN - bis.html */
+	.mainBis-Galería {
+		padding: 0;
+	}
+	.carousel-item {
+		height: 60vw;
+	}
+	.carousel-caption h5,
+	.carousel-caption p {
+		font-size: calc(1px + 2vw);
+	}
+	.mainBis-Videos {
+		height: 50vw;
+		width: 100%;
+	}
+	/* MAIN - wack.html */
+	.mainWack-Grupos {
+		grid-template-areas:
+			"titulo"
+			"asp-Texto"
+			"asp-ToxicInvasion"
+			"asp-TheManCalling"
+			"exwhyz-Texto"
+			"exwhyz-Iza"
+			"exwhyz-FurachinaSummer"
+			"gangParade-Texto"
+			"gpPla2me-Plastic2Mercy"
+			"gpPop-PrettyPrettyGood"
+			"gangParade-BeyondTheMountain"
+			"gangParade-LoveCommunication"
+			"bis3-Texto"
+			"bis3-SmokingBilly"
+			"bis3-Tsuyogarisan"
+			"bish-Texto"
+			"bish-Otnk"
+			"bish-Tomorrow";
+		margin: 10vw 0;
+	}
+	.mainWack-Grupos p {
+		margin-top: 15%;
+	}
+	.mainWack-Grupos iframe {
+		height: calc(50px + 50vw);
+		margin: 1vw 0;
+	}
+	/* MAIN - otrosGrupos.html */
+	.mainOtrosGrupos-Iframes iframe {
+		height: calc(50px + 50vw);
+		margin: 1vw 0;
+	}
+	/* FOOTER */
+	.footer-Navzone {
+		grid-template-areas:
+			"bis"
+			"wack"
+			"otrosGrupos"
+			"quiz";
+	}
+	.footer-DatosPersonales {
+		grid-template-areas:
+			"textoDP	textoDP"
+			"fotoDP		socialDP";
+		grid-template-columns: 3fr 1fr;
+		margin: 7.5% 0;
+	}
+	.footerDatosPersonales-FotoPersonal,
+	.footerDatosPersonales-IconosSociales a {
+		width: 90%;
+	}
+	.footerDatosPersonales-IconosSociales {
+		flex-direction: column;
+	}
+	/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
+	#goToTop {
+		width: 20vw;
+	}
+	#goToTop:hover {
+		width: 25vw;
+	}
+}

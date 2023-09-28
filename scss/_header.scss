@@ -1,0 +1,42 @@
+@use "reset" as G;
+
+/* HEADER */
+#header {
+	background-color: G.$purple;
+	/* background: linear-gradient(darkblue, $purple, darkblue); */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: sticky;
+	top: 0px;
+	z-index: 3;
+	padding: 2% 5%;
+	border: solid black thin;
+	border-radius: 25px;
+}
+.header-TituloPrincipal {
+	text-align: center;
+	font-family: "Courier Prime", monospace;
+}
+.headerTituloPrincipal-Titulo,
+.headerTituloPrincipal-Slogan {
+	font-variant: small-caps;
+	margin-bottom: 0;
+}
+.headerTituloPrincipalTitulo-IdolTachado {
+	text-decoration-line: line-through;
+}
+.header-Navbar {
+	display: flex;
+}
+.headerNavbar-List {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 0;
+}
+.headerNavbar-List a:hover {
+	color: black;
+	font-weight: 900;
+	transition: all 0.25s ease-in-out;
+}

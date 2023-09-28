@@ -1,0 +1,66 @@
+@use "../reset" as G;
+
+/* MAIN - wack.html */
+.mainWack-Grupos {
+	display: grid;
+}
+.mainWack-Grupos p {
+	text-align: justify;
+}
+.mainWack-Grupos iframe {
+	max-width: 100%;
+}
+.mainWackGrupos-Titulo {
+	grid-area: titulo;
+}
+.asp-Texto {
+	grid-area: asp-Texto;
+}
+.asp-ToxicInvasion {
+	grid-area: asp-ToxicInvasion;
+}
+.asp-TheManCalling {
+	grid-area: asp-TheManCalling;
+}
+.exwhyz-Texto {
+	grid-area: exwhyz-Texto;
+}
+.exwhyz-Iza {
+	grid-area: exwhyz-Iza;
+}
+.exwhyz-FurachinaSummer {
+	grid-area: exwhyz-FurachinaSummer;
+}
+.gangParade-Texto {
+	grid-area: gangParade-Texto;
+}
+.gpPla2me-Plastic2Mercy {
+	grid-area: gpPla2me-Plastic2Mercy;
+}
+.gpPop-PrettyPrettyGood {
+	grid-area: gpPop-PrettyPrettyGood;
+}
+.gangParade-BeyondTheMountain {
+	grid-area: gangParade-BeyondTheMountain;
+}
+.gangParade-LoveCommunication {
+	grid-area: gangParade-LoveCommunication;
+}
+.bis3-Texto {
+	grid-area: bis3-Texto;
+}
+.bis3-SmokingBilly {
+	grid-area: bis3-SmokingBilly;
+}
+.bis3-Tsuyogarisan {
+	grid-area: bis3-Tsuyogarisan;
+}
+.bish-Texto {
+	grid-area: bish-Texto;
+}
+.bish-Otnk {
+	grid-area: bish-Otnk;
+}
+.bish-Tomorrow {
+	grid-area: bish-Tomorrow;
+}

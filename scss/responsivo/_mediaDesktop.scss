@@ -1,0 +1,155 @@
+@use "../reset" as G;
+
+/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
+/* DESKTOP */
+@media only screen and (836px <= width) {
+	/* Abreviación de @media only screen and (min-width:836px) { */
+	/* HEADER */
+	.header-TituloPrincipal {
+		/* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN DESKTOP */
+		width: calc(35% + 1vw);
+	}
+	.headerTituloPrincipal-Titulo {
+		font-size: calc(0.3em + 2.5vw);
+	}
+	.headerTituloPrincipal-Slogan {
+		font-size: calc(0.1em + 1vw);
+	}
+	.header-Navbar {
+		width: 55%;
+	}
+	.headerNavbar-List {
+		justify-content: flex-end;
+		margin-bottom: 0;
+	}
+	.headerNavbar-List li {
+		margin: 0 calc(0.1px + 0.9vw);
+	}
+	.headerNavbar-List li a {
+		font-size: calc(4px + 1.5vw);
+	}
+	/* PORTADA - index.html */
+	.portadaBis {
+		margin: 1% 25%;
+	}
+	/* PORTADA - wack.html */
+	.portadaWack-Icono {
+		width: 50%;
+	}
+	/* PORTADA - otrosGrupos.html */
+	.portada-OtrosGrupos {
+		width: 50%;
+	}
+	/* PORTADA - quiz.html */
+	.portadaQuiz-Icono {
+		width: 25%;
+	}
+	/* MAIN - index.html */
+	.mTL-TxtImp,
+	.mainTextoLlamativo-Bienvenida {
+		@include G.boxmodel(1.5% 0, 1% 3%);
+	}
+	.mainTextoLlamativo-Solucion {
+		@extend .mTL-TxtImp;
+		font-size: calc(1rem + 0.5vw);
+	}
+	.main-Videos {
+		grid-template-areas:
+			"bis-Video			bellring-Video"
+			"babymetal-Video	atarashii-Video";
+		margin: 5% 0;
+	}
+	.mainVideos-Figuras figcaption {
+		font-size: calc(3px + 1.25vw);
+	}
+	.mainVideos-Iframes {
+		/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan mantengan su PROPORCIÓN de tamaño  */
+		height: 25vw;
+	}
+	/* MAIN - bis.html */
+	.mainBis-Galería {
+		padding: 0 25%;
+	}
+	.carousel-item {
+		height: 30vw;
+	}
+	.carousel-caption h5,
+	.carousel-caption p {
+		font-size: calc(3.3px + 1vw);
+	}
+	.mainBis-Videos {
+		@include G.vidsizes(0 20%, $vidh: true);
+	}
+	/* MAIN - wack.html */
+	.mainWack-Grupos {
+		grid-template-areas:
+			"titulo							titulo"
+			"asp-Texto						asp-Texto"
+			"asp-ToxicInvasion				asp-TheManCalling"
+			"exwhyz-Texto					exwhyz-Texto"
+			"exwhyz-Iza						exwhyz-FurachinaSummer"
+			"gangParade-Texto				gangParade-Texto"
+			"gpPla2me-Plastic2Mercy			gpPop-PrettyPrettyGood"
+			"gangParade-BeyondTheMountain	gangParade-LoveCommunication"
+			"bis3-Texto						bis3-Texto"
+			"bis3-SmokingBilly				bis3-Tsuyogarisan"
+			"bish-Texto						bish-Texto"
+			"bish-Otnk						bish-Tomorrow";
+		margin: 5vw 0;
+		gap: 5px;
+	}
+	.mainWack-Grupos p {
+		margin-top: 5%;
+	}
+	@for $i from 11 through 11 {
+		//entonces
+		.mainWack-Grupos iframe {
+			height: 14vw + $i;
+		}
+	}
+	// .mainWack-Grupos iframe {
+	// 	height: 25vw;
+	// }
+	/* MAIN - otrosGrupos.html */
+	.mainOtrosGrupos-Iframes iframe {
+		height: 25vw;
+		$tuberculo: patata;
+		@if $tuberculo == patata {
+			margin: 1vw 0;
+		} @else if $tuberculo == papa {
+			margin: 10vw 0;
+		}
+	}
+	/* FOOTER */
+	.footer-Navzone {
+		grid-template-areas:
+			"bis			wack"
+			"otrosGrupos	quiz";
+	}
+	.footerNavzone-Botones {
+		font-size: calc(15px + 1vw);
+	}
+	.footer-DatosPersonales {
+		grid-template-areas:
+			"textoDP	fotoDP"
+			"textoDP	socialDP";
+		grid-template-columns: 4fr 1fr;
+		grid-template-rows: 2fr 1fr;
+		align-items: center;
+		margin: 2% 0 1% 0;
+	}
+	.footerDatosPersonales-Texto {
+		/* font-size: 2vw, la solución que se me ocurrió para que el texto sea medianamente responsive */
+		font-size: 2vw;
+	}
+	.footerDatosPersonales-IconosSociales a {
+		width: 37.5%;
+	}
+	/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
+	#goToTop {
+		width: 7.5vw;
+	}
+	#goToTop:hover {
+		width: 10vw;
+	}
+}

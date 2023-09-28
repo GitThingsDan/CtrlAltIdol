@@ -1,0 +1,111 @@
+@use "reset" as G;
+
+/* FOOTER */
+.footer-Navzone {
+	background-color: G.$purple;
+	display: grid;
+	border-radius: 25px;
+	justify-items: center;
+}
+.footerNavzone-Contenedores {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 3%;
+	margin: 0;
+	transition: padding 0.25s ease-in-out;
+}
+.footerNavzone-Contenedores:hover {
+	padding: 0;
+	transition: padding 0.25s ease-in-out;
+}
+.footer-Navzone img {
+	height: 100%;
+	max-width: 100%;
+	border-radius: 25px;
+}
+.footerNavzone-Bis {
+	grid-area: bis;
+}
+.footerNavzone-Wack {
+	grid-area: wack;
+}
+/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height:85.901% */
+.footerNavzoneWack-ImgLink {
+	height: 85.901%;
+}
+.footerNavzone-OtrosGrupos {
+	grid-area: otrosGrupos;
+}
+.footerNavzone-Quiz {
+	grid-area: quiz;
+	/* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone), y para separarla apropiadamente de su botón respectivo (de modo que el botón quede a la misma altura que el contiguo botón de "Otros grupos") */
+	width: 55%;
+	justify-content: space-between;
+}
+.footerNavzoneOtrosGrupos-ImgLink {
+	display: grid;
+	grid-template-areas:
+		"bisBikini		bellringPlaya"
+		"babymetalFuego	atarashiiGakkoFormacion";
+}
+.bisBikini-OtrosGruposImg {
+	grid-area: bisBikini;
+}
+.bellringPlaya-OtrosGruposImg {
+	grid-area: bellringPlaya;
+}
+.babymetalFuego-OtrosGruposImg {
+	grid-area: babymetalFuego;
+}
+.atarashiiGakkoFormacion-OtrosGruposImg {
+	grid-area: atarashiiGakkoFormacion;
+}
+.footerNavzone-Botones {
+	background-color: black;
+	padding: 15px;
+	margin-top: 1.5%;
+	border-radius: 25px;
+}
+.footerNavzone-Botones:hover {
+	color: G.$purple;
+	font-weight: 900;
+	transition: all 0.25s ease-in-out;
+}
+.footer-DatosPersonales {
+	display: grid;
+}
+.footerDatosPersonales-Texto {
+	grid-area: textoDP;
+	hyphens: auto;
+}
+.footerDatosPersonalesTexto-Curiosidades {
+	list-style: disc;
+}
+.footerDatosPersonalesTexto-EmailYUbicacion {
+	font-style: italic;
+}
+.footerDatosPersonales-FotoPersonal,
+.footerDatosPersonales-IconosSociales img {
+	max-width: 100%;
+}
+.footerDatosPersonales-FotoPersonal {
+	grid-area: fotoDP;
+	border-radius: 100%;
+}
+.footerDatosPersonales-IconosSociales {
+	grid-area: socialDP;
+	display: flex;
+	justify-content: space-around;
+}
+.footerDatosPersonales-IconosSociales a:hover {
+	width: 50%;
+	transition: 0.5s ease-in-out;
+}
+.footer-Derechos {
+	background-color: G.$purple;
+	text-align: center;
+	display: block;
+	border-radius: 25px;
+	padding: 0.5% 7.5%;
+}

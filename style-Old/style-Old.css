@@ -1,0 +1,906 @@
+/* Algunas VARIABLES, para no tener que ir a buscar el púrpura que uso siempre, cada vez que lo necesite */
+:root {
+	--purple: rgb(62, 0, 143);
+	--purple-transparent: rgba(62, 0, 143, 0.5);
+}
+
+/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
+/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 429px) {
+	/* Abreviación de @media only screen and (max-width: 429px) { */
+	/* HEADER */
+	#header {
+		flex-direction: column;
+	}
+	.headerTituloPrincipal-Titulo {
+		font-size: smaller;
+	}
+	.headerTituloPrincipal-Slogan {
+		font-size: 10px;
+	}
+	.header-Navbar {
+		width: 100%;
+	}
+	.headerNavbar-List {
+		justify-content: space-around;
+		margin-bottom: 8px;
+	}
+	.headerNavbar-List li {
+		/* calc(1px + 1vw) parece ser el mayor margin horizontal en que (para un ancho de dispositivo de 320px) los ítems de la lista del Navbar se ven en 1 fila/renglón */
+		margin: 0 calc(1px + 1vw);
+		font-size: calc(1px + 3vw);
+	}
+	/* PORTADA - index.html */
+	.portadaBis {
+		margin: 0.5% 0;
+	}
+	/* PORTADA - wack.html */
+	.portadaWack-Icono {
+		width: 100%;
+	}
+	/* PORTADA - otrosGrupos.html */
+	.portada-OtrosGrupos {
+		width: 100%;
+	}
+	/* PORTADA - quiz.html */
+	.portadaQuiz-Icono {
+		width: 50%;
+	}
+	/* MAIN - index.html */
+	.mainTextoLlamativo-Bienvenida {
+		font-size: calc(0.9em + 1vw);
+	}
+	.mainTextoLlamativo-Bienvenida,
+	.mainTextoLlamativo-Solucion {
+		margin: 4% 0;
+		padding: 12.5px;
+	}
+	.main-Videos {
+		grid-template-areas:
+			"bis-Video"
+			"bellring-Video"
+			"babymetal-Video"
+			"atarashii-Video";
+		/* Curiosamente, en mobile este Grid Container se ve parcialmente cubierto por el siguiente (.footer-Navzone tapa el figcaption de la última figura de .main-Videos), así que la solución que se me ocurrió fue ponerle estos margins que encontré aceptables para resolver el problema de la forma más armónica posible */
+		margin: 12.5% 0 35% 0;
+	}
+	.mainVideos-Iframes {
+		/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan mantengan su PROPORCIÓN de tamaño  */
+		height: calc(50px + 50vw);
+	}
+	/* MAIN - bis.html */
+	.mainBis-Galería {
+		padding: 0;
+	}
+	.carousel-item {
+		height: 60vw;
+	}
+	.carousel-caption h5,
+	.carousel-caption p {
+		font-size: calc(1px + 2vw);
+	}
+	.mainBis-Videos {
+		height: 50vw;
+		width: 100%;
+	}
+	/* MAIN - wack.html */
+	.mainWack-Grupos {
+		grid-template-areas:
+			"titulo"
+			"asp-Texto"
+			"asp-ToxicInvasion"
+			"asp-TheManCalling"
+			"exwhyz-Texto"
+			"exwhyz-Iza"
+			"exwhyz-FurachinaSummer"
+			"gangParade-Texto"
+			"gpPla2me-Plastic2Mercy"
+			"gpPop-PrettyPrettyGood"
+			"gangParade-BeyondTheMountain"
+			"gangParade-LoveCommunication"
+			"bis3-Texto"
+			"bis3-SmokingBilly"
+			"bis3-Tsuyogarisan"
+			"bish-Texto"
+			"bish-Otnk"
+			"bish-Tomorrow";
+		margin: 10vw 0;
+	}
+	.mainWack-Grupos p {
+		margin-top: 15%;
+	}
+	.mainWack-Grupos iframe {
+		height: calc(50px + 50vw);
+		margin: 1vw 0;
+	}
+	/* MAIN - otrosGrupos.html */
+	.mainOtrosGrupos-Iframes iframe {
+		height: calc(50px + 50vw);
+		margin: 1vw 0;
+	}
+	/* FOOTER */
+	.footer-Navzone {
+		grid-template-areas:
+			"bis"
+			"wack"
+			"otrosGrupos"
+			"quiz";
+	}
+	.footer-DatosPersonales {
+		grid-template-areas:
+			"textoDP	textoDP"
+			"fotoDP		socialDP";
+		grid-template-columns: 3fr 1fr;
+		margin: 7.5% 0;
+	}
+	.footerDatosPersonales-FotoPersonal,
+	.footerDatosPersonales-IconosSociales a {
+		width: 90%;
+	}
+	.footerDatosPersonales-IconosSociales {
+		flex-direction: column;
+	}
+	/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
+	#goToTop {
+		width: 20vw;
+	}
+	#goToTop:hover {
+		width: 25vw;
+	}
+}
+/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (430px <= width <= 835px) {
+	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+	/* HEADER */
+	.header-TituloPrincipal {
+		/* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN TABLET*/
+		width: calc(40% + 1vw);
+		margin-bottom: 0;
+	}
+	.headerTituloPrincipal-Titulo {
+		font-size: calc(0.3em + 3vw);
+	}
+	.headerTituloPrincipal-Slogan {
+		font-size: calc(0.1em + 1.1vw);
+	}
+	.header-Navbar {
+		width: 55%;
+	}
+	.headerNavbar-List {
+		justify-content: flex-end;
+		margin-bottom: 0;
+	}
+	.headerNavbar-List li {
+		margin: 0 15px;
+		line-height: calc(11px + 2.3vw);
+	}
+	.headerNavbar-List li a {
+		font-size: calc(3.5px + 2.2vw);
+	}
+	/* PORTADA - index.html */
+	.portadaBis {
+		margin: 1% 20%;
+	}
+	/* PORTADA - wack.html */
+	.portadaWack-Icono {
+		width: 75%;
+	}
+	/* PORTADA - otrosGrupos.html */
+	.portada-OtrosGrupos {
+		width: 75%;
+	}
+	/* PORTADA - quiz.html */
+	.portadaQuiz-Icono {
+		width: 25%;
+	}
+	/* MAIN - index.html */
+	.mainTextoLlamativo-Bienvenida {
+		font-size: calc(4px + 2.5vw);
+	}
+	.mainTextoLlamativo-Bienvenida,
+	.mainTextoLlamativo-Solucion {
+		margin: 1.5% 0;
+		padding: 1% 3%;
+	}
+	.mainTextoLlamativo-Solucion {
+		font-size: calc(1rem + 0.5vw);
+	}
+	.main-Videos {
+		grid-template-areas:
+			"bis-Video			bellring-Video"
+			"babymetal-Video	atarashii-Video";
+		margin: 5% 0;
+	}
+	.mainVideos-Figuras figcaption {
+		font-size: calc(3px + 1.25vw);
+	}
+	.mainVideos-Iframes {
+		/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan mantengan su PROPORCIÓN de tamaño  */
+		height: 25vw;
+	}
+	/* MAIN - bis.html */
+	.mainBis-Galería {
+		padding: 0 10%;
+	}
+	.carousel-item {
+		height: 50vw;
+	}
+	.carousel-caption h5,
+	.carousel-caption p {
+		font-size: calc(1px + 1.9vw);
+	}
+	.mainBis-Videos {
+		height: 50vw;
+		width: 100%;
+	}
+	/* MAIN - wack.html */
+	.mainWack-Grupos {
+		grid-template-areas:
+			"titulo							titulo"
+			"asp-Texto						asp-Texto"
+			"asp-ToxicInvasion				asp-TheManCalling"
+			"exwhyz-Texto					exwhyz-Texto"
+			"exwhyz-Iza						exwhyz-FurachinaSummer"
+			"gangParade-Texto				gangParade-Texto"
+			"gpPla2me-Plastic2Mercy			gpPop-PrettyPrettyGood"
+			"gangParade-BeyondTheMountain	gangParade-LoveCommunication"
+			"bis3-Texto						bis3-Texto"
+			"bis3-SmokingBilly				bis3-Tsuyogarisan"
+			"bish-Texto						bish-Texto"
+			"bish-Otnk						bish-Tomorrow";
+		margin: 7.5vw 0;
+		gap: 5px;
+	}
+	.mainWack-Grupos p {
+		margin-top: 5%;
+	}
+	.mainWack-Grupos iframe {
+		height: 25vw;
+	}
+	/* MAIN - otrosGrupos.html */
+	.mainOtrosGrupos-Iframes iframe {
+		height: 25vw;
+		margin: 1vw 0;
+	}
+	/* FOOTER */
+	.footer-Navzone {
+		grid-template-areas:
+			"bis			wack"
+			"otrosGrupos	quiz";
+	}
+	.footer-DatosPersonales {
+		grid-template-areas:
+			"textoDP	fotoDP"
+			"textoDP	socialDP";
+		grid-template-columns: 3.5fr 1.5fr;
+		grid-template-rows: 2fr 1fr;
+		align-items: center;
+		margin: 2% 0 1% 0;
+	}
+	.footerDatosPersonales-Texto {
+		/* font-size: 0.5px + 2.5vw, la solución que se me ocurrió para que el texto sea medianamente responsive */
+		font-size: calc(0.5px + 2.5vw);
+	}
+	.footerDatosPersonales-IconosSociales {
+		align-self: start;
+	}
+	.footerDatosPersonales-IconosSociales a {
+		width: 35%;
+	}
+	/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
+	#goToTop {
+		width: 10vw;
+	}
+	#goToTop:hover {
+		width: 12.5vw;
+	}
+}
+/* DESKTOP */
+@media only screen and (836px <= width) {
+	/* Abreviación de @media only screen and (min-width:836px) { */
+	/* HEADER */
+	.header-TituloPrincipal {
+		/* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN DESKTOP */
+		width: calc(35% + 1vw);
+	}
+	.headerTituloPrincipal-Titulo {
+		font-size: calc(0.3em + 2.5vw);
+	}
+	.headerTituloPrincipal-Slogan {
+		font-size: calc(0.1em + 1vw);
+	}
+	.header-Navbar {
+		width: 55%;
+	}
+	.headerNavbar-List {
+		justify-content: flex-end;
+		margin-bottom: 0;
+	}
+	.headerNavbar-List li {
+		margin: 0 calc(0.1px + 0.9vw);
+	}
+	.headerNavbar-List li a {
+		font-size: calc(4px + 1.5vw);
+	}
+	/* PORTADA - index.html */
+	.portadaBis {
+		margin: 1% 25%;
+	}
+	/* PORTADA - wack.html */
+	.portadaWack-Icono {
+		width: 50%;
+	}
+	/* PORTADA - otrosGrupos.html */
+	.portada-OtrosGrupos {
+		width: 50%;
+	}
+	/* PORTADA - quiz.html */
+	.portadaQuiz-Icono {
+		width: 25%;
+	}
+	/* MAIN - index.html */
+	.mainTextoLlamativo-Bienvenida,
+	.mainTextoLlamativo-Solucion {
+		margin: 1.5% 0;
+		padding: 1% 3%;
+	}
+	.mainTextoLlamativo-Solucion {
+		font-size: calc(1rem + 0.5vw);
+	}
+	.main-Videos {
+		grid-template-areas:
+			"bis-Video			bellring-Video"
+			"babymetal-Video	atarashii-Video";
+		margin: 5% 0;
+	}
+	.mainVideos-Figuras figcaption {
+		font-size: calc(3px + 1.25vw);
+	}
+	.mainVideos-Iframes {
+		/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan mantengan su PROPORCIÓN de tamaño  */
+		height: 25vw;
+	}
+	/* MAIN - bis.html */
+	.mainBis-Galería {
+		padding: 0 25%;
+	}
+	.carousel-item {
+		height: 30vw;
+	}
+	.carousel-caption h5,
+	.carousel-caption p {
+		font-size: calc(3.3px + 1vw);
+	}
+	.mainBis-Videos {
+		padding: 0 20%;
+		height: 30vw;
+		width: 100%;
+	}
+	/* MAIN - wack.html */
+	.mainWack-Grupos {
+		grid-template-areas:
+			"titulo							titulo"
+			"asp-Texto						asp-Texto"
+			"asp-ToxicInvasion				asp-TheManCalling"
+			"exwhyz-Texto					exwhyz-Texto"
+			"exwhyz-Iza						exwhyz-FurachinaSummer"
+			"gangParade-Texto				gangParade-Texto"
+			"gpPla2me-Plastic2Mercy			gpPop-PrettyPrettyGood"
+			"gangParade-BeyondTheMountain	gangParade-LoveCommunication"
+			"bis3-Texto						bis3-Texto"
+			"bis3-SmokingBilly				bis3-Tsuyogarisan"
+			"bish-Texto						bish-Texto"
+			"bish-Otnk						bish-Tomorrow";
+		margin: 5vw 0;
+		gap: 5px;
+	}
+	.mainWack-Grupos p {
+		margin-top: 5%;
+	}
+	.mainWack-Grupos iframe {
+		height: 25vw;
+	}
+	/* MAIN - otrosGrupos.html */
+	.mainOtrosGrupos-Iframes iframe {
+		height: 25vw;
+		margin: 1vw 0;
+	}
+	/* FOOTER */
+	.footer-Navzone {
+		grid-template-areas:
+			"bis			wack"
+			"otrosGrupos	quiz";
+	}
+	.footerNavzone-Botones {
+		font-size: calc(15px + 1vw);
+	}
+	.footer-DatosPersonales {
+		grid-template-areas:
+			"textoDP	fotoDP"
+			"textoDP	socialDP";
+		grid-template-columns: 4fr 1fr;
+		grid-template-rows: 2fr 1fr;
+		align-items: center;
+		margin: 2% 0 1% 0;
+	}
+	.footerDatosPersonales-Texto {
+		/* font-size: 2vw, la solución que se me ocurrió para que el texto sea medianamente responsive */
+		font-size: 2vw;
+	}
+	.footerDatosPersonales-IconosSociales a {
+		width: 37.5%;
+	}
+	/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
+	#goToTop {
+		width: 7.5vw;
+	}
+	#goToTop:hover {
+		width: 10vw;
+	}
+}
+
+/* REGLAS @FONT-FACE (familias de fuentes descargadas desde Google Fonts) */
+/* "Roboto Mono" */
+@font-face {
+	font-family: "Roboto Mono";
+	src: url(../fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
+}
+/* "Courier Prime" */
+@font-face {
+	font-family: "Courier Prime";
+	src: url(../fonts/Courier_Prime/CourierPrime-Regular.ttf);
+}
+
+/* RESETEO DE ESTILOS */
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: white;
+	text-decoration: none;
+	transition: 0.25s ease-in-out;
+}
+#body {
+	background: linear-gradient(90deg, var(--purple), black, var(--purple));
+	/* background-image: url(../images/dark-grey-terrazzo.png); */
+	color: white;
+	font-family: "Roboto Mono", monospace;
+	padding: 0 5%;
+}
+h2,
+h3,
+h4 {
+	margin: 2vw 0 1vw 0;
+}
+ul {
+	list-style: none;
+}
+
+/* FIN DEL RESETEO DE ESTILOS */
+/* FIN DEL RESETEO DE ESTILOS */
+/* FIN DEL RESETEO DE ESTILOS */
+
+/* HEADER */
+#header {
+	background-color: var(--purple);
+	/* background: linear-gradient(darkblue, var(--purple), darkblue); */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: sticky;
+	top: 0px;
+	z-index: 3;
+	padding: 2% 5%;
+	border: solid black thin;
+	border-radius: 25px;
+}
+.header-TituloPrincipal {
+	text-align: center;
+	font-family: "Courier Prime", monospace;
+}
+.headerTituloPrincipal-Titulo,
+.headerTituloPrincipal-Slogan {
+	font-variant: small-caps;
+	margin-bottom: 0;
+}
+.headerTituloPrincipalTitulo-IdolTachado {
+	text-decoration-line: line-through;
+}
+.header-Navbar {
+	display: flex;
+}
+.headerNavbar-List {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 0;
+}
+.headerNavbar-List a:hover {
+	color: black;
+	font-weight: 900;
+	transition: all 0.25s ease-in-out;
+}
+
+/* PORTADA - index.html */
+.portadaBis {
+	/* background: url(../images/bis/bisIdolIsDead-2012.png); */
+	position: relative;
+	/* top: -1cm;
+	height: 130vh;
+	width: 100%; */
+}
+.portadaBis-Imagen {
+	width: 100%;
+	border-radius: 20px;
+}
+.portadaBis-Logo {
+	position: absolute;
+	top: 5%;
+	left: 7%;
+	width: 15%;
+	filter: invert();
+}
+/* PORTADA - otrosGrupos.html */
+.portada-OtrosGrupos {
+	margin: 0 auto;
+}
+.portada-OtrosGrupos img {
+	padding: 0;
+}
+/* PORTADA - quiz.html */
+.portadaQuiz-Icono {
+	filter: invert();
+}
+
+/* MAIN - general */
+.main {
+	font-size: calc(0.7rem + 1vw);
+	text-align: justify;
+}
+.main a {
+	font-weight: bold;
+}
+.main a:hover {
+	color: black;
+	font-weight: 900;
+	transition: all 0.25s ease-in-out;
+}
+/* MAIN - index.html */
+.mainTextoLlamativo-Problema,
+.mainTextoLlamativo-Esperanza {
+	text-align: center;
+}
+.mainTextoLlamativo-Bienvenida,
+.mainTextoLlamativo-Solucion {
+	font-family: "Courier Prime", monospace;
+	font-variant: small-caps;
+	background-color: var(--purple);
+	font-weight: 600;
+	letter-spacing: 0.15vw;
+	text-align: center;
+	border-radius: 25px;
+}
+.mainTextoLlamativo-Problema,
+.mainTextoLlamativo-Esperanza,
+.mainTextoLlamativo-DefinicionAltIdol {
+	font-size: calc(11px + 1vw);
+}
+.mainTextoLlamativo-DefinicionAltIdol {
+	text-align: justify;
+}
+/* Definiciones de "Alt Idol"/"Anti Idol" (.mainTextoLlamativo-DefinicionAltIdol) */
+#dfnAlt,
+#dfnAnti {
+	font-family: "Courier Prime", monospace;
+}
+/* .main-Videos: estoy probando con display:flex y display:grid...por ahora, aunque yo hubiera preferido flex, parece funcionar mejor grid */
+.main-Videos {
+	display: grid;
+	gap: 3%;
+}
+.mainVideos-Figuras figcaption {
+	text-align: center;
+}
+.mainVideos-BisPaprika {
+	grid-area: bis-Video;
+}
+.mainVideos-BellringShoujoHeartGigabite {
+	grid-area: bellring-Video;
+}
+.mainVideos-BabymetalKarate {
+	grid-area: babymetal-Video;
+}
+.mainVideos-AtarashiiGakkoKoiGeba {
+	grid-area: atarashii-Video;
+}
+.main-Videos video {
+	max-width: 100%;
+}
+/* MAIN - bis.html */
+.carousel-item img {
+	border-radius: 20px;
+	height: 100%;
+}
+.carousel-caption h5,
+.carousel-caption p {
+	color: rgba(255, 255, 255, 0);
+	padding: 2%;
+	transition: 0.25s ease-in-out;
+}
+.carousel-caption:hover h5,
+.carousel-caption:hover p {
+	color: rgb(255, 255, 255);
+	background-color: var(--purple-transparent);
+	border-radius: 20px;
+}
+.carousel-control-prev-icon {
+	background-image: url("../icons/flecha-Izquierda.svg");
+	transition: all 0.25s ease-in-out;
+}
+.carousel-control-prev-icon:hover {
+	height: 100%;
+	width: 50%;
+	filter: invert();
+}
+.carousel-control-next-icon {
+	background-image: url("../icons/flecha-Derecha.svg");
+	transition: all 0.25s ease-in-out;
+}
+.carousel-control-next-icon:hover {
+	height: 100%;
+	width: 50%;
+	filter: invert();
+}
+.carousel-indicators [data-bs-target] {
+	background-color: var(--purple-transparent);
+	transition: 0.5s ease-in-out;
+}
+.carousel-indicators .active {
+	background-color: var(--purple);
+	height: 6px;
+}
+.carousel-indicators [data-bs-target]:hover {
+	background-color: var(--purple);
+	height: 6px;
+}
+.mainBis-Presente ul {
+	list-style: square;
+}
+/* MAIN - wack.html */
+.mainWack-Grupos {
+	display: grid;
+}
+.mainWack-Grupos p {
+	text-align: justify;
+}
+.mainWack-Grupos iframe {
+	max-width: 100%;
+}
+.mainWackGrupos-Titulo {
+	grid-area: titulo;
+}
+.asp-Texto {
+	grid-area: asp-Texto;
+}
+.asp-ToxicInvasion {
+	grid-area: asp-ToxicInvasion;
+}
+.asp-TheManCalling {
+	grid-area: asp-TheManCalling;
+}
+.exwhyz-Texto {
+	grid-area: exwhyz-Texto;
+}
+.exwhyz-Iza {
+	grid-area: exwhyz-Iza;
+}
+.exwhyz-FurachinaSummer {
+	grid-area: exwhyz-FurachinaSummer;
+}
+.gangParade-Texto {
+	grid-area: gangParade-Texto;
+}
+.gpPla2me-Plastic2Mercy {
+	grid-area: gpPla2me-Plastic2Mercy;
+}
+.gpPop-PrettyPrettyGood {
+	grid-area: gpPop-PrettyPrettyGood;
+}
+.gangParade-BeyondTheMountain {
+	grid-area: gangParade-BeyondTheMountain;
+}
+.gangParade-LoveCommunication {
+	grid-area: gangParade-LoveCommunication;
+}
+.bis3-Texto {
+	grid-area: bis3-Texto;
+}
+.bis3-SmokingBilly {
+	grid-area: bis3-SmokingBilly;
+}
+.bis3-Tsuyogarisan {
+	grid-area: bis3-Tsuyogarisan;
+}
+.bish-Texto {
+	grid-area: bish-Texto;
+}
+.bish-Otnk {
+	grid-area: bish-Otnk;
+}
+.bish-Tomorrow {
+	grid-area: bish-Tomorrow;
+}
+/* MAIN - otrosGrupos.html */
+.mainOtrosGrupos-Titulo {
+	text-align: center;
+}
+.mainOtrosGrupos-Iframes {
+	margin: 1vw 0;
+}
+/* MAIN - quiz.html */
+legend {
+	font-size: calc(0.7rem + 1vw);
+}
+.mainQuiz-BotonContenedor {
+	display: flex;
+	justify-content: center;
+	margin: 25px 0;
+}
+/* Respuesta correcta: nueva imagen */
+.form-select.is-valid:not([multiple]):not([size]),
+.form-select.is-valid:not([multiple])[size="1"],
+.was-validated .form-select:valid:not([multiple]):not([size]),
+.was-validated .form-select:valid:not([multiple])[size="1"],
+.form-control.is-valid,
+.was-validated .form-control:valid {
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%2375b798" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>');
+}
+/* Respuesta incorrecta: nueva imagen */
+.form-select.is-invalid:not([multiple]):not([size]),
+.form-select.is-invalid:not([multiple])[size="1"],
+.was-validated .form-select:invalid:not([multiple]):not([size]),
+.was-validated .form-select:invalid:not([multiple])[size="1"],
+.form-control.is-invalid,
+.was-validated .form-control:invalid {
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ea868f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>');
+}
+#submit {
+	padding: 5%;
+	background-color: var(--purple);
+	color: white;
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	transition: 0.25s ease-in-out;
+}
+#submit:hover {
+	color: black;
+	font-size: 1.5em;
+	transition: 0.25s ease-in-out;
+}
+
+/* FOOTER */
+.footer-Navzone {
+	background-color: var(--purple);
+	display: grid;
+	border-radius: 25px;
+	justify-items: center;
+}
+.footerNavzone-Contenedores {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 3%;
+	margin: 0;
+	transition: padding 0.25s ease-in-out;
+}
+.footerNavzone-Contenedores:hover {
+	padding: 0;
+	transition: padding 0.25s ease-in-out;
+}
+.footer-Navzone img {
+	height: 100%;
+	max-width: 100%;
+	border-radius: 25px;
+}
+.footerNavzone-Bis {
+	grid-area: bis;
+}
+.footerNavzone-Wack {
+	grid-area: wack;
+}
+/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height:85.901% */
+.footerNavzoneWack-ImgLink {
+	height: 85.901%;
+}
+.footerNavzone-OtrosGrupos {
+	grid-area: otrosGrupos;
+}
+.footerNavzone-Quiz {
+	grid-area: quiz;
+	/* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone), y para separarla apropiadamente de su botón respectivo (de modo que el botón quede a la misma altura que el contiguo botón de "Otros grupos") */
+	width: 55%;
+	justify-content: space-between;
+}
+.footerNavzoneOtrosGrupos-ImgLink {
+	display: grid;
+	grid-template-areas:
+		"bisBikini		bellringPlaya"
+		"babymetalFuego	atarashiiGakkoFormacion";
+}
+.bisBikini-OtrosGruposImg {
+	grid-area: bisBikini;
+}
+.bellringPlaya-OtrosGruposImg {
+	grid-area: bellringPlaya;
+}
+.babymetalFuego-OtrosGruposImg {
+	grid-area: babymetalFuego;
+}
+.atarashiiGakkoFormacion-OtrosGruposImg {
+	grid-area: atarashiiGakkoFormacion;
+}
+.footerNavzone-Botones {
+	background-color: black;
+	padding: 15px;
+	margin-top: 1.5%;
+	border-radius: 25px;
+}
+.footerNavzone-Botones:hover {
+	color: var(--purple);
+	font-weight: 900;
+	transition: all 0.25s ease-in-out;
+}
+.footer-DatosPersonales {
+	display: grid;
+}
+.footerDatosPersonales-Texto {
+	grid-area: textoDP;
+	hyphens: auto;
+}
+.footerDatosPersonalesTexto-Curiosidades {
+	list-style: disc;
+}
+.footerDatosPersonalesTexto-EmailYUbicacion {
+	font-style: italic;
+}
+.footerDatosPersonales-FotoPersonal,
+.footerDatosPersonales-IconosSociales img {
+	max-width: 100%;
+}
+.footerDatosPersonales-FotoPersonal {
+	grid-area: fotoDP;
+	border-radius: 100%;
+}
+.footerDatosPersonales-IconosSociales {
+	grid-area: socialDP;
+	display: flex;
+	justify-content: space-around;
+}
+.footerDatosPersonales-IconosSociales a:hover {
+	width: 50%;
+	transition: 0.5s ease-in-out;
+}
+.footer-Derechos {
+	background-color: var(--purple);
+	text-align: center;
+	display: block;
+	border-radius: 25px;
+	padding: 0.5% 7.5%;
+}
+
+/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
+#top {
+	font-size: 0.000001px;
+	position: absolute;
+	top: 0;
+}
+#goToTop {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	transition: 0.5s ease-in-out;
+}
+#goToTop:hover {
+	filter: invert();
+}

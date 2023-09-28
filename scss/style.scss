@@ -1,0 +1,17 @@
+// @MEDIA IMPORTS:
+@use "responsivo/mediaMobile";
+@use "responsivo/mediaTablet";
+@use "responsivo/mediaDesktop";
+
+// GENERAL IMPORTS:
+@use "reset" as G;
+@use "header";
+@use "footer";
+
+// SPECIFIC IMPORTS:
+@use "index/index";
+@use "bis/bis";
+@use "wack/wack";
+@use "otrosGrupos/otrosGrupos";
+@use "quiz/quiz";
+

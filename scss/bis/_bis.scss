@@ -1,0 +1,52 @@
+@use "../reset" as G;
+
+/* MAIN - bis.html */
+.carousel-item img {
+	border-radius: 20px;
+	height: 100%;
+}
+.carousel-caption h5,
+.carousel-caption p {
+	color: rgba(255, 255, 255, 0);
+	padding: 2%;
+	transition: 0.25s ease-in-out;
+}
+.carousel-caption:hover h5,
+.carousel-caption:hover p {
+	color: rgb(255, 255, 255);
+	background-color: G.$purple-transparent;
+	border-radius: 20px;
+}
+.carousel-control-prev-icon {
+	background-image: url("../icons/flecha-Izquierda.svg");
+	transition: all 0.25s ease-in-out;
+}
+.carousel-control-prev-icon:hover {
+	height: 100%;
+	width: 50%;
+	filter: invert(1);
+}
+.carousel-control-next-icon {
+	background-image: url("../icons/flecha-Derecha.svg");
+	transition: all 0.25s ease-in-out;
+}
+.carousel-control-next-icon:hover {
+	height: 100%;
+	width: 50%;
+	filter: invert(1);
+}
+.carousel-indicators [data-bs-target] {
+	background-color: G.$purple-transparent;
+	transition: 0.5s ease-in-out;
+}
+.carousel-indicators .active {
+	background-color: G.$purple;
+	height: 6px;
+}
+.carousel-indicators [data-bs-target]:hover {
+	background-color: G.$purple;
+	height: 6px;
+}
+.mainBis-Presente ul {
+	list-style: square;
+}

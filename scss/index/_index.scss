@@ -1,0 +1,71 @@
+@use "../reset" as G;
+
+/* PORTADA - index.html */
+.portadaBis {
+	/* background: url(../images/bis/bisIdolIsDead-2012.png); */
+	position: relative;
+	/* top: -1cm;
+	height: 130vh;
+	width: 100%; */
+}
+.portadaBis-Imagen {
+	width: 100%;
+	border-radius: 20px;
+}
+.portadaBis-Logo {
+	position: absolute;
+	top: 5%;
+	left: 7%;
+	width: 15%;
+	filter: invert(1);
+}
+
+/* MAIN - index.html */
+.mainTextoLlamativo-Problema,
+.mainTextoLlamativo-Esperanza {
+	text-align: center;
+}
+.mainTextoLlamativo-Bienvenida,
+.mainTextoLlamativo-Solucion {
+	font-family: "Courier Prime", monospace;
+	font-variant: small-caps;
+	background-color: G.$purple;
+	font-weight: 600;
+	letter-spacing: 0.15vw;
+	text-align: center;
+	border-radius: 25px;
+}
+.mainTextoLlamativo-Problema,
+.mainTextoLlamativo-Esperanza,
+.mainTextoLlamativo-DefinicionAltIdol {
+	font-size: calc(11px + 1vw);
+}
+.mainTextoLlamativo-DefinicionAltIdol {
+	text-align: justify;
+}
+#dfnAlt,
+#dfnAnti {
+	font-family: "Courier Prime", monospace;
+}
+.main-Videos {
+	display: grid;
+	gap: 3%;
+}
+.mainVideos-Figuras figcaption {
+	text-align: center;
+}
+.mainVideos-BisPaprika {
+	grid-area: bis-Video;
+}
+.mainVideos-BellringShoujoHeartGigabite {
+	grid-area: bellring-Video;
+}
+.mainVideos-BabymetalKarate {
+	grid-area: babymetal-Video;
+}
+.mainVideos-AtarashiiGakkoKoiGeba {
+	grid-area: atarashii-Video;
+}
+.main-Videos video {
+	max-width: 100%;
+}

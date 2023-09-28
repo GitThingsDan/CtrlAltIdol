@@ -1,3 +1,5 @@
 .vscode
 # Me arrepentí...mejor usaré iframes de YouTube no más u.u
 videos
+/package.json
+/node_modules
