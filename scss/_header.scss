@@ -1,8 +1,6 @@
-@use "reset" as G;
-
 /* HEADER */
 #header {
-	background-color: G.$purple;
+	background-color: $purple;
 	/* background: linear-gradient(darkblue, $purple, darkblue); */
 	display: flex;
 	align-items: center;

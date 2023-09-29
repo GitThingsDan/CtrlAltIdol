@@ -1,4 +1,4 @@
-@use "../reset" as G;
+@use "../reset" as *;
 
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* DESKTOP */
@@ -47,7 +47,7 @@
 	/* MAIN - index.html */
 	.mTL-TxtImp,
 	.mainTextoLlamativo-Bienvenida {
-		@include G.boxmodel(1.5% 0, 1% 3%);
+		@include boxmodel(1.5% 0, 1% 3%);
 	}
 	.mainTextoLlamativo-Solucion {
 		@extend .mTL-TxtImp;
@@ -78,7 +78,7 @@
 		font-size: calc(3.3px + 1vw);
 	}
 	.mainBis-Videos {
-		@include G.vidsizes(0 20%, $vidh: true);
+		@include vidsizes(0 20%, $vidh: true);
 	}
 	/* MAIN - wack.html */
 	.mainWack-Grupos {

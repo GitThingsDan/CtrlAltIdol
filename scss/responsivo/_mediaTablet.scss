@@ -1,5 +1,3 @@
-@use "../reset" as G;
-
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
 @media only screen and (430px <= width <= 835px) {

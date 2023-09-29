@@ -1,5 +1,3 @@
-@use "../reset" as G;
-
 /* PORTADA - index.html */
 .portadaBis {
 	/* background: url(../images/bis/bisIdolIsDead-2012.png); */
@@ -29,7 +27,7 @@
 .mainTextoLlamativo-Solucion {
 	font-family: "Courier Prime", monospace;
 	font-variant: small-caps;
-	background-color: G.$purple;
+	background-color: $purple;
 	font-weight: 600;
 	letter-spacing: 0.15vw;
 	text-align: center;

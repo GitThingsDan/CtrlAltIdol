@@ -1,79 +1,4 @@
 @charset "UTF-8";
-/* REGLAS @FONT-FACE (familias de fuentes descargadas desde Google Fonts) */
-/* "Roboto Mono" */
-@font-face {
-  font-family: "Roboto Mono";
-  src: url(../fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
-}
-/* "Courier Prime" */
-@font-face {
-  font-family: "Courier Prime";
-  src: url(../fonts/Courier_Prime/CourierPrime-Regular.ttf);
-}
-/* RESETEO DE ESTILOS */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-  transition: 0.25s ease-in-out;
-}
-
-#body {
-  background: linear-gradient(90deg, rgb(62, 0, 143), black, rgb(62, 0, 143));
-  /* background-image: url(../images/dark-grey-terrazzo.png); */
-  color: white;
-  font-family: "Roboto Mono", monospace;
-  padding: 0 5%;
-}
-
-h2,
-h3,
-h4 {
-  margin: 2vw 0 1vw 0;
-}
-
-.main {
-  font-size: calc(0.7rem + 1vw);
-  text-align: justify;
-}
-.main a {
-  font-weight: bold;
-}
-.main a:hover {
-  color: black;
-  font-weight: 900;
-  transition: all 0.25s ease-in-out;
-}
-
-ul {
-  list-style: none;
-}
-
-/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
-#top {
-  font-size: 0.000001px;
-  position: absolute;
-  top: 0;
-}
-
-#goToTop {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  transition: 0.5s ease-in-out;
-}
-
-#goToTop:hover {
-  filter: invert(1);
-}
-
-/* FIN DEL RESETEO DE ESTILOS */
-/* FIN DEL RESETEO DE ESTILOS */
-/* FIN DEL RESETEO DE ESTILOS */
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
 @media only screen and (width <= 429px) {
@@ -320,6 +245,83 @@ ul {
     width: 12.5vw;
   }
 }
+/* REGLAS @FONT-FACE (familias de fuentes descargadas desde Google Fonts) */
+/* "Roboto Mono" */
+@font-face {
+  font-family: "Roboto Mono";
+  src: url(../fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
+}
+/* "Courier Prime" */
+@font-face {
+  font-family: "Courier Prime";
+  src: url(../fonts/Courier_Prime/CourierPrime-Regular.ttf);
+}
+/* RESETEO DE ESTILOS */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: 0.25s ease-in-out;
+}
+
+#body {
+  background: linear-gradient(90deg, rgb(62, 0, 143), black, rgb(62, 0, 143));
+  /* background-image: url(../images/dark-grey-terrazzo.png); */
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  padding: 0 5%;
+}
+
+h2,
+h3,
+h4 {
+  margin: 2vw 0 1vw 0;
+}
+
+.main {
+  font-size: calc(0.7rem + 1vw);
+  text-align: justify;
+}
+
+.main a {
+  font-weight: bold;
+}
+
+.main a:hover {
+  color: black;
+  font-weight: 900;
+  transition: all 0.25s ease-in-out;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
+#top {
+  font-size: 0.000001px;
+  position: absolute;
+  top: 0;
+}
+
+#goToTop {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+#goToTop:hover {
+  filter: invert(1);
+}
+
+/* FIN DEL RESETEO DE ESTILOS */
+/* FIN DEL RESETEO DE ESTILOS */
+/* FIN DEL RESETEO DE ESTILOS */
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* DESKTOP */
 @media only screen and (836px <= width) {
@@ -446,6 +448,81 @@ ul {
     width: 10vw;
   }
 }
+/* REGLAS @FONT-FACE (familias de fuentes descargadas desde Google Fonts) */
+/* "Roboto Mono" */
+@font-face {
+  font-family: "Roboto Mono";
+  src: url(../fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
+}
+/* "Courier Prime" */
+@font-face {
+  font-family: "Courier Prime";
+  src: url(../fonts/Courier_Prime/CourierPrime-Regular.ttf);
+}
+/* RESETEO DE ESTILOS */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  transition: 0.25s ease-in-out;
+}
+
+#body {
+  background: linear-gradient(90deg, rgb(62, 0, 143), black, rgb(62, 0, 143));
+  /* background-image: url(../images/dark-grey-terrazzo.png); */
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  padding: 0 5%;
+}
+
+h2,
+h3,
+h4 {
+  margin: 2vw 0 1vw 0;
+}
+
+.main {
+  font-size: calc(0.7rem + 1vw);
+  text-align: justify;
+}
+.main a {
+  font-weight: bold;
+}
+.main a:hover {
+  color: black;
+  font-weight: 900;
+  transition: all 0.25s ease-in-out;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
+#top {
+  font-size: 0.000001px;
+  position: absolute;
+  top: 0;
+}
+
+#goToTop {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+#goToTop:hover {
+  filter: invert(1);
+}
+
+/* FIN DEL RESETEO DE ESTILOS */
+/* FIN DEL RESETEO DE ESTILOS */
+/* FIN DEL RESETEO DE ESTILOS */
 /* HEADER */
 #header {
   background-color: rgb(62, 0, 143);

@@ -1,16 +1,35 @@
+// Primero, con @import:
 // @MEDIA IMPORTS:
-@use "responsivo/mediaMobile";
-@use "responsivo/mediaTablet";
-@use "responsivo/mediaDesktop";
+@import "responsivo/mediaMobile";
+@import "responsivo/mediaTablet";
+@import "responsivo/mediaDesktop";
 
 // GENERAL IMPORTS:
-@use "reset" as G;
-@use "header";
-@use "footer";
+@import "reset";
+@import "header";
+@import "footer";
 
 // SPECIFIC IMPORTS:
-@use "index/index";
-@use "bis/bis";
-@use "wack/wack";
-@use "otrosGrupos/otrosGrupos";
-@use "quiz/quiz";
+@import "index/index";
+@import "bis/bis";
+@import "wack/wack";
+@import "otrosGrupos/otrosGrupos";
+@import "quiz/quiz";
+
+// Ahora, con @use:
+// @MEDIA USES:
+// @use "responsivo/mediaMobile";
+// @use "responsivo/mediaTablet";
+// @use "responsivo/mediaDesktop";
+
+// GENERAL USES:
+// @use "reset" as *;
+// @use "header";
+// @use "footer";
+
+// SPECIFIC USES:
+// @use "index/index";
+// @use "bis/bis";
+// @use "wack/wack";
+// @use "otrosGrupos/otrosGrupos";
+// @use "quiz/quiz";

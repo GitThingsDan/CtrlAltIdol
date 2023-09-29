@@ -1,5 +1,3 @@
-@use "../reset" as G;
-
 /* MAIN - bis.html */
 .carousel-item img {
 	border-radius: 20px;
@@ -14,7 +12,7 @@
 .carousel-caption:hover h5,
 .carousel-caption:hover p {
 	color: rgb(255, 255, 255);
-	background-color: G.$purple-transparent;
+	background-color: $purple-transparent;
 	border-radius: 20px;
 }
 .carousel-control-prev-icon {
@@ -36,15 +34,15 @@
 	filter: invert(1);
 }
 .carousel-indicators [data-bs-target] {
-	background-color: G.$purple-transparent;
+	background-color: $purple-transparent;
 	transition: 0.5s ease-in-out;
 }
 .carousel-indicators .active {
-	background-color: G.$purple;
+	background-color: $purple;
 	height: 6px;
 }
 .carousel-indicators [data-bs-target]:hover {
-	background-color: G.$purple;
+	background-color: $purple;
 	height: 6px;
 }
 .mainBis-Presente ul {

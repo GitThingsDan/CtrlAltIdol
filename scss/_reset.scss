@@ -2,7 +2,7 @@
 $purple: rgb(62, 0, 143);
 $purple-transparent: rgba(62, 0, 143, 0.5);
 
-// MIX-INS (O MIXINS...COMO SEA QUE SE ESCRIBAN)
+// MIXINS:
 @mixin boxmodel($margin, $padding) {
 	margin: $margin;
 	padding: $padding;
