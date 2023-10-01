@@ -48,3 +48,64 @@
 .mainBis-Presente ul {
 	list-style: square;
 }
+/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
+/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 429px) {
+	/* Abreviación de @media only screen and (max-width: 429px) { */
+
+	/* MAIN - bis.html */
+	.mainBis-Galería {
+		padding: 0;
+	}
+	.carousel-item {
+		height: 60vw;
+	}
+	.carousel-caption h5,
+	.carousel-caption p {
+		font-size: calc(1px + 2vw);
+	}
+	.mainBis-Videos {
+		height: 50vw;
+		width: 100%;
+	}
+}
+
+/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (430px <= width <= 835px) {
+	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+
+	/* MAIN - bis.html */
+	.mainBis-Galería {
+		padding: 0 10%;
+	}
+	.carousel-item {
+		height: 50vw;
+	}
+	.carousel-caption h5,
+	.carousel-caption p {
+		font-size: calc(1px + 1.9vw);
+	}
+	.mainBis-Videos {
+		height: 50vw;
+		width: 100%;
+	}
+}
+
+/* DESKTOP */
+@media only screen and (836px <= width) {
+	/* Abreviación de @media only screen and (min-width:836px) { */
+	/* MAIN - bis.html */
+	.mainBis-Galería {
+		padding: 0 25%;
+	}
+	.carousel-item {
+		height: 30vw;
+	}
+	.carousel-caption h5,
+	.carousel-caption p {
+		font-size: calc(3.3px + 1vw);
+	}
+	.mainBis-Videos {
+		@include vidsizes(0 20%, $vidh: true);
+	}
+}

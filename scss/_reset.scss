@@ -33,53 +33,41 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 	margin: 0;
 	padding: 0;
 }
-a {
-	color: white;
-	text-decoration: none;
-	transition: 0.25s ease-in-out;
-}
-#body {
+
+.body {
 	background: linear-gradient(90deg, $purple, black, $purple);
-	/* background-image: url(../images/dark-grey-terrazzo.png); */
 	color: white;
 	font-family: "Roboto Mono", monospace;
 	padding: 0 5%;
-}
-h2,
-h3,
-h4 {
-	margin: 2vw 0 1vw 0;
-}
-.main {
-	font-size: calc(0.7rem + 1vw);
-	text-align: justify;
+
 	a {
-		font-weight: bold;
-		&:hover {
-			color: black;
-			font-weight: 900;
-			transition: all 0.25s ease-in-out;
+		color: white;
+		text-decoration: none;
+		transition: 0.25s ease-in-out;
+	}
+
+	h2,
+	h3,
+	h4 {
+		margin: 2vw 0 1vw 0;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	.main {
+		font-size: calc(0.7rem + 1vw);
+		text-align: justify;
+		a {
+			font-weight: bold;
+			&:hover {
+				color: black;
+				font-weight: 900;
+				transition: all 0.25s ease-in-out;
+			}
 		}
 	}
-}
-ul {
-	list-style: none;
-}
-
-/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
-#top {
-	font-size: 0.000001px;
-	position: absolute;
-	top: 0;
-}
-#goToTop {
-	position: fixed;
-	bottom: 10px;
-	right: 10px;
-	transition: 0.5s ease-in-out;
-}
-#goToTop:hover {
-	filter: invert(1);
 }
 
 /* FIN DEL RESETEO DE ESTILOS */

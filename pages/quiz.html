@@ -19,10 +19,10 @@
 	<title>Quiz - Ctrl Alt Idol</title>
 </head>
 
-<body class="body" id="body">
-	<header class="header" id="header">
+<body class="body">
+	<header class="header">
 		<!-- TÍTULO DEL SITIO -->
-		<h1 class="header-TituloPrincipal">
+		<h1 class="headerTituloPrincipal">
 			<a class="headerTituloPrincipal-Link" href="../index.html">
 				<p class="headerTituloPrincipal-Titulo">
 					Ctrl Alt
@@ -34,7 +34,7 @@
 			</a>
 		</h1>
 		<!-- NAVBAR -->
-		<nav class="header-Navbar">
+		<nav class="headerNavbar">
 			<ul class="headerNavbar-List">
 				<li class="headerNavbarList-Inicio">
 					<a href="../index.html">Inicio</a>
@@ -56,13 +56,13 @@
 	</header>
 
 	<!-- PORTADA - quiz.html -->
-	<h2 class="mainQuiz-Titulo text-center">Quiz</h2>
-	<div class="portada-Quiz d-flex justify-content-center">
+	<h2 class="text-center">Quiz</h2>
+	<div class="portadaQuiz d-flex justify-content-center">
 		<img src="../icons/musica.png" alt="Dos notas musicales corcheas, unidas; versión de color negro"
 			class="portadaQuiz-Icono" />
 	</div>
 
-	<main class="main main-Quiz d-flex flex-column align-items-center" id="main-Quiz">
+	<main class="main mainQuiz d-flex flex-column align-items-center">
 		<p class="mainQuiz-Pregunta">
 			Ahora que leíste mi sitio, ¿qué tanto aprendiste de ALT IDOL?
 		</p>
@@ -223,9 +223,9 @@
 		</form>
 	</main>
 
-	<footer class="footer" id="footer">
-		<!-- NAVZONE: igual que .header-Navbar, pero ahora con imagenes - -->
-		<nav class="footer-Navzone">
+	<footer class="footer">
+		<!-- NAVZONE: igual que .headerNavbar, pero ahora con imagenes - -->
+		<nav class="footerNavzone">
 			<!-- IMAGENES con links de navegacion -->
 			<div class="footerNavzone-Contenedores footerNavzone-Bis">
 				<a href="bis.html" class="footerNavzoneBis-ImgLink">
@@ -243,16 +243,16 @@
 			<div class="footerNavzone-Contenedores footerNavzone-OtrosGrupos">
 				<a href="otrosGrupos.html" class="footerNavzoneOtrosGrupos-ImgLink">
 					<img src="../images/bis/bisFinalDance-2014_crop.png" alt="BiS en bikini, sosteniendo bates con púas"
-						class="bisBikini-OtrosGruposImg" />
+						class="OtrosGruposImg-bisBikini" />
 					<img src="../images/bellring.png"
 						alt="BELLRING Shoujo Heart, con sus vestidos tipo cuervo, en la playa, descalzas"
-						class="bellringPlaya-OtrosGruposImg" />
+						class="OtrosGruposImg-bellringPlaya" />
 					<img src="../images/babymetal-Crop.png"
 						alt="BABYMETAL frente a un anillo dorado gigante y resplandeciente, sobre un fondo con rayos de luces rojas"
-						class="babymetalFuego-OtrosGruposImg" />
+						class="OtrosGruposImg-babymetalFuego" />
 					<img src="../images/atarashiiGakko.png"
 						alt="ATARASHII GAKKO! en formación tipo Hombre de Vitruvio (¿?), de modo tal que todas parecen compartir la misma falda"
-						class="atarashiiGakkoFormacion-OtrosGruposImg" />
+						class="OtrosGruposImg-atarashiiGakkoFormacion" />
 				</a>
 				<a href="otrosGrupos.html" class="footerNavzone-Botones footerNavzoneOtrosGrupos-Boton">Otros grupos
 				</a>
@@ -265,7 +265,7 @@
 			</div>
 		</nav>
 		<!-- INFORMACIÓN DEL AUTOR DE ESTE BLOG, FOTO PERSONAL, Y LINKEDIN/GITHUB... (como si yo fuera tan interesante...u.u) -->
-		<div class="footer-DatosPersonales">
+		<div class="footerDatosPersonales">
 			<div class="footerDatosPersonales-Texto">
 				<p class="footerDatosPersonalesTexto-Nombre">
 					¡Hola! Soy Daniel y...
@@ -301,14 +301,14 @@
 			</div>
 		</div>
 		<!-- Cedo todos los DERECHOS de lo que esté en este blog y simultáneamente no sea mío - no soy abogado ni nada de eso, pero sólo quisiera dejar bien claro que de "aquello" (lo que mencioné en la primera oración de este comentario), NO SOY DUEÑO - -->
-		<small class="footer-Derechos">
+		<small class="footerDerechos">
 			Todos los derechos pertenecen a sus respectivos dueños.
 		</small>
+		<!-- Hack para botón "Volver al principio de la página", en la esquina inferior derecha -->
+		<p id="top">.</p>
+		<a href="#top"><img src="../icons/flecha-Arriba.png" alt="" id="goToTop" /></a>
 	</footer>
 
-	<!-- Hack para botón "Volver al principio de la página", en la esquina inferior derecha -->
-	<p id="top">.</p>
-	<a href="#top"><img src="../icons/flecha-Arriba.png" alt="" id="goToTop" /></a>
 
 	<!-- Script - Bootstrap Framework -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

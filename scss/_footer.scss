@@ -1,109 +1,246 @@
 /* FOOTER */
-.footer-Navzone {
-	background-color: $purple;
-	display: grid;
-	border-radius: 25px;
-	justify-items: center;
+.footer {
+	.footerNavzone {
+		background-color: $purple;
+		display: grid;
+		border-radius: 25px;
+		justify-items: center;
+		img {
+			height: 100%;
+			max-width: 100%;
+			border-radius: 25px;
+		}
+		.footerNavzone-Contenedores {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 3%;
+			margin: 0;
+			transition: padding 0.25s ease-in-out;
+		}
+		.footerNavzone-Contenedores:hover {
+			padding: 0;
+			transition: padding 0.25s ease-in-out;
+		}
+	}
+	.footerNavzone-Botones {
+		background-color: black;
+		padding: 15px;
+		margin-top: 1.5%;
+		border-radius: 25px;
+		&:hover {
+			color: $purple;
+			font-weight: 900;
+			transition: all 0.25s ease-in-out;
+		}
+	}
+	.footerNavzone-Bis {
+		grid-area: bis;
+	}
+	.footerNavzone-Wack {
+		grid-area: wack;
+		/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height:85.901% */
+	}
+	.footerNavzoneWack-ImgLink {
+		height: 85.901%;
+	}
+	.footerNavzone-OtrosGrupos {
+		grid-area: otrosGrupos;
+	}
+	.footerNavzoneOtrosGrupos-ImgLink {
+		display: grid;
+		grid-template-areas:
+			"bisBikini		bellringPlaya"
+			"babymetalFuego	atarashiiGakkoFormacion";
+		.OtrosGruposImg {
+			&-bisBikini {
+				grid-area: bisBikini;
+			}
+			&-bellringPlaya {
+				grid-area: bellringPlaya;
+			}
+			&-babymetalFuego {
+				grid-area: babymetalFuego;
+			}
+			&-atarashiiGakkoFormacion {
+				grid-area: atarashiiGakkoFormacion;
+			}
+		}
+	}
+	.footerNavzone-Quiz {
+		grid-area: quiz;
+		/* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone), y para separarla apropiadamente de su botón respectivo (de modo que el botón quede a la misma altura que el contiguo botón de "Otros grupos") */
+		width: 55%;
+		justify-content: space-between;
+	}
+
+	.footerDatosPersonales {
+		display: grid;
+		.footerDatosPersonales-Texto {
+			grid-area: textoDP;
+			hyphens: auto;
+			.footerDatosPersonalesTexto-Curiosidades {
+				list-style: disc;
+			}
+			.footerDatosPersonalesTexto-EmailYUbicacion {
+				font-style: italic;
+			}
+		}
+		.footerDatosPersonales-FotoPersonal {
+			grid-area: fotoDP;
+			border-radius: 100%;
+			max-width: 100%;
+		}
+		.footerDatosPersonales-IconosSociales {
+			grid-area: socialDP;
+			display: flex;
+			justify-content: space-around;
+			img {
+				max-width: 100%;
+			}
+			a:hover {
+				width: 50%;
+				transition: 0.5s ease-in-out;
+			}
+		}
+	}
+	.footerDerechos {
+		background-color: $purple;
+		text-align: center;
+		display: block;
+		border-radius: 25px;
+		padding: 0.5% 7.5%;
+	}
+	/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
+	#top {
+		font-size: 0.000001px;
+		position: absolute;
+		top: 0;
+	}
+	#goToTop {
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		transition: 0.5s ease-in-out;
+		&:hover {
+			filter: invert(1);
+		}
+	}
 }
-.footerNavzone-Contenedores {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 3%;
-	margin: 0;
-	transition: padding 0.25s ease-in-out;
+
+/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
+/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 429px) {
+	/* Abreviación de @media only screen and (max-width: 429px) { */
+	/* FOOTER */
+	.footer {
+		.footerNavzone {
+			grid-template-areas:
+				"bis"
+				"wack"
+				"otrosGrupos"
+				"quiz";
+		}
+		.footerDatosPersonales {
+			grid-template-areas:
+				"textoDP	textoDP"
+				"fotoDP		socialDP";
+			grid-template-columns: 3fr 1fr;
+			margin: 7.5% 0;
+			.footerDatosPersonales-FotoPersonal {
+				width: 90%;
+			}
+			.footerDatosPersonales-IconosSociales {
+				flex-direction: column;
+				a {
+					width: 90%;
+				}
+			}
+		}
+		/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
+		#goToTop {
+			width: 20vw;
+			&:hover {
+				width: 25vw;
+			}
+		}
+	}
 }
-.footerNavzone-Contenedores:hover {
-	padding: 0;
-	transition: padding 0.25s ease-in-out;
+
+/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (430px <= width <= 835px) {
+	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+	/* FOOTER */
+	.footer {
+		.footerNavzone {
+			grid-template-areas:
+				"bis			wack"
+				"otrosGrupos	quiz";
+		}
+		.footerDatosPersonales {
+			grid-template-areas:
+				"textoDP	fotoDP"
+				"textoDP	socialDP";
+			grid-template-columns: 3.5fr 1.5fr;
+			grid-template-rows: 2fr 1fr;
+			align-items: center;
+			margin: 2% 0 1% 0;
+			.footerDatosPersonales-Texto {
+				/* font-size: 0.5px + 2.5vw, la solución que se me ocurrió para que el texto sea medianamente responsive */
+				font-size: calc(0.5px + 2.5vw);
+			}
+			.footerDatosPersonales-IconosSociales {
+				align-self: start;
+				a {
+					width: 35%;
+				}
+			}
+		}
+		/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
+		#goToTop {
+			width: 10vw;
+			&:hover {
+				width: 12.5vw;
+			}
+		}
+	}
 }
-.footer-Navzone img {
-	height: 100%;
-	max-width: 100%;
-	border-radius: 25px;
-}
-.footerNavzone-Bis {
-	grid-area: bis;
-}
-.footerNavzone-Wack {
-	grid-area: wack;
-}
-/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height:85.901% */
-.footerNavzoneWack-ImgLink {
-	height: 85.901%;
-}
-.footerNavzone-OtrosGrupos {
-	grid-area: otrosGrupos;
-}
-.footerNavzone-Quiz {
-	grid-area: quiz;
-	/* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone), y para separarla apropiadamente de su botón respectivo (de modo que el botón quede a la misma altura que el contiguo botón de "Otros grupos") */
-	width: 55%;
-	justify-content: space-between;
-}
-.footerNavzoneOtrosGrupos-ImgLink {
-	display: grid;
-	grid-template-areas:
-		"bisBikini		bellringPlaya"
-		"babymetalFuego	atarashiiGakkoFormacion";
-}
-.bisBikini-OtrosGruposImg {
-	grid-area: bisBikini;
-}
-.bellringPlaya-OtrosGruposImg {
-	grid-area: bellringPlaya;
-}
-.babymetalFuego-OtrosGruposImg {
-	grid-area: babymetalFuego;
-}
-.atarashiiGakkoFormacion-OtrosGruposImg {
-	grid-area: atarashiiGakkoFormacion;
-}
-.footerNavzone-Botones {
-	background-color: black;
-	padding: 15px;
-	margin-top: 1.5%;
-	border-radius: 25px;
-}
-.footerNavzone-Botones:hover {
-	color: $purple;
-	font-weight: 900;
-	transition: all 0.25s ease-in-out;
-}
-.footer-DatosPersonales {
-	display: grid;
-}
-.footerDatosPersonales-Texto {
-	grid-area: textoDP;
-	hyphens: auto;
-}
-.footerDatosPersonalesTexto-Curiosidades {
-	list-style: disc;
-}
-.footerDatosPersonalesTexto-EmailYUbicacion {
-	font-style: italic;
-}
-.footerDatosPersonales-FotoPersonal,
-.footerDatosPersonales-IconosSociales img {
-	max-width: 100%;
-}
-.footerDatosPersonales-FotoPersonal {
-	grid-area: fotoDP;
-	border-radius: 100%;
-}
-.footerDatosPersonales-IconosSociales {
-	grid-area: socialDP;
-	display: flex;
-	justify-content: space-around;
-}
-.footerDatosPersonales-IconosSociales a:hover {
-	width: 50%;
-	transition: 0.5s ease-in-out;
-}
-.footer-Derechos {
-	background-color: $purple;
-	text-align: center;
-	display: block;
-	border-radius: 25px;
-	padding: 0.5% 7.5%;
+
+/* DESKTOP */
+@media only screen and (836px <= width) {
+	/* Abreviación de @media only screen and (min-width:836px) { */
+	/* FOOTER */
+	.footer {
+		.footerNavzone {
+			grid-template-areas:
+				"bis			wack"
+				"otrosGrupos	quiz";
+			.footerNavzone-Botones {
+				font-size: calc(15px + 1vw);
+			}
+		}
+		.footerDatosPersonales {
+			grid-template-areas:
+				"textoDP	fotoDP"
+				"textoDP	socialDP";
+			grid-template-columns: 4fr 1fr;
+			grid-template-rows: 2fr 1fr;
+			align-items: center;
+			margin: 2% 0 1% 0;
+			.footerDatosPersonales-Texto {
+				/* font-size: 2vw, la solución que se me ocurrió para que el texto sea medianamente responsive */
+				font-size: 2vw;
+			}
+			.footerDatosPersonales-IconosSociales a {
+				width: 37.5%;
+			}
+		}
+		/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
+		#goToTop {
+			width: 7.5vw;
+			&:hover {
+				width: 10vw;
+			}
+		}
+	}
 }

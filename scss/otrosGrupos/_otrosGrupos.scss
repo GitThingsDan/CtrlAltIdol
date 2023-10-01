@@ -1,8 +1,8 @@
 /* PORTADA - otrosGrupos.html */
-.portada-OtrosGrupos {
+.portadaOtrosGrupos {
 	margin: 0 auto;
 }
-.portada-OtrosGrupos img {
+.portadaOtrosGrupos img {
 	padding: 0;
 }
 /* MAIN - otrosGrupos.html */
@@ -11,4 +11,53 @@
 }
 .mainOtrosGrupos-Iframes {
 	margin: 1vw 0;
+}
+/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
+/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 429px) {
+	/* Abreviación de @media only screen and (max-width: 429px) { */
+
+	/* PORTADA - otrosGrupos.html */
+	.portadaOtrosGrupos {
+		width: 100%;
+	}
+	/* MAIN - otrosGrupos.html */
+	.mainOtrosGrupos-Iframes iframe {
+		height: calc(50px + 50vw);
+		margin: 1vw 0;
+	}
+}
+
+/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (430px <= width <= 835px) {
+	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+
+	/* PORTADA - otrosGrupos.html */
+	.portadaOtrosGrupos {
+		width: 75%;
+	}
+	/* MAIN - otrosGrupos.html */
+	.mainOtrosGrupos-Iframes iframe {
+		height: 25vw;
+		margin: 1vw 0;
+	}
+}
+
+/* DESKTOP */
+@media only screen and (836px <= width) {
+	/* Abreviación de @media only screen and (min-width:836px) { */
+	/* PORTADA - otrosGrupos.html */
+	.portadaOtrosGrupos {
+		width: 50%;
+	}
+	/* MAIN - otrosGrupos.html */
+	.mainOtrosGrupos-Iframes iframe {
+		height: 25vw;
+		$tuberculo: patata;
+		@if $tuberculo == patata {
+			margin: 1vw 0;
+		} @else if $tuberculo == papa {
+			margin: 10vw 0;
+		}
+	}
 }

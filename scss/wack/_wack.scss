@@ -62,3 +62,115 @@
 .bish-Tomorrow {
 	grid-area: bish-Tomorrow;
 }
+/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
+/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 429px) {
+	/* Abreviación de @media only screen and (max-width: 429px) { */
+	/* PORTADA - wack.html */
+	.portadaWack-Icono {
+		width: 100%;
+	}
+	/* MAIN - wack.html */
+	.mainWack-Grupos {
+		grid-template-areas:
+			"titulo"
+			"asp-Texto"
+			"asp-ToxicInvasion"
+			"asp-TheManCalling"
+			"exwhyz-Texto"
+			"exwhyz-Iza"
+			"exwhyz-FurachinaSummer"
+			"gangParade-Texto"
+			"gpPla2me-Plastic2Mercy"
+			"gpPop-PrettyPrettyGood"
+			"gangParade-BeyondTheMountain"
+			"gangParade-LoveCommunication"
+			"bis3-Texto"
+			"bis3-SmokingBilly"
+			"bis3-Tsuyogarisan"
+			"bish-Texto"
+			"bish-Otnk"
+			"bish-Tomorrow";
+		margin: 10vw 0;
+	}
+	.mainWack-Grupos p {
+		margin-top: 15%;
+	}
+	.mainWack-Grupos iframe {
+		height: calc(50px + 50vw);
+		margin: 1vw 0;
+	}
+}
+
+/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (430px <= width <= 835px) {
+	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+
+	/* PORTADA - wack.html */
+	.portadaWack-Icono {
+		width: 75%;
+	}
+	/* MAIN - wack.html */
+	.mainWack-Grupos {
+		grid-template-areas:
+			"titulo							titulo"
+			"asp-Texto						asp-Texto"
+			"asp-ToxicInvasion				asp-TheManCalling"
+			"exwhyz-Texto					exwhyz-Texto"
+			"exwhyz-Iza						exwhyz-FurachinaSummer"
+			"gangParade-Texto				gangParade-Texto"
+			"gpPla2me-Plastic2Mercy			gpPop-PrettyPrettyGood"
+			"gangParade-BeyondTheMountain	gangParade-LoveCommunication"
+			"bis3-Texto						bis3-Texto"
+			"bis3-SmokingBilly				bis3-Tsuyogarisan"
+			"bish-Texto						bish-Texto"
+			"bish-Otnk						bish-Tomorrow";
+		margin: 7.5vw 0;
+		gap: 5px;
+	}
+	.mainWack-Grupos p {
+		margin-top: 5%;
+	}
+	.mainWack-Grupos iframe {
+		height: 25vw;
+	}
+}
+
+/* DESKTOP */
+@media only screen and (836px <= width) {
+	/* Abreviación de @media only screen and (min-width:836px) { */
+	/* PORTADA - wack.html */
+	.portadaWack-Icono {
+		width: 50%;
+	}
+	/* MAIN - wack.html */
+	.mainWack-Grupos {
+		grid-template-areas:
+			"titulo							titulo"
+			"asp-Texto						asp-Texto"
+			"asp-ToxicInvasion				asp-TheManCalling"
+			"exwhyz-Texto					exwhyz-Texto"
+			"exwhyz-Iza						exwhyz-FurachinaSummer"
+			"gangParade-Texto				gangParade-Texto"
+			"gpPla2me-Plastic2Mercy			gpPop-PrettyPrettyGood"
+			"gangParade-BeyondTheMountain	gangParade-LoveCommunication"
+			"bis3-Texto						bis3-Texto"
+			"bis3-SmokingBilly				bis3-Tsuyogarisan"
+			"bish-Texto						bish-Texto"
+			"bish-Otnk						bish-Tomorrow";
+		margin: 5vw 0;
+		gap: 5px;
+	}
+	.mainWack-Grupos p {
+		margin-top: 5%;
+	}
+	@for $i from 11 through 11 {
+		//entonces
+		.mainWack-Grupos iframe {
+			height: 14vw + $i;
+		}
+	}
+	// .mainWack-Grupos iframe {
+	// 	height: 25vw;
+	// }
+}
