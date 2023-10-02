@@ -15,7 +15,7 @@
 }
 
 /* MAIN - index.html */
-.main {
+.mainIndex {
 	.mainTextoLlamativo {
 		// Bienvenida y Exclamación resolutiva (con background-color y small-caps)
 		.mainTextoLlamativo-Bienvenida,
@@ -71,7 +71,7 @@
 		margin: 0.5% 0;
 	}
 	/* MAIN - index.html */
-	.main {
+	.mainIndex {
 		.mainTextoLlamativo {
 			.mainTextoLlamativo-Bienvenida {
 				font-size: calc(0.9em + 1vw);
@@ -83,6 +83,7 @@
 				padding: 12.5px;
 			}
 		}
+		// Grid de Iframes de YouTube
 		.mainVideos {
 			grid-template-areas:
 				"bis-Video"
@@ -107,7 +108,7 @@
 		margin: 1% 20%;
 	}
 	/* MAIN - index.html */
-	.main {
+	.mainIndex {
 		.mainTextoLlamativo {
 			// Aquí, yo podría "inventar" una clase, sólo para hacer @extend en Bienvenida y en Solución, contribuyendo a repetir menos líneas de código...
 			.mainTextoLlamativo-Bienvenida {
@@ -143,8 +144,9 @@
 		margin: 1% 25%;
 	}
 	/* MAIN - index.html */
-	.main {
+	.mainIndex {
 		.mainTextoLlamativo {
+			// Los @ de .mainTextoLlamativo no tienen ninguna razón de existencia; sólo están aquí porque los creé para practicar las características de Sass, mientras veía las clases pregrabadas.
 			.mTL-TxtImp,
 			.mainTextoLlamativo-Bienvenida {
 				@include boxmodel(1.5% 0, 1% 3%);

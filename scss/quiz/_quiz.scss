@@ -1,65 +1,97 @@
+// VARIABLES CSS - quiz.html
+:root {
+	// Variables CSS para los nuevos iconos de validación, que sobreescribirán los por defecto de Bootstrap
+	--icono-Correcto: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%2375b798" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>');
+	--icono-Incorrecto: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ea868f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>');
+}
+
 /* PORTADA - quiz.html */
-.portadaQuiz-Icono {
-	filter: invert(1);
+.portadaQuiz {
+	.portadaQuiz-Icono {
+		filter: invert(1);
+	}
 }
 /* MAIN - quiz.html */
-legend {
-	font-size: calc(0.7rem + 1vw);
+.mainQuiz {
+	.mainQuiz-Form {
+		.bis-Legendaria,
+		.wack-Impostoras {
+			// Esto es para que estas leyendas en específico no se vean desproporcionalmente grande en comparación al resto del texto (principalmente las labels):
+			legend {
+				font-size: calc(0.7rem + 1vw);
+			}
+		}
+		// Botón de "ENVIAR"
+		.mainQuiz-BotonContenedor {
+			display: flex;
+			justify-content: center;
+			margin: 25px 0;
+			#submit {
+				padding: 5%;
+				background-color: $purple;
+				color: white;
+				font-family: "Courier New", Courier, monospace;
+				font-weight: bold;
+				transition: 0.25s ease-in-out;
+				&:hover {
+					color: black;
+					font-size: 1.5em;
+					transition: 0.25s ease-in-out;
+				}
+			}
+		}
+	}
+	// Nuevos iconos de validación (no hubo caso...no pude anidarlos dentro de .mainQuiz-Form...)
+	/* Respuesta correcta: nuevo icono */
+	.form-control.is-valid,
+	.was-validated .form-control:valid {
+		background-image: var(--icono-Correcto);
+	}
+	.form-select.is-valid,
+	.was-validated .form-select:valid {
+		&:not([multiple]) {
+			&:not([size]),
+			&[size="1"] {
+				--bs-form-select-bg-icon: var(--icono-Correcto);
+			}
+		}
+	}
+	/* Respuesta incorrecta: nuevo icono */
+	.form-control.is-invalid,
+	.was-validated .form-control:invalid {
+		background-image: var(--icono-Incorrecto);
+	}
+	.form-select.is-invalid,
+	.was-validated .form-select:invalid {
+		&:not([multiple]) {
+			&:not([size]),
+			&[size="1"] {
+				--bs-form-select-bg-icon: var(--icono-Incorrecto);
+			}
+		}
+	}
 }
-.mainQuiz-BotonContenedor {
-	display: flex;
-	justify-content: center;
-	margin: 25px 0;
-}
-/* Respuesta correcta: nueva imagen */
-.form-select.is-valid:not([multiple]):not([size]),
-.form-select.is-valid:not([multiple])[size="1"],
-.was-validated .form-select:valid:not([multiple]):not([size]),
-.was-validated .form-select:valid:not([multiple])[size="1"],
-.form-control.is-valid,
-.was-validated .form-control:valid {
-	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%2375b798" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>');
-}
-/* Respuesta incorrecta: nueva imagen */
-.form-select.is-invalid:not([multiple]):not([size]),
-.form-select.is-invalid:not([multiple])[size="1"],
-.was-validated .form-select:invalid:not([multiple]):not([size]),
-.was-validated .form-select:invalid:not([multiple])[size="1"],
-.form-control.is-invalid,
-.was-validated .form-control:invalid {
-	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ea868f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>');
-}
-#submit {
-	padding: 5%;
-	background-color: $purple;
-	color: white;
-	font-family: "Courier New", Courier, monospace;
-	font-weight: bold;
-	transition: 0.25s ease-in-out;
-}
-#submit:hover {
-	color: black;
-	font-size: 1.5em;
-	transition: 0.25s ease-in-out;
-}
+
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
 @media only screen and (width <= 429px) {
 	/* Abreviación de @media only screen and (max-width: 429px) { */
-
 	/* PORTADA - quiz.html */
-	.portadaQuiz-Icono {
-		width: 50%;
+	.portadaQuiz {
+		.portadaQuiz-Icono {
+			width: 50%;
+		}
 	}
 }
 
 /* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
 @media only screen and (430px <= width <= 835px) {
 	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
-
 	/* PORTADA - quiz.html */
-	.portadaQuiz-Icono {
-		width: 25%;
+	.portadaQuiz {
+		.portadaQuiz-Icono {
+			width: 25%;
+		}
 	}
 }
 
@@ -67,7 +99,9 @@ legend {
 @media only screen and (836px <= width) {
 	/* Abreviación de @media only screen and (min-width:836px) { */
 	/* PORTADA - quiz.html */
-	.portadaQuiz-Icono {
-		width: 25%;
+	.portadaQuiz {
+		.portadaQuiz-Icono {
+			width: 25%;
+		}
 	}
 }

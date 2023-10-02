@@ -1,93 +1,101 @@
 /* MAIN - bis.html */
-.carousel-item img {
-	border-radius: 20px;
-	height: 100%;
-}
-.carousel-caption h5,
-.carousel-caption p {
-	color: rgba(255, 255, 255, 0);
-	padding: 2%;
-	transition: 0.25s ease-in-out;
-}
-.carousel-caption:hover h5,
-.carousel-caption:hover p {
-	color: rgb(255, 255, 255);
-	background-color: $purple-transparent;
-	border-radius: 20px;
-}
-.carousel-control-prev-icon {
-	background-image: url("../icons/flecha-Izquierda.svg");
-	transition: all 0.25s ease-in-out;
-}
-.carousel-control-prev-icon:hover {
-	height: 100%;
-	width: 50%;
-	filter: invert(1);
-}
-.carousel-control-next-icon {
-	background-image: url("../icons/flecha-Derecha.svg");
-	transition: all 0.25s ease-in-out;
-}
-.carousel-control-next-icon:hover {
-	height: 100%;
-	width: 50%;
-	filter: invert(1);
-}
-.carousel-indicators [data-bs-target] {
-	background-color: $purple-transparent;
-	transition: 0.5s ease-in-out;
-}
-.carousel-indicators .active {
-	background-color: $purple;
-	height: 6px;
-}
-.carousel-indicators [data-bs-target]:hover {
-	background-color: $purple;
-	height: 6px;
-}
-.mainBis-Presente ul {
-	list-style: square;
+.mainBis {
+	.mainBis-Galería {
+		.carousel-item {
+			img {
+				border-radius: 20px;
+				height: 100%;
+			}
+			.carousel-caption {
+				* {
+					opacity: 0;
+					padding: 2%;
+					transition: 0.25s ease-in-out;
+				}
+				&:hover {
+					* {
+						opacity: 1;
+						background-color: $purple-transparent;
+						border-radius: 20px;
+					}
+				}
+			}
+		}
+		.carousel-control-icons {
+			transition: all 0.25s ease-in-out;
+			&:hover {
+				height: 100%;
+				width: 50%;
+				filter: invert(1);
+			}
+		}
+		.carousel-control-prev-icon {
+			@extend .carousel-control-icons;
+			background-image: url("../icons/flecha-Izquierda.svg");
+		}
+		.carousel-control-next-icon {
+			@extend .carousel-control-icons;
+			background-image: url("../icons/flecha-Derecha.svg");
+		}
+		.carousel-indicators {
+			[data-bs-target] {
+				background-color: $purple-transparent;
+				transition: 0.5s ease-in-out;
+				&:hover {
+					background-color: $purple;
+					height: 6px;
+				}
+			}
+			.active {
+				background-color: $purple;
+				height: 6px;
+			}
+		}
+	}
+	.mainBis-Presente ul {
+		list-style: square;
+	}
 }
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
 @media only screen and (width <= 429px) {
 	/* Abreviación de @media only screen and (max-width: 429px) { */
-
 	/* MAIN - bis.html */
-	.mainBis-Galería {
-		padding: 0;
-	}
-	.carousel-item {
-		height: 60vw;
-	}
-	.carousel-caption h5,
-	.carousel-caption p {
-		font-size: calc(1px + 2vw);
-	}
-	.mainBis-Videos {
-		height: 50vw;
-		width: 100%;
+	.mainBis {
+		.mainBis-Galería {
+			padding: 0;
+			.carousel-item {
+				height: 60vw;
+				.carousel-caption * {
+					font-size: calc(1px + 2vw);
+				}
+			}
+		}
+		.mainBis-Videos {
+			height: 50vw;
+			width: 100%;
+		}
 	}
 }
 
 /* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
 @media only screen and (430px <= width <= 835px) {
 	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
-
 	/* MAIN - bis.html */
-	.mainBis-Galería {
-		padding: 0 10%;
-	}
-	.carousel-item {
-		height: 50vw;
-	}
-	.carousel-caption h5,
-	.carousel-caption p {
-		font-size: calc(1px + 1.9vw);
-	}
-	.mainBis-Videos {
-		height: 50vw;
-		width: 100%;
+	.mainBis {
+		.mainBis-Galería {
+			padding: 0 10%;
+			.carousel-item {
+				height: 50vw;
+				.carousel-caption * {
+					font-size: calc(1px + 1.9vw);
+				}
+			}
+		}
+		.mainBis-Videos {
+			height: 50vw;
+			width: 100%;
+		}
 	}
 }
 
@@ -95,17 +103,19 @@
 @media only screen and (836px <= width) {
 	/* Abreviación de @media only screen and (min-width:836px) { */
 	/* MAIN - bis.html */
-	.mainBis-Galería {
-		padding: 0 25%;
-	}
-	.carousel-item {
-		height: 30vw;
-	}
-	.carousel-caption h5,
-	.carousel-caption p {
-		font-size: calc(3.3px + 1vw);
-	}
-	.mainBis-Videos {
-		@include vidsizes(0 20%, $vidh: true);
+	.mainBis {
+		.mainBis-Galería {
+			padding: 0 25%;
+			.carousel-item {
+				height: 30vw;
+				.carousel-caption * {
+					font-size: calc(3.3px + 1vw);
+				}
+			}
+		}
+		.mainBis-Videos {
+			// Lo siguiente sólo lo hice para practicar Sass mientras veía las pregrabadas correspondientes.
+			@include vidsizes(0 20%, $vidh: true);
+		}
 	}
 }

@@ -10,6 +10,7 @@
 			max-width: 100%;
 			border-radius: 25px;
 		}
+		// LAS 4 CAJAS
 		.footerNavzone-Contenedores {
 			display: flex;
 			flex-direction: column;
@@ -17,63 +18,64 @@
 			padding: 3%;
 			margin: 0;
 			transition: padding 0.25s ease-in-out;
-		}
-		.footerNavzone-Contenedores:hover {
-			padding: 0;
-			transition: padding 0.25s ease-in-out;
-		}
-	}
-	.footerNavzone-Botones {
-		background-color: black;
-		padding: 15px;
-		margin-top: 1.5%;
-		border-radius: 25px;
-		&:hover {
-			color: $purple;
-			font-weight: 900;
-			transition: all 0.25s ease-in-out;
-		}
-	}
-	.footerNavzone-Bis {
-		grid-area: bis;
-	}
-	.footerNavzone-Wack {
-		grid-area: wack;
-		/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height:85.901% */
-	}
-	.footerNavzoneWack-ImgLink {
-		height: 85.901%;
-	}
-	.footerNavzone-OtrosGrupos {
-		grid-area: otrosGrupos;
-	}
-	.footerNavzoneOtrosGrupos-ImgLink {
-		display: grid;
-		grid-template-areas:
-			"bisBikini		bellringPlaya"
-			"babymetalFuego	atarashiiGakkoFormacion";
-		.OtrosGruposImg {
-			&-bisBikini {
-				grid-area: bisBikini;
+			&:hover {
+				padding: 0;
+				transition: padding 0.25s ease-in-out;
 			}
-			&-bellringPlaya {
-				grid-area: bellringPlaya;
+			// CADA CAJA EN ESPECÍFICO
+			&.footerNavzone-Bis {
+				grid-area: bis;
 			}
-			&-babymetalFuego {
-				grid-area: babymetalFuego;
+			&.footerNavzone-Wack {
+				grid-area: wack;
+				.footerNavzoneWack-ImgLink {
+					/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height:85.901% */
+					height: 85.901%;
+				}
 			}
-			&-atarashiiGakkoFormacion {
-				grid-area: atarashiiGakkoFormacion;
+			&.footerNavzone-OtrosGrupos {
+				grid-area: otrosGrupos;
+				.footerNavzoneOtrosGrupos-ImgLink {
+					display: grid;
+					grid-template-areas:
+						"bisBikini		bellringPlaya"
+						"babymetalFuego	atarashiiGakkoFormacion";
+					.OtrosGruposImg {
+						&-bisBikini {
+							grid-area: bisBikini;
+						}
+						&-bellringPlaya {
+							grid-area: bellringPlaya;
+						}
+						&-babymetalFuego {
+							grid-area: babymetalFuego;
+						}
+						&-atarashiiGakkoFormacion {
+							grid-area: atarashiiGakkoFormacion;
+						}
+					}
+				}
+			}
+			&.footerNavzone-Quiz {
+				grid-area: quiz;
+				/* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone), y para separarla apropiadamente de su botón respectivo (de modo que el botón quede a la misma altura que el contiguo botón de "Otros grupos") */
+				width: 55%;
+				justify-content: space-between;
+			}
+			// LOS BOTONES DE LAS 4 CAJAS
+			.footerNavzone-Botones {
+				background-color: black;
+				padding: 15px;
+				margin-top: 1.5%;
+				border-radius: 25px;
+				&:hover {
+					color: $purple;
+					font-weight: 900;
+					transition: all 0.25s ease-in-out;
+				}
 			}
 		}
 	}
-	.footerNavzone-Quiz {
-		grid-area: quiz;
-		/* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone), y para separarla apropiadamente de su botón respectivo (de modo que el botón quede a la misma altura que el contiguo botón de "Otros grupos") */
-		width: 55%;
-		justify-content: space-between;
-	}
-
 	.footerDatosPersonales {
 		display: grid;
 		.footerDatosPersonales-Texto {
@@ -84,6 +86,18 @@
 			}
 			.footerDatosPersonalesTexto-EmailYUbicacion {
 				font-style: italic;
+				// DIRECCIÓN DE E-MAIL:
+				a {
+					@keyframes parpadeo {
+						from {
+							font-weight: 100;
+						}
+						to {
+							font-weight: 900;
+						}
+					}
+					animation: parpadeo 1s linear infinite alternate;
+				}
 			}
 		}
 		.footerDatosPersonales-FotoPersonal {

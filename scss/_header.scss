@@ -29,8 +29,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			padding-left: 0;
-			& a:hover {
-				// color: black;
+			li a:hover {
 				font-weight: 900;
 				transition: all 0.25s ease-in-out;
 			}
@@ -58,7 +57,7 @@
 			.headerNavbar-List {
 				justify-content: space-around;
 				margin-bottom: 8px;
-				& li {
+				li {
 					/* calc(1px + 1vw) parece ser el mayor margin horizontal en que (para un ancho de dispositivo de 320px) los ítems de la lista del Navbar se ven en 1 fila/renglón */
 					margin: 0 calc(1px + 1vw);
 					font-size: calc(1px + 3vw);
@@ -90,10 +89,10 @@
 			.headerNavbar-List {
 				justify-content: flex-end;
 				margin-bottom: 0;
-				& li {
+				li {
 					margin: 0 15px;
 					line-height: calc(11px + 2.3vw);
-					& a {
+					a {
 						font-size: calc(3.5px + 2.2vw);
 					}
 				}
@@ -122,9 +121,9 @@
 			.headerNavbar-List {
 				justify-content: flex-end;
 				margin-bottom: 0;
-				& li {
+				li {
 					margin: 0 calc(0.1px + 0.9vw);
-					& a {
+					a {
 						font-size: calc(4px + 1.5vw);
 					}
 				}
