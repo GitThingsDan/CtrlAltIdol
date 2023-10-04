@@ -90,6 +90,9 @@
 					font-weight: 900;
 					transition: all 0.25s ease-in-out;
 				}
+				&:active {
+					transform: scale(0.9, 0.9);
+				}
 			}
 		}
 	}
