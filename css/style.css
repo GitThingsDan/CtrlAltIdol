@@ -1179,6 +1179,10 @@
 .header .headerTituloPrincipal {
   text-align: center;
   font-family: "Courier Prime", monospace;
+  transition: font-weight 0s ease-in-out;
+}
+.header .headerTituloPrincipal:hover {
+  font-weight: 900;
 }
 .header .headerTituloPrincipal .headerTituloPrincipal-Titulo,
 .header .headerTituloPrincipal .headerTituloPrincipal-Slogan {
@@ -1200,7 +1204,7 @@
 }
 .header .headerNavbar .headerNavbar-List li a:hover {
   font-weight: 900;
-  transition: all 0.25s ease-in-out;
+  transition: font-weight 0s ease-in-out;
 }
 
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
@@ -1309,11 +1313,16 @@
   align-items: center;
   padding: 3%;
   margin: 0;
-  transition: padding 0.25s ease-in-out;
 }
-.footer .footerNavzone .footerNavzone-Contenedores:hover {
-  padding: 0;
-  transition: padding 0.25s ease-in-out;
+.footer .footerNavzone .footerNavzone-Contenedores:not(.footerNavzone-OtrosGrupos) img {
+  transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+.footer .footerNavzone .footerNavzone-Contenedores:not(.footerNavzone-OtrosGrupos) img:hover {
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+  transform: scale(1.025, 1.025);
+}
+.footer .footerNavzone .footerNavzone-Contenedores:not(.footerNavzone-OtrosGrupos) img:active {
+  transform: scale(0.975, 0.975);
 }
 .footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Bis {
   grid-area: bis;
@@ -1331,6 +1340,18 @@
 .footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink {
   display: grid;
   grid-template-areas: "bisBikini		bellringPlaya" "babymetalFuego	atarashiiGakkoFormacion";
+  border-radius: 25px;
+  transition-property: background-color, box-shadow, transform;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+  transform: scale(1.025, 1.025);
+}
+.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink:active {
+  transform: scale(0.975, 0.975);
 }
 .footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink .OtrosGruposImg-bisBikini {
   grid-area: bisBikini;
@@ -1419,6 +1440,15 @@
   bottom: 10px;
   right: 10px;
   transition: 0.5s ease-in-out;
+  animation: rotacion 4s linear infinite alternate;
+}
+@keyframes rotacion {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
 }
 .footer #goToTop:hover {
   filter: invert(1);
@@ -1518,10 +1548,10 @@
     width: 37.5%;
   }
   .footer #goToTop {
-    width: 7.5vw;
+    width: 5vw;
   }
   .footer #goToTop:hover {
-    width: 10vw;
+    width: 6.25vw;
   }
 }
 /* PORTADA - index.html */

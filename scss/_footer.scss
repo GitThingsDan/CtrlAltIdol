@@ -17,10 +17,15 @@
 			align-items: center;
 			padding: 3%;
 			margin: 0;
-			transition: padding 0.25s ease-in-out;
-			&:hover {
-				padding: 0;
-				transition: padding 0.25s ease-in-out;
+			&:not(.footerNavzone-OtrosGrupos) img {
+				transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+				&:hover {
+					box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+					transform: scale(1.025, 1.025);
+				}
+				&:active {
+					transform: scale(0.975, 0.975);
+				}
 			}
 			// CADA CAJA EN ESPECÍFICO
 			&.footerNavzone-Bis {
@@ -40,6 +45,18 @@
 					grid-template-areas:
 						"bisBikini		bellringPlaya"
 						"babymetalFuego	atarashiiGakkoFormacion";
+					border-radius: 25px;
+					transition-property: background-color, box-shadow, transform;
+					transition-duration: 0.25s;
+					transition-timing-function: ease-in-out;
+					&:hover {
+						background-color: rgba(0, 0, 0, 0.5);
+						box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+						transform: scale(1.025, 1.025);
+					}
+					&:active {
+						transform: scale(0.975, 0.975);
+					}
 					.OtrosGruposImg {
 						&-bisBikini {
 							grid-area: bisBikini;
@@ -136,6 +153,15 @@
 		bottom: 10px;
 		right: 10px;
 		transition: 0.5s ease-in-out;
+		@keyframes rotacion {
+			from {
+				transform: rotateY(0deg);
+			}
+			to {
+				transform: rotateY(360deg);
+			}
+		}
+		animation: rotacion 4s linear infinite alternate;
 		&:hover {
 			filter: invert(1);
 		}
@@ -251,9 +277,9 @@
 		}
 		/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
 		#goToTop {
-			width: 7.5vw;
+			width: 5vw;
 			&:hover {
-				width: 10vw;
+				width: 6.25vw;
 			}
 		}
 	}
