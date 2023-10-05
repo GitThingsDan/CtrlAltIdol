@@ -22,11 +22,11 @@
 		<!-- TÍTULO DEL SITIO -->
 		<h1 class="headerTituloPrincipal">
 			<a class="headerTituloPrincipal-Link" href="../index.html">
-				<p class="headerTituloPrincipal-Titulo">
+				<p class="headerTituloPrincipal-Titulo mb-0">
 					Ctrl Alt
-					<span class="headerTituloPrincipalTitulo-IdolTachado">Idol</span>
+					<span class="text-decoration-line-through">Idol</span>
 				</p>
-				<p class="headerTituloPrincipal-Slogan">
+				<p class="headerTituloPrincipal-Slogan mb-0">
 					Trayendo a las Idols de regreso al Alt
 				</p>
 			</a>
@@ -148,8 +148,8 @@
 				<p class="gangParade-Texto">
 					<span class="fw-bold">GANG PARADE (2014-2020, 2022-presente):</span>
 					Al principio el dúo <strong>Pla2me</strong> <em>(プラニメ)</em>,
-					compuesto por <a href="https://youtu.be/m3HU-sxQ8M8">la previamente solista <strong>Izukoneko</strong>
-						<em>(いずこねこ, "gato perdido" en japonés)</em></a> y la ex-miembro de la 1° generación de BiS
+					compuesto por la previamente solista <a href="https://youtu.be/m3HU-sxQ8M8"><strong>Izukoneko</strong></a>
+					<em>(いずこねこ, "gato perdido" en japonés)</em> y la ex-miembro de la 1° generación de BiS
 					<strong>Kamiya Saki</strong> <em>(カミヤサキ)</em>, siendo el primer
 					acto de idols de WACK en su fundación el 2014, para después
 					sumársele más miembros y pasarse a llamar <strong>POP</strong>
@@ -297,7 +297,7 @@
 					</li>
 				</ul>
 				<address class="footerDatosPersonalesTexto-EmailYUbicacion">
-					<a href="mailto:dvillarroela@pm.me">¡Escríbeme!</a><br />
+					<a id="emailAddress" href="mailto:dvillarroela@pm.me">¡Escríbeme!</a><br />
 					Vivo en Temuco, Chile.
 				</address>
 			</div>
@@ -320,7 +320,12 @@
 		</small>
 		<!-- Hack para botón "Volver al principio de la página", en la esquina inferior derecha -->
 		<p id="top">.</p>
-		<a href="#top"><img src="../icons/flecha-Arriba.png" alt="" id="goToTop" /></a>
+		<div class="goToTop-Box">
+			<a href="#top" class="goToTop-Link">
+				<img src="../icons/flecha-Arriba.png" alt="Flecha cliqueable para volver al principio de la página"
+					class="goToTop-Img" />
+			</a>
+		</div>
 	</footer>
 
 

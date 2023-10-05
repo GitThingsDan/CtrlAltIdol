@@ -22,11 +22,11 @@
 		<!-- TÍTULO DEL SITIO -->
 		<h1 class="headerTituloPrincipal">
 			<a class="headerTituloPrincipal-Link" href="index.html">
-				<p class="headerTituloPrincipal-Titulo">
+				<p class="headerTituloPrincipal-Titulo mb-0">
 					Ctrl Alt
-					<span class="headerTituloPrincipalTitulo-IdolTachado">Idol</span>
+					<span class="text-decoration-line-through">Idol</span>
 				</p>
-				<p class="headerTituloPrincipal-Slogan">
+				<p class="headerTituloPrincipal-Slogan mb-0">
 					Trayendo a las Idols de regreso al Alt
 				</p>
 			</a>
@@ -167,7 +167,7 @@
 					</li>
 				</ul>
 				<address class="footerDatosPersonalesTexto-EmailYUbicacion">
-					<a href="mailto:dvillarroela@pm.me">¡Escríbeme!</a><br />
+					<a id="emailAddress" href="mailto:dvillarroela@pm.me">¡Escríbeme!</a><br />
 					Vivo en Temuco, Chile.
 				</address>
 			</div>
@@ -190,7 +190,12 @@
 		</small>
 		<!-- Hack para botón "Volver al principio de la página", en la esquina inferior derecha -->
 		<p id="top">.</p>
-		<a href="#top"><img src="icons/flecha-Arriba.png" alt="" id="goToTop" /></a>
+		<div class="goToTop-Box">
+			<a href="#top" class="goToTop-Link">
+				<img src="icons/flecha-Arriba.png" alt="Flecha cliqueable para volver al principio de la página"
+					class="goToTop-Img" />
+			</a>
+		</div>
 	</footer>
 
 

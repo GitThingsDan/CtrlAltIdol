@@ -15,12 +15,13 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			justify-content: center;
 			padding: 3%;
-			margin: 0;
-			&:not(.footerNavzone-OtrosGrupos) img {
-				transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+			&:not(.footerNavzone-OtrosGrupos, .footerNavzone-Quiz) img {
+				box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+				transition: box-shadow 0.25s, transform 0.25s;
 				&:hover {
-					box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+					box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
 					transform: scale(1.025, 1.025);
 				}
 				&:active {
@@ -34,8 +35,8 @@
 			&.footerNavzone-Wack {
 				grid-area: wack;
 				.footerNavzoneWack-ImgLink {
-					/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height:85.901% */
-					height: 85.901%;
+					/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height: 83.375% */
+					height: 83.375%;
 				}
 			}
 			&.footerNavzone-OtrosGrupos {
@@ -46,12 +47,11 @@
 						"bisBikini		bellringPlaya"
 						"babymetalFuego	atarashiiGakkoFormacion";
 					border-radius: 25px;
-					transition-property: background-color, box-shadow, transform;
-					transition-duration: 0.25s;
-					transition-timing-function: ease-in-out;
+					background-color: rgba(0, 0, 0, 0.5);
+					box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+					transition: box-shadow 0.25s, transform 0.25s;
 					&:hover {
-						background-color: rgba(0, 0, 0, 0.5);
-						box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+						box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
 						transform: scale(1.025, 1.025);
 					}
 					&:active {
@@ -75,9 +75,25 @@
 			}
 			&.footerNavzone-Quiz {
 				grid-area: quiz;
-				/* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone), y para separarla apropiadamente de su botón respectivo (de modo que el botón quede a la misma altura que el contiguo botón de "Otros grupos") */
-				width: 55%;
-				justify-content: space-between;
+				.footerNavzoneQuiz-ImgLink {
+					display: flex;
+					width: 100%;
+					border-radius: 25px;
+					justify-content: center;
+					box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+					transition: box-shadow 0.25s, transform 0.25s;
+					&:hover {
+						box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
+						transform: scale(1.025, 1.025);
+					}
+					&:active {
+						transform: scale(0.975, 0.975);
+					}
+					img {
+						/* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone). width: 56.25% */
+						width: 56.25%;
+					}
+				}
 			}
 			// LOS BOTONES DE LAS 4 CAJAS
 			.footerNavzone-Botones {
@@ -85,13 +101,17 @@
 				padding: 15px;
 				margin-top: 1.5%;
 				border-radius: 25px;
+				box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
+				transition-property: box-shadow, color, font-weight, transform;
+				transition-duration: 0.25s;
 				&:hover {
+					box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
 					color: $purple;
 					font-weight: 900;
-					transition: all 0.25s ease-in-out;
+					transform: scale(1.05, 1.05);
 				}
 				&:active {
-					transform: scale(0.9, 0.9);
+					transform: scale(0.95, 0.95);
 				}
 			}
 		}
@@ -106,8 +126,7 @@
 			}
 			.footerDatosPersonalesTexto-EmailYUbicacion {
 				font-style: italic;
-				// DIRECCIÓN DE E-MAIL:
-				a {
+				#emailAddress {
 					@keyframes parpadeo {
 						from {
 							font-weight: 100;
@@ -117,6 +136,15 @@
 						}
 					}
 					animation: parpadeo 1s linear infinite alternate;
+					&::after {
+						content: " Dirección de e-mail: dvillarroela@pm.me";
+						transition: font-size 0.5s;
+						font-size: 0px;
+						vertical-align: middle;
+					}
+					&:hover::after {
+						font-size: 1vw;
+					}
 				}
 			}
 		}
@@ -129,12 +157,17 @@
 			grid-area: socialDP;
 			display: flex;
 			justify-content: space-around;
-			img {
-				max-width: 100%;
-			}
-			a:hover {
-				width: 50%;
-				transition: 0.5s ease-in-out;
+			a {
+				transition: transform 0.25s;
+				&:hover {
+					transform: scale(1.1, 1.1);
+				}
+				&:active {
+					transform: scale(0.95, 0.95);
+				}
+				img {
+					max-width: 100%;
+				}
 			}
 		}
 	}
@@ -147,26 +180,33 @@
 	}
 	/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
 	#top {
-		font-size: 0.000001px;
+		visibility: hidden;
 		position: absolute;
 		top: 0;
 	}
-	#goToTop {
+	.goToTop-Box {
 		position: fixed;
 		bottom: 10px;
 		right: 10px;
-		transition: 0.5s ease-in-out;
-		@keyframes rotacion {
-			from {
-				transform: rotateY(0deg);
-			}
-			to {
-				transform: rotateY(360deg);
-			}
-		}
-		animation: rotacion 4s linear infinite alternate;
+		transition: transform 0.5s;
 		&:hover {
-			filter: invert(1);
+			transform: scale(1.25, 1.25) translate(-10px, -10px);
+		}
+		.goToTop-Img {
+			@keyframes rotacion {
+				from {
+					transform: rotateY(0deg);
+				}
+				to {
+					transform: rotateY(180deg);
+				}
+			}
+			animation: rotacion 2.5s linear infinite alternate;
+			width: 100%;
+			transition: filter 0.5s;
+			&:hover {
+				filter: invert(1);
+			}
 		}
 	}
 }
@@ -201,11 +241,8 @@
 			}
 		}
 		/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
-		#goToTop {
+		.goToTop-Box {
 			width: 20vw;
-			&:hover {
-				width: 25vw;
-			}
 		}
 	}
 }
@@ -235,16 +272,14 @@
 			.footerDatosPersonales-IconosSociales {
 				align-self: start;
 				a {
+					margin-top: 5%;
 					width: 35%;
 				}
 			}
 		}
 		/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
-		#goToTop {
+		.goToTop-Box {
 			width: 10vw;
-			&:hover {
-				width: 12.5vw;
-			}
 		}
 	}
 }
@@ -279,11 +314,8 @@
 			}
 		}
 		/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
-		#goToTop {
+		.goToTop-Box {
 			width: 5vw;
-			&:hover {
-				width: 6.25vw;
-			}
 		}
 	}
 }

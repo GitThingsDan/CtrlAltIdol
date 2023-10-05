@@ -20,7 +20,7 @@
 		// Bienvenida y Exclamación resolutiva (con background-color y small-caps)
 		.mainTextoLlamativo-Bienvenida,
 		.mainTextoLlamativo-Solucion {
-			font-family: "Courier Prime", monospace;
+			font-family: 'Montagu Slab', serif;
 			font-variant: small-caps;
 			background-color: $purple;
 			font-weight: 600;
@@ -40,7 +40,7 @@
 			// Términos por definir
 			#dfnAlt,
 			#dfnAnti {
-				font-family: "Courier Prime", monospace;
+				font-family: 'Montagu Slab', serif;
 			}
 		}
 	}

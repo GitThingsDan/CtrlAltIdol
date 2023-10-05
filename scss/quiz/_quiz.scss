@@ -32,11 +32,13 @@
 				color: white;
 				font-family: "Courier New", Courier, monospace;
 				font-weight: bold;
-				transition: 0.25s ease-in-out;
+				transition: color 0.25s, transform 0.25s;
 				&:hover {
 					color: black;
-					font-size: 1.5em;
-					transition: 0.25s ease-in-out;
+					transform: scale(1.05, 1.05);
+				}
+				&:active {
+					transform: scale(0.95, 0.95);
 				}
 			}
 		}

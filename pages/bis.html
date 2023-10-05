@@ -22,11 +22,11 @@
 		<!-- TÍTULO DEL SITIO -->
 		<h1 class="headerTituloPrincipal">
 			<a class="headerTituloPrincipal-Link" href="../index.html">
-				<p class="headerTituloPrincipal-Titulo">
+				<p class="headerTituloPrincipal-Titulo mb-0">
 					Ctrl Alt
-					<span class="headerTituloPrincipalTitulo-IdolTachado">Idol</span>
+					<span class="text-decoration-line-through">Idol</span>
 				</p>
-				<p class="headerTituloPrincipal-Slogan">
+				<p class="headerTituloPrincipal-Slogan mb-0">
 					Trayendo a las Idols de regreso al Alt
 				</p>
 			</a>
@@ -378,30 +378,30 @@
 				<h3>Curiosidades</h3>
 				<!-- Películas de BiS -->
 				<p>
-					Existe no una, ¡sino que 2 películas de BiS! La primera,
-					<em><a href="https://youtu.be/fw_WkE4j-vc">"Idol Is Dead"</a></em>, está
-					<a href="https://www.youtube.com/watch?v=gpjEZbqwQJ0">disponible con subtítulos en inglés</a>, aunque la
-					segunda,
-					<em><a href="https://youtu.be/lceVyeI-9M0">"Idol Is Dead - Non-chan no Propaganda Daisensou -"</a></em>,
+					Existe no una, ¡sino que 2 películas de BiS! La primera, "Idol Is Dead"
+					<em><a href="https://youtu.be/fw_WkE4j-vc">(tráiler)</a></em>, está disponible con subtítulos en inglés
+					<a href="https://www.youtube.com/watch?v=gpjEZbqwQJ0">(p.ej., en YouTube)</a>, aunque la
+					segunda, "Idol Is Dead - Non-chan no Propaganda Daisensou -"
+					<em><a href="https://youtu.be/lceVyeI-9M0">(tráiler)</a></em>,
 					lamentablemente todavía no ha sido posible encontrarle en idiomas
 					distintos al japonés.
 				</p>
 				<!-- Serie de anime de BiS -->
 				<p>
 					Por si fuera poco, ¡también tienen una serie de anime!
-					<a href="https://www.youtube.com/watch?v=RN_5OfZrwsQ">"Backstage idol story" (バックステージ・アイドル・ストーリー)</a>
+					<a href="https://www.youtube.com/watch?v=RN_5OfZrwsQ">"Backstage idol story"</a>
 					se emitió a fines del 2012, y consiste en 8 episodios de 15 minutos
 					en los que las chicas (sí, ellas mismas le dan la voz a sus
 					personajes) conversan de temas varios, como molestar a los fans y la
 					menstruación, en la primera mitad de cada episodio; en la segunda
 					mitad, charlan con un invitado.
 				</p>
-				<!-- "aidoru" (escrito "アイドル") -->
+				<!-- "aidoru" ("アイドル") -->
 				<p>
 					Antes del single "IDOL" (2012), dado que no habían obtenido el éxito
 					deseado como anti idols, anunciaron un cambio drástico en su imagen
 					y sonido, lanzando la canción
-					<a href="https://www.youtube.com/watch?v=4LK6EhU0Mdo">"aidoru" (escrito "アイドル")</a>, y un giro hacia la idea
+					<a href="https://www.youtube.com/watch?v=4LK6EhU0Mdo">"aidoru" ("アイドル")</a>, y un giro hacia la idea
 					tradicional de idols, con el slogan
 					"¡Compremos el mismo CD una y otra vez!" (aludiendo a la estrategia
 					que las discográficas usan para vender discos de sus grupos idols).
@@ -472,7 +472,7 @@
 					</li>
 				</ul>
 				<address class="footerDatosPersonalesTexto-EmailYUbicacion">
-					<a href="mailto:dvillarroela@pm.me">¡Escríbeme!</a><br />
+					<a id="emailAddress" href="mailto:dvillarroela@pm.me">¡Escríbeme!</a><br />
 					Vivo en Temuco, Chile.
 				</address>
 			</div>
@@ -495,7 +495,12 @@
 		</small>
 		<!-- Hack para botón "Volver al principio de la página", en la esquina inferior derecha -->
 		<p id="top">.</p>
-		<a href="#top"><img src="../icons/flecha-Arriba.png" alt="" id="goToTop" /></a>
+		<div class="goToTop-Box">
+			<a href="#top" class="goToTop-Link">
+				<img src="../icons/flecha-Arriba.png" alt="Flecha cliqueable para volver al principio de la página"
+					class="goToTop-Img" />
+			</a>
+		</div>
 	</footer>
 
 

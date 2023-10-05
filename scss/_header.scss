@@ -9,21 +9,18 @@
 	z-index: 3;
 	padding: 2% 5%;
 	border: solid black thin;
+	box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
 	border-radius: 25px;
 	.headerTituloPrincipal {
 		text-align: center;
-		font-family: "Courier Prime", monospace;
-		transition: font-weight 0s ease-in-out;
+		font-family: "Montagu Slab", serif;
+		transition: font-weight 0.75s, transform 0.15s;
+		font-variant: small-caps;
 		&:hover {
 			font-weight: 900;
 		}
-		.headerTituloPrincipal-Titulo,
-		.headerTituloPrincipal-Slogan {
-			font-variant: small-caps;
-			margin-bottom: 0;
-			.headerTituloPrincipalTitulo-IdolTachado {
-				text-decoration-line: line-through;
-			}
+		&:active {
+			transform: scale(0.95, 0.95);
 		}
 	}
 	.headerNavbar {
@@ -33,9 +30,14 @@
 			display: flex;
 			flex-wrap: wrap;
 			padding-left: 0;
-			li a:hover {
-				font-weight: 900;
-				transition: font-weight 0s ease-in-out;
+			li {
+				transition: font-weight 0.75s, transform 0.25s;
+				&:hover {
+					font-weight: 900;
+				}
+				&:active {
+					transform: scale(0.9, 0.9);
+				}
 			}
 		}
 	}

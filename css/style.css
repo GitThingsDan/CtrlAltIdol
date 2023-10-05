@@ -5,10 +5,10 @@
   font-family: "Roboto Mono";
   src: url(../fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
 }
-/* "Courier Prime" */
+/* 'Montagu Slab' */
 @font-face {
-  font-family: "Courier Prime";
-  src: url(../fonts/Courier_Prime/CourierPrime-Regular.ttf);
+  font-family: "Montagu Slab";
+  src: url(../fonts/Montagu_Slab/MontaguSlab-VariableFont_opsz-wght.ttf);
 }
 /* RESETEO DE ESTILOS */
 * {
@@ -24,8 +24,7 @@
 }
 .body a {
   color: white;
-  text-decoration: none;
-  transition: 0.25s ease-in-out;
+  text-decoration-line: none;
 }
 .body h2,
 .body h3,
@@ -40,12 +39,41 @@
   text-align: justify;
 }
 .body .main a {
-  font-weight: bold;
+  position: relative;
+  transition-property: color, border-bottom-color, border-top-color;
+  transition-duration: 0.2s;
+  font-weight: bolder;
 }
-.body .main a:hover {
+.body .main a::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  right: 100%;
+  border-bottom-style: solid;
+  border-bottom-width: 0.02em;
+  transition: right 0.2s;
+}
+.body .main a:hover::before {
+  right: 0;
+}
+.body .main a::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  border-top-style: solid;
+  border-top-width: 0.02em;
+  transition: left 0.2s;
+}
+.body .main a:hover::after {
+  left: 0;
+}
+.body .main a:active {
   color: black;
-  font-weight: 900;
-  transition: all 0.25s ease-in-out;
+  border-top-color: black;
+  border-bottom-color: black;
 }
 
 /* FIN DEL RESETEO DE ESTILOS */
@@ -1174,24 +1202,20 @@
   z-index: 3;
   padding: 2% 5%;
   border: solid black thin;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
   border-radius: 25px;
 }
 .header .headerTituloPrincipal {
   text-align: center;
-  font-family: "Courier Prime", monospace;
-  transition: font-weight 0s ease-in-out;
+  font-family: "Montagu Slab", serif;
+  transition: font-weight 0.75s, transform 0.15s;
+  font-variant: small-caps;
 }
 .header .headerTituloPrincipal:hover {
   font-weight: 900;
 }
-.header .headerTituloPrincipal .headerTituloPrincipal-Titulo,
-.header .headerTituloPrincipal .headerTituloPrincipal-Slogan {
-  font-variant: small-caps;
-  margin-bottom: 0;
-}
-.header .headerTituloPrincipal .headerTituloPrincipal-Titulo .headerTituloPrincipalTitulo-IdolTachado,
-.header .headerTituloPrincipal .headerTituloPrincipal-Slogan .headerTituloPrincipalTitulo-IdolTachado {
-  text-decoration-line: line-through;
+.header .headerTituloPrincipal:active {
+  transform: scale(0.95, 0.95);
 }
 .header .headerNavbar {
   display: flex;
@@ -1202,9 +1226,14 @@
   flex-wrap: wrap;
   padding-left: 0;
 }
-.header .headerNavbar .headerNavbar-List li a:hover {
+.header .headerNavbar .headerNavbar-List li {
+  transition: font-weight 0.75s, transform 0.25s;
+}
+.header .headerNavbar .headerNavbar-List li:hover {
   font-weight: 900;
-  transition: font-weight 0s ease-in-out;
+}
+.header .headerNavbar .headerNavbar-List li:active {
+  transform: scale(0.9, 0.9);
 }
 
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
@@ -1311,17 +1340,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 3%;
-  margin: 0;
 }
-.footer .footerNavzone .footerNavzone-Contenedores:not(.footerNavzone-OtrosGrupos) img {
-  transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+.footer .footerNavzone .footerNavzone-Contenedores:not(.footerNavzone-OtrosGrupos, .footerNavzone-Quiz) img {
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.25s, transform 0.25s;
 }
-.footer .footerNavzone .footerNavzone-Contenedores:not(.footerNavzone-OtrosGrupos) img:hover {
-  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+.footer .footerNavzone .footerNavzone-Contenedores:not(.footerNavzone-OtrosGrupos, .footerNavzone-Quiz) img:hover {
+  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
   transform: scale(1.025, 1.025);
 }
-.footer .footerNavzone .footerNavzone-Contenedores:not(.footerNavzone-OtrosGrupos) img:active {
+.footer .footerNavzone .footerNavzone-Contenedores:not(.footerNavzone-OtrosGrupos, .footerNavzone-Quiz) img:active {
   transform: scale(0.975, 0.975);
 }
 .footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Bis {
@@ -1331,8 +1361,8 @@
   grid-area: wack;
 }
 .footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Wack .footerNavzoneWack-ImgLink {
-  /* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height:85.901% */
-  height: 85.901%;
+  /* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height: 83.375% */
+  height: 83.375%;
 }
 .footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos {
   grid-area: otrosGrupos;
@@ -1341,13 +1371,12 @@
   display: grid;
   grid-template-areas: "bisBikini		bellringPlaya" "babymetalFuego	atarashiiGakkoFormacion";
   border-radius: 25px;
-  transition-property: background-color, box-shadow, transform;
-  transition-duration: 0.25s;
-  transition-timing-function: ease-in-out;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.25s, transform 0.25s;
 }
 .footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
   transform: scale(1.025, 1.025);
 }
 .footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink:active {
@@ -1367,23 +1396,43 @@
 }
 .footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Quiz {
   grid-area: quiz;
-  /* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone), y para separarla apropiadamente de su botón respectivo (de modo que el botón quede a la misma altura que el contiguo botón de "Otros grupos") */
-  width: 55%;
-  justify-content: space-between;
+}
+.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Quiz .footerNavzoneQuiz-ImgLink {
+  display: flex;
+  width: 100%;
+  border-radius: 25px;
+  justify-content: center;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Quiz .footerNavzoneQuiz-ImgLink:hover {
+  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
+  transform: scale(1.025, 1.025);
+}
+.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Quiz .footerNavzoneQuiz-ImgLink:active {
+  transform: scale(0.975, 0.975);
+}
+.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Quiz .footerNavzoneQuiz-ImgLink img {
+  /* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone). width: 56.25% */
+  width: 56.25%;
 }
 .footer .footerNavzone .footerNavzone-Contenedores .footerNavzone-Botones {
   background-color: black;
   padding: 15px;
   margin-top: 1.5%;
   border-radius: 25px;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
+  transition-property: box-shadow, color, font-weight, transform;
+  transition-duration: 0.25s;
 }
 .footer .footerNavzone .footerNavzone-Contenedores .footerNavzone-Botones:hover {
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
   color: rgb(62, 0, 143);
   font-weight: 900;
-  transition: all 0.25s ease-in-out;
+  transform: scale(1.05, 1.05);
 }
 .footer .footerNavzone .footerNavzone-Contenedores .footerNavzone-Botones:active {
-  transform: scale(0.9, 0.9);
+  transform: scale(0.95, 0.95);
 }
 .footer .footerDatosPersonales {
   display: grid;
@@ -1398,7 +1447,7 @@
 .footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonalesTexto-EmailYUbicacion {
   font-style: italic;
 }
-.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonalesTexto-EmailYUbicacion a {
+.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonalesTexto-EmailYUbicacion #emailAddress {
   animation: parpadeo 1s linear infinite alternate;
 }
 @keyframes parpadeo {
@@ -1408,6 +1457,15 @@
   to {
     font-weight: 900;
   }
+}
+.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonalesTexto-EmailYUbicacion #emailAddress::after {
+  content: " Dirección de e-mail: dvillarroela@pm.me";
+  transition: font-size 0.5s;
+  font-size: 0px;
+  vertical-align: middle;
+}
+.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonalesTexto-EmailYUbicacion #emailAddress:hover::after {
+  font-size: 1vw;
 }
 .footer .footerDatosPersonales .footerDatosPersonales-FotoPersonal {
   grid-area: fotoDP;
@@ -1419,12 +1477,17 @@
   display: flex;
   justify-content: space-around;
 }
-.footer .footerDatosPersonales .footerDatosPersonales-IconosSociales img {
-  max-width: 100%;
+.footer .footerDatosPersonales .footerDatosPersonales-IconosSociales a {
+  transition: transform 0.25s;
 }
 .footer .footerDatosPersonales .footerDatosPersonales-IconosSociales a:hover {
-  width: 50%;
-  transition: 0.5s ease-in-out;
+  transform: scale(1.1, 1.1);
+}
+.footer .footerDatosPersonales .footerDatosPersonales-IconosSociales a:active {
+  transform: scale(0.95, 0.95);
+}
+.footer .footerDatosPersonales .footerDatosPersonales-IconosSociales a img {
+  max-width: 100%;
 }
 .footer .footerDerechos {
   background-color: rgb(62, 0, 143);
@@ -1434,26 +1497,33 @@
   padding: 0.5% 7.5%;
 }
 .footer #top {
-  font-size: 0.000001px;
+  visibility: hidden;
   position: absolute;
   top: 0;
 }
-.footer #goToTop {
+.footer .goToTop-Box {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  transition: 0.5s ease-in-out;
-  animation: rotacion 4s linear infinite alternate;
+  transition: transform 0.5s;
+}
+.footer .goToTop-Box:hover {
+  transform: scale(1.25, 1.25) translate(-10px, -10px);
+}
+.footer .goToTop-Box .goToTop-Img {
+  animation: rotacion 2.5s linear infinite alternate;
+  width: 100%;
+  transition: filter 0.5s;
 }
 @keyframes rotacion {
   from {
     transform: rotateY(0deg);
   }
   to {
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
   }
 }
-.footer #goToTop:hover {
+.footer .goToTop-Box .goToTop-Img:hover {
   filter: invert(1);
 }
 
@@ -1482,11 +1552,8 @@
   .footer .footerDatosPersonales .footerDatosPersonales-IconosSociales a {
     width: 90%;
   }
-  .footer #goToTop {
+  .footer .goToTop-Box {
     width: 20vw;
-  }
-  .footer #goToTop:hover {
-    width: 25vw;
   }
 }
 /* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
@@ -1514,13 +1581,11 @@
     align-self: start;
   }
   .footer .footerDatosPersonales .footerDatosPersonales-IconosSociales a {
+    margin-top: 5%;
     width: 35%;
   }
-  .footer #goToTop {
+  .footer .goToTop-Box {
     width: 10vw;
-  }
-  .footer #goToTop:hover {
-    width: 12.5vw;
   }
 }
 /* DESKTOP */
@@ -1550,11 +1615,8 @@
   .footer .footerDatosPersonales .footerDatosPersonales-IconosSociales a {
     width: 37.5%;
   }
-  .footer #goToTop {
+  .footer .goToTop-Box {
     width: 5vw;
-  }
-  .footer #goToTop:hover {
-    width: 6.25vw;
   }
 }
 /* PORTADA - index.html */
@@ -1576,7 +1638,7 @@
 /* MAIN - index.html */
 .mainIndex .mainTextoLlamativo .mainTextoLlamativo-Bienvenida,
 .mainIndex .mainTextoLlamativo .mainTextoLlamativo-Solucion {
-  font-family: "Courier Prime", monospace;
+  font-family: "Montagu Slab", serif;
   font-variant: small-caps;
   background-color: rgb(62, 0, 143);
   font-weight: 600;
@@ -1595,7 +1657,7 @@
 }
 .mainIndex .mainTextoLlamativo .mainTextoLlamativo-DefinicionAltIdol #dfnAlt,
 .mainIndex .mainTextoLlamativo .mainTextoLlamativo-DefinicionAltIdol #dfnAnti {
-  font-family: "Courier Prime", monospace;
+  font-family: "Montagu Slab", serif;
 }
 .mainIndex .mainVideos {
   display: grid;
@@ -1699,23 +1761,24 @@
   border-radius: 20px;
   height: 100%;
 }
-.mainBis .mainBis-Galería .carousel-item .carousel-caption * {
-  opacity: 0;
-  padding: 2%;
-  transition: 0.25s ease-in-out;
-}
-.mainBis .mainBis-Galería .carousel-item .carousel-caption:hover * {
-  opacity: 1;
+.mainBis .mainBis-Galería .carousel-item .carousel-caption h5,
+.mainBis .mainBis-Galería .carousel-item .carousel-caption p {
   background-color: rgba(62, 0, 143, 0.5);
+  padding: 2%;
   border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.mainBis .mainBis-Galería .carousel-item .carousel-caption:hover h5,
+.mainBis .mainBis-Galería .carousel-item .carousel-caption:hover p {
+  opacity: 1;
 }
 .mainBis .mainBis-Galería .carousel-control-icons, .mainBis .mainBis-Galería .carousel-control-next-icon, .mainBis .mainBis-Galería .carousel-control-prev-icon {
-  transition: all 0.25s ease-in-out;
+  transition: filter 0.5s, transform 0.5s;
 }
 .mainBis .mainBis-Galería .carousel-control-icons:hover, .mainBis .mainBis-Galería .carousel-control-next-icon:hover, .mainBis .mainBis-Galería .carousel-control-prev-icon:hover {
-  height: 100%;
-  width: 50%;
   filter: invert(1);
+  transform: scale(1.5, 1.5);
 }
 .mainBis .mainBis-Galería .carousel-control-prev-icon {
   background-image: url("../icons/flecha-Izquierda.svg");
@@ -1724,8 +1787,8 @@
   background-image: url("../icons/flecha-Derecha.svg");
 }
 .mainBis .mainBis-Galería .carousel-indicators [data-bs-target] {
+  transition: background-color 0.5s, height 0.5s;
   background-color: rgba(62, 0, 143, 0.5);
-  transition: 0.5s ease-in-out;
 }
 .mainBis .mainBis-Galería .carousel-indicators [data-bs-target]:hover {
   background-color: rgb(62, 0, 143);
@@ -2007,12 +2070,14 @@
   color: white;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
-  transition: 0.25s ease-in-out;
+  transition: color 0.25s, transform 0.25s;
 }
 .mainQuiz .mainQuiz-Form .mainQuiz-BotonContenedor #submit:hover {
   color: black;
-  font-size: 1.5em;
-  transition: 0.25s ease-in-out;
+  transform: scale(1.05, 1.05);
+}
+.mainQuiz .mainQuiz-Form .mainQuiz-BotonContenedor #submit:active {
+  transform: scale(0.95, 0.95);
 }
 .mainQuiz .form-control.is-valid,
 .mainQuiz .was-validated .form-control:valid {
