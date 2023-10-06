@@ -2,7 +2,7 @@
 // RESET IMPORTS:
 @import "reset"; // Para que los 'miembros' (mixins, variables, etc.) sean reconocidos GLOBALmente (nótense las mayúsculas) en TODOS los .scss, la regla @import correspondiente ("@import 'reset'", en este caso) debe estar ubicada AL PRINCIPIO, *antes* de los @import de los demás .scss.
 
-// IMAGEHOVER.IO IMPORT: 
+// IMAGEHOVER.IO IMPORT:
 @import "imagehover/imagehover.scss";
 
 // GENERAL IMPORTS:
@@ -10,11 +10,11 @@
 @import "footer";
 
 // SPECIFIC IMPORTS:
-@import "index/index";							// index.html
-@import "bis/bis";									// bis.html
-@import "wack/wack";								// wack.html
-@import "otrosGrupos/otrosGrupos";	// otrosGrupos.html
-@import "quiz/quiz";								// quiz.html
+@import "index/index"; // 						index.html
+@import "bis/bis"; // 								bis.html
+@import "wack/wack"; // 							wack.html
+@import "otrosGrupos/otrosGrupos"; // otrosGrupos.html
+@import "quiz/quiz"; // 							quiz.html
 
 // Ahora, con @use:
 // RESET USES:
@@ -25,8 +25,8 @@
 // @use "footer";
 
 // SPECIFIC USES:
-// @use "index/index";	// index.html
-// @use "bis/bis";	// bis.html
-// @use "wack/wack";	// wack.html
-// @use "otrosGrupos/otrosGrupos";	// otrosGrupos.html
-// @use "quiz/quiz";	// quiz.html
+// @use "index/index";	// 							index.html
+// @use "bis/bis";	// 									bis.html
+// @use "wack/wack";	// 								wack.html
+// @use "otrosGrupos/otrosGrupos";	//	otrosGrupos.html
+// @use "quiz/quiz";	// 								quiz.html

@@ -20,7 +20,7 @@
 		// Bienvenida y Exclamación resolutiva (con background-color y small-caps)
 		.mainTextoLlamativo-Bienvenida,
 		.mainTextoLlamativo-Solucion {
-			font-family: 'Montagu Slab', serif;
+			font-family: "Montagu Slab", serif;
 			font-variant: small-caps;
 			background-color: $purple;
 			font-weight: 600;
@@ -40,24 +40,27 @@
 			// Términos por definir
 			#dfnAlt,
 			#dfnAnti {
-				font-family: 'Montagu Slab', serif;
+				font-family: "Montagu Slab", serif;
 			}
 		}
 	}
 	.mainVideos {
 		display: grid;
 		gap: 3%;
-		.mainVideos-BisPaprika {
-			grid-area: bis-Video;
-		}
-		.mainVideos-BellringShoujoHeartGigabite {
-			grid-area: bellring-Video;
-		}
-		.mainVideos-BabymetalKarate {
-			grid-area: babymetal-Video;
-		}
-		.mainVideos-AtarashiiGakkoKoiGeba {
-			grid-area: atarashii-Video;
+		.mainVideos-Iframes {
+			width: 100%;
+			&.mainVideos-BisPaprika {
+				grid-area: bis-Video;
+			}
+			&.mainVideos-BellringShoujoHeartGigabite {
+				grid-area: bellring-Video;
+			}
+			&.mainVideos-BabymetalKarate {
+				grid-area: babymetal-Video;
+			}
+			&.mainVideos-AtarashiiGakkoKoiGeba {
+				grid-area: atarashii-Video;
+			}
 		}
 	}
 }
@@ -125,7 +128,7 @@
 		// Grid de Iframes de YouTube
 		.mainVideos {
 			grid-template-areas:
-				"bis-Video			bellring-Video"
+				"bis-Video				bellring-Video"
 				"babymetal-Video	atarashii-Video";
 			margin: 5% 0;
 			.mainVideos-Iframes {
@@ -146,7 +149,7 @@
 	/* MAIN - index.html */
 	.mainIndex {
 		.mainTextoLlamativo {
-			// Los @ de .mainTextoLlamativo no tienen ninguna razón de existencia; sólo están aquí porque los creé para practicar las características de Sass, mientras veía las clases pregrabadas.
+			// Los @ de .mainTextoLlamativo no tienen ninguna razón para existir; sólo están aquí porque los creé para practicar las características de Sass, mientras veía las clases pregrabadas.
 			.mTL-TxtImp,
 			.mainTextoLlamativo-Bienvenida {
 				@include boxmodel(1.5% 0, 1% 3%);
@@ -159,7 +162,7 @@
 		// Grid de Iframes de YouTube
 		.mainVideos {
 			grid-template-areas:
-				"bis-Video			bellring-Video"
+				"bis-Video				bellring-Video"
 				"babymetal-Video	atarashii-Video";
 			margin: 5% 0;
 			.mainVideos-Iframes {

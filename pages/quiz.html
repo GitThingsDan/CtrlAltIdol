@@ -34,19 +34,19 @@
 		<!-- NAVBAR -->
 		<nav class="headerNavbar">
 			<ul class="headerNavbar-List">
-				<li class="headerNavbarList-Inicio">
+				<li class="headerNavbar-List--Inicio">
 					<a href="../index.html">Inicio</a>
 				</li>
-				<li class="headerNavbarList-Bis">
+				<li class="headerNavbar-List--Bis">
 					<a href="bis.html">BiS</a>
 				</li>
-				<li class="headerNavbarList-Wack">
+				<li class="headerNavbar-List--Wack">
 					<a href="wack.html">WACK</a>
 				</li>
-				<li class="headerNavbarList-OtrosGrupos">
+				<li class="headerNavbar-List--OtrosGrupos">
 					<a href="otrosGrupos.html">Otros grupos</a>
 				</li>
-				<li class="headerNavbarList-Quiz">
+				<li class="headerNavbar-List--Quiz">
 					<a href="quiz.html">Quiz</a>
 				</li>
 			</ul>
@@ -72,34 +72,34 @@
 			class="mainQuiz-Form needs-validation d-flex flex-column flex-md-row align-items-baseline justify-content-around w-100"
 			id="mainQuiz-Form" method="get" novalidate>
 			<!-- BiS - sección -->
-			<fieldset class="mainQuizForm-Bis d-flex flex-column col-md-5" data-bs-theme="dark">
-				<legend class="mainQuizFormBis-Legend fw-bold mt-2 text-center">
+			<fieldset class="mainQuiz-Form--Bis d-flex flex-column col-md-5" data-bs-theme="dark">
+				<legend class="mainQuiz-Form--Bis---Legend fw-bold mt-2 text-center">
 					BiS
 				</legend>
 				<!-- ¿En qué año se formó BiS? "2010" -->
-				<label class="form-label" for="bis-Formacion" id="bisFormacion-Label">¿En qué año se formó BiS?
-					<input class="form-control" id="bis-Formacion" max="2010" min="2010" placeholder="20XX" required
-						type="number" />
+				<label class="form-label" for="bisFormacion" id="bisFormacion-Label">¿En qué año se formó BiS?
+					<input class="form-control" id="bisFormacion" max="2010" min="2010" placeholder="20XX" type="number"
+						required />
 					<div class="invalid-feedback">Respuesta correcta: 2010</div>
 				</label>
 				<!-- ¿Cómo se llama la líder de BiS (1° generación)? "Pour Lui" -->
-				<label class="form-label" for="bis-Lider" id="bisLider-Label">¿Cómo se llama la líder de BiS (1° generación)?
-					<input class="form-control" id="bis-Lider" pattern="Pour Lui" placeholder="Sus iniciales son P.L." required
-						type="text" />
+				<label class="form-label" for="bisLider" id="bisLider-Label">¿Cómo se llama la líder de BiS (1° generación)?
+					<input class="form-control" id="bisLider" pattern="Pour Lui" placeholder="Sus iniciales son P.L." type="text"
+						required />
 					<div class="invalid-feedback">Respuesta correcta: Pour Lui</div>
 				</label>
 				<!-- ¿De cuántos kilómetros fue la maratón que corrieron Pour
 					Lui y Wakisaka Yurika? "100" -->
-				<label class="form-label" for="bis-Maraton" id="bisMaraton-Label">¿De cuántos kilómetros fue la maratón que
+				<label class="form-label" for="bisMaraton" id="bisMaraton-Label">¿De cuántos kilómetros fue la maratón que
 					corrieron Pour Lui y
 					Wakisaka Yurika?
-					<input class="form-control" id="bis-Maraton" max="100" min="100" placeholder="Pista: son más de 2..." required
-						type="number" />
+					<input class="form-control" id="bisMaraton" max="100" min="100" placeholder="Pista: son más de 2..."
+						type="number" required />
 					<div class="invalid-feedback">Respuesta correcta: 100</div>
 				</label>
 				<!-- ¿Qué significa "BiS"? "Brand-new Idol Society" -->
-				<label class="form-label" for="bis-Significado" id="bisSignificado-Label">¿Qué significa "BiS"?
-					<select class="form-select" id="bis-Significado" name="bis-Significado" required>
+				<label class="form-label" for="bisSignificado" id="bisSignificado-Label">¿Qué significa "BiS"?
+					<select class="form-select" id="bisSignificado" name="bisSignificado" required>
 						<option selected value="">Brand-new Idol Shit</option>
 						<option value="BiS">Brand-new Idol Society</option>
 					</select>
@@ -109,30 +109,30 @@
 				</label>
 				<!-- De estas 3 canciones de BiS, ¿cuál es la que yo
 						considero la más legendaria? "primal." -->
-				<fieldset class="bis-Legendaria d-flex flex-column align-items-center">
+				<fieldset class="bisLegendaria d-flex flex-column align-items-center">
 					<legend class="bisLegendaria-Legend">
 						De estas 3 canciones de BiS, ¿cuál es la que yo considero la más
 						legendaria?
 					</legend>
 					<div class="d-flex w-50 flex-column">
 						<div class="bisLegendaria-Stupig form-check">
-							<input class="form-check-input" id="bisLegendariaStupig-Input" name="bis-Legendaria" required type="radio"
-								value="STUPiG" />
-							<label class="form-check-label" for="bisLegendariaStupig-Input" id="bisLegendariaStupig-Label">
+							<input class="form-check-input" id="bisLegendaria-Stupig--Input" name="bisLegendaria" type="radio"
+								value="STUPiG" required />
+							<label class="form-check-label" for="bisLegendaria-Stupig--Input" id="bisLegendaria-Stupig--Label">
 								STUPiG
 							</label>
 						</div>
 						<div class="bisLegendaria-Primal form-check">
-							<input class="form-check-input" id="bisLegendariaPrimal-Input" name="bis-Legendaria" required type="radio"
-								value="primal." />
-							<label class="form-check-label" for="bisLegendariaPrimal-Input" id="bisLEgendariaPrimal-Label">
+							<input class="form-check-input" id="bisLegendaria-Primal--Input" name="bisLegendaria" type="radio"
+								value="primal." required />
+							<label class="form-check-label" for="bisLegendaria-Primal--Input" id="bisLegendaria-Primal--Label">
 								primal.
 							</label>
 						</div>
 						<div class="bisLegendaria-Die form-check">
-							<input class="form-check-input" id="bisLegendariaDie-Input" name="bis-Legendaria" required type="radio"
-								value="DiE" />
-							<label class="form-check-label" for="bisLegendariaDie-Input" id="bisLegendariaDie-Label">
+							<input class="form-check-input" id="bisLegendaria-Die--Input" name="bisLegendaria" type="radio"
+								value="DiE" required />
+							<label class="form-check-label" for="bisLegendaria-Die--Input" id="bisLegendaria-Die--Label">
 								DiE
 							</label>
 							<div class="valid-feedback">Respuesta correcta: primal.</div>
@@ -141,34 +141,34 @@
 				</fieldset>
 			</fieldset>
 			<!-- WACK - sección -->
-			<fieldset class="mainQuizForm-Wack d-flex flex-column col-md-5" data-bs-theme="dark">
-				<legend class="mainQuizFormWack-Legend fw-bold mt-4 text-center">
+			<fieldset class="mainQuiz-Form--Wack d-flex flex-column col-md-5" data-bs-theme="dark">
+				<legend class="mainQuiz-Form--Wack---Legend fw-bold mt-4 text-center">
 					WACK
 				</legend>
 				<!-- ¿En qué año se fundó WACK? "2014" -->
-				<label class="form-label" for="wack-Fundacion" id="wackFundacion-Label">¿En qué año se fundó WACK?
-					<input class="form-control" id="wack-Fundacion" max="2014" min="2014" placeholder="20XX" required
-						type="number" />
+				<label class="form-label" for="wackFundacion" id="wackFundacion-Label">¿En qué año se fundó WACK?
+					<input class="form-control" id="wackFundacion" max="2014" min="2014" placeholder="20XX" type="number"
+						required />
 					<div class="invalid-feedback">Respuesta correcta: 2014</div>
 				</label>
 				<!-- ¿Cómo se llama el director de WACK (también manager de BiS)? "Watanabe Junnosuke" -->
-				<label class="form-label" for="wack-Director" id="wackDirector-Label">¿Cómo se llama el director de WACK
+				<label class="form-label" for="wackDirector" id="wackDirector-Label">¿Cómo se llama el director de WACK
 					(también manager de BiS)?
-					<input class="form-control" id="wack-Director" pattern="Watanabe Junnosuke"
-						placeholder="Sus iniciales son W.J." required type="text" />
+					<input class="form-control" id="wackDirector" pattern="Watanabe Junnosuke"
+						placeholder="Sus iniciales son W.J." type="text" required />
 					<div class="invalid-feedback">
 						Respuesta correcta: Watanabe Junnosuke
 					</div>
 				</label>
 				<!-- ¿Cuántas idols forman parte de WACK? "50" -->
-				<label class="form-label" for="wack-Idols" id="wackIdols-Label">¿Cuántas idols forman parte de WACK?
-					<input class="form-control" id="wack-Idols" max="50" min="50" placeholder="Pista: son más de 2..." required
-						type="number" />
+				<label class="form-label" for="wackIdols" id="wackIdols-Label">¿Cuántas idols forman parte de WACK?
+					<input class="form-control" id="wackIdols" max="50" min="50" placeholder="Pista: son más de 2..."
+						type="number" required />
 					<div class="invalid-feedback">Respuesta correcta: 50</div>
 				</label>
 				<!-- ¿Qué significa "WACK"? "Watanabe Artists Creative Kabushikigaisha" -->
-				<label class="form-label" for="wack-Significado">¿Qué significa "WACK"?
-					<select class="form-select" name="wack-Significado" id="wack-Significado" required>
+				<label class="form-label" for="wackSignificado">¿Qué significa "WACK"?
+					<select class="form-select" name="wackSignificado" id="wackSignificado" required>
 						<option selected value="">
 							Watanabe Alternative Collective Kabushikigaisha
 						</option>
@@ -181,29 +181,29 @@
 					</div>
 				</label>
 				<!-- De estos 3 grupos, 1 NO forma parte de WACK. ¿Cuál es? "PIGGS" -->
-				<fieldset class="wack-Impostoras d-flex flex-column align-items-center">
+				<fieldset class="wackImpostoras d-flex flex-column align-items-center">
 					<legend class="wackImpostoras-Legend">
 						De estos 3 grupos, 1 NO forma parte de WACK. ¿Cuál es?
 					</legend>
 					<div class="d-flex w-50 flex-column">
 						<div class="wackImpostoras-Piggs form-check">
-							<input class="form-check-input" id="wackImpostorasPiggs-Input" name="wack-Impostoras" required
-								type="radio" value="PIGGS" />
-							<label class="form-check-label" for="wackImpostorasPiggs-Input" id="wackImpostorasPiggs-Label">
+							<input class="form-check-input" id="wackImpostoras-Piggs--Input" name="wackImpostoras" type="radio"
+								value="PIGGS" required />
+							<label class="form-check-label" for="wackImpostoras-Piggs--Input" id="wackImpostoras-Piggs--Label">
 								PIGGS
 							</label>
 						</div>
 						<div class="wackImpostoras-Asp form-check">
-							<input class="form-check-input" id="wackImpostorasAsp-Input" name="wack-Impostoras" required type="radio"
-								value="ASP" />
-							<label class="form-check-label" for="wackImpostorasAsp-Input" id="wackImpostorasAsp-Label">
+							<input class="form-check-input" id="wackImpostoras-Asp--Input" name="wackImpostoras" type="radio"
+								value="ASP" required />
+							<label class="form-check-label" for="wackImpostoras-Asp--Input" id="wackImpostoras-Asp--Label">
 								ASP
 							</label>
 						</div>
 						<div class="wackImpostoras-Exwhyz form-check">
-							<input class="form-check-input" id="wackImpostorasExwhyz-Input" name="wack-Impostoras" required
-								type="radio" value="ExWHYZ" />
-							<label class="form-check-label" for="wackImpostorasExwhyz-Input" id="wackImpostorasExwhyz-Label">
+							<input class="form-check-input" id="wackImpostoras-Exwhyz--Input" name="wackImpostoras" type="radio"
+								value="ExWHYZ" required />
+							<label class="form-check-label" for="wackImpostoras-Exwhyz--Input" id="wackImpostoras-Exwhyz--Label">
 								ExWHYZ
 							</label>
 							<div class="valid-feedback">Respuesta correcta: PIGGS</div>
@@ -212,7 +212,7 @@
 				</fieldset>
 
 				<!-- ¡ENVIAR! Lo puse dentro de este fieldset para aprovechar mejor el espacio, y que ocupe sólo 1 columna y no todo el ancho de la página (creando mucho espacio vacío) -->
-				<div class="mainQuiz-BotonContenedor">
+				<div class="mainQuiz-Submit--Box">
 					<button form="mainQuiz-Form" id="submit" type="submit">
 						¡Enviar!
 					</button>
@@ -225,75 +225,75 @@
 		<!-- NAVZONE: igual que .headerNavbar, pero ahora con imagenes - -->
 		<nav class="footerNavzone">
 			<!-- IMAGENES con links de navegacion -->
-			<div class="footerNavzone-Contenedores footerNavzone-Bis">
-				<a href="bis.html" class="footerNavzoneBis-ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-Bis">
+				<a href="bis.html" class="footerNavzone-Bis--ImgLink">
 					<img src="../images/bis/bisIdolIsDead-2012.png"
 						alt="BiS con vestidos de reo, fumando en el patio de la cárcel" />
 				</a>
-				<a href="bis.html" class="footerNavzone-Botones footerNavzoneBis-Boton">BiS</a>
+				<a href="bis.html" class="footerNavzone-Botones footerNavzone-Bis--Boton">BiS</a>
 			</div>
-			<div class="footerNavzone-Contenedores footerNavzone-Wack">
-				<a href="wack.html" class="footerNavzoneWack-ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-Wack">
+				<a href="wack.html" class="footerNavzone-Wack--ImgLink">
 					<img src="../icons/wackLogo.png" alt="Logo de WACK" />
 				</a>
-				<a href="wack.html" class="footerNavzone-Botones footerNavzoneWack-Boton">WACK</a>
+				<a href="wack.html" class="footerNavzone-Botones footerNavzone-Wack--Boton">WACK</a>
 			</div>
-			<div class="footerNavzone-Contenedores footerNavzone-OtrosGrupos">
-				<a href="otrosGrupos.html" class="footerNavzoneOtrosGrupos-ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-OtrosGrupos">
+				<a href="otrosGrupos.html" class="footerNavzone-OtrosGrupos--ImgLink">
 					<img src="../images/bis/bisFinalDance-2014_crop.png" alt="BiS en bikini, sosteniendo bates con púas"
-						class="OtrosGruposImg-bisBikini" />
+						id="OtrosGruposImg-bisBikini" />
 					<img src="../images/bellring.png"
 						alt="BELLRING Shoujo Heart, con sus vestidos tipo cuervo, en la playa, descalzas"
-						class="OtrosGruposImg-bellringPlaya" />
+						id="OtrosGruposImg-bellringPlaya" />
 					<img src="../images/babymetal-Crop.png"
 						alt="BABYMETAL frente a un anillo dorado gigante y resplandeciente, sobre un fondo con rayos de luces rojas"
-						class="OtrosGruposImg-babymetalFuego" />
+						id="OtrosGruposImg-babymetalFuego" />
 					<img src="../images/atarashiiGakko.png"
 						alt="ATARASHII GAKKO! en formación tipo Hombre de Vitruvio (¿?), de modo tal que todas parecen compartir la misma falda"
-						class="OtrosGruposImg-atarashiiGakkoFormacion" />
+						id="OtrosGruposImg-atarashiiGakkoFormacion" />
 				</a>
-				<a href="otrosGrupos.html" class="footerNavzone-Botones footerNavzoneOtrosGrupos-Boton">Otros grupos
+				<a href="otrosGrupos.html" class="footerNavzone-Botones footerNavzone-OtrosGrupos--Boton">Otros grupos
 				</a>
 			</div>
-			<div class="footerNavzone-Contenedores footerNavzone-Quiz">
-				<a href="quiz.html" class="footerNavzoneQuiz-ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-Quiz">
+				<a href="quiz.html" class="footerNavzone-Quiz--ImgLink">
 					<img src="../icons/musica.png" alt="Dos notas musicales corcheas, unidas; versión de color negro" />
 				</a>
-				<a href="quiz.html" class="footerNavzone-Botones footerNavzoneQuiz-Boton">Quiz</a>
+				<a href="quiz.html" class="footerNavzone-Botones footerNavzone-Quiz--Boton">Quiz</a>
 			</div>
 		</nav>
 		<!-- INFORMACIÓN DEL AUTOR DE ESTE BLOG, FOTO PERSONAL, Y LINKEDIN/GITHUB... (como si yo fuera tan interesante...u.u) -->
 		<div class="footerDatosPersonales">
 			<div class="footerDatosPersonales-Texto">
-				<p class="footerDatosPersonalesTexto-Nombre">
+				<p class="footerDatosPersonales-Texto--Nombre">
 					¡Hola! Soy Daniel y...
 				</p>
-				<ul class="footerDatosPersonalesTexto-Curiosidades">
-					<li class="footerDatosPersonalesTextoCuriosidades-Edad">
+				<ul class="footerDatosPersonales-Texto--Curiosidades">
+					<li class="footerDatosPersonales-Texto--Curiosidades---Edad">
 						...tengo 26 años, y...
 					</li>
-					<li class="footerDatosPersonalesTextoCuriosidades-Carrera">
+					<li class="footerDatosPersonales-Texto--Curiosidades---Carrera">
 						...soy biotecnólogo, pero...
 					</li>
-					<li class="footerDatosPersonalesTextoCuriosidades-Gustos">
+					<li class="footerDatosPersonales-Texto--Curiosidades---Gustos">
 						...en realidad me gustan la programación, la música y los
 						videojuegos
 					</li>
 				</ul>
-				<address class="footerDatosPersonalesTexto-EmailYUbicacion">
+				<address class="footerDatosPersonales-Texto--EmailYUbicacion">
 					<a id="emailAddress" href="mailto:dvillarroela@pm.me">¡Escríbeme!</a><br />
 					Vivo en Temuco, Chile.
 				</address>
 			</div>
 			<img class="footerDatosPersonales-FotoPersonal" src="../images/danielCuadrado.png" alt="Fotografía de mí" />
 			<div class="footerDatosPersonales-IconosSociales">
-				<a class="footerDatosPersonalesIconosSocialesLinkedin-Link"
+				<a class="footerDatosPersonales-IconosSociales--Linkedin---Link"
 					href="https://www.linkedin.com/in/daniel-ignacio-v-48673557/">
-					<img class="footerDatosPersonalesIconosSocialesLinkedin-Logo" src="../icons/linkedinLogo.png"
+					<img class="footerDatosPersonales-IconosSociales--Linkedin---Logo" src="../icons/linkedinLogo.png"
 						alt="Logo de LinkedIn" />
 				</a>
-				<a class="footerDatosPersonalesIconosSocialesGithub-Link" href="https://github.com/GitThingsDan">
-					<img class="footerDatosPersonalesIconosSocialesGithub-Logo" src="../icons/githubLogo-White.png"
+				<a class="footerDatosPersonales-IconosSociales--Github---Link" href="https://github.com/GitThingsDan">
+					<img class="footerDatosPersonales-IconosSociales--Github---Logo" src="../icons/githubLogo-White.png"
 						alt="Logo de GitHub" />
 				</a>
 			</div>
@@ -304,10 +304,10 @@
 		</small>
 		<!-- Hack para botón "Volver al principio de la página", en la esquina inferior derecha -->
 		<p id="top">.</p>
-		<div class="goToTop-Box">
-			<a href="#top" class="goToTop-Link">
+		<div id="goToTopBox">
+			<a href="#top" id="goToTopBox-Link">
 				<img src="../icons/flecha-Arriba.png" alt="Flecha cliqueable para volver al principio de la página"
-					class="goToTop-Img" />
+					id="goToTopBox-Link--Img" />
 			</a>
 		</div>
 	</footer>

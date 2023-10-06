@@ -34,205 +34,193 @@
 		<!-- NAVBAR -->
 		<nav class="headerNavbar">
 			<ul class="headerNavbar-List">
-				<li class="headerNavbarList-Inicio">
+				<li class="headerNavbar-List--Inicio">
 					<a href="../index.html">Inicio</a>
 				</li>
-				<li class="headerNavbarList-Bis">
+				<li class="headerNavbar-List--Bis">
 					<a href="bis.html">BiS</a>
 				</li>
-				<li class="headerNavbarList-Wack">
+				<li class="headerNavbar-List--Wack">
 					<a href="wack.html">WACK</a>
 				</li>
-				<li class="headerNavbarList-OtrosGrupos">
+				<li class="headerNavbar-List--OtrosGrupos">
 					<a href="otrosGrupos.html">Otros grupos</a>
 				</li>
-				<li class="headerNavbarList-Quiz">
+				<li class="headerNavbar-List--Quiz">
 					<a href="quiz.html">Quiz</a>
 				</li>
 			</ul>
 		</nav>
 	</header>
 
-	<main class="main mainBis">
-		<!-- 	PORTADA - bis.html -->
-		<h2 class="mainBis-Titulo text-center">BiS</h2>
-		<!-- Galería de fotos (si me arrepiento y decido hacerla en Grid, sería interesante que al hacer :hover en alguna foto, ésta aumente de tamaño...) -->
-		<section class="mainBis-Galería">
-			<!-- CARRUSEL BOOTSTRAP -->
-			<div id="carouselExampleCaptions" class="carousel slide carousel-fade">
-				<!-- INDICADORES -->
-				<div class="carousel-indicators">
-					<!-- bisIdolIsDead-2012.png -->
-					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-						aria-current="true" aria-label="Slide 1"></button>
-					<!-- bisBackstageIdolStory-2012.png -->
-					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-						aria-label="Slide 2"></button>
-					<!-- bisBisimulation-2013.png -->
-					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-						aria-label="Slide 3"></button>
-					<!-- bisDie-2013.png -->
-					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-						aria-label="Slide 4"></button>
-					<!-- bisGetYou-2013.png -->
-					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
-						aria-label="Slide 5"></button>
-					<!-- bisKaidan-2013.png -->
-					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
-						aria-label="Slide 6"></button>
-					<!-- bisFinalDance-2014.png -->
-					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
-						aria-label="Slide 7"></button>
-					<!-- bisGekkan-2014.png -->
-					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
-						aria-label="Slide 8"></button>
-					<!-- bisStupig-2014.png -->
-					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8"
-						aria-label="Slide 9"></button>
-					<!-- bisWhoKilledIdol-2014.png -->
-					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9"
-						aria-label="Slide 10"></button>
-					<!-- bisPrimal-2011.png (las proporciones de la imagen son muy raras y me complican, así que mejor no la usaré) -->
-					<!-- <button type="button" data-bs-target="#carouselExampleCaptions"
-						data-bs-slide-to="10" aria-label="Slide 11"></button> -->
-				</div>
-				<!-- IMÁGENES Y CAPTIONS -->
-				<div class="carousel-inner">
-					<!-- bisIdolIsDead-2012.png -->
-					<div class="carousel-item active w-100">
-						<img class="d-block w-100" src="../images/bis/bisIdolIsDead-2012.png"
-							alt="BiS con vestidos de reo, fumando en el patio de la cárcel" />
-						<div class="carousel-caption d-block">
-							<h5>IDOL is DEAD (2012)</h5>
-							<p>
-								Foto promocional para el sencillo (y segundo álbum) "IDOL is
-								DEAD" (...¡y portada de este sitio web!)
-							</p>
-						</div>
-					</div>
-					<!-- bisBackstageIdolStory-2012.png -->
-					<div class="carousel-item w-100">
-						<img class="d-block w-100" src="../images/bis/bisBackstageIdolStory-2012.png" alt="" />
-						<div class="carousel-caption d-block">
-							<h5>Backstage idol story (2012)</h5>
-							<p>
-								¡La serie de anime de BiS! Son las integrantes de BiS,
-								ilustradas en versión anime
-							</p>
-						</div>
-					</div>
-					<!-- bisBisimulation-2013.png -->
-					<div class="carousel-item w-100">
-						<img class="d-block w-100" src="../images/bis/bisBisimulation-2013.png"
-							alt="Integrantes de BiS caminando fuera de un túnel hacia la cámara, con atuendos de color negro con blanco, y sosteniendo bates con púas" />
-						<div class="carousel-caption d-block">
-							<h5>BiSimulation (2013)</h5>
-							<p>Foto promocional para el sencillo "BiSimulation"</p>
-						</div>
-					</div>
-					<!-- bisDie-2013.png -->
-					<div class="carousel-item w-100">
-						<img class="d-block w-100" src="../images/bis/bisDie-2013.png"
-							alt="6 fotos desde los hombros para arriba, 1 foto por cada integrante de BiS, cada una aparentemente desnuda y con 1 ó 2 dedos sobre su propia nariz" />
-						<div class="carousel-caption d-block">
-							<h5>DiE (2013)</h5>
-							<p>Foto promocional para el sencillo "DiE"</p>
-						</div>
-					</div>
-					<!-- bisGetYou-2013.png -->
-					<div class="carousel-item w-100">
-						<img class="d-block w-100" src="../images/bis/bisGetYou-2013.png"
-							alt="Las 5 chicas de BiS, formadas en línea en un cuarto blanco, mirando a la cámara y llevando vestidos de cuello blanco, sombreros cónicos y bates de púas, todos de color negro" />
-						<div class="carousel-caption d-block">
-							<h5>GET YOU (2013)</h5>
-							<p>
-								Foto promocional para el sencillo "GET YOU", en colaboración
-								con Dorothy Little Happy, un grupo idol de Avex más
-								tradicional, diametralmente opuesto a BiS.
-							</p>
-						</div>
-					</div>
-					<!-- bisKaidan-2013_crop.png -->
-					<div class="carousel-item w-100">
-						<img class="d-block w-100" src="../images/bis/bisKaidan-2013_crop.png"
-							alt="BiS y Hijokaidan en un tétrico parque de juegos infantiles, de noche; BiS jugando en el parque y usando vestidos blancos con el abdomen lleno de (aparentes) vísceras y sangre" />
-						<div class="carousel-caption d-block">
-							<h5>BiS Kaidan (2013)</h5>
-							<p>
-								Foto promocional para "BiS Kaidan" (BiS階段), álbum
-								colaborativo entre BiS y la banda japonesa de música noise
-								"Hijokaidan"
-							</p>
-						</div>
-					</div>
-					<!-- bisFinalDance-2014.png -->
-					<div class="carousel-item w-100">
-						<img class="d-block w-100" src="../images/bis/bisFinalDance-2014.png"
-							alt="BiS en bikini, sosteniendo bates con púas, en la playa" />
-						<div class="carousel-caption d-block">
-							<h5>FiNAL DANCE (2014)</h5>
-							<p>Foto promocional para el sencillo "FiNAL DANCE"</p>
-						</div>
-					</div>
-					<!-- bisGekkan-2014.png -->
-					<div class="carousel-item w-100">
-						<img class="d-block w-100" src="../images/bis/bisGekkan-2014.png" alt="" />
-						<div class="carousel-caption d-block">
-							<h5>Gekkan BiS X Yonehara Yasumasa (2014)</h5>
-							<p>
-								Foto promocional para un libro de fotos en colaboración con el
-								fotógrafo Yonehara Yasumasa. La temática era "placer" y
-								"dolor"; contiene fotos sugestivas que expresan estos temas.
-								Las miembros posan aquí vistiendo piezas de un producto
-								vendido para promocionarlo: poleras con fotos de sus escotes.
-							</p>
-						</div>
-					</div>
-					<!-- bisStupig-2014.png -->
-					<div class="carousel-item w-100">
-						<img class="d-block w-100" src="../images/bis/bisStupig-2014.png"
-							alt="BiS con atuendos futuristas de color negro con naranja/verde y bates con púas, en un cuarto hexagonal futurista, con paredes blancas y muchas luces, además de piso metálico" />
-						<div class="carousel-caption d-block">
-							<h5>STUPiG (2014)</h5>
-							<p>Foto promocional para el sencillo "STUPiG"</p>
-						</div>
-					</div>
-					<!-- bisWhoKilledIdol-2014.png -->
-					<div class="carousel-item w-100">
-						<img class="d-block w-100" src="../images/bis/bisWhoKilledIdol-2014.png"
-							alt="BiS con atuendos de color negro y de mangas arrugadas, usando orejas tipo Mickey Mouse, y posando en una especie de cementerio a la luz de la luna, frente a una cruz." />
-						<div class="carousel-caption d-block">
-							<h5>WHO KiLLED IDOL? (2014)</h5>
-							<p>Foto promocional para el tercer álbum "WHO KiLLED IDOL?"</p>
-						</div>
-					</div>
-					<!-- bisPrimal-2011.png (las proporciones de la imagen son muy raras y me complican, así que mejor no la usaré) -->
-					<!-- <div class="carousel-item">
-						<img class="d-block w-100" src="../images/bis/bisPrimal-2011.png"  alt="">
-						<div class="carousel-caption d-none d-md-block">
-							<h5>primal. (2011)</h5>
-							<p>Foto promocional para el sencillo "primal."</p>
-						</div>
-					</div> -->
-				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-					data-bs-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-					data-bs-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="visually-hidden">Next</span>
-				</button>
+	<!-- 	PORTADA - bis.html -->
+	<h2 class="text-center">BiS</h2>
+	<div class="portadaBis">
+		<!-- CARRUSEL BOOTSTRAP -->
+		<div id="carouselExampleCaptions" class="carousel slide carousel-fade">
+			<!-- INDICADORES -->
+			<div class="carousel-indicators">
+				<!-- bisIdolIsDead-2012.png -->
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+					aria-current="true" aria-label="Slide 1"></button>
+				<!-- bisBackstageIdolStory-2012.png -->
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+					aria-label="Slide 2"></button>
+				<!-- bisBisimulation-2013.png -->
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+					aria-label="Slide 3"></button>
+				<!-- bisDie-2013.png -->
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+					aria-label="Slide 4"></button>
+				<!-- bisGetYou-2013.png -->
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+					aria-label="Slide 5"></button>
+				<!-- bisKaidan-2013.png -->
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+					aria-label="Slide 6"></button>
+				<!-- bisFinalDance-2014.png -->
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
+					aria-label="Slide 7"></button>
+				<!-- bisGekkan-2014.png -->
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
+					aria-label="Slide 8"></button>
+				<!-- bisStupig-2014.png -->
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8"
+					aria-label="Slide 9"></button>
+				<!-- bisWhoKilledIdol-2014.png -->
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9"
+					aria-label="Slide 10"></button>
 			</div>
-		</section>
+			<!-- IMÁGENES Y CAPTIONS -->
+			<div class="carousel-inner">
+				<!-- bisIdolIsDead-2012.png -->
+				<div class="carousel-item active w-100">
+					<img class="d-block w-100" src="../images/bis/bisIdolIsDead-2012.png"
+						alt="BiS con vestidos de reo, fumando en el patio de la cárcel" />
+					<div class="carousel-caption d-block">
+						<h5>IDOL is DEAD (2012)</h5>
+						<p>
+							Foto promocional para el sencillo (y segundo álbum) "IDOL is
+							DEAD" (...¡y portada de este sitio web!)
+						</p>
+					</div>
+				</div>
+				<!-- bisBackstageIdolStory-2012.png -->
+				<div class="carousel-item w-100">
+					<img class="d-block w-100" src="../images/bis/bisBackstageIdolStory-2012.png" alt="" />
+					<div class="carousel-caption d-block">
+						<h5>Backstage idol story (2012)</h5>
+						<p>
+							¡La serie de anime de BiS! Son las integrantes de BiS,
+							ilustradas en versión anime
+						</p>
+					</div>
+				</div>
+				<!-- bisBisimulation-2013.png -->
+				<div class="carousel-item w-100">
+					<img class="d-block w-100" src="../images/bis/bisBisimulation-2013.png"
+						alt="Integrantes de BiS caminando fuera de un túnel hacia la cámara, con atuendos de color negro con blanco, y sosteniendo bates con púas" />
+					<div class="carousel-caption d-block">
+						<h5>BiSimulation (2013)</h5>
+						<p>Foto promocional para el sencillo "BiSimulation"</p>
+					</div>
+				</div>
+				<!-- bisDie-2013.png -->
+				<div class="carousel-item w-100">
+					<img class="d-block w-100" src="../images/bis/bisDie-2013.png"
+						alt="6 fotos desde los hombros para arriba, 1 foto por cada integrante de BiS, cada una aparentemente desnuda y con 1 ó 2 dedos sobre su propia nariz" />
+					<div class="carousel-caption d-block">
+						<h5>DiE (2013)</h5>
+						<p>Foto promocional para el sencillo "DiE"</p>
+					</div>
+				</div>
+				<!-- bisGetYou-2013.png -->
+				<div class="carousel-item w-100">
+					<img class="d-block w-100" src="../images/bis/bisGetYou-2013.png"
+						alt="Las 5 chicas de BiS, formadas en línea en un cuarto blanco, mirando a la cámara y llevando vestidos de cuello blanco, sombreros cónicos y bates de púas, todos de color negro" />
+					<div class="carousel-caption d-block">
+						<h5>GET YOU (2013)</h5>
+						<p>
+							Foto promocional para el sencillo "GET YOU", en colaboración
+							con Dorothy Little Happy, un grupo idol de Avex más
+							tradicional, diametralmente opuesto a BiS.
+						</p>
+					</div>
+				</div>
+				<!-- bisKaidan-2013_crop.png -->
+				<div class="carousel-item w-100">
+					<img class="d-block w-100" src="../images/bis/bisKaidan-2013_crop.png"
+						alt="BiS y Hijokaidan en un tétrico parque de juegos infantiles, de noche; BiS jugando en el parque y usando vestidos blancos con el abdomen lleno de (aparentes) vísceras y sangre" />
+					<div class="carousel-caption d-block">
+						<h5>BiS Kaidan (2013)</h5>
+						<p>
+							Foto promocional para "BiS Kaidan" (BiS階段), álbum
+							colaborativo entre BiS y la banda japonesa de música noise
+							"Hijokaidan"
+						</p>
+					</div>
+				</div>
+				<!-- bisFinalDance-2014.png -->
+				<div class="carousel-item w-100">
+					<img class="d-block w-100" src="../images/bis/bisFinalDance-2014.png"
+						alt="BiS en bikini, sosteniendo bates con púas, en la playa" />
+					<div class="carousel-caption d-block">
+						<h5>FiNAL DANCE (2014)</h5>
+						<p>Foto promocional para el sencillo "FiNAL DANCE"</p>
+					</div>
+				</div>
+				<!-- bisGekkan-2014.png -->
+				<div class="carousel-item w-100">
+					<img class="d-block w-100" src="../images/bis/bisGekkan-2014.png" alt="" />
+					<div class="carousel-caption d-block">
+						<h5>Gekkan BiS X Yonehara Yasumasa (2014)</h5>
+						<p>
+							Foto promocional para un libro de fotos en colaboración con el
+							fotógrafo Yonehara Yasumasa. La temática era "placer" y
+							"dolor"; contiene fotos sugestivas que expresan estos temas.
+							Las miembros posan aquí vistiendo piezas de un producto
+							vendido para promocionarlo: poleras con fotos de sus escotes.
+						</p>
+					</div>
+				</div>
+				<!-- bisStupig-2014.png -->
+				<div class="carousel-item w-100">
+					<img class="d-block w-100" src="../images/bis/bisStupig-2014.png"
+						alt="BiS con atuendos futuristas de color negro con naranja/verde y bates con púas, en un cuarto hexagonal futurista, con paredes blancas y muchas luces, además de piso metálico" />
+					<div class="carousel-caption d-block">
+						<h5>STUPiG (2014)</h5>
+						<p>Foto promocional para el sencillo "STUPiG"</p>
+					</div>
+				</div>
+				<!-- bisWhoKilledIdol-2014.png -->
+				<div class="carousel-item w-100">
+					<img class="d-block w-100" src="../images/bis/bisWhoKilledIdol-2014.png"
+						alt="BiS con atuendos de color negro y de mangas arrugadas, usando orejas tipo Mickey Mouse, y posando en una especie de cementerio a la luz de la luna, frente a una cruz." />
+					<div class="carousel-caption d-block">
+						<h5>WHO KiLLED IDOL? (2014)</h5>
+						<p>Foto promocional para el tercer álbum "WHO KiLLED IDOL?"</p>
+					</div>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+				data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+				data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</div>
 
+	<main class="main mainBis">
 		<!-- Artículo principal -->
 		<article class="mainBis-Articulo">
 			<!-- INTRODUCCIÓN: síntesis introductoria del tema, a modo de resumen -->
-			<section class="mainBis-Intro">
-				<h3 class="mainBisIntro-Titulo">¿Qué es BiS?</h3>
+			<section class="mainBis-Articulo--Intro">
+				<h3 class="mainBis-Articulo--Intro---Titulo">¿Qué es BiS?</h3>
 				<p>
 					<strong>BiS</strong>
 					<em>(Brand-new Idol Society, 新生アイドル研究会)</em> es un grupo de
@@ -253,14 +241,16 @@
 			</section>
 			<!-- VIDEOS: algunas canciones representativas del grupo original -->
 			<section class="mainBis-Canciones">
-				<h3 class="mainBisCanciones-Titulo">Canciones esenciales:</h3>
-				<div class="mainBisCanciones-MyIxxx">
+				<h3 class="mainBis-Canciones--Titulo">Canciones esenciales:</h3>
+				<div class="mainBis-Canciones--MyIxxx">
 					<!-- <iframe width="560" height="315"
 						src="https://www.youtube-nocookie.com/embed/wSI-IJls5Vg?si=deSydyG0036hkabo"
-						title="YouTube video player" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen></iframe> -->
-					<video class="mainBis-Videos" src="../videos/My Ixxx  ⧸ BiS 新生アイドル研究会 [wSI-IJls5Vg].mp4" controls></video>
+						title="Reproductor de video de YouTube, para la canción de BiS llamada 'My Ixxx'" 
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+						></iframe> -->
+					<!-- Originalmente iba a insertar el previo iframe de YouTube (al igual que con los otros videos; es para evitar problemas de derechos de autor), pero como tiene restricción de contenido, me arriesgué y puse el video de forma local -->
+					<video class="mainBis-Canciones--Videos" src="../videos/My Ixxx  ⧸ BiS 新生アイドル研究会 [wSI-IJls5Vg].mp4"
+						title="Reproductor de video de YouTube, para la canción de BiS llamada 'My Ixxx'" controls></video>
 					<p>
 						<a href="https://www.youtube.com/watch?v=wSI-IJls5Vg">My Ixxx (2011)</a>, cuyo videoclip rompió todos los
 						esquemas establecidos: idols
@@ -269,11 +259,11 @@
 						YouTube.
 					</p>
 				</div>
-				<div class="mainBisCanciones-Primal">
-					<iframe class="mainBis-Videos" src="https://www.youtube-nocookie.com/embed/sKnFnhoXiCU?si=PPompLyze3dPv8Ce"
-						title="YouTube video player" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen></iframe>
+				<div class="mainBis-Canciones--Primal">
+					<iframe class="mainBis-Canciones--Videos"
+						src="https://www.youtube-nocookie.com/embed/sKnFnhoXiCU?si=PPompLyze3dPv8Ce"
+						title="Reproductor de video de YouTube, para la canción de BiS llamada 'primal.'"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
 					<p>
 						<a href="https://www.youtube.com/watch?v=sKnFnhoXiCU">primal. (2011)</a>, la cual considero la canción más
 						legendaria del grupo, y que
@@ -281,11 +271,11 @@
 						usaría WACK para muchos temas de sus futuros grupos.
 					</p>
 				</div>
-				<div class="mainBisCanciones-Idol">
-					<iframe class="mainBis-Videos" src="https://www.youtube-nocookie.com/embed/QJh5xAI_6Ig?si=pNl6ch007j24CZ8H"
-						title="YouTube video player" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen></iframe>
+				<div class="mainBis-Canciones--Idol">
+					<iframe class="mainBis-Canciones--Videos"
+						src="https://www.youtube-nocookie.com/embed/QJh5xAI_6Ig?si=pNl6ch007j24CZ8H"
+						title="Reproductor de video de YouTube, para la canción de BiS llamada 'IDOL'"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
 					<p>
 						<a href="https://www.youtube.com/watch?v=QJh5xAI_6Ig">IDOL (2012)</a>
 						significó el fin de su carrera indie, antes de formar parte del
@@ -299,11 +289,11 @@
 						todavía estaba en pañales.
 					</p>
 				</div>
-				<div class="mainBisCanciones-Die">
-					<iframe class="mainBis-Videos" src="https://www.youtube-nocookie.com/embed/P91AD3y6GyM?si=EKkaiQ-yXfIkRXCy"
-						title="YouTube video player" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen></iframe>
+				<div class="mainBis-Canciones--Die">
+					<iframe class="mainBis-Canciones--Videos"
+						src="https://www.youtube-nocookie.com/embed/P91AD3y6GyM?si=EKkaiQ-yXfIkRXCy"
+						title="Reproductor de video de YouTube, para la canción de BiS llamada 'DiE'"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
 					<p>
 						<a href="https://www.youtube.com/watch?v=P91AD3y6GyM">DiE (2013)</a>
 						fue el sencillo en el que debutaron 3 miembros que eventualmente
@@ -311,11 +301,11 @@
 						Summer Uika, Tentenko y Kamiya Saki.
 					</p>
 				</div>
-				<div class="mainBisCanciones-Stupig">
-					<iframe class="mainBis-Videos" src="https://www.youtube-nocookie.com/embed/gRaMsDyW-XQ?si=pNUVrmCu5DY2ReZr"
-						title="YouTube video player" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen></iframe>
+				<div class="mainBis-Canciones--Stupig">
+					<iframe class="mainBis-Canciones--Videos"
+						src="https://www.youtube-nocookie.com/embed/gRaMsDyW-XQ?si=pNUVrmCu5DY2ReZr"
+						title="Reproductor de video de YouTube, para la canción de BiS llamada 'STUPiG'"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
 					<p>
 						<a href="https://www.youtube.com/watch?v=gRaMsDyW-XQ">STUPiG (2014)</a>, tema que rescata muchos elementos
 						del género musical europeo
@@ -326,11 +316,11 @@
 						bastante "pop".
 					</p>
 				</div>
-				<div class="mainBisCanciones-FinalDance">
-					<iframe class="mainBis-Videos" src="https://www.youtube-nocookie.com/embed/Hc8vjprOWLs?si=Wevw81Uy8HKF5bv3"
-						title="YouTube video player" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen></iframe>
+				<div class="mainBis-Canciones--FinalDance">
+					<iframe class="mainBis-Canciones--Videos"
+						src="https://www.youtube-nocookie.com/embed/Hc8vjprOWLs?si=Wevw81Uy8HKF5bv3"
+						title="Reproductor de video de YouTube, para la canción de BiS llamada 'FiNAL DANCE'"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
 					<p>
 						<a href="https://www.youtube.com/watch?v=Hc8vjprOWLs">FiNAL DANCE (2014)</a>, la que representa, como su
 						título sugiere, su última canción.
@@ -416,75 +406,75 @@
 		<!-- NAVZONE: igual que .headerNavbar, pero ahora con imagenes - -->
 		<nav class="footerNavzone">
 			<!-- IMAGENES con links de navegacion -->
-			<div class="footerNavzone-Contenedores footerNavzone-Bis">
-				<a href="bis.html" class="footerNavzone-ImgLink footerNavzoneBis-ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-Bis">
+				<a href="bis.html" class="footerNavzone-Bis--ImgLink">
 					<img src="../images/bis/bisIdolIsDead-2012.png"
 						alt="BiS con vestidos de reo, fumando en el patio de la cárcel" />
 				</a>
-				<a href="bis.html" class="footerNavzone-Botones footerNavzoneBis-Boton">BiS</a>
+				<a href="bis.html" class="footerNavzone-Botones footerNavzone-Bis--Boton">BiS</a>
 			</div>
-			<div class="footerNavzone-Contenedores footerNavzone-Wack">
-				<a href="wack.html" class="footerNavzone-ImgLink footerNavzoneWack-ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-Wack">
+				<a href="wack.html" class="footerNavzone-Wack--ImgLink">
 					<img src="../icons/wackLogo.png" alt="Logo de WACK" />
 				</a>
-				<a href="wack.html" class="footerNavzone-Botones footerNavzoneWack-Boton">WACK</a>
+				<a href="wack.html" class="footerNavzone-Botones footerNavzone-Wack--Boton">WACK</a>
 			</div>
-			<div class="footerNavzone-Contenedores footerNavzone-OtrosGrupos">
-				<a href="otrosGrupos.html" class="footerNavzone-ImgLink footerNavzoneOtrosGrupos-ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-OtrosGrupos">
+				<a href="otrosGrupos.html" class="footerNavzone-OtrosGrupos--ImgLink">
 					<img src="../images/bis/bisFinalDance-2014_crop.png" alt="BiS en bikini, sosteniendo bates con púas"
-						class="OtrosGruposImg-bisBikini" />
+						id="OtrosGruposImg-bisBikini" />
 					<img src="../images/bellring.png"
 						alt="BELLRING Shoujo Heart, con sus vestidos tipo cuervo, en la playa, descalzas"
-						class="OtrosGruposImg-bellringPlaya" />
+						id="OtrosGruposImg-bellringPlaya" />
 					<img src="../images/babymetal-Crop.png"
 						alt="BABYMETAL frente a un anillo dorado gigante y resplandeciente, sobre un fondo con rayos de luces rojas"
-						class="OtrosGruposImg-babymetalFuego" />
+						id="OtrosGruposImg-babymetalFuego" />
 					<img src="../images/atarashiiGakko.png"
 						alt="ATARASHII GAKKO! en formación tipo Hombre de Vitruvio (¿?), de modo tal que todas parecen compartir la misma falda"
-						class="OtrosGruposImg-atarashiiGakkoFormacion" />
+						id="OtrosGruposImg-atarashiiGakkoFormacion" />
 				</a>
-				<a href="otrosGrupos.html" class="footerNavzone-Botones footerNavzoneOtrosGrupos-Boton">Otros grupos
+				<a href="otrosGrupos.html" class="footerNavzone-Botones footerNavzone-OtrosGrupos--Boton">Otros grupos
 				</a>
 			</div>
-			<div class="footerNavzone-Contenedores footerNavzone-Quiz">
-				<a href="quiz.html" class="footerNavzone-ImgLink footerNavzoneQuiz-ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-Quiz">
+				<a href="quiz.html" class="footerNavzone-Quiz--ImgLink">
 					<img src="../icons/musica.png" alt="Dos notas musicales corcheas, unidas; versión de color negro" />
 				</a>
-				<a href="quiz.html" class="footerNavzone-Botones footerNavzoneQuiz-Boton">Quiz</a>
+				<a href="quiz.html" class="footerNavzone-Botones footerNavzone-Quiz--Boton">Quiz</a>
 			</div>
 		</nav>
 		<!-- INFORMACIÓN DEL AUTOR DE ESTE BLOG, FOTO PERSONAL, Y LINKEDIN/GITHUB... (como si yo fuera tan interesante...u.u) -->
 		<div class="footerDatosPersonales">
 			<div class="footerDatosPersonales-Texto">
-				<p class="footerDatosPersonalesTexto-Nombre">
+				<p class="footerDatosPersonales-Texto--Nombre">
 					¡Hola! Soy Daniel y...
 				</p>
-				<ul class="footerDatosPersonalesTexto-Curiosidades">
-					<li class="footerDatosPersonalesTextoCuriosidades-Edad">
+				<ul class="footerDatosPersonales-Texto--Curiosidades">
+					<li class="footerDatosPersonales-Texto--Curiosidades---Edad">
 						...tengo 26 años, y...
 					</li>
-					<li class="footerDatosPersonalesTextoCuriosidades-Carrera">
+					<li class="footerDatosPersonales-Texto--Curiosidades---Carrera">
 						...soy biotecnólogo, pero...
 					</li>
-					<li class="footerDatosPersonalesTextoCuriosidades-Gustos">
+					<li class="footerDatosPersonales-Texto--Curiosidades---Gustos">
 						...en realidad me gustan la programación, la música y los
 						videojuegos
 					</li>
 				</ul>
-				<address class="footerDatosPersonalesTexto-EmailYUbicacion">
+				<address class="footerDatosPersonales-Texto--EmailYUbicacion">
 					<a id="emailAddress" href="mailto:dvillarroela@pm.me">¡Escríbeme!</a><br />
 					Vivo en Temuco, Chile.
 				</address>
 			</div>
 			<img class="footerDatosPersonales-FotoPersonal" src="../images/danielCuadrado.png" alt="Fotografía de mí" />
 			<div class="footerDatosPersonales-IconosSociales">
-				<a class="footerDatosPersonalesIconosSocialesLinkedin-Link"
+				<a class="footerDatosPersonales-IconosSociales--Linkedin---Link"
 					href="https://www.linkedin.com/in/daniel-ignacio-v-48673557/">
-					<img class="footerDatosPersonalesIconosSocialesLinkedin-Logo" src="../icons/linkedinLogo.png"
+					<img class="footerDatosPersonales-IconosSociales--Linkedin---Logo" src="../icons/linkedinLogo.png"
 						alt="Logo de LinkedIn" />
 				</a>
-				<a class="footerDatosPersonalesIconosSocialesGithub-Link" href="https://github.com/GitThingsDan">
-					<img class="footerDatosPersonalesIconosSocialesGithub-Logo" src="../icons/githubLogo-White.png"
+				<a class="footerDatosPersonales-IconosSociales--Github---Link" href="https://github.com/GitThingsDan">
+					<img class="footerDatosPersonales-IconosSociales--Github---Logo" src="../icons/githubLogo-White.png"
 						alt="Logo de GitHub" />
 				</a>
 			</div>
@@ -495,10 +485,10 @@
 		</small>
 		<!-- Hack para botón "Volver al principio de la página", en la esquina inferior derecha -->
 		<p id="top">.</p>
-		<div class="goToTop-Box">
-			<a href="#top" class="goToTop-Link">
+		<div id="goToTopBox">
+			<a href="#top" id="goToTopBox-Link">
 				<img src="../icons/flecha-Arriba.png" alt="Flecha cliqueable para volver al principio de la página"
-					class="goToTop-Img" />
+					id="goToTopBox-Link--Img" />
 			</a>
 		</div>
 	</footer>

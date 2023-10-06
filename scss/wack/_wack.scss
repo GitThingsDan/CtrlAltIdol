@@ -1,19 +1,20 @@
 /* MAIN - wack.html */
 .mainWack {
-	.mainWack-Grupos {
+	.mainWack-Articulo--Grupos {
 		display: grid;
-		.mainWackGrupos-Titulo {
+		.mainWack-Articulo--Grupos---Titulo {
 			grid-area: titulo;
+			margin: initial;
 		}
 		// TODOS LOS "p" Y "iframe" EN GENERAL
 		p {
 			text-align: justify;
 		}
 		iframe {
-			max-width: 100%;
+			width: 100%;
 		}
 		// "p" Y "iframe" EN ESPECÍFICO
-		.asp {
+		#asp {
 			&-Texto {
 				grid-area: asp-Texto;
 			}
@@ -24,7 +25,7 @@
 				grid-area: asp-TheManCalling;
 			}
 		}
-		.exwhyz {
+		#exwhyz {
 			&-Texto {
 				grid-area: exwhyz-Texto;
 			}
@@ -35,7 +36,7 @@
 				grid-area: exwhyz-FurachinaSummer;
 			}
 		}
-		.gangParade {
+		#gangParade {
 			&-Texto {
 				grid-area: gangParade-Texto;
 			}
@@ -52,18 +53,18 @@
 				grid-area: gangParade-LoveCommunication;
 			}
 		}
-		.bis3 {
+		#bis3 {
 			&-Texto {
 				grid-area: bis3-Texto;
 			}
-			&-SmokingBilly {
-				grid-area: bis3-SmokingBilly;
+			&-SmokinBilly {
+				grid-area: bis3-SmokinBilly;
 			}
 			&-Tsuyogarisan {
 				grid-area: bis3-Tsuyogarisan;
 			}
 		}
-		.bish {
+		#bish {
 			&-Texto {
 				grid-area: bish-Texto;
 			}
@@ -88,9 +89,12 @@
 	}
 	/* MAIN - wack.html */
 	.mainWack {
-		.mainWack-Grupos {
+		.mainWack-Articulo--Grupos {
+			.mainWack-Articulo--Grupos---Titulo {
+				text-align: center;
+			}
 			p {
-				margin-top: 15%;
+				margin-top: 12.5%;
 			}
 			iframe {
 				height: calc(50px + 50vw);
@@ -111,7 +115,7 @@
 				"gangParade-BeyondTheMountain"
 				"gangParade-LoveCommunication"
 				"bis3-Texto"
-				"bis3-SmokingBilly"
+				"bis3-SmokinBilly"
 				"bis3-Tsuyogarisan"
 				"bish-Texto"
 				"bish-Otnk"
@@ -131,9 +135,9 @@
 	}
 	/* MAIN - wack.html */
 	.mainWack {
-		.mainWack-Grupos {
+		.mainWack-Articulo--Grupos {
 			p {
-				margin-top: 5%;
+				margin-top: 4%;
 			}
 			iframe {
 				height: 25vw;
@@ -150,7 +154,7 @@
 				"gangParade-Plastic2Mercy			gangParade-PrettyPrettyGood"
 				"gangParade-BeyondTheMountain	gangParade-LoveCommunication"
 				"bis3-Texto										bis3-Texto"
-				"bis3-SmokingBilly						bis3-Tsuyogarisan"
+				"bis3-SmokinBilly							bis3-Tsuyogarisan"
 				"bish-Texto										bish-Texto"
 				"bish-Otnk										bish-Tomorrow";
 		}
@@ -168,13 +172,12 @@
 	}
 	/* MAIN - wack.html */
 	.mainWack {
-		.mainWack-Grupos {
+		.mainWack-Articulo--Grupos {
 			p {
-				margin-top: 5%;
+				margin-top: 4%;
 			}
-			// iframe {height: 25vw}
+			// Lo siguiente fue sólo para practicar Sass mientras veía las clases pregrabadas. El código original es 'iframe {height: 25vw}'.
 			@for $i from 11 through 11 {
-				// Lo siguiente fue sólo para practicar Sass mientras veía las clases pregrabadas.
 				iframe {
 					height: 14vw + $i;
 				}
@@ -182,18 +185,18 @@
 			margin: 5vw 0;
 			gap: 5px;
 			grid-template-areas:
-				"titulo							titulo"
-				"asp-Texto						asp-Texto"
-				"asp-ToxicInvasion				asp-TheManCalling"
-				"exwhyz-Texto					exwhyz-Texto"
-				"exwhyz-Iza						exwhyz-FurachinaSummer"
-				"gangParade-Texto				gangParade-Texto"
+				"titulo												titulo"
+				"asp-Texto										asp-Texto"
+				"asp-ToxicInvasion						asp-TheManCalling"
+				"exwhyz-Texto									exwhyz-Texto"
+				"exwhyz-Iza										exwhyz-FurachinaSummer"
+				"gangParade-Texto							gangParade-Texto"
 				"gangParade-Plastic2Mercy			gangParade-PrettyPrettyGood"
 				"gangParade-BeyondTheMountain	gangParade-LoveCommunication"
-				"bis3-Texto						bis3-Texto"
-				"bis3-SmokingBilly				bis3-Tsuyogarisan"
-				"bish-Texto						bish-Texto"
-				"bish-Otnk						bish-Tomorrow";
+				"bis3-Texto										bis3-Texto"
+				"bis3-SmokinBilly							bis3-Tsuyogarisan"
+				"bish-Texto										bish-Texto"
+				"bish-Otnk										bish-Tomorrow";
 		}
 	}
 }

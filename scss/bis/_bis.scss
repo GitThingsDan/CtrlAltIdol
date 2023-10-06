@@ -1,58 +1,59 @@
-/* MAIN - bis.html */
-.mainBis {
-	.mainBis-Galería {
-		.carousel-item {
-			img {
+/* PORTADA - bis.html */
+.portadaBis {
+	.carousel-item {
+		img {
+			border-radius: 20px;
+			height: 100%;
+		}
+		.carousel-caption {
+			h5,
+			p {
+				background-color: $purple-transparent;
+				padding: 2%;
 				border-radius: 20px;
-				height: 100%;
+				opacity: 0;
+				transition: opacity 0.5s;
 			}
-			.carousel-caption {
+			&:hover {
 				h5,
 				p {
-					background-color: $purple-transparent;
-					padding: 2%;
-					border-radius: 20px;
-					opacity: 0;
-					transition: opacity 0.5s;
+					opacity: 1;
 				}
-				&:hover {
-					h5,
-					p {
-						opacity: 1;
-					}
-				}
-			}
-		}
-		.carousel-control-icons {
-			transition: filter 0.5s, transform 0.5s;
-			&:hover {
-				filter: invert(1);
-				transform: scale(1.5, 1.5);
-			}
-		}
-		.carousel-control-prev-icon {
-			@extend .carousel-control-icons;
-			background-image: url("../icons/flecha-Izquierda.svg");
-		}
-		.carousel-control-next-icon {
-			@extend .carousel-control-icons;
-			background-image: url("../icons/flecha-Derecha.svg");
-		}
-		.carousel-indicators {
-			[data-bs-target] {
-				transition: background-color 0.5s, height 0.5s;
-				background-color: $purple-transparent;
-				&:hover {
-					background-color: $purple;
-					height: 6px;
-				}
-			}
-			.active {
-				background-color: $purple;
-				height: 6px;
 			}
 		}
 	}
+	.carousel-control-icons {
+		transition: filter 0.5s, transform 0.5s;
+		&:hover {
+			filter: invert(1);
+			transform: scale(1.5, 1.5);
+		}
+	}
+	.carousel-control-prev-icon {
+		@extend .carousel-control-icons;
+		background-image: url("../icons/flecha-Izquierda.svg");
+	}
+	.carousel-control-next-icon {
+		@extend .carousel-control-icons;
+		background-image: url("../icons/flecha-Derecha.svg");
+	}
+	.carousel-indicators {
+		[data-bs-target] {
+			transition: background-color 0.5s, transform 0.5s;
+			background-color: $purple-transparent;
+			&:hover {
+				background-color: $purple;
+				transform: scaleY(2);
+			}
+		}
+		.active {
+			background-color: $purple;
+			transform: scaleY(2);
+		}
+	}
+}
+/* MAIN - bis.html */
+.mainBis {
 	.mainBis-Presente ul {
 		list-style: square;
 	}
@@ -61,18 +62,19 @@
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
 @media only screen and (width <= 429px) {
 	/* Abreviación de @media only screen and (max-width: 429px) { */
-	/* MAIN - bis.html */
-	.mainBis {
-		.mainBis-Galería {
-			padding: 0;
-			.carousel-item {
-				height: 60vw;
-				.carousel-caption * {
-					font-size: calc(1px + 2vw);
-				}
+	/* PORTADA - bis.html */
+	.portadaBis {
+		padding: 0;
+		.carousel-item {
+			height: 60vw;
+			.carousel-caption * {
+				font-size: calc(1px + 2vw);
 			}
 		}
-		.mainBis-Videos {
+	}
+	/* MAIN - bis.html */
+	.mainBis {
+		.mainBis-Canciones--Videos {
 			height: 50vw;
 			width: 100%;
 		}
@@ -82,18 +84,19 @@
 /* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
 @media only screen and (430px <= width <= 835px) {
 	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
-	/* MAIN - bis.html */
-	.mainBis {
-		.mainBis-Galería {
-			padding: 0 10%;
-			.carousel-item {
-				height: 50vw;
-				.carousel-caption * {
-					font-size: calc(1px + 1.9vw);
-				}
+	/* PORTADA - bis.html */
+	.portadaBis {
+		padding: 0 10%;
+		.carousel-item {
+			height: 50vw;
+			.carousel-caption * {
+				font-size: calc(1px + 1.9vw);
 			}
 		}
-		.mainBis-Videos {
+	}
+	/* MAIN - bis.html */
+	.mainBis {
+		.mainBis-Canciones--Videos {
 			height: 50vw;
 			width: 100%;
 		}
@@ -103,18 +106,19 @@
 /* DESKTOP */
 @media only screen and (836px <= width) {
 	/* Abreviación de @media only screen and (min-width:836px) { */
-	/* MAIN - bis.html */
-	.mainBis {
-		.mainBis-Galería {
-			padding: 0 25%;
-			.carousel-item {
-				height: 30vw;
-				.carousel-caption * {
-					font-size: calc(3.3px + 1vw);
-				}
+	/* PORTADA - bis.html */
+	.portadaBis {
+		padding: 0 25%;
+		.carousel-item {
+			height: 30vw;
+			.carousel-caption * {
+				font-size: calc(3.3px + 1vw);
 			}
 		}
-		.mainBis-Videos {
+	}
+	/* MAIN - bis.html */
+	.mainBis {
+		.mainBis-Canciones--Videos {
 			// Lo siguiente sólo lo hice para practicar Sass mientras veía las pregrabadas correspondientes.
 			@include vidsizes(0 20%, $vidh: true);
 		}

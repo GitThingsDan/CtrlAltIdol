@@ -1,3 +1,4 @@
+// Aquí hay pocos estilos, porque para esta página los hice casi todos con clases de Bootstrap.
 /* PORTADA - otrosGrupos.html */
 .portadaOtrosGrupos {
 	margin: 0 auto;
@@ -59,7 +60,7 @@
 	.mainOtrosGrupos {
 		.mainOtrosGrupos-IframeGrid iframe {
 			height: 25vw;
-			// Lo siguiente fue solamente para practicar Sass mientras veía las clases pregrabadas.
+			// Lo siguiente fue solamente para practicar Sass mientras veía las clases pregrabadas. El código original es 'margin: 1vw 0;'.
 			$tuberculo: patata;
 			@if $tuberculo == patata {
 				margin: 1vw 0;

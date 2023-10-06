@@ -11,13 +11,27 @@
 			border-radius: 25px;
 		}
 		// LAS 4 CAJAS
-		.footerNavzone-Contenedores {
+		.footerNavzone-Boxes {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 			padding: 3%;
-			&:not(.footerNavzone-OtrosGrupos, .footerNavzone-Quiz) img {
+			&.footerNavzone-Bis img,
+			&.footerNavzone-Wack img {
+				box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+				transition: box-shadow 0.25s, transform 0.25s;
+				&:hover {
+					box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
+					transform: scale(1.025, 1.025);
+				}
+				&:active {
+					transform: scale(0.975, 0.975);
+				}
+			}
+			.footerNavzone-OtrosGrupos--ImgLink,
+			.footerNavzone-Quiz--ImgLink {
+				border-radius: 25px;
 				box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
 				transition: box-shadow 0.25s, transform 0.25s;
 				&:hover {
@@ -34,30 +48,20 @@
 			}
 			&.footerNavzone-Wack {
 				grid-area: wack;
-				.footerNavzoneWack-ImgLink {
+				.footerNavzone-Wack--ImgLink {
 					/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height: 83.375% */
 					height: 83.375%;
 				}
 			}
 			&.footerNavzone-OtrosGrupos {
 				grid-area: otrosGrupos;
-				.footerNavzoneOtrosGrupos-ImgLink {
+				.footerNavzone-OtrosGrupos--ImgLink {
 					display: grid;
 					grid-template-areas:
-						"bisBikini		bellringPlaya"
+						"bisBikini			bellringPlaya"
 						"babymetalFuego	atarashiiGakkoFormacion";
-					border-radius: 25px;
 					background-color: rgba(0, 0, 0, 0.5);
-					box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
-					transition: box-shadow 0.25s, transform 0.25s;
-					&:hover {
-						box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
-						transform: scale(1.025, 1.025);
-					}
-					&:active {
-						transform: scale(0.975, 0.975);
-					}
-					.OtrosGruposImg {
+					#OtrosGruposImg {
 						&-bisBikini {
 							grid-area: bisBikini;
 						}
@@ -75,20 +79,10 @@
 			}
 			&.footerNavzone-Quiz {
 				grid-area: quiz;
-				.footerNavzoneQuiz-ImgLink {
+				.footerNavzone-Quiz--ImgLink {
 					display: flex;
 					width: 100%;
-					border-radius: 25px;
 					justify-content: center;
-					box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
-					transition: box-shadow 0.25s, transform 0.25s;
-					&:hover {
-						box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
-						transform: scale(1.025, 1.025);
-					}
-					&:active {
-						transform: scale(0.975, 0.975);
-					}
 					img {
 						/* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone). width: 56.25% */
 						width: 56.25%;
@@ -121,10 +115,10 @@
 		.footerDatosPersonales-Texto {
 			grid-area: textoDP;
 			hyphens: auto;
-			.footerDatosPersonalesTexto-Curiosidades {
+			.footerDatosPersonales-Texto--Curiosidades {
 				list-style: disc;
 			}
-			.footerDatosPersonalesTexto-EmailYUbicacion {
+			.footerDatosPersonales-Texto--EmailYUbicacion {
 				font-style: italic;
 				#emailAddress {
 					@keyframes parpadeo {
@@ -138,9 +132,9 @@
 					animation: parpadeo 1s linear infinite alternate;
 					&::after {
 						content: " Dirección de e-mail: dvillarroela@pm.me";
+						vertical-align: middle;
 						transition: font-size 0.5s;
 						font-size: 0px;
-						vertical-align: middle;
 					}
 					&:hover::after {
 						font-size: 1vw;
@@ -184,7 +178,7 @@
 		position: absolute;
 		top: 0;
 	}
-	.goToTop-Box {
+	#goToTopBox {
 		position: fixed;
 		bottom: 10px;
 		right: 10px;
@@ -192,7 +186,7 @@
 		&:hover {
 			transform: scale(1.25, 1.25) translate(-10px, -10px);
 		}
-		.goToTop-Img {
+		#goToTopBox-Link--Img {
 			@keyframes rotacion {
 				from {
 					transform: rotateY(0deg);
@@ -241,7 +235,7 @@
 			}
 		}
 		/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
-		.goToTop-Box {
+		#goToTopBox {
 			width: 20vw;
 		}
 	}
@@ -254,7 +248,7 @@
 	.footer {
 		.footerNavzone {
 			grid-template-areas:
-				"bis			wack"
+				"bis					wack"
 				"otrosGrupos	quiz";
 		}
 		.footerDatosPersonales {
@@ -278,7 +272,7 @@
 			}
 		}
 		/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
-		.goToTop-Box {
+		#goToTopBox {
 			width: 10vw;
 		}
 	}
@@ -291,7 +285,7 @@
 	.footer {
 		.footerNavzone {
 			grid-template-areas:
-				"bis			wack"
+				"bis					wack"
 				"otrosGrupos	quiz";
 			.footerNavzone-Botones {
 				font-size: calc(15px + 1vw);
@@ -314,7 +308,7 @@
 			}
 		}
 		/* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
-		.goToTop-Box {
+		#goToTopBox {
 			width: 5vw;
 		}
 	}

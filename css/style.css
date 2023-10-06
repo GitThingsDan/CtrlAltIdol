@@ -24,7 +24,7 @@
 }
 .body a {
   color: white;
-  text-decoration-line: none;
+  text-decoration: none;
 }
 .body h2,
 .body h3,
@@ -52,7 +52,7 @@
   right: 100%;
   border-bottom-style: solid;
   border-bottom-width: 0.02em;
-  transition: right 0.2s;
+  transition: right 0.25s;
 }
 .body .main a:hover::before {
   right: 0;
@@ -65,7 +65,7 @@
   left: 100%;
   border-top-style: solid;
   border-top-width: 0.02em;
-  transition: left 0.2s;
+  transition: left 0.25s;
 }
 .body .main a:hover::after {
   left: 0;
@@ -1336,87 +1336,82 @@
   max-width: 100%;
   border-radius: 25px;
 }
-.footer .footerNavzone .footerNavzone-Contenedores {
+.footer .footerNavzone .footerNavzone-Boxes {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 3%;
 }
-.footer .footerNavzone .footerNavzone-Contenedores:not(.footerNavzone-OtrosGrupos, .footerNavzone-Quiz) img {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-Bis img, .footer .footerNavzone .footerNavzone-Boxes.footerNavzone-Wack img {
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.25s, transform 0.25s;
 }
-.footer .footerNavzone .footerNavzone-Contenedores:not(.footerNavzone-OtrosGrupos, .footerNavzone-Quiz) img:hover {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-Bis img:hover, .footer .footerNavzone .footerNavzone-Boxes.footerNavzone-Wack img:hover {
   box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
   transform: scale(1.025, 1.025);
 }
-.footer .footerNavzone .footerNavzone-Contenedores:not(.footerNavzone-OtrosGrupos, .footerNavzone-Quiz) img:active {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-Bis img:active, .footer .footerNavzone .footerNavzone-Boxes.footerNavzone-Wack img:active {
   transform: scale(0.975, 0.975);
 }
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Bis {
+.footer .footerNavzone .footerNavzone-Boxes .footerNavzone-OtrosGrupos--ImgLink,
+.footer .footerNavzone .footerNavzone-Boxes .footerNavzone-Quiz--ImgLink {
+  border-radius: 25px;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.footer .footerNavzone .footerNavzone-Boxes .footerNavzone-OtrosGrupos--ImgLink:hover,
+.footer .footerNavzone .footerNavzone-Boxes .footerNavzone-Quiz--ImgLink:hover {
+  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
+  transform: scale(1.025, 1.025);
+}
+.footer .footerNavzone .footerNavzone-Boxes .footerNavzone-OtrosGrupos--ImgLink:active,
+.footer .footerNavzone .footerNavzone-Boxes .footerNavzone-Quiz--ImgLink:active {
+  transform: scale(0.975, 0.975);
+}
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-Bis {
   grid-area: bis;
 }
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Wack {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-Wack {
   grid-area: wack;
 }
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Wack .footerNavzoneWack-ImgLink {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-Wack .footerNavzone-Wack--ImgLink {
   /* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height: 83.375% */
   height: 83.375%;
 }
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-OtrosGrupos {
   grid-area: otrosGrupos;
 }
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-OtrosGrupos .footerNavzone-OtrosGrupos--ImgLink {
   display: grid;
-  grid-template-areas: "bisBikini		bellringPlaya" "babymetalFuego	atarashiiGakkoFormacion";
-  border-radius: 25px;
+  grid-template-areas: "bisBikini			bellringPlaya" "babymetalFuego	atarashiiGakkoFormacion";
   background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
-  transition: box-shadow 0.25s, transform 0.25s;
 }
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink:hover {
-  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
-  transform: scale(1.025, 1.025);
-}
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink:active {
-  transform: scale(0.975, 0.975);
-}
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink .OtrosGruposImg-bisBikini {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-OtrosGrupos .footerNavzone-OtrosGrupos--ImgLink #OtrosGruposImg-bisBikini {
   grid-area: bisBikini;
 }
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink .OtrosGruposImg-bellringPlaya {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-OtrosGrupos .footerNavzone-OtrosGrupos--ImgLink #OtrosGruposImg-bellringPlaya {
   grid-area: bellringPlaya;
 }
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink .OtrosGruposImg-babymetalFuego {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-OtrosGrupos .footerNavzone-OtrosGrupos--ImgLink #OtrosGruposImg-babymetalFuego {
   grid-area: babymetalFuego;
 }
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-OtrosGrupos .footerNavzoneOtrosGrupos-ImgLink .OtrosGruposImg-atarashiiGakkoFormacion {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-OtrosGrupos .footerNavzone-OtrosGrupos--ImgLink #OtrosGruposImg-atarashiiGakkoFormacion {
   grid-area: atarashiiGakkoFormacion;
 }
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Quiz {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-Quiz {
   grid-area: quiz;
 }
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Quiz .footerNavzoneQuiz-ImgLink {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-Quiz .footerNavzone-Quiz--ImgLink {
   display: flex;
   width: 100%;
-  border-radius: 25px;
   justify-content: center;
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
-  transition: box-shadow 0.25s, transform 0.25s;
 }
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Quiz .footerNavzoneQuiz-ImgLink:hover {
-  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
-  transform: scale(1.025, 1.025);
-}
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Quiz .footerNavzoneQuiz-ImgLink:active {
-  transform: scale(0.975, 0.975);
-}
-.footer .footerNavzone .footerNavzone-Contenedores.footerNavzone-Quiz .footerNavzoneQuiz-ImgLink img {
+.footer .footerNavzone .footerNavzone-Boxes.footerNavzone-Quiz .footerNavzone-Quiz--ImgLink img {
   /* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone). width: 56.25% */
   width: 56.25%;
 }
-.footer .footerNavzone .footerNavzone-Contenedores .footerNavzone-Botones {
+.footer .footerNavzone .footerNavzone-Boxes .footerNavzone-Botones {
   background-color: black;
   padding: 15px;
   margin-top: 1.5%;
@@ -1425,13 +1420,13 @@
   transition-property: box-shadow, color, font-weight, transform;
   transition-duration: 0.25s;
 }
-.footer .footerNavzone .footerNavzone-Contenedores .footerNavzone-Botones:hover {
+.footer .footerNavzone .footerNavzone-Boxes .footerNavzone-Botones:hover {
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
   color: rgb(62, 0, 143);
   font-weight: 900;
   transform: scale(1.05, 1.05);
 }
-.footer .footerNavzone .footerNavzone-Contenedores .footerNavzone-Botones:active {
+.footer .footerNavzone .footerNavzone-Boxes .footerNavzone-Botones:active {
   transform: scale(0.95, 0.95);
 }
 .footer .footerDatosPersonales {
@@ -1441,13 +1436,13 @@
   grid-area: textoDP;
   hyphens: auto;
 }
-.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonalesTexto-Curiosidades {
+.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonales-Texto--Curiosidades {
   list-style: disc;
 }
-.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonalesTexto-EmailYUbicacion {
+.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonales-Texto--EmailYUbicacion {
   font-style: italic;
 }
-.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonalesTexto-EmailYUbicacion #emailAddress {
+.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonales-Texto--EmailYUbicacion #emailAddress {
   animation: parpadeo 1s linear infinite alternate;
 }
 @keyframes parpadeo {
@@ -1458,13 +1453,13 @@
     font-weight: 900;
   }
 }
-.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonalesTexto-EmailYUbicacion #emailAddress::after {
+.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonales-Texto--EmailYUbicacion #emailAddress::after {
   content: " Dirección de e-mail: dvillarroela@pm.me";
+  vertical-align: middle;
   transition: font-size 0.5s;
   font-size: 0px;
-  vertical-align: middle;
 }
-.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonalesTexto-EmailYUbicacion #emailAddress:hover::after {
+.footer .footerDatosPersonales .footerDatosPersonales-Texto .footerDatosPersonales-Texto--EmailYUbicacion #emailAddress:hover::after {
   font-size: 1vw;
 }
 .footer .footerDatosPersonales .footerDatosPersonales-FotoPersonal {
@@ -1501,16 +1496,16 @@
   position: absolute;
   top: 0;
 }
-.footer .goToTop-Box {
+.footer #goToTopBox {
   position: fixed;
   bottom: 10px;
   right: 10px;
   transition: transform 0.5s;
 }
-.footer .goToTop-Box:hover {
+.footer #goToTopBox:hover {
   transform: scale(1.25, 1.25) translate(-10px, -10px);
 }
-.footer .goToTop-Box .goToTop-Img {
+.footer #goToTopBox #goToTopBox-Link--Img {
   animation: rotacion 2.5s linear infinite alternate;
   width: 100%;
   transition: filter 0.5s;
@@ -1523,7 +1518,7 @@
     transform: rotateY(180deg);
   }
 }
-.footer .goToTop-Box .goToTop-Img:hover {
+.footer #goToTopBox #goToTopBox-Link--Img:hover {
   filter: invert(1);
 }
 
@@ -1552,7 +1547,7 @@
   .footer .footerDatosPersonales .footerDatosPersonales-IconosSociales a {
     width: 90%;
   }
-  .footer .goToTop-Box {
+  .footer #goToTopBox {
     width: 20vw;
   }
 }
@@ -1564,7 +1559,7 @@
     /* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
   }
   .footer .footerNavzone {
-    grid-template-areas: "bis			wack" "otrosGrupos	quiz";
+    grid-template-areas: "bis					wack" "otrosGrupos	quiz";
   }
   .footer .footerDatosPersonales {
     grid-template-areas: "textoDP	fotoDP" "textoDP	socialDP";
@@ -1584,7 +1579,7 @@
     margin-top: 5%;
     width: 35%;
   }
-  .footer .goToTop-Box {
+  .footer #goToTopBox {
     width: 10vw;
   }
 }
@@ -1596,7 +1591,7 @@
     /* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
   }
   .footer .footerNavzone {
-    grid-template-areas: "bis			wack" "otrosGrupos	quiz";
+    grid-template-areas: "bis					wack" "otrosGrupos	quiz";
   }
   .footer .footerNavzone .footerNavzone-Botones {
     font-size: calc(15px + 1vw);
@@ -1615,7 +1610,7 @@
   .footer .footerDatosPersonales .footerDatosPersonales-IconosSociales a {
     width: 37.5%;
   }
-  .footer .goToTop-Box {
+  .footer #goToTopBox {
     width: 5vw;
   }
 }
@@ -1663,16 +1658,19 @@
   display: grid;
   gap: 3%;
 }
-.mainIndex .mainVideos .mainVideos-BisPaprika {
+.mainIndex .mainVideos .mainVideos-Iframes {
+  width: 100%;
+}
+.mainIndex .mainVideos .mainVideos-Iframes.mainVideos-BisPaprika {
   grid-area: bis-Video;
 }
-.mainIndex .mainVideos .mainVideos-BellringShoujoHeartGigabite {
+.mainIndex .mainVideos .mainVideos-Iframes.mainVideos-BellringShoujoHeartGigabite {
   grid-area: bellring-Video;
 }
-.mainIndex .mainVideos .mainVideos-BabymetalKarate {
+.mainIndex .mainVideos .mainVideos-Iframes.mainVideos-BabymetalKarate {
   grid-area: babymetal-Video;
 }
-.mainIndex .mainVideos .mainVideos-AtarashiiGakkoKoiGeba {
+.mainIndex .mainVideos .mainVideos-Iframes.mainVideos-AtarashiiGakkoKoiGeba {
   grid-area: atarashii-Video;
 }
 
@@ -1723,7 +1721,7 @@
     font-size: calc(1rem + 0.5vw);
   }
   .mainIndex .mainVideos {
-    grid-template-areas: "bis-Video			bellring-Video" "babymetal-Video	atarashii-Video";
+    grid-template-areas: "bis-Video				bellring-Video" "babymetal-Video	atarashii-Video";
     margin: 5% 0;
   }
   .mainIndex .mainVideos .mainVideos-Iframes {
@@ -1748,7 +1746,7 @@
     font-size: calc(1rem + 0.5vw);
   }
   .mainIndex .mainVideos {
-    grid-template-areas: "bis-Video			bellring-Video" "babymetal-Video	atarashii-Video";
+    grid-template-areas: "bis-Video				bellring-Video" "babymetal-Video	atarashii-Video";
     margin: 5% 0;
   }
   .mainIndex .mainVideos .mainVideos-Iframes {
@@ -1756,48 +1754,50 @@
     height: 25vw;
   }
 }
-/* MAIN - bis.html */
-.mainBis .mainBis-Galería .carousel-item img {
+/* PORTADA - bis.html */
+.portadaBis .carousel-item img {
   border-radius: 20px;
   height: 100%;
 }
-.mainBis .mainBis-Galería .carousel-item .carousel-caption h5,
-.mainBis .mainBis-Galería .carousel-item .carousel-caption p {
+.portadaBis .carousel-item .carousel-caption h5,
+.portadaBis .carousel-item .carousel-caption p {
   background-color: rgba(62, 0, 143, 0.5);
   padding: 2%;
   border-radius: 20px;
   opacity: 0;
   transition: opacity 0.5s;
 }
-.mainBis .mainBis-Galería .carousel-item .carousel-caption:hover h5,
-.mainBis .mainBis-Galería .carousel-item .carousel-caption:hover p {
+.portadaBis .carousel-item .carousel-caption:hover h5,
+.portadaBis .carousel-item .carousel-caption:hover p {
   opacity: 1;
 }
-.mainBis .mainBis-Galería .carousel-control-icons, .mainBis .mainBis-Galería .carousel-control-next-icon, .mainBis .mainBis-Galería .carousel-control-prev-icon {
+.portadaBis .carousel-control-icons, .portadaBis .carousel-control-next-icon, .portadaBis .carousel-control-prev-icon {
   transition: filter 0.5s, transform 0.5s;
 }
-.mainBis .mainBis-Galería .carousel-control-icons:hover, .mainBis .mainBis-Galería .carousel-control-next-icon:hover, .mainBis .mainBis-Galería .carousel-control-prev-icon:hover {
+.portadaBis .carousel-control-icons:hover, .portadaBis .carousel-control-next-icon:hover, .portadaBis .carousel-control-prev-icon:hover {
   filter: invert(1);
   transform: scale(1.5, 1.5);
 }
-.mainBis .mainBis-Galería .carousel-control-prev-icon {
+.portadaBis .carousel-control-prev-icon {
   background-image: url("../icons/flecha-Izquierda.svg");
 }
-.mainBis .mainBis-Galería .carousel-control-next-icon {
+.portadaBis .carousel-control-next-icon {
   background-image: url("../icons/flecha-Derecha.svg");
 }
-.mainBis .mainBis-Galería .carousel-indicators [data-bs-target] {
-  transition: background-color 0.5s, height 0.5s;
+.portadaBis .carousel-indicators [data-bs-target] {
+  transition: background-color 0.5s, transform 0.5s;
   background-color: rgba(62, 0, 143, 0.5);
 }
-.mainBis .mainBis-Galería .carousel-indicators [data-bs-target]:hover {
+.portadaBis .carousel-indicators [data-bs-target]:hover {
   background-color: rgb(62, 0, 143);
-  height: 6px;
+  transform: scaleY(2);
 }
-.mainBis .mainBis-Galería .carousel-indicators .active {
+.portadaBis .carousel-indicators .active {
   background-color: rgb(62, 0, 143);
-  height: 6px;
+  transform: scaleY(2);
 }
+
+/* MAIN - bis.html */
 .mainBis .mainBis-Presente ul {
   list-style: square;
 }
@@ -1806,17 +1806,18 @@
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
 @media only screen and (width <= 429px) {
   /* Abreviación de @media only screen and (max-width: 429px) { */
-  /* MAIN - bis.html */
-  .mainBis .mainBis-Galería {
+  /* PORTADA - bis.html */
+  .portadaBis {
     padding: 0;
   }
-  .mainBis .mainBis-Galería .carousel-item {
+  .portadaBis .carousel-item {
     height: 60vw;
   }
-  .mainBis .mainBis-Galería .carousel-item .carousel-caption * {
+  .portadaBis .carousel-item .carousel-caption * {
     font-size: calc(1px + 2vw);
   }
-  .mainBis .mainBis-Videos {
+  /* MAIN - bis.html */
+  .mainBis .mainBis-Canciones--Videos {
     height: 50vw;
     width: 100%;
   }
@@ -1824,17 +1825,18 @@
 /* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
 @media only screen and (430px <= width <= 835px) {
   /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
-  /* MAIN - bis.html */
-  .mainBis .mainBis-Galería {
+  /* PORTADA - bis.html */
+  .portadaBis {
     padding: 0 10%;
   }
-  .mainBis .mainBis-Galería .carousel-item {
+  .portadaBis .carousel-item {
     height: 50vw;
   }
-  .mainBis .mainBis-Galería .carousel-item .carousel-caption * {
+  .portadaBis .carousel-item .carousel-caption * {
     font-size: calc(1px + 1.9vw);
   }
-  .mainBis .mainBis-Videos {
+  /* MAIN - bis.html */
+  .mainBis .mainBis-Canciones--Videos {
     height: 50vw;
     width: 100%;
   }
@@ -1842,84 +1844,86 @@
 /* DESKTOP */
 @media only screen and (836px <= width) {
   /* Abreviación de @media only screen and (min-width:836px) { */
-  /* MAIN - bis.html */
-  .mainBis .mainBis-Galería {
+  /* PORTADA - bis.html */
+  .portadaBis {
     padding: 0 25%;
   }
-  .mainBis .mainBis-Galería .carousel-item {
+  .portadaBis .carousel-item {
     height: 30vw;
   }
-  .mainBis .mainBis-Galería .carousel-item .carousel-caption * {
+  .portadaBis .carousel-item .carousel-caption * {
     font-size: calc(3.3px + 1vw);
   }
-  .mainBis .mainBis-Videos {
+  /* MAIN - bis.html */
+  .mainBis .mainBis-Canciones--Videos {
     padding: 0 20%;
     width: 100%;
     height: 30vw;
   }
 }
 /* MAIN - wack.html */
-.mainWack .mainWack-Grupos {
+.mainWack .mainWack-Articulo--Grupos {
   display: grid;
 }
-.mainWack .mainWack-Grupos .mainWackGrupos-Titulo {
+.mainWack .mainWack-Articulo--Grupos .mainWack-Articulo--Grupos---Titulo {
   grid-area: titulo;
+  margin: initial;
 }
-.mainWack .mainWack-Grupos p {
+.mainWack .mainWack-Articulo--Grupos p {
   text-align: justify;
 }
-.mainWack .mainWack-Grupos iframe {
-  max-width: 100%;
+.mainWack .mainWack-Articulo--Grupos iframe {
+  width: 100%;
 }
-.mainWack .mainWack-Grupos .asp-Texto {
+.mainWack .mainWack-Articulo--Grupos #asp-Texto {
   grid-area: asp-Texto;
 }
-.mainWack .mainWack-Grupos .asp-ToxicInvasion {
+.mainWack .mainWack-Articulo--Grupos #asp-ToxicInvasion {
   grid-area: asp-ToxicInvasion;
 }
-.mainWack .mainWack-Grupos .asp-TheManCalling {
+.mainWack .mainWack-Articulo--Grupos #asp-TheManCalling {
   grid-area: asp-TheManCalling;
 }
-.mainWack .mainWack-Grupos .exwhyz-Texto {
+.mainWack .mainWack-Articulo--Grupos #exwhyz-Texto {
   grid-area: exwhyz-Texto;
 }
-.mainWack .mainWack-Grupos .exwhyz-Iza {
+.mainWack .mainWack-Articulo--Grupos #exwhyz-Iza {
   grid-area: exwhyz-Iza;
 }
-.mainWack .mainWack-Grupos .exwhyz-FurachinaSummer {
+.mainWack .mainWack-Articulo--Grupos #exwhyz-FurachinaSummer {
   grid-area: exwhyz-FurachinaSummer;
 }
-.mainWack .mainWack-Grupos .gangParade-Texto {
+.mainWack .mainWack-Articulo--Grupos #gangParade-Texto {
   grid-area: gangParade-Texto;
 }
-.mainWack .mainWack-Grupos .gangParade-Plastic2Mercy {
+.mainWack .mainWack-Articulo--Grupos #gangParade-Plastic2Mercy {
   grid-area: gangParade-Plastic2Mercy;
 }
-.mainWack .mainWack-Grupos .gangParade-PrettyPrettyGood {
+.mainWack .mainWack-Articulo--Grupos #gangParade-PrettyPrettyGood {
   grid-area: gangParade-PrettyPrettyGood;
 }
-.mainWack .mainWack-Grupos .gangParade-BeyondTheMountain {
+.mainWack .mainWack-Articulo--Grupos #gangParade-BeyondTheMountain {
   grid-area: gangParade-BeyondTheMountain;
 }
-.mainWack .mainWack-Grupos .gangParade-LoveCommunication {
+.mainWack .mainWack-Articulo--Grupos #gangParade-LoveCommunication {
   grid-area: gangParade-LoveCommunication;
 }
-.mainWack .mainWack-Grupos .bis3-Texto {
+.mainWack .mainWack-Articulo--Grupos #bis3-Texto {
   grid-area: bis3-Texto;
 }
-.mainWack .mainWack-Grupos .bis3-SmokingBilly {
-  grid-area: bis3-SmokingBilly;
+.mainWack .mainWack-Articulo--Grupos #bis3-SmokinBilly {
+  grid-area: bis3-SmokinBilly;
 }
-.mainWack .mainWack-Grupos .bis3-Tsuyogarisan {
+.mainWack .mainWack-Articulo--Grupos #bis3-Tsuyogarisan {
   grid-area: bis3-Tsuyogarisan;
 }
-.mainWack .mainWack-Grupos .bish-Texto {
+.mainWack .mainWack-Articulo--Grupos #bish-Texto {
   grid-area: bish-Texto;
 }
-.mainWack .mainWack-Grupos .bish-Otnk {
+.mainWack .mainWack-Articulo--Grupos #bish-Otnk {
   grid-area: bish-Otnk;
 }
-.mainWack .mainWack-Grupos .bish-Tomorrow {
+.mainWack .mainWack-Articulo--Grupos #bish-Tomorrow {
   grid-area: bish-Tomorrow;
 }
 
@@ -1932,14 +1936,17 @@
     width: 100%;
   }
   /* MAIN - wack.html */
-  .mainWack .mainWack-Grupos {
+  .mainWack .mainWack-Articulo--Grupos {
     margin: 10vw 0;
-    grid-template-areas: "titulo" "asp-Texto" "asp-ToxicInvasion" "asp-TheManCalling" "exwhyz-Texto" "exwhyz-Iza" "exwhyz-FurachinaSummer" "gangParade-Texto" "gangParade-Plastic2Mercy" "gangParade-PrettyPrettyGood" "gangParade-BeyondTheMountain" "gangParade-LoveCommunication" "bis3-Texto" "bis3-SmokingBilly" "bis3-Tsuyogarisan" "bish-Texto" "bish-Otnk" "bish-Tomorrow";
+    grid-template-areas: "titulo" "asp-Texto" "asp-ToxicInvasion" "asp-TheManCalling" "exwhyz-Texto" "exwhyz-Iza" "exwhyz-FurachinaSummer" "gangParade-Texto" "gangParade-Plastic2Mercy" "gangParade-PrettyPrettyGood" "gangParade-BeyondTheMountain" "gangParade-LoveCommunication" "bis3-Texto" "bis3-SmokinBilly" "bis3-Tsuyogarisan" "bish-Texto" "bish-Otnk" "bish-Tomorrow";
   }
-  .mainWack .mainWack-Grupos p {
-    margin-top: 15%;
+  .mainWack .mainWack-Articulo--Grupos .mainWack-Articulo--Grupos---Titulo {
+    text-align: center;
   }
-  .mainWack .mainWack-Grupos iframe {
+  .mainWack .mainWack-Articulo--Grupos p {
+    margin-top: 12.5%;
+  }
+  .mainWack .mainWack-Articulo--Grupos iframe {
     height: calc(50px + 50vw);
     margin: 1vw 0;
   }
@@ -1952,15 +1959,15 @@
     width: 75%;
   }
   /* MAIN - wack.html */
-  .mainWack .mainWack-Grupos {
+  .mainWack .mainWack-Articulo--Grupos {
     margin: 7.5vw 0;
     gap: 5px;
-    grid-template-areas: "titulo												titulo" "asp-Texto										asp-Texto" "asp-ToxicInvasion						asp-TheManCalling" "exwhyz-Texto									exwhyz-Texto" "exwhyz-Iza										exwhyz-FurachinaSummer" "gangParade-Texto							gangParade-Texto" "gangParade-Plastic2Mercy			gangParade-PrettyPrettyGood" "gangParade-BeyondTheMountain	gangParade-LoveCommunication" "bis3-Texto										bis3-Texto" "bis3-SmokingBilly						bis3-Tsuyogarisan" "bish-Texto										bish-Texto" "bish-Otnk										bish-Tomorrow";
+    grid-template-areas: "titulo												titulo" "asp-Texto										asp-Texto" "asp-ToxicInvasion						asp-TheManCalling" "exwhyz-Texto									exwhyz-Texto" "exwhyz-Iza										exwhyz-FurachinaSummer" "gangParade-Texto							gangParade-Texto" "gangParade-Plastic2Mercy			gangParade-PrettyPrettyGood" "gangParade-BeyondTheMountain	gangParade-LoveCommunication" "bis3-Texto										bis3-Texto" "bis3-SmokinBilly							bis3-Tsuyogarisan" "bish-Texto										bish-Texto" "bish-Otnk										bish-Tomorrow";
   }
-  .mainWack .mainWack-Grupos p {
-    margin-top: 5%;
+  .mainWack .mainWack-Articulo--Grupos p {
+    margin-top: 4%;
   }
-  .mainWack .mainWack-Grupos iframe {
+  .mainWack .mainWack-Articulo--Grupos iframe {
     height: 25vw;
   }
 }
@@ -1972,15 +1979,15 @@
     width: 50%;
   }
   /* MAIN - wack.html */
-  .mainWack .mainWack-Grupos {
+  .mainWack .mainWack-Articulo--Grupos {
     margin: 5vw 0;
     gap: 5px;
-    grid-template-areas: "titulo							titulo" "asp-Texto						asp-Texto" "asp-ToxicInvasion				asp-TheManCalling" "exwhyz-Texto					exwhyz-Texto" "exwhyz-Iza						exwhyz-FurachinaSummer" "gangParade-Texto				gangParade-Texto" "gangParade-Plastic2Mercy			gangParade-PrettyPrettyGood" "gangParade-BeyondTheMountain	gangParade-LoveCommunication" "bis3-Texto						bis3-Texto" "bis3-SmokingBilly				bis3-Tsuyogarisan" "bish-Texto						bish-Texto" "bish-Otnk						bish-Tomorrow";
+    grid-template-areas: "titulo												titulo" "asp-Texto										asp-Texto" "asp-ToxicInvasion						asp-TheManCalling" "exwhyz-Texto									exwhyz-Texto" "exwhyz-Iza										exwhyz-FurachinaSummer" "gangParade-Texto							gangParade-Texto" "gangParade-Plastic2Mercy			gangParade-PrettyPrettyGood" "gangParade-BeyondTheMountain	gangParade-LoveCommunication" "bis3-Texto										bis3-Texto" "bis3-SmokinBilly							bis3-Tsuyogarisan" "bish-Texto										bish-Texto" "bish-Otnk										bish-Tomorrow";
   }
-  .mainWack .mainWack-Grupos p {
-    margin-top: 5%;
+  .mainWack .mainWack-Articulo--Grupos p {
+    margin-top: 4%;
   }
-  .mainWack .mainWack-Grupos iframe {
+  .mainWack .mainWack-Articulo--Grupos iframe {
     height: 25vw;
   }
 }
@@ -2055,16 +2062,16 @@
   /* Respuesta correcta: nuevo icono */
   /* Respuesta incorrecta: nuevo icono */
 }
-.mainQuiz .mainQuiz-Form .bis-Legendaria legend,
-.mainQuiz .mainQuiz-Form .wack-Impostoras legend {
+.mainQuiz .mainQuiz-Form .bisLegendaria legend,
+.mainQuiz .mainQuiz-Form .wackImpostoras legend {
   font-size: calc(0.7rem + 1vw);
 }
-.mainQuiz .mainQuiz-Form .mainQuiz-BotonContenedor {
+.mainQuiz .mainQuiz-Form .mainQuiz-Submit--Box {
   display: flex;
   justify-content: center;
   margin: 25px 0;
 }
-.mainQuiz .mainQuiz-Form .mainQuiz-BotonContenedor #submit {
+.mainQuiz .mainQuiz-Form .mainQuiz-Submit--Box #submit {
   padding: 5%;
   background-color: rgb(62, 0, 143);
   color: white;
@@ -2072,11 +2079,11 @@
   font-weight: bold;
   transition: color 0.25s, transform 0.25s;
 }
-.mainQuiz .mainQuiz-Form .mainQuiz-BotonContenedor #submit:hover {
+.mainQuiz .mainQuiz-Form .mainQuiz-Submit--Box #submit:hover {
   color: black;
   transform: scale(1.05, 1.05);
 }
-.mainQuiz .mainQuiz-Form .mainQuiz-BotonContenedor #submit:active {
+.mainQuiz .mainQuiz-Form .mainQuiz-Submit--Box #submit:active {
   transform: scale(0.95, 0.95);
 }
 .mainQuiz .form-control.is-valid,
