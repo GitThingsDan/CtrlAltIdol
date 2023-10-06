@@ -1322,9 +1322,6 @@
   }
 }
 /* FOOTER */
-.footer {
-  /* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
-}
 .footer .footerNavzone {
   background-color: rgb(62, 0, 143);
   display: grid;
@@ -1527,9 +1524,6 @@
 @media only screen and (width <= 429px) {
   /* Abreviación de @media only screen and (max-width: 429px) { */
   /* FOOTER */
-  .footer {
-    /* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
-  }
   .footer .footerNavzone {
     grid-template-areas: "bis" "wack" "otrosGrupos" "quiz";
   }
@@ -1555,9 +1549,6 @@
 @media only screen and (430px <= width <= 835px) {
   /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
   /* FOOTER */
-  .footer {
-    /* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
-  }
   .footer .footerNavzone {
     grid-template-areas: "bis					wack" "otrosGrupos	quiz";
   }
@@ -1587,9 +1578,6 @@
 @media only screen and (836px <= width) {
   /* Abreviación de @media only screen and (min-width:836px) { */
   /* FOOTER */
-  .footer {
-    /* Hack para botón "Volver al principio de la página", en la esquina inferior derecha */
-  }
   .footer .footerNavzone {
     grid-template-areas: "bis					wack" "otrosGrupos	quiz";
   }
@@ -2058,10 +2046,6 @@
 }
 
 /* MAIN - quiz.html */
-.mainQuiz {
-  /* Respuesta correcta: nuevo icono */
-  /* Respuesta incorrecta: nuevo icono */
-}
 .mainQuiz .mainQuiz-Form .bisLegendaria legend,
 .mainQuiz .mainQuiz-Form .wackImpostoras legend {
   font-size: calc(0.7rem + 1vw);

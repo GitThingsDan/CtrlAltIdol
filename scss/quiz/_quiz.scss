@@ -46,7 +46,7 @@
 		}
 	}
 	// Nuevos iconos de validación (no hubo caso...no pude anidarlos dentro de .mainQuiz-Form...)
-	/* Respuesta correcta: nuevo icono */
+	// Respuesta correcta: nuevo icono
 	.form-control.is-valid,
 	.was-validated .form-control:valid {
 		background-image: var(--icono-Correcto);
@@ -60,7 +60,7 @@
 			}
 		}
 	}
-	/* Respuesta incorrecta: nuevo icono */
+	// Respuesta incorrecta: nuevo icono
 	.form-control.is-invalid,
 	.was-validated .form-control:invalid {
 		background-image: var(--icono-Incorrecto);
