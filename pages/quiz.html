@@ -109,27 +109,27 @@
 				</label>
 				<!-- De estas 3 canciones de BiS, ¿cuál es la que yo
 						considero la más legendaria? "primal." -->
-				<fieldset class="bisLegendaria d-flex flex-column align-items-center">
-					<legend class="bisLegendaria-Legend">
+				<fieldset class="d-flex flex-column align-items-center" id="bisLegendaria">
+					<legend id="bisLegendaria-Legend">
 						De estas 3 canciones de BiS, ¿cuál es la que yo considero la más
 						legendaria?
 					</legend>
 					<div class="d-flex w-50 flex-column">
-						<div class="bisLegendaria-Stupig form-check">
+						<div class="form-check" id="bisLegendaria-Stupig">
 							<input class="form-check-input" id="bisLegendaria-Stupig--Input" name="bisLegendaria" type="radio"
 								value="STUPiG" required />
 							<label class="form-check-label" for="bisLegendaria-Stupig--Input" id="bisLegendaria-Stupig--Label">
 								STUPiG
 							</label>
 						</div>
-						<div class="bisLegendaria-Primal form-check">
+						<div class="form-check" id="bisLegendaria-Primal">
 							<input class="form-check-input" id="bisLegendaria-Primal--Input" name="bisLegendaria" type="radio"
 								value="primal." required />
 							<label class="form-check-label" for="bisLegendaria-Primal--Input" id="bisLegendaria-Primal--Label">
 								primal.
 							</label>
 						</div>
-						<div class="bisLegendaria-Die form-check">
+						<div class="form-check" id="bisLegendaria-Die">
 							<input class="form-check-input" id="bisLegendaria-Die--Input" name="bisLegendaria" type="radio"
 								value="DiE" required />
 							<label class="form-check-label" for="bisLegendaria-Die--Input" id="bisLegendaria-Die--Label">
@@ -181,26 +181,26 @@
 					</div>
 				</label>
 				<!-- De estos 3 grupos, 1 NO forma parte de WACK. ¿Cuál es? "PIGGS" -->
-				<fieldset class="wackImpostoras d-flex flex-column align-items-center">
-					<legend class="wackImpostoras-Legend">
+				<fieldset class="d-flex flex-column align-items-center" id="wackImpostoras">
+					<legend id="wackImpostoras-Legend">
 						De estos 3 grupos, 1 NO forma parte de WACK. ¿Cuál es?
 					</legend>
 					<div class="d-flex w-50 flex-column">
-						<div class="wackImpostoras-Piggs form-check">
+						<div class="form-check" id="wackImpostoras-Piggs">
 							<input class="form-check-input" id="wackImpostoras-Piggs--Input" name="wackImpostoras" type="radio"
 								value="PIGGS" required />
 							<label class="form-check-label" for="wackImpostoras-Piggs--Input" id="wackImpostoras-Piggs--Label">
 								PIGGS
 							</label>
 						</div>
-						<div class="wackImpostoras-Asp form-check">
+						<div class="form-check" id="wackImpostoras-Asp">
 							<input class="form-check-input" id="wackImpostoras-Asp--Input" name="wackImpostoras" type="radio"
 								value="ASP" required />
 							<label class="form-check-label" for="wackImpostoras-Asp--Input" id="wackImpostoras-Asp--Label">
 								ASP
 							</label>
 						</div>
-						<div class="wackImpostoras-Exwhyz form-check">
+						<div class="form-check" id="wackImpostoras-Exwhyz">
 							<input class="form-check-input" id="wackImpostoras-Exwhyz--Input" name="wackImpostoras" type="radio"
 								value="ExWHYZ" required />
 							<label class="form-check-label" for="wackImpostoras-Exwhyz--Input" id="wackImpostoras-Exwhyz--Label">
@@ -212,8 +212,8 @@
 				</fieldset>
 
 				<!-- ¡ENVIAR! Lo puse dentro de este fieldset para aprovechar mejor el espacio, y que ocupe sólo 1 columna y no todo el ancho de la página (creando mucho espacio vacío) -->
-				<div class="mainQuiz-Submit--Box">
-					<button form="mainQuiz-Form" id="submit" type="submit">
+				<div id="submitBox">
+					<button form="mainQuiz-Form" id="submitBox-Button" type="submit">
 						¡Enviar!
 					</button>
 				</div>
@@ -225,21 +225,21 @@
 		<!-- NAVZONE: igual que .headerNavbar, pero ahora con imagenes - -->
 		<nav class="footerNavzone">
 			<!-- IMAGENES con links de navegacion -->
-			<div class="footerNavzone-Boxes footerNavzone-Bis">
-				<a href="bis.html" class="footerNavzone-Bis--ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-Bis--Box">
+				<a href="bis.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Bis--Box---ImgLink">
 					<img src="../images/bis/bisIdolIsDead-2012.png"
 						alt="BiS con vestidos de reo, fumando en el patio de la cárcel" />
 				</a>
-				<a href="bis.html" class="footerNavzone-Botones footerNavzone-Bis--Boton">BiS</a>
+				<a href="bis.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Bis--Box---TxtLink">BiS</a>
 			</div>
-			<div class="footerNavzone-Boxes footerNavzone-Wack">
-				<a href="wack.html" class="footerNavzone-Wack--ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-Wack--Box">
+				<a href="wack.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Wack--Box---ImgLink">
 					<img src="../icons/wackLogo.png" alt="Logo de WACK" />
 				</a>
-				<a href="wack.html" class="footerNavzone-Botones footerNavzone-Wack--Boton">WACK</a>
+				<a href="wack.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Wack--Box---TxtLink">WACK</a>
 			</div>
-			<div class="footerNavzone-Boxes footerNavzone-OtrosGrupos">
-				<a href="otrosGrupos.html" class="footerNavzone-OtrosGrupos--ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-OtrosGrupos--Box">
+				<a href="otrosGrupos.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-OtrosGrupos--Box---ImgLink">
 					<img src="../images/bis/bisFinalDance-2014_crop.png" alt="BiS en bikini, sosteniendo bates con púas"
 						id="OtrosGruposImg-bisBikini" />
 					<img src="../images/bellring.png"
@@ -252,17 +252,18 @@
 						alt="ATARASHII GAKKO! en formación tipo Hombre de Vitruvio (¿?), de modo tal que todas parecen compartir la misma falda"
 						id="OtrosGruposImg-atarashiiGakkoFormacion" />
 				</a>
-				<a href="otrosGrupos.html" class="footerNavzone-Botones footerNavzone-OtrosGrupos--Boton">Otros grupos
+				<a href="otrosGrupos.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-OtrosGrupos--Box---TxtLink">Otros
+					grupos
 				</a>
 			</div>
-			<div class="footerNavzone-Boxes footerNavzone-Quiz">
-				<a href="quiz.html" class="footerNavzone-Quiz--ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-Quiz--Box">
+				<a href="quiz.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Quiz--Box---ImgLink">
 					<img src="../icons/musica.png" alt="Dos notas musicales corcheas, unidas; versión de color negro" />
 				</a>
-				<a href="quiz.html" class="footerNavzone-Botones footerNavzone-Quiz--Boton">Quiz</a>
+				<a href="quiz.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Quiz--Box---TxtLink">Quiz</a>
 			</div>
 		</nav>
-		<!-- INFORMACIÓN DEL AUTOR DE ESTE BLOG, FOTO PERSONAL, Y LINKEDIN/GITHUB... (como si yo fuera tan interesante...u.u) -->
+		<!-- INFORMACIÓN DEL AUTOR DE ESTE BLOG, FOTO PERSONAL, Y GITHUB/LINKEDIN... (como si yo fuera tan interesante...u.u) -->
 		<div class="footerDatosPersonales">
 			<div class="footerDatosPersonales-Texto">
 				<p class="footerDatosPersonales-Texto--Nombre">
@@ -287,14 +288,14 @@
 			</div>
 			<img class="footerDatosPersonales-FotoPersonal" src="../images/danielCuadrado.png" alt="Fotografía de mí" />
 			<div class="footerDatosPersonales-IconosSociales">
-				<a class="footerDatosPersonales-IconosSociales--Linkedin---Link"
-					href="https://www.linkedin.com/in/daniel-ignacio-v-48673557/">
-					<img class="footerDatosPersonales-IconosSociales--Linkedin---Logo" src="../icons/linkedinLogo.png"
-						alt="Logo de LinkedIn" />
-				</a>
-				<a class="footerDatosPersonales-IconosSociales--Github---Link" href="https://github.com/GitThingsDan">
-					<img class="footerDatosPersonales-IconosSociales--Github---Logo" src="../icons/githubLogo-White.png"
+				<a class="footerDatosPersonales-IconosSociales--Links " href="https://github.com/GitThingsDan">
+					<img class="footerDatosPersonales-IconosSociales--Links---Logos " src="../icons/githubLogo-White.png"
 						alt="Logo de GitHub" />
+				</a>
+				<a class="footerDatosPersonales-IconosSociales--Links "
+					href="https://www.linkedin.com/in/daniel-ignacio-v-48673557/">
+					<img class="footerDatosPersonales-IconosSociales--Links---Logos " src="../icons/linkedinLogo.png"
+						alt="Logo de LinkedIn" />
 				</a>
 			</div>
 		</div>

@@ -62,24 +62,24 @@
 
 	<main class="main mainIndex">
 		<!-- TEXTO PRINCIPAL, llamativo y atractivo, para capturar al lector...no me gusta mucho el "espacio en blanco", vacío, que hay en esta section... -->
-		<section class="mainTextoLlamativo">
-			<h2 class="mainTextoLlamativo-Bienvenida">
+		<section class="mainIndex-TextoLlamativo">
+			<h2 class="mainIndex-TextoLlamativo--Bienvenida">
 				Bienvenid@ a CTRL ALT IDOL, el santuario web dedicado a lo mejor del
 				movimiento "Alt Idol".
 			</h2>
-			<p class="mainTextoLlamativo-Problema">
+			<p class="mainIndex-TextoLlamativo--Problema">
 				¿Cansad@ de la
 				<a href="https://www.youtube.com/watch?v=dFf4AgBNR1E">INOFENSIVIDAD</a>
 				de las idols japonesas del mainstream?
 			</p>
-			<p class="mainTextoLlamativo-Esperanza">
+			<p class="mainIndex-TextoLlamativo--Esperanza">
 				¿En busca de una propuesta DIFERENTE Y NOVEDOSA, espiritual, visual y
 				musicalmente?
 			</p>
-			<p class="mainTextoLlamativo-Solucion">
+			<p class="mainIndex-TextoLlamativo--Solucion">
 				¡Has llegado al lugar indicado!
 			</p>
-			<p class="mainTextoLlamativo-DefinicionAltIdol">
+			<p class="mainIndex-TextoLlamativo--DefinicionAltIdol">
 				El movimiento <dfn id="dfnAlt">“Alt Idol”</dfn> (o
 				<dfn id="dfnAnti">“Anti Idol”</dfn>) representa una manera alternativa
 				de llevar la carrera de idol japonesa. Implica marcar un quiebre en la
@@ -87,19 +87,20 @@
 			</p>
 		</section>
 		<!-- VIDEOS -->
-		<div class="mainVideos">
-			<iframe class="mainVideos-Iframes mainVideos-BisPaprika" src="https://www.youtube-nocookie.com/embed/KzvO6v71EXk"
+		<div class="mainIndex-VideoGrid">
+			<iframe id="bis-Video"
+				src="https://www.youtube-nocookie.com/embed/KzvO6v71EXk"
 				title="Reproductor de video de YouTube, para la canción de BiS llamada 'PAPRIKA'"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
-			<iframe class="mainVideos-Iframes mainVideos-BellringShoujoHeartGigabite"
+			<iframe id="bellring-Video"
 				src="https://www.youtube-nocookie.com/embed/0774w1q6dG8"
 				title="Reproductor de video de YouTube, para la canción de BELLRING Shoujo Heart llamada 'GIGABITE'"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
-			<iframe class="mainVideos-Iframes mainVideos-BabymetalKarate"
+			<iframe id="babymetal-Video"
 				src="https://www.youtube-nocookie.com/embed/GvD3CHA48pA"
 				title="Reproductor de video de YouTube, para la canción de BABYMETAL llamada 'KARATE'"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
-			<iframe class="mainVideos-Iframes mainVideos-AtarashiiGakkoKoiGeba"
+			<iframe id="atarashii-Video"
 				src="https://www.youtube-nocookie.com/embed/ye5v9mOkDh8"
 				title="Reproductor de video de YouTube, para la canción de ATARASHII GAKKO! llamada 'KOI GEBA'"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
@@ -110,21 +111,21 @@
 		<!-- NAVZONE: igual que .headerNavbar, pero ahora con imagenes - -->
 		<nav class="footerNavzone">
 			<!-- IMAGENES con links de navegacion -->
-			<div class="footerNavzone-Boxes footerNavzone-Bis">
-				<a href="pages/bis.html" class="footerNavzone-Bis--ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-Bis--Box">
+				<a href="pages/bis.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Bis--Box---ImgLink">
 					<img src="images/bis/bisIdolIsDead-2012.png"
 						alt="BiS con vestidos de reo, fumando en el patio de la cárcel" />
 				</a>
-				<a href="pages/bis.html" class="footerNavzone-Botones footerNavzone-Bis--Boton">BiS</a>
+				<a href="pages/bis.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Bis--Box---TxtLink">BiS</a>
 			</div>
-			<div class="footerNavzone-Boxes footerNavzone-Wack">
-				<a href="pages/wack.html" class="footerNavzone-Wack--ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-Wack--Box">
+				<a href="pages/wack.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Wack--Box---ImgLink">
 					<img src="icons/wackLogo.png" alt="Logo de WACK" />
 				</a>
-				<a href="pages/wack.html" class="footerNavzone-Botones footerNavzone-Wack--Boton">WACK</a>
+				<a href="pages/wack.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Wack--Box---TxtLink">WACK</a>
 			</div>
-			<div class="footerNavzone-Boxes footerNavzone-OtrosGrupos">
-				<a href="pages/otrosGrupos.html" class="footerNavzone-OtrosGrupos--ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-OtrosGrupos--Box">
+				<a href="pages/otrosGrupos.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-OtrosGrupos--Box---ImgLink">
 					<img src="images/bis/bisFinalDance-2014_crop.png" alt="BiS en bikini, sosteniendo bates con púas"
 						id="OtrosGruposImg-bisBikini" />
 					<img src="images/bellring.png"
@@ -137,17 +138,19 @@
 						alt="ATARASHII GAKKO! en formación tipo Hombre de Vitruvio (¿?), de modo tal que todas parecen compartir la misma falda"
 						id="OtrosGruposImg-atarashiiGakkoFormacion" />
 				</a>
-				<a href="pages/otrosGrupos.html" class="footerNavzone-Botones footerNavzone-OtrosGrupos--Boton">Otros grupos
+				<a href="pages/otrosGrupos.html"
+					class="footerNavzone-Boxes--TxtLinks footerNavzone-OtrosGrupos--Box---TxtLink">Otros
+					grupos
 				</a>
 			</div>
-			<div class="footerNavzone-Boxes footerNavzone-Quiz">
-				<a href="pages/quiz.html" class="footerNavzone-Quiz--ImgLink">
+			<div class="footerNavzone-Boxes footerNavzone-Quiz--Box">
+				<a href="pages/quiz.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Quiz--Box---ImgLink">
 					<img src="icons/musica.png" alt="Dos notas musicales corcheas, unidas; versión de color negro" />
 				</a>
-				<a href="pages/quiz.html" class="footerNavzone-Botones footerNavzone-Quiz--Boton">Quiz</a>
+				<a href="pages/quiz.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Quiz--Box---TxtLink">Quiz</a>
 			</div>
 		</nav>
-		<!-- INFORMACIÓN DEL AUTOR DE ESTE BLOG, FOTO PERSONAL, Y LINKEDIN/GITHUB... (como si yo fuera tan interesante...u.u) -->
+		<!-- INFORMACIÓN DEL AUTOR DE ESTE BLOG, FOTO PERSONAL, Y GITHUB/LINKEDIN... (como si yo fuera tan interesante...u.u) -->
 		<div class="footerDatosPersonales">
 			<div class="footerDatosPersonales-Texto">
 				<p class="footerDatosPersonales-Texto--Nombre">
@@ -172,14 +175,14 @@
 			</div>
 			<img class="footerDatosPersonales-FotoPersonal" src="images/danielCuadrado.png" alt="Fotografía de mí" />
 			<div class="footerDatosPersonales-IconosSociales">
-				<a class="footerDatosPersonales-IconosSociales--Linkedin---Link"
-					href="https://www.linkedin.com/in/daniel-ignacio-v-48673557/">
-					<img class="footerDatosPersonales-IconosSociales--Linkedin---Logo" src="icons/linkedinLogo.png"
-						alt="Logo de LinkedIn" />
-				</a>
-				<a class="footerDatosPersonales-IconosSociales--Github---Link" href="https://github.com/GitThingsDan">
-					<img class="footerDatosPersonales-IconosSociales--Github---Logo" src="icons/githubLogo-White.png"
+				<a class="footerDatosPersonales-IconosSociales--Links " href="https://github.com/GitThingsDan">
+					<img class="footerDatosPersonales-IconosSociales--Links---Logos " src="icons/githubLogo-White.png"
 						alt="Logo de GitHub" />
+				</a>
+				<a class="footerDatosPersonales-IconosSociales--Links "
+					href="https://www.linkedin.com/in/daniel-ignacio-v-48673557/">
+					<img class="footerDatosPersonales-IconosSociales--Links---Logos " src="icons/linkedinLogo.png"
+						alt="Logo de LinkedIn" />
 				</a>
 			</div>
 		</div>

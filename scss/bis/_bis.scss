@@ -54,7 +54,7 @@
 }
 /* MAIN - bis.html */
 .mainBis {
-	.mainBis-Presente ul {
+	&-Presente ul {
 		list-style: square;
 	}
 }
@@ -74,7 +74,7 @@
 	}
 	/* MAIN - bis.html */
 	.mainBis {
-		.mainBis-Canciones--Videos {
+		&-Canciones--Videos {
 			height: 50vw;
 			width: 100%;
 		}
@@ -90,13 +90,13 @@
 		.carousel-item {
 			height: 50vw;
 			.carousel-caption * {
-				font-size: calc(1px + 1.9vw);
+				font-size: calc(1px + 1.8vw);
 			}
 		}
 	}
 	/* MAIN - bis.html */
 	.mainBis {
-		.mainBis-Canciones--Videos {
+		&-Canciones--Videos {
 			height: 50vw;
 			width: 100%;
 		}
@@ -112,13 +112,13 @@
 		.carousel-item {
 			height: 30vw;
 			.carousel-caption * {
-				font-size: calc(3.3px + 1vw);
+				font-size: calc(3px + 1vw);
 			}
 		}
 	}
 	/* MAIN - bis.html */
 	.mainBis {
-		.mainBis-Canciones--Videos {
+		&-Canciones--Videos {
 			// Lo siguiente sólo lo hice para practicar Sass mientras veía las pregrabadas correspondientes.
 			@include vidsizes(0 20%, $vidh: true);
 		}

@@ -1,36 +1,19 @@
 /* FOOTER */
 .footer {
-	.footerNavzone {
+	&Navzone {
 		background-color: $purple;
 		display: grid;
 		border-radius: 25px;
 		justify-items: center;
-		img {
-			height: 100%;
-			max-width: 100%;
-			border-radius: 25px;
-		}
-		// LAS 4 CAJAS
-		.footerNavzone-Boxes {
+		// LAS 4 CAJAS (cada una contiene: una imagen en un link, y un texto en un link)
+		&-Boxes {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 			padding: 3%;
-			&.footerNavzone-Bis img,
-			&.footerNavzone-Wack img {
-				box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
-				transition: box-shadow 0.25s, transform 0.25s;
-				&:hover {
-					box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
-					transform: scale(1.025, 1.025);
-				}
-				&:active {
-					transform: scale(0.975, 0.975);
-				}
-			}
-			.footerNavzone-OtrosGrupos--ImgLink,
-			.footerNavzone-Quiz--ImgLink {
+			// LOS LINKS DE IMÁGENES
+			&--ImgLinks {
 				border-radius: 25px;
 				box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
 				transition: box-shadow 0.25s, transform 0.25s;
@@ -41,63 +24,22 @@
 				&:active {
 					transform: scale(0.975, 0.975);
 				}
-			}
-			// CADA CAJA EN ESPECÍFICO
-			&.footerNavzone-Bis {
-				grid-area: bis;
-			}
-			&.footerNavzone-Wack {
-				grid-area: wack;
-				.footerNavzone-Wack--ImgLink {
-					/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height: 83.375% */
-					height: 83.375%;
+				// Las imágenes.
+				img {
+					height: 100%;
+					max-width: 100%;
+					border-radius: 25px;
 				}
 			}
-			&.footerNavzone-OtrosGrupos {
-				grid-area: otrosGrupos;
-				.footerNavzone-OtrosGrupos--ImgLink {
-					display: grid;
-					grid-template-areas:
-						"bisBikini			bellringPlaya"
-						"babymetalFuego	atarashiiGakkoFormacion";
-					background-color: rgba(0, 0, 0, 0.5);
-					#OtrosGruposImg {
-						&-bisBikini {
-							grid-area: bisBikini;
-						}
-						&-bellringPlaya {
-							grid-area: bellringPlaya;
-						}
-						&-babymetalFuego {
-							grid-area: babymetalFuego;
-						}
-						&-atarashiiGakkoFormacion {
-							grid-area: atarashiiGakkoFormacion;
-						}
-					}
-				}
-			}
-			&.footerNavzone-Quiz {
-				grid-area: quiz;
-				.footerNavzone-Quiz--ImgLink {
-					display: flex;
-					width: 100%;
-					justify-content: center;
-					img {
-						/* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone). width: 56.25% */
-						width: 56.25%;
-					}
-				}
-			}
-			// LOS BOTONES DE LAS 4 CAJAS
-			.footerNavzone-Botones {
+			// LOS LINKS DE TEXTO
+			&--TxtLinks {
 				background-color: black;
 				padding: 15px;
 				margin-top: 1.5%;
 				border-radius: 25px;
-				box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
 				transition-property: box-shadow, color, font-weight, transform;
 				transition-duration: 0.25s;
+				box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
 				&:hover {
 					box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
 					color: $purple;
@@ -109,16 +51,67 @@
 				}
 			}
 		}
+
+		// CADA CAJA EN ESPECÍFICO
+		&-Bis--Box {
+			grid-area: bis;
+		}
+		&-Wack--Box {
+			grid-area: wack;
+			/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height: 83.375% */
+			&---ImgLink {
+				height: 83.375%;
+			}
+		}
+		&-OtrosGrupos--Box {
+			grid-area: otrosGrupos;
+			// Esta es la única caja que tiene más de 1 imagen (4, para ser exactos), por lo que toca aplicarle display:grid al link que las envuelve
+			&---ImgLink {
+				display: grid;
+				grid-template-areas:
+					"bisBikini			bellringPlaya"
+					"babymetalFuego	atarashiiGakkoFormacion";
+				background-color: rgba(0, 0, 0, 0.5);
+				#OtrosGruposImg {
+					&-bisBikini {
+						grid-area: bisBikini;
+					}
+					&-bellringPlaya {
+						grid-area: bellringPlaya;
+					}
+					&-babymetalFuego {
+						grid-area: babymetalFuego;
+					}
+					&-atarashiiGakkoFormacion {
+						grid-area: atarashiiGakkoFormacion;
+					}
+				}
+			}
+		}
+		&-Quiz--Box {
+			grid-area: quiz;
+
+			&---ImgLink {
+				display: flex;
+				width: 100%;
+				justify-content: center;
+				/* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone). width: 56.25% */
+				img {
+					width: 56.25%;
+				}
+			}
+		}
 	}
-	.footerDatosPersonales {
+	&DatosPersonales {
 		display: grid;
-		.footerDatosPersonales-Texto {
+
+		&-Texto {
 			grid-area: textoDP;
-			hyphens: auto;
-			.footerDatosPersonales-Texto--Curiosidades {
+
+			&--Curiosidades {
 				list-style: disc;
 			}
-			.footerDatosPersonales-Texto--EmailYUbicacion {
+			&--EmailYUbicacion {
 				font-style: italic;
 				#emailAddress {
 					@keyframes parpadeo {
@@ -136,22 +129,22 @@
 						transition: font-size 0.5s;
 						font-size: 0px;
 					}
-					&:hover::after {
-						font-size: 1vw;
-					}
 				}
 			}
 		}
-		.footerDatosPersonales-FotoPersonal {
+		&-FotoPersonal {
 			grid-area: fotoDP;
 			border-radius: 100%;
 			max-width: 100%;
 		}
-		.footerDatosPersonales-IconosSociales {
+		// UNA CAJA QUE ENCIERRA A LOS ENLACES DE LOS LOGOS SOCIALES
+		&-IconosSociales {
 			grid-area: socialDP;
 			display: flex;
 			justify-content: space-around;
-			a {
+			// LOS 2 LOGOS
+			&--Links---Logos {
+				max-width: 100%;
 				transition: transform 0.25s;
 				&:hover {
 					transform: scale(1.1, 1.1);
@@ -159,34 +152,38 @@
 				&:active {
 					transform: scale(0.95, 0.95);
 				}
-				img {
-					max-width: 100%;
-				}
 			}
 		}
 	}
-	.footerDerechos {
+	&Derechos {
 		background-color: $purple;
 		text-align: center;
 		display: block;
 		border-radius: 25px;
 		padding: 0.5% 7.5%;
 	}
+
 	// Hack para botón "Volver al principio de la página", en la esquina inferior derecha
 	#top {
 		visibility: hidden;
 		position: absolute;
 		top: 0;
 	}
+	// SE TRATA DE UNA CAJA QUE ENCIERRA A UN ENLACE, EL CUAL A SU VEZ ENVUELVE A UNA IMAGEN EN SU INTERIOR. PARA QUE SIMULTÁNEAMENTE HAYA (1) TRANSICIÓN - al hacer :hover - DE transform:scale, Y (2) ANIMACIÓN - infinita - DE transform:rotateY  (se genera un conflicto, me imagino que porque ambos usan 'transform'), TOCA APLICAR LA TRANSICIÓN Y LA ANIMACIÓN A DISTINTOS NIVELES DEL ELEMENTO:
+	// transición transform:scale a la caja...
 	#goToTopBox {
 		position: fixed;
 		bottom: 10px;
 		right: 10px;
-		transition: transform 0.5s;
+		transition: transform 0.5s, filter 0.5s;
 		&:hover {
 			transform: scale(1.25, 1.25) translate(-10px, -10px);
+			filter: invert(1);
 		}
-		#goToTopBox-Link--Img {
+		// ...y animación transform:rotateY a la imagen
+		&-Link--Img {
+			width: 100%;
+			animation: rotacion 2.5s linear infinite alternate;
 			@keyframes rotacion {
 				from {
 					transform: rotateY(0deg);
@@ -194,12 +191,6 @@
 				to {
 					transform: rotateY(180deg);
 				}
-			}
-			animation: rotacion 2.5s linear infinite alternate;
-			width: 100%;
-			transition: filter 0.5s;
-			&:hover {
-				filter: invert(1);
 			}
 		}
 	}
@@ -211,25 +202,33 @@
 	/* Abreviación de @media only screen and (max-width: 429px) { */
 	/* FOOTER */
 	.footer {
-		.footerNavzone {
+		&Navzone {
 			grid-template-areas:
 				"bis"
 				"wack"
 				"otrosGrupos"
 				"quiz";
 		}
-		.footerDatosPersonales {
+		&DatosPersonales {
 			grid-template-areas:
 				"textoDP	textoDP"
 				"fotoDP		socialDP";
 			grid-template-columns: 3fr 1fr;
 			margin: 7.5% 0;
-			.footerDatosPersonales-FotoPersonal {
+
+			&-Texto {
+				&--EmailYUbicacion {
+					#emailAddress:hover::after {
+						font-size: 2.3vw;
+					}
+				}
+			}
+			&-FotoPersonal {
 				width: 90%;
 			}
-			.footerDatosPersonales-IconosSociales {
+			&-IconosSociales {
 				flex-direction: column;
-				a {
+				&--Links {
 					width: 90%;
 				}
 			}
@@ -246,12 +245,12 @@
 	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
 	/* FOOTER */
 	.footer {
-		.footerNavzone {
+		&Navzone {
 			grid-template-areas:
 				"bis					wack"
 				"otrosGrupos	quiz";
 		}
-		.footerDatosPersonales {
+		&DatosPersonales {
 			grid-template-areas:
 				"textoDP	fotoDP"
 				"textoDP	socialDP";
@@ -259,13 +258,19 @@
 			grid-template-rows: 2fr 1fr;
 			align-items: center;
 			margin: 2% 0 1% 0;
-			.footerDatosPersonales-Texto {
-				/* font-size: 0.5px + 2.5vw, la solución que se me ocurrió para que el texto sea medianamente responsive */
+
+			&-Texto {
+				/* font-size: calc(0.5px + 2.5vw), la solución que se me ocurrió para que el texto sea medianamente responsive */
 				font-size: calc(0.5px + 2.5vw);
+				&--EmailYUbicacion {
+					#emailAddress:hover::after {
+						font-size: 1.9vw;
+					}
+				}
 			}
-			.footerDatosPersonales-IconosSociales {
+			&-IconosSociales {
 				align-self: start;
-				a {
+				&--Links {
 					margin-top: 5%;
 					width: 35%;
 				}
@@ -283,15 +288,15 @@
 	/* Abreviación de @media only screen and (min-width:836px) { */
 	/* FOOTER */
 	.footer {
-		.footerNavzone {
+		&Navzone {
 			grid-template-areas:
 				"bis					wack"
 				"otrosGrupos	quiz";
-			.footerNavzone-Botones {
+			&-Boxes--TxtLinks {
 				font-size: calc(15px + 1vw);
 			}
 		}
-		.footerDatosPersonales {
+		&DatosPersonales {
 			grid-template-areas:
 				"textoDP	fotoDP"
 				"textoDP	socialDP";
@@ -299,11 +304,17 @@
 			grid-template-rows: 2fr 1fr;
 			align-items: center;
 			margin: 2% 0 1% 0;
-			.footerDatosPersonales-Texto {
+			
+			&-Texto {
 				/* font-size: 2vw, la solución que se me ocurrió para que el texto sea medianamente responsive */
 				font-size: 2vw;
+				&--EmailYUbicacion {
+					#emailAddress:hover::after {
+						font-size: 1.5vw;
+					}
+				}
 			}
-			.footerDatosPersonales-IconosSociales a {
+			&-IconosSociales--Links {
 				width: 37.5%;
 			}
 		}

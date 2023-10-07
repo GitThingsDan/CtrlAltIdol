@@ -7,28 +7,28 @@
 
 /* PORTADA - quiz.html */
 .portadaQuiz {
-	.portadaQuiz-Icono {
+	&-Icono {
 		filter: invert(1);
 	}
 }
 /* MAIN - quiz.html */
 .mainQuiz {
-	.mainQuiz-Form {
+	&-Form {
 		// Este formulario tiene 2 secciones (<fieldset>): "BiS" y "WACK". Cada una tiene anidado, al final, un pequeño <fieldset> con tres <input type="radio">; las clases de estos <fieldset> anidados son, respectivamente: .bisLegendaria ('De estas 3 canciones de BiS, ¿cuál es la que yo considero la más legendaria?') y .wackImpostoras ('De estos 3 grupos, 1 NO forma parte de WACK. ¿Cuál es?').
-		.bisLegendaria,
-		.wackImpostoras {
+		#bisLegendaria,
+		#wackImpostoras {
 			// Esto es para que las leyendas de estos <fieldset> en específico no se vean desproporcionalmente grande en comparación al resto del texto (principalmente las <label>), a medida que disminuye el ancho de la pantalla:
-			legend {
+			&-Legend {
 				font-size: calc(0.7rem + 1vw);
 			}
 		}
 		// Contenedor de botón de "ENVIAR"
-		.mainQuiz-Submit--Box {
+		#submitBox {
 			display: flex;
 			justify-content: center;
 			margin: 25px 0;
 			// Botón de "ENVIAR"
-			#submit {
+			&-Button {
 				padding: 5%;
 				background-color: $purple;
 				color: white;
@@ -82,7 +82,7 @@
 	/* Abreviación de @media only screen and (max-width: 429px) { */
 	/* PORTADA - quiz.html */
 	.portadaQuiz {
-		.portadaQuiz-Icono {
+		&-Icono {
 			width: 50%;
 		}
 	}
@@ -93,7 +93,7 @@
 	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
 	/* PORTADA - quiz.html */
 	.portadaQuiz {
-		.portadaQuiz-Icono {
+		&-Icono {
 			width: 25%;
 		}
 	}
@@ -104,7 +104,7 @@
 	/* Abreviación de @media only screen and (min-width:836px) { */
 	/* PORTADA - quiz.html */
 	.portadaQuiz {
-		.portadaQuiz-Icono {
+		&-Icono {
 			width: 25%;
 		}
 	}

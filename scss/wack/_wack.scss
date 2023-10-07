@@ -1,8 +1,8 @@
 /* MAIN - wack.html */
 .mainWack {
-	.mainWack-Articulo--Grupos {
+	&-Articulo--Grupos {
 		display: grid;
-		.mainWack-Articulo--Grupos---Titulo {
+		&---Titulo {
 			grid-area: titulo;
 			margin: initial;
 		}
@@ -83,14 +83,14 @@
 	/* Abreviación de @media only screen and (max-width: 429px) { */
 	/* PORTADA - wack.html */
 	.portadaWack {
-		.portadaWack-Icono {
+		&-Icono {
 			width: 100%;
 		}
 	}
 	/* MAIN - wack.html */
 	.mainWack {
-		.mainWack-Articulo--Grupos {
-			.mainWack-Articulo--Grupos---Titulo {
+		&-Articulo--Grupos {
+			&---Titulo {
 				text-align: center;
 			}
 			p {
@@ -129,13 +129,13 @@
 	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
 	/* PORTADA - wack.html */
 	.portadaWack {
-		.portadaWack-Icono {
+		&-Icono {
 			width: 75%;
 		}
 	}
 	/* MAIN - wack.html */
 	.mainWack {
-		.mainWack-Articulo--Grupos {
+		&-Articulo--Grupos {
 			p {
 				margin-top: 4%;
 			}
@@ -166,13 +166,13 @@
 	/* Abreviación de @media only screen and (min-width:836px) { */
 	/* PORTADA - wack.html */
 	.portadaWack {
-		.portadaWack-Icono {
+		&-Icono {
 			width: 50%;
 		}
 	}
 	/* MAIN - wack.html */
 	.mainWack {
-		.mainWack-Articulo--Grupos {
+		&-Articulo--Grupos {
 			p {
 				margin-top: 4%;
 			}
