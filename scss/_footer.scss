@@ -1,5 +1,9 @@
 /* FOOTER */
 .footer {
+	a {
+		color: white;
+		text-decoration: none;
+	}
 	&Index {
 		background: linear-gradient(90deg, $purple, black, $purple);
 	}
@@ -110,9 +114,9 @@
 
 		&-Texto {
 			grid-area: textoDP;
-
-			&--Curiosidades {
-				list-style: disc !important;
+			// Para no usar el delimitador '!' seguido de la palabra clave 'importante' en inglés (soy así de críptico para que esto no aparezca en el buscador de VS Code):
+			&--Curiosidades[id] {
+				list-style: disc;
 			}
 			&--EmailYUbicacion {
 				font-style: italic;

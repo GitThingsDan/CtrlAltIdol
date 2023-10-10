@@ -30,10 +30,6 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 	background: linear-gradient(90deg, $purple, black, $purple);
 	color: white;
 	font-family: "Roboto Mono", monospace;
-	a {
-		color: white;
-		text-decoration: none;
-	}
 
 	ul {
 		list-style: none;
@@ -45,6 +41,7 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 		padding: 0 5%;
 
 		&SidebarBoton {
+			margin: 2vw 0;
 			position: sticky;
 			z-index: 3;
 			background-color: $purple;
@@ -71,6 +68,8 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 		}
 
 		a {
+			color: white;
+			text-decoration: none;
 			position: relative;
 			transition-property: color, border-bottom-color, border-top-color;
 			transition-duration: 0.2s;

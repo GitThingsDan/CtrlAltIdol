@@ -18,10 +18,47 @@
 </head>
 
 <body class="body" data-bs-spy="scroll" data-bs-target="#wackIndice" tabindex="0">
-	<header class="header">
-		<!-- TÍTULO DEL SITIO -->
-		<h1 class="headerTituloPrincipal">
-			<a class="headerTituloPrincipal-Link" href="../index.html">
+	<header class="header align-items-sm-center" data-bs-theme="dark">
+		<!-- NAVBAR - Bootstrap - -->
+		<nav class="navbar navbar-expand-sm w-100 headerNavbar">
+			<div class="container-fluid">
+				<!-- LOGO SITIO WEB -->
+				<a class="navbar-brand headerTituloPrincipal headerTituloPrincipal-Titulo" href="../index.html">Ctrl Alt <span
+						class="text-decoration-line-through">Idol</span></a>
+				<!-- MENÚ 'HAMBURGUESA' -->
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- EL NAVBAR EN CUESTIÓN -->
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav headerNavbar-List mx-sm-auto">
+						<li class="nav-item mx-sm-auto headerNavbar-List--Inicio">
+							<a class="nav-link" href="../index.html">Inicio</a>
+						</li>
+						<li class="nav-item mx-sm-auto headerNavbar-List--Bis">
+							<a class="nav-link" href="bis.html">BiS</a>
+						</li>
+						<li class="nav-item mx-sm-auto headerNavbar-List--Wack">
+							<a class="nav-link active" aria-current="page" href="wack.html">WACK</a>
+						</li>
+						<li class="nav-item mx-sm-auto headerNavbar-List--OtrosGrupos">
+							<a class="nav-link" href="otrosGrupos.html">Otros grupos</a>
+						</li>
+						<li class="nav-item mx-sm-auto headerNavbar-List--Quiz">
+							<a class="nav-link" href="quiz.html">Quiz</a>
+						</li>
+					</ul>
+					<span class="navbar-text headerTituloPrincipal headerTituloPrincipal-Slogan">
+						Trayendo a las Idols de regreso al Alt
+					</span>
+				</div>
+			</div>
+		</nav>
+
+		<!-- TÍTULO DEL SITIO - propio - -->
+		<!-- <h1 class="headerTituloPrincipal">
+			<a class="headerTituloPrincipal-Link" href="../index.html">         
 				<p class="headerTituloPrincipal-Titulo mb-0">
 					Ctrl Alt
 					<span class="text-decoration-line-through">Idol</span>
@@ -30,18 +67,18 @@
 					Trayendo a las Idols de regreso al Alt
 				</p>
 			</a>
-		</h1>
-		<!-- NAVBAR -->
-		<nav class="headerNavbar">
+		</h1> -->
+		<!-- NAVBAR - propio - -->
+		<!-- <nav class="headerNavbar">
 			<ul class="headerNavbar-List">
 				<li class="headerNavbar-List--Inicio">
 					<a href="../index.html">Inicio</a>
 				</li>
 				<li class="headerNavbar-List--Bis">
-					<a href="bis.html">BiS</a>
+					<a class="currentPage" aria-current="page" href="bis.html">BiS</a>
 				</li>
 				<li class="headerNavbar-List--Wack">
-					<a class="currentPage" aria-current="page" href="wack.html">WACK</a>
+					<a href="wack.html">WACK</a>
 				</li>
 				<li class="headerNavbar-List--OtrosGrupos">
 					<a href="otrosGrupos.html">Otros grupos</a>
@@ -50,7 +87,7 @@
 					<a href="quiz.html">Quiz</a>
 				</li>
 			</ul>
-		</nav>
+		</nav> -->
 	</header>
 
 	<!-- PORTADA - wack.html -->
@@ -307,7 +344,7 @@
 				<p class="footerDatosPersonales-Texto--Nombre">
 					¡Hola! Soy Daniel y...
 				</p>
-				<ul class="footerDatosPersonales-Texto--Curiosidades">
+				<ul class="footerDatosPersonales-Texto--Curiosidades" id="ftrTrivia">
 					<li class="footerDatosPersonales-Texto--Curiosidades---Edad">
 						...tengo 26 años, y...
 					</li>

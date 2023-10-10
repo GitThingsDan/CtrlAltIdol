@@ -21,10 +21,6 @@
   color: white;
   font-family: "Roboto Mono", monospace;
 }
-.body a {
-  color: white;
-  text-decoration: none;
-}
 .body ul {
   list-style: none;
 }
@@ -34,6 +30,7 @@
   padding: 0 5%;
 }
 .body .mainSidebarBoton {
+  margin: 2vw 0;
   position: sticky;
   z-index: 3;
   background-color: rgb(62, 0, 143);
@@ -58,6 +55,8 @@
   font-size: larger;
 }
 .body .main a {
+  color: white;
+  text-decoration: none;
   position: relative;
   transition-property: color, border-bottom-color, border-top-color;
   transition-duration: 0.2s;
@@ -1275,12 +1274,11 @@
 .header {
   background-color: rgb(62, 0, 143);
   display: flex;
-  align-items: center;
   justify-content: space-between;
   position: sticky;
   top: 0px;
   z-index: 4;
-  padding: 2% 5%;
+  padding: 2%;
   border: solid black thin;
   box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
   border-radius: 0 0 25px 25px;
@@ -1292,11 +1290,16 @@
   transition: font-weight 0.75s, transform 0.15s;
   font-variant: small-caps;
 }
-.headerTituloPrincipal:hover {
+.headerTituloPrincipal-Titulo:hover {
   font-weight: 900;
 }
-.headerTituloPrincipal:active {
+.headerTituloPrincipal-Titulo:active {
   transform: scale(0.95, 0.95);
+}
+.headerTituloPrincipal-Slogan {
+  width: 35%;
+  font-size: 2vw;
+  font-style: italic;
 }
 .headerNavbar {
   display: flex;
@@ -1313,12 +1316,6 @@
 .headerNavbar-List li:hover {
   font-weight: 900;
 }
-.headerNavbar-List li:active {
-  transform: scale(0.9, 0.9);
-}
-.headerNavbar-List li .currentPage {
-  color: black;
-}
 
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
@@ -1326,11 +1323,7 @@
   /* Abreviación de @media only screen and (max-width: 429px) { */
   /* HEADER */
   .header {
-    height: 22.5vw;
     flex-direction: column;
-  }
-  .headerTituloPrincipal-Titulo {
-    font-size: smaller;
   }
   .headerTituloPrincipal-Slogan {
     font-size: 10px;
@@ -1344,41 +1337,49 @@
   }
   .headerNavbar-List li {
     /* calc(1px + 1vw) parece ser el mayor margin horizontal en que (para un ancho de dispositivo de 320px) los ítems de la lista del Navbar se ven en 1 fila/renglón */
-    margin: 0 calc(1px + 1vw);
     font-size: calc(1px + 3vw);
+  }
+  .headerNavbar-List li .nav-link {
+    padding: 0.1em 0;
+  }
+  .headerNavbar-List li:active {
+    transform: scale(0.9, 0.9) translateX(-5vw);
   }
 }
 /* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
 @media only screen and (430px <= width <= 835px) {
   /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
   /* HEADER */
-  .header {
-    height: 12vw;
-  }
   .headerTituloPrincipal {
     /* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN TABLET*/
-    width: calc(40% + 1vw);
     margin-bottom: 0;
   }
   .headerTituloPrincipal-Titulo {
     font-size: calc(0.2em + 3vw);
   }
-  .headerTituloPrincipal-Slogan {
-    font-size: calc(0.09em + 0.9vw);
-  }
-  .headerNavbar {
-    width: 55%;
-  }
   .headerNavbar-List {
-    justify-content: flex-end;
+    width: 55%;
+    justify-content: center;
     margin-bottom: 0;
   }
   .headerNavbar-List li {
-    margin: 0 15px;
-    line-height: calc(11px + 2.3vw);
+    margin: 0;
   }
   .headerNavbar-List li a {
     font-size: calc(3.2px + 2.2vw);
+  }
+  .headerNavbar-List li .nav-link {
+    padding: 0.1em 0;
+  }
+}
+@media only screen and (width <= 576px) {
+  .nav-item:active {
+    transform: scale(0.9, 0.9) translateX(-2.75vw);
+  }
+}
+@media only screen and (576px <= width) {
+  .nav-item:active {
+    transform: scale(0.9, 0.9);
   }
 }
 /* DESKTOP */
@@ -1390,29 +1391,30 @@
   }
   .headerTituloPrincipal {
     /* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN DESKTOP */
-    width: calc(35% + 1vw);
   }
   .headerTituloPrincipal-Titulo {
     font-size: calc(0.3em + 2.5vw);
   }
-  .headerTituloPrincipal-Slogan {
-    font-size: calc(0.09em + 0.9vw);
-  }
-  .headerNavbar {
-    width: 55%;
-  }
   .headerNavbar-List {
-    justify-content: flex-end;
+    width: 55%;
+    justify-content: center;
     margin-bottom: 0;
   }
-  .headerNavbar-List li {
-    margin: 0 calc(0.1px + 0.9vw);
-  }
   .headerNavbar-List li a {
-    font-size: calc(4px + 1.5vw);
+    font-size: calc(0.1px + 1.75vw);
+  }
+  .headerNavbar-List li a.nav-link[href] {
+    padding: 0;
+  }
+  .headerNavbar-List li:active {
+    transform: scale(0.9, 0.9);
   }
 }
 /* FOOTER */
+.footer a {
+  color: white;
+  text-decoration: none;
+}
 .footerIndex {
   background: linear-gradient(90deg, rgb(62, 0, 143), black, rgb(62, 0, 143));
 }
@@ -1512,8 +1514,8 @@
 .footerDatosPersonales-Texto {
   grid-area: textoDP;
 }
-.footerDatosPersonales-Texto--Curiosidades {
-  list-style: disc !important;
+.footerDatosPersonales-Texto--Curiosidades[id] {
+  list-style: disc;
 }
 .footerDatosPersonales-Texto--EmailYUbicacion {
   font-style: italic;
