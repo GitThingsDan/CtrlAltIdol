@@ -53,10 +53,8 @@
 	}
 }
 /* MAIN - bis.html */
-.mainBis {
-	&-Presente ul {
-		list-style: square;
-	}
+.mainBis-Articulo--Presente ul {
+	list-style: square;
 }
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
@@ -66,18 +64,16 @@
 	.portadaBis {
 		padding: 0;
 		.carousel-item {
-			height: 60vw;
+			height: 65vw;
 			.carousel-caption * {
 				font-size: calc(1px + 2vw);
 			}
 		}
 	}
 	/* MAIN - bis.html */
-	.mainBis {
-		&-Canciones--Videos {
-			height: 50vw;
-			width: 100%;
-		}
+	.mainBis-Articulo--Canciones---Videos {
+		height: 50vw;
+		width: 100%;
 	}
 }
 
@@ -88,18 +84,16 @@
 	.portadaBis {
 		padding: 0 10%;
 		.carousel-item {
-			height: 50vw;
+			height: 55vw;
 			.carousel-caption * {
 				font-size: calc(1px + 1.8vw);
 			}
 		}
 	}
 	/* MAIN - bis.html */
-	.mainBis {
-		&-Canciones--Videos {
-			height: 50vw;
-			width: 100%;
-		}
+	.mainBis-Articulo--Canciones---Videos {
+		height: 50vw;
+		width: 100%;
 	}
 }
 
@@ -108,7 +102,7 @@
 	/* Abreviación de @media only screen and (min-width:836px) { */
 	/* PORTADA - bis.html */
 	.portadaBis {
-		padding: 0 25%;
+		padding: 0 27.5%;
 		.carousel-item {
 			height: 30vw;
 			.carousel-caption * {
@@ -117,10 +111,9 @@
 		}
 	}
 	/* MAIN - bis.html */
-	.mainBis {
-		&-Canciones--Videos {
-			// Lo siguiente sólo lo hice para practicar Sass mientras veía las pregrabadas correspondientes.
-			@include vidsizes(0 20%, $vidh: true);
-		}
+	.mainBis-Articulo--Canciones---Videos {
+		padding: 0 20%;
+		height: 30vw;
+		width: 100%;
 	}
 }

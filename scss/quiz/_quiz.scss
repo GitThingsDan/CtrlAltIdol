@@ -32,11 +32,13 @@
 				padding: 5%;
 				background-color: $purple;
 				color: white;
-				font-family: "Courier New", Courier, monospace;
-				font-weight: bold;
-				transition: color 0.25s, transform 0.25s;
+				font-family: "Montagu Slab", serif;
+				font-variant-caps: small-caps;
+				transition-property: color, font-weight, transform;
+				transition-duration: 0.25s;
 				&:hover {
 					color: black;
+					font-weight: bold;
 					transform: scale(1.05, 1.05);
 				}
 				&:active {

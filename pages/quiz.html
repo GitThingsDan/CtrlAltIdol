@@ -47,7 +47,7 @@
 					<a href="otrosGrupos.html">Otros grupos</a>
 				</li>
 				<li class="headerNavbar-List--Quiz">
-					<a href="quiz.html">Quiz</a>
+					<a class="currentPage" aria-current="page" href="quiz.html">Quiz</a>
 				</li>
 			</ul>
 		</nav>
@@ -70,9 +70,9 @@
 		<!-- QUIZ: cuestionario -->
 		<form action=""
 			class="mainQuiz-Form needs-validation d-flex flex-column flex-md-row align-items-baseline justify-content-around w-100"
-			id="mainQuiz-Form" method="get" novalidate>
+			data-bs-theme="dark" id="mainQuiz-Form" method="get" novalidate>
 			<!-- BiS - sección -->
-			<fieldset class="mainQuiz-Form--Bis d-flex flex-column col-md-5" data-bs-theme="dark">
+			<fieldset class="mainQuiz-Form--Bis d-flex flex-column col-md-5">
 				<legend class="mainQuiz-Form--Bis---Legend fw-bold mt-2 text-center">
 					BiS
 				</legend>
@@ -141,7 +141,7 @@
 				</fieldset>
 			</fieldset>
 			<!-- WACK - sección -->
-			<fieldset class="mainQuiz-Form--Wack d-flex flex-column col-md-5" data-bs-theme="dark">
+			<fieldset class="mainQuiz-Form--Wack d-flex flex-column col-md-5">
 				<legend class="mainQuiz-Form--Wack---Legend fw-bold mt-4 text-center">
 					WACK
 				</legend>

@@ -20,16 +20,10 @@
   background: linear-gradient(90deg, rgb(62, 0, 143), black, rgb(62, 0, 143));
   color: white;
   font-family: "Roboto Mono", monospace;
-  padding: 0 5%;
 }
 .body a {
   color: white;
   text-decoration: none;
-}
-.body h2,
-.body h3,
-.body h4 {
-  margin: 2vw 0 1vw 0;
 }
 .body ul {
   list-style: none;
@@ -37,6 +31,31 @@
 .body .main {
   font-size: calc(0.7rem + 1vw);
   text-align: justify;
+  padding: 0 5%;
+}
+.body .mainSidebarBoton {
+  position: sticky;
+  z-index: 3;
+  background-color: rgb(62, 0, 143);
+  border: solid black thin;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  animation: parpadeo 2s ease-in-out infinite alternate;
+  transition: transform 0.5s;
+}
+.body .mainSidebarBoton:hover {
+  transform: scale(1.2, 1.2);
+}
+.body .main .mainIndice a {
+  font-weight: initial;
+  transition: font-weight 0.4s, font-size 0.4s;
+}
+.body .main .mainIndice a:hover {
+  font-weight: bold;
+  font-size: larger;
+}
+.body .main .mainIndice a.active {
+  font-weight: bold;
+  font-size: larger;
 }
 .body .main a {
   position: relative;
@@ -76,6 +95,67 @@
   border-bottom-color: black;
 }
 
+/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
+/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 429px) {
+  /* Abreviación de @media only screen and (max-width: 429px) { */
+  /* HTML */
+  html {
+    scroll-padding: 30vw 0 0 0;
+  }
+  html h2,
+  html h3,
+  html h4 {
+    margin: 4vw 0 2vw 0;
+  }
+  html h4 {
+    text-align: center;
+  }
+  html .mainSidebarBoton {
+    top: 24vw;
+  }
+  html .main #offcanvasRight {
+    width: 85%;
+  }
+}
+/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (430px <= width <= 835px) {
+  /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+  /* HTML */
+  html {
+    scroll-padding: 15vw 0 0 0;
+  }
+  html h2,
+  html h3,
+  html h4 {
+    margin: 2vw 0 1vw 0;
+  }
+  html .mainSidebarBoton {
+    top: 12.5vw;
+  }
+  html .main #offcanvasRight {
+    width: 50vw;
+  }
+}
+/* DESKTOP */
+@media only screen and (836px <= width) {
+  /* Abreviación de @media only screen and (min-width:836px) { */
+  /* HTML */
+  html {
+    scroll-padding: 12vw 0 0 0;
+  }
+  html h2,
+  html h3,
+  html h4 {
+    margin: 2vw 0 1vw 0;
+  }
+  html .mainSidebarBoton {
+    top: 10.5vw;
+  }
+  html .main #offcanvasRight {
+    width: 50vw;
+  }
+}
 /* FIN DEL RESETEO DE ESTILOS */
 /* FIN DEL RESETEO DE ESTILOS */
 /* FIN DEL RESETEO DE ESTILOS */
@@ -1199,11 +1279,12 @@
   justify-content: space-between;
   position: sticky;
   top: 0px;
-  z-index: 3;
+  z-index: 4;
   padding: 2% 5%;
   border: solid black thin;
   box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
-  border-radius: 25px;
+  border-radius: 0 0 25px 25px;
+  width: 100%;
 }
 .headerTituloPrincipal {
   text-align: center;
@@ -1235,6 +1316,9 @@
 .headerNavbar-List li:active {
   transform: scale(0.9, 0.9);
 }
+.headerNavbar-List li .currentPage {
+  color: black;
+}
 
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
 /* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
@@ -1242,6 +1326,7 @@
   /* Abreviación de @media only screen and (max-width: 429px) { */
   /* HEADER */
   .header {
+    height: 22.5vw;
     flex-direction: column;
   }
   .headerTituloPrincipal-Titulo {
@@ -1267,6 +1352,9 @@
 @media only screen and (430px <= width <= 835px) {
   /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
   /* HEADER */
+  .header {
+    height: 12vw;
+  }
   .headerTituloPrincipal {
     /* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN TABLET*/
     width: calc(40% + 1vw);
@@ -1297,6 +1385,9 @@
 @media only screen and (836px <= width) {
   /* Abreviación de @media only screen and (min-width:836px) { */
   /* HEADER */
+  .header {
+    height: 10vw;
+  }
   .headerTituloPrincipal {
     /* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN DESKTOP */
     width: calc(35% + 1vw);
@@ -1322,6 +1413,9 @@
   }
 }
 /* FOOTER */
+.footerIndex {
+  background: linear-gradient(90deg, rgb(62, 0, 143), black, rgb(62, 0, 143));
+}
 .footerNavzone {
   background-color: rgb(62, 0, 143);
   display: grid;
@@ -1419,7 +1513,7 @@
   grid-area: textoDP;
 }
 .footerDatosPersonales-Texto--Curiosidades {
-  list-style: disc;
+  list-style: disc !important;
 }
 .footerDatosPersonales-Texto--EmailYUbicacion {
   font-style: italic;
@@ -1485,7 +1579,7 @@
 }
 .footer #goToTopBox-Link--Img {
   width: 100%;
-  animation: rotacion 2.5s linear infinite alternate;
+  animation: rotacion 4s linear infinite alternate;
 }
 @keyframes rotacion {
   from {
@@ -1506,20 +1600,24 @@
   }
   .footerDatosPersonales {
     grid-template-areas: "textoDP	textoDP" "fotoDP		socialDP";
-    grid-template-columns: 3fr 1fr;
-    margin: 7.5% 0;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 25px;
+    margin: 7.5% 5%;
   }
   .footerDatosPersonales-Texto--EmailYUbicacion #emailAddress:hover::after {
     font-size: 2.3vw;
   }
   .footerDatosPersonales-FotoPersonal {
-    width: 90%;
+    width: 100%;
+    margin-left: 5vw;
   }
   .footerDatosPersonales-IconosSociales {
     flex-direction: column;
+    align-items: center;
+    margin-left: 5vw;
   }
   .footerDatosPersonales-IconosSociales--Links {
-    width: 90%;
+    width: 37.5%;
   }
   .footer #goToTopBox {
     width: 20vw;
@@ -1537,7 +1635,8 @@
     grid-template-columns: 3.5fr 1.5fr;
     grid-template-rows: 2fr 1fr;
     align-items: center;
-    margin: 2% 0 1% 0;
+    margin: 2% 5%;
+    column-gap: 75px;
   }
   .footerDatosPersonales-Texto {
     /* font-size: calc(0.5px + 2.5vw), la solución que se me ocurrió para que el texto sea medianamente responsive */
@@ -1547,7 +1646,7 @@
     font-size: 1.9vw;
   }
   .footerDatosPersonales-IconosSociales {
-    align-self: start;
+    align-self: flex-start;
   }
   .footerDatosPersonales-IconosSociales--Links {
     margin-top: 5%;
@@ -1571,8 +1670,9 @@
     grid-template-areas: "textoDP	fotoDP" "textoDP	socialDP";
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 2fr 1fr;
+    column-gap: 100px;
     align-items: center;
-    margin: 2% 0 1% 0;
+    margin: 2% 5%;
   }
   .footerDatosPersonales-Texto {
     /* font-size: 2vw, la solución que se me ocurrió para que el texto sea medianamente responsive */
@@ -1589,22 +1689,17 @@
   }
 }
 /* PORTADA - index.html */
-.portadaIndex {
-  position: relative;
-}
-.portadaIndex-Logo {
-  position: absolute;
-  top: 5%;
-  left: 7%;
-  width: 15%;
-  filter: invert(1);
-}
-.portadaIndex-Imagen {
+.portadaIndex-Video {
+  position: fixed;
   width: 100%;
-  border-radius: 20px;
+  z-index: -100;
 }
 
 /* MAIN - index.html */
+.mainIndex {
+  background: linear-gradient(90deg, rgb(62, 0, 143), black, rgb(62, 0, 143));
+  border-radius: 25px 25px 0 0;
+}
 .mainIndex-TextoLlamativo--Bienvenida, .mainIndex-TextoLlamativo--Solucion {
   font-family: "Montagu Slab", serif;
   font-variant: small-caps;
@@ -1613,6 +1708,7 @@
   letter-spacing: 0.15vw;
   text-align: center;
   border-radius: 25px;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
 }
 .mainIndex-TextoLlamativo--Problema, .mainIndex-TextoLlamativo--Esperanza {
   text-align: center;
@@ -1652,7 +1748,10 @@
   /* Abreviación de @media only screen and (max-width: 429px) { */
   /* PORTADA - index.html */
   .portadaIndex {
-    margin: 0.5% 0;
+    height: calc(75px + 20vw);
+  }
+  .portadaIndex-Video {
+    top: calc(1px + 17.5vw);
   }
   /* MAIN - index.html */
   .mainIndex-TextoLlamativo--Bienvenida {
@@ -1666,8 +1765,8 @@
   }
   .mainIndex-VideoGrid {
     grid-template-areas: "bis-Video" "bellring-Video" "babymetal-Video" "atarashii-Video";
-    /* Curiosamente, en mobile este Grid Container se ve parcialmente cubierto por el siguiente (.footerNavzone tapa parte del último video de .mainIndex-VideoGrid), así que la solución que se me ocurrió fue ponerle estos margins que encontré aceptables para resolver el problema de la forma más armónica posible */
-    margin: 12.5% 0 35% 0;
+    /* Curiosamente, en mobile este Grid Container se ve parcialmente cubierto por el siguiente (.footerNavzone tapa parte del último video de .mainIndex-VideoGrid), así que la solución que se me ocurrió fue ponerle estos paddings que encontré aceptables para resolver el problema de la forma más armónica posible */
+    padding: 5% 0 35% 0;
     /* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan manteniendo su PROPORCIÓN de tamaño:  */
   }
   .mainIndex-VideoGrid iframe {
@@ -1679,7 +1778,10 @@
   /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
   /* PORTADA - index.html */
   .portadaIndex {
-    margin: 1% 20%;
+    height: 40vw;
+  }
+  .portadaIndex-Video {
+    top: 7.5%;
   }
   /* MAIN - index.html */
   .mainIndex-TextoLlamativo--Bienvenida {
@@ -1694,7 +1796,7 @@
   }
   .mainIndex-VideoGrid {
     grid-template-areas: "bis-Video				bellring-Video" "babymetal-Video	atarashii-Video";
-    margin: 5% 0;
+    padding-bottom: 5vw;
     /* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan manteniendo su PROPORCIÓN de tamaño:  */
   }
   .mainIndex-VideoGrid iframe {
@@ -1706,10 +1808,13 @@
   /* Abreviación de @media only screen and (min-width:836px) { */
   /* PORTADA - index.html */
   .portadaIndex {
-    margin: 1% 25%;
+    height: 30vw;
+  }
+  .portadaIndex-Video {
+    top: 10%;
   }
   /* MAIN - index.html */
-  .mainIndex-TextoLlamativo .mTL-TxtImp, .mainIndex-TextoLlamativo .mainIndex-TextoLlamativo--Solucion, .mainIndex-TextoLlamativo--Bienvenida {
+  .mainIndex-TextoLlamativo--Bienvenida, .mainIndex-TextoLlamativo--Solucion {
     margin: 1.5% 0;
     padding: 1% 3%;
   }
@@ -1718,7 +1823,7 @@
   }
   .mainIndex-VideoGrid {
     grid-template-areas: "bis-Video				bellring-Video" "babymetal-Video	atarashii-Video";
-    margin: 5% 0;
+    padding-bottom: 5vw;
     /* Ajuste necesario para que todos los iframes de YouTube, siendo responsive, sigan manteniendo su PROPORCIÓN de tamaño:  */
   }
   .mainIndex-VideoGrid iframe {
@@ -1769,7 +1874,7 @@
 }
 
 /* MAIN - bis.html */
-.mainBis-Presente ul {
+.mainBis-Articulo--Presente ul {
   list-style: square;
 }
 
@@ -1782,13 +1887,13 @@
     padding: 0;
   }
   .portadaBis .carousel-item {
-    height: 60vw;
+    height: 65vw;
   }
   .portadaBis .carousel-item .carousel-caption * {
     font-size: calc(1px + 2vw);
   }
   /* MAIN - bis.html */
-  .mainBis-Canciones--Videos {
+  .mainBis-Articulo--Canciones---Videos {
     height: 50vw;
     width: 100%;
   }
@@ -1801,13 +1906,13 @@
     padding: 0 10%;
   }
   .portadaBis .carousel-item {
-    height: 50vw;
+    height: 55vw;
   }
   .portadaBis .carousel-item .carousel-caption * {
     font-size: calc(1px + 1.8vw);
   }
   /* MAIN - bis.html */
-  .mainBis-Canciones--Videos {
+  .mainBis-Articulo--Canciones---Videos {
     height: 50vw;
     width: 100%;
   }
@@ -1817,7 +1922,7 @@
   /* Abreviación de @media only screen and (min-width:836px) { */
   /* PORTADA - bis.html */
   .portadaBis {
-    padding: 0 25%;
+    padding: 0 27.5%;
   }
   .portadaBis .carousel-item {
     height: 30vw;
@@ -1826,76 +1931,42 @@
     font-size: calc(3px + 1vw);
   }
   /* MAIN - bis.html */
-  .mainBis-Canciones--Videos {
+  .mainBis-Articulo--Canciones---Videos {
     padding: 0 20%;
-    width: 100%;
     height: 30vw;
+    width: 100%;
   }
 }
 /* MAIN - wack.html */
 .mainWack-Articulo--Grupos {
   display: grid;
+  grid-template-areas: "titulo" "asp" "exwhyz" "gang-parade" "bis3" "bish";
 }
 .mainWack-Articulo--Grupos---Titulo {
   grid-area: titulo;
-  margin: initial;
 }
-.mainWack-Articulo--Grupos p {
-  text-align: justify;
+.mainWack-Articulo--Grupos #cinco-grupos-de-wack_asp {
+  grid-area: asp;
 }
-.mainWack-Articulo--Grupos iframe {
-  width: 100%;
+.mainWack-Articulo--Grupos #cinco-grupos-de-wack_exwhyz {
+  grid-area: exwhyz;
 }
-.mainWack-Articulo--Grupos #asp-Texto {
-  grid-area: asp-Texto;
+.mainWack-Articulo--Grupos #cinco-grupos-de-wack_gang-parade {
+  grid-area: gang-parade;
 }
-.mainWack-Articulo--Grupos #asp-ToxicInvasion {
-  grid-area: asp-ToxicInvasion;
+.mainWack-Articulo--Grupos #cinco-grupos-de-wack_bis3 {
+  grid-area: bis3;
 }
-.mainWack-Articulo--Grupos #asp-TheManCalling {
-  grid-area: asp-TheManCalling;
+.mainWack-Articulo--Grupos #cinco-grupos-de-wack_bish {
+  grid-area: bish;
 }
-.mainWack-Articulo--Grupos #exwhyz-Texto {
-  grid-area: exwhyz-Texto;
+.mainWack-Articulo--Grupos---VideoFlexBoxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-.mainWack-Articulo--Grupos #exwhyz-Iza {
-  grid-area: exwhyz-Iza;
-}
-.mainWack-Articulo--Grupos #exwhyz-FurachinaSummer {
-  grid-area: exwhyz-FurachinaSummer;
-}
-.mainWack-Articulo--Grupos #gangParade-Texto {
-  grid-area: gangParade-Texto;
-}
-.mainWack-Articulo--Grupos #gangParade-Plastic2Mercy {
-  grid-area: gangParade-Plastic2Mercy;
-}
-.mainWack-Articulo--Grupos #gangParade-PrettyPrettyGood {
-  grid-area: gangParade-PrettyPrettyGood;
-}
-.mainWack-Articulo--Grupos #gangParade-BeyondTheMountain {
-  grid-area: gangParade-BeyondTheMountain;
-}
-.mainWack-Articulo--Grupos #gangParade-LoveCommunication {
-  grid-area: gangParade-LoveCommunication;
-}
-.mainWack-Articulo--Grupos #bis3-Texto {
-  grid-area: bis3-Texto;
-}
-.mainWack-Articulo--Grupos #bis3-SmokinBilly {
-  grid-area: bis3-SmokinBilly;
-}
-.mainWack-Articulo--Grupos #bis3-Tsuyogarisan {
-  grid-area: bis3-Tsuyogarisan;
-}
-.mainWack-Articulo--Grupos #bish-Texto {
-  grid-area: bish-Texto;
-}
-.mainWack-Articulo--Grupos #bish-Otnk {
-  grid-area: bish-Otnk;
-}
-.mainWack-Articulo--Grupos #bish-Tomorrow {
-  grid-area: bish-Tomorrow;
+.mainWack-Articulo--Grupos---VideoFlexBoxes iframe {
+  margin: 0.5vw 0;
 }
 
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
@@ -1908,18 +1979,14 @@
   }
   /* MAIN - wack.html */
   .mainWack-Articulo--Grupos {
-    margin: 10vw 0;
-    grid-template-areas: "titulo" "asp-Texto" "asp-ToxicInvasion" "asp-TheManCalling" "exwhyz-Texto" "exwhyz-Iza" "exwhyz-FurachinaSummer" "gangParade-Texto" "gangParade-Plastic2Mercy" "gangParade-PrettyPrettyGood" "gangParade-BeyondTheMountain" "gangParade-LoveCommunication" "bis3-Texto" "bis3-SmokinBilly" "bis3-Tsuyogarisan" "bish-Texto" "bish-Otnk" "bish-Tomorrow";
+    margin: 9vw 0;
   }
   .mainWack-Articulo--Grupos---Titulo {
     text-align: center;
   }
-  .mainWack-Articulo--Grupos p {
-    margin-top: 12.5%;
-  }
   .mainWack-Articulo--Grupos iframe {
     height: calc(50px + 50vw);
-    margin: 1vw 0;
+    width: 100%;
   }
 }
 /* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
@@ -1931,15 +1998,11 @@
   }
   /* MAIN - wack.html */
   .mainWack-Articulo--Grupos {
-    margin: 7.5vw 0;
-    gap: 5px;
-    grid-template-areas: "titulo												titulo" "asp-Texto										asp-Texto" "asp-ToxicInvasion						asp-TheManCalling" "exwhyz-Texto									exwhyz-Texto" "exwhyz-Iza										exwhyz-FurachinaSummer" "gangParade-Texto							gangParade-Texto" "gangParade-Plastic2Mercy			gangParade-PrettyPrettyGood" "gangParade-BeyondTheMountain	gangParade-LoveCommunication" "bis3-Texto										bis3-Texto" "bis3-SmokinBilly							bis3-Tsuyogarisan" "bish-Texto										bish-Texto" "bish-Otnk										bish-Tomorrow";
-  }
-  .mainWack-Articulo--Grupos p {
-    margin-top: 4%;
+    margin: 6vw 0;
   }
   .mainWack-Articulo--Grupos iframe {
     height: 25vw;
+    width: 44vw;
   }
 }
 /* DESKTOP */
@@ -1951,15 +2014,11 @@
   }
   /* MAIN - wack.html */
   .mainWack-Articulo--Grupos {
-    margin: 5vw 0;
-    gap: 5px;
-    grid-template-areas: "titulo												titulo" "asp-Texto										asp-Texto" "asp-ToxicInvasion						asp-TheManCalling" "exwhyz-Texto									exwhyz-Texto" "exwhyz-Iza										exwhyz-FurachinaSummer" "gangParade-Texto							gangParade-Texto" "gangParade-Plastic2Mercy			gangParade-PrettyPrettyGood" "gangParade-BeyondTheMountain	gangParade-LoveCommunication" "bis3-Texto										bis3-Texto" "bis3-SmokinBilly							bis3-Tsuyogarisan" "bish-Texto										bish-Texto" "bish-Otnk										bish-Tomorrow";
-  }
-  .mainWack-Articulo--Grupos p {
-    margin-top: 4%;
+    margin: 3vw 0;
   }
   .mainWack-Articulo--Grupos iframe {
     height: 25vw;
+    width: 44vw;
   }
 }
 /* PORTADA - otrosGrupos.html */
@@ -1974,8 +2033,9 @@
 .mainOtrosGrupos-Titulo {
   text-align: center;
 }
-.mainOtrosGrupos-VideoGrid {
+.mainOtrosGrupos-VideoFlexBox {
   margin: 1vw 0;
+  flex-wrap: wrap;
 }
 
 /* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
@@ -1987,9 +2047,10 @@
     width: 100%;
   }
   /* MAIN - otrosGrupos.html */
-  .mainOtrosGrupos-VideoGrid iframe {
+  .mainOtrosGrupos-VideoFlexBox iframe {
     height: calc(50px + 50vw);
     margin: 1vw 0;
+    width: 100%;
   }
 }
 /* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
@@ -2000,9 +2061,10 @@
     width: 75%;
   }
   /* MAIN - otrosGrupos.html */
-  .mainOtrosGrupos-VideoGrid iframe {
+  .mainOtrosGrupos-VideoFlexBox iframe {
     height: 25vw;
     margin: 1vw 0;
+    width: 50%;
   }
 }
 /* DESKTOP */
@@ -2013,9 +2075,10 @@
     width: 50%;
   }
   /* MAIN - otrosGrupos.html */
-  .mainOtrosGrupos-VideoGrid iframe {
+  .mainOtrosGrupos-VideoFlexBox iframe {
     height: 25vw;
     margin: 1vw 0;
+    width: 50%;
   }
 }
 :root {
@@ -2042,12 +2105,14 @@
   padding: 5%;
   background-color: rgb(62, 0, 143);
   color: white;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
-  transition: color 0.25s, transform 0.25s;
+  font-family: "Montagu Slab", serif;
+  font-variant-caps: small-caps;
+  transition-property: color, font-weight, transform;
+  transition-duration: 0.25s;
 }
 .mainQuiz-Form #submitBox-Button:hover {
   color: black;
+  font-weight: bold;
   transform: scale(1.05, 1.05);
 }
 .mainQuiz-Form #submitBox-Button:active {

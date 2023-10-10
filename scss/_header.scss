@@ -4,13 +4,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	// Por alguna razón, queriendo configurarlo como 'fixed', el header me tapa parte de la portada, por lo que me veo en la obligación de setearlo como 'sticky', ya que no sé cómo resolver ese problema de otro modo.
 	position: sticky;
 	top: 0px;
-	z-index: 3;
+	z-index: 4;
 	padding: 2% 5%;
 	border: solid black thin;
 	box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
-	border-radius: 25px;
+	border-radius: 0 0 25px 25px;
+	width: 100%;
 
 	&TituloPrincipal {
 		text-align: center;
@@ -40,6 +42,9 @@
 				&:active {
 					transform: scale(0.9, 0.9);
 				}
+				.currentPage {
+					color: black;
+				}
 			}
 		}
 	}
@@ -51,6 +56,7 @@
 	/* Abreviación de @media only screen and (max-width: 429px) { */
 	/* HEADER */
 	.header {
+		height: 22.5vw;
 		flex-direction: column;
 
 		&TituloPrincipal {
@@ -63,7 +69,7 @@
 		}
 		&Navbar {
 			width: 100%;
-			
+
 			&-List {
 				justify-content: space-around;
 				margin-bottom: 8px;
@@ -82,6 +88,7 @@
 	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
 	/* HEADER */
 	.header {
+		height: 12vw;
 		&TituloPrincipal {
 			/* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN TABLET*/
 			width: calc(40% + 1vw);
@@ -117,6 +124,7 @@
 	/* Abreviación de @media only screen and (min-width:836px) { */
 	/* HEADER */
 	.header {
+		height: 10vw;
 		&TituloPrincipal {
 			/* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN DESKTOP */
 			width: calc(35% + 1vw);
@@ -130,7 +138,7 @@
 		}
 		&Navbar {
 			width: 55%;
-			
+
 			&-List {
 				justify-content: flex-end;
 				margin-bottom: 0;

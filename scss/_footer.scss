@@ -1,5 +1,8 @@
 /* FOOTER */
 .footer {
+	&Index {
+		background: linear-gradient(90deg, $purple, black, $purple);
+	}
 	&Navzone {
 		background-color: $purple;
 		display: grid;
@@ -109,7 +112,7 @@
 			grid-area: textoDP;
 
 			&--Curiosidades {
-				list-style: disc;
+				list-style: disc !important;
 			}
 			&--EmailYUbicacion {
 				font-style: italic;
@@ -183,7 +186,7 @@
 		// ...y animación transform:rotateY a la imagen
 		&-Link--Img {
 			width: 100%;
-			animation: rotacion 2.5s linear infinite alternate;
+			animation: rotacion 4s linear infinite alternate;
 			@keyframes rotacion {
 				from {
 					transform: rotateY(0deg);
@@ -213,8 +216,9 @@
 			grid-template-areas:
 				"textoDP	textoDP"
 				"fotoDP		socialDP";
-			grid-template-columns: 3fr 1fr;
-			margin: 7.5% 0;
+			grid-template-columns: 1fr 1fr;
+			row-gap: 25px;
+			margin: 7.5% 5%;
 
 			&-Texto {
 				&--EmailYUbicacion {
@@ -224,12 +228,15 @@
 				}
 			}
 			&-FotoPersonal {
-				width: 90%;
+				width: 100%;
+				margin-left: 5vw;
 			}
 			&-IconosSociales {
 				flex-direction: column;
+				align-items: center;
+				margin-left: 5vw;
 				&--Links {
-					width: 90%;
+					width: 37.5%;
 				}
 			}
 		}
@@ -257,7 +264,8 @@
 			grid-template-columns: 3.5fr 1.5fr;
 			grid-template-rows: 2fr 1fr;
 			align-items: center;
-			margin: 2% 0 1% 0;
+			margin: 2% 5%;
+			column-gap: 75px;
 
 			&-Texto {
 				/* font-size: calc(0.5px + 2.5vw), la solución que se me ocurrió para que el texto sea medianamente responsive */
@@ -269,7 +277,7 @@
 				}
 			}
 			&-IconosSociales {
-				align-self: start;
+				align-self: flex-start;
 				&--Links {
 					margin-top: 5%;
 					width: 35%;
@@ -302,9 +310,10 @@
 				"textoDP	socialDP";
 			grid-template-columns: 4fr 1fr;
 			grid-template-rows: 2fr 1fr;
+			column-gap: 100px;
 			align-items: center;
-			margin: 2% 0 1% 0;
-			
+			margin: 2% 5%;
+
 			&-Texto {
 				/* font-size: 2vw, la solución que se me ocurrió para que el texto sea medianamente responsive */
 				font-size: 2vw;

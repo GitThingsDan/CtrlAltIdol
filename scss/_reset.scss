@@ -8,14 +8,6 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 	padding: $pad;
 }
 
-@mixin vidsizes($pad, $wid: 100%, $vidh: false) {
-	padding: $pad;
-	width: $wid;
-	@if $vidh == true {
-		height: 30vw;
-	}
-}
-
 /* REGLAS @FONT-FACE (familias de fuentes descargadas desde Google Fonts) */
 /* "Roboto Mono" */
 @font-face {
@@ -38,17 +30,9 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 	background: linear-gradient(90deg, $purple, black, $purple);
 	color: white;
 	font-family: "Roboto Mono", monospace;
-	padding: 0 5%;
-
 	a {
 		color: white;
 		text-decoration: none;
-	}
-
-	h2,
-	h3,
-	h4 {
-		margin: 2vw 0 1vw 0;
 	}
 
 	ul {
@@ -58,6 +42,34 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 	.main {
 		font-size: calc(0.7rem + 1vw);
 		text-align: justify;
+		padding: 0 5%;
+
+		&SidebarBoton {
+			position: sticky;
+			z-index: 3;
+			background-color: $purple;
+			border: solid black thin;
+			box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+			animation: parpadeo 2s ease-in-out infinite alternate;
+			transition: transform 0.5s;
+			&:hover {
+				transform: scale(1.2, 1.2);
+			}
+		}
+		// Sidebar
+		.mainIndice a {
+			font-weight: initial;
+			transition: font-weight 0.4s, font-size 0.4s;
+			&:hover {
+				font-weight: bold;
+				font-size: larger;
+			}
+			&.active {
+				font-weight: bold;
+				font-size: larger;
+			}
+		}
+
 		a {
 			position: relative;
 			transition-property: color, border-bottom-color, border-top-color;
@@ -93,6 +105,78 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 				color: black;
 				border-top-color: black;
 				border-bottom-color: black;
+			}
+		}
+	}
+}
+
+/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
+/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 429px) {
+	/* Abreviación de @media only screen and (max-width: 429px) { */
+	/* HTML */
+	html {
+		scroll-padding: 30vw 0 0 0;
+		h2,
+		h3,
+		h4 {
+			margin: 4vw 0 2vw 0;
+		}
+		h4 {
+			text-align: center;
+		}
+		.main {
+			&SidebarBoton {
+				top: 24vw;
+			}
+			// Sidebar
+			#offcanvasRight {
+				width: 85%;
+			}
+		}
+	}
+}
+
+/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (430px <= width <= 835px) {
+	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+	/* HTML */
+	html {
+		scroll-padding: 15vw 0 0 0;
+		h2,
+		h3,
+		h4 {
+			margin: 2vw 0 1vw 0;
+		}
+		.main {
+			&SidebarBoton {
+				top: 12.5vw;
+			}
+			// Sidebar
+			#offcanvasRight {
+				width: 50vw;
+			}
+		}
+	}
+}
+/* DESKTOP */
+@media only screen and (836px <= width) {
+	/* Abreviación de @media only screen and (min-width:836px) { */
+	/* HTML */
+	html {
+		scroll-padding: 12vw 0 0 0;
+		h2,
+		h3,
+		h4 {
+			margin: 2vw 0 1vw 0;
+		}
+		.main {
+			&SidebarBoton {
+				top: 10.5vw;
+			}
+			// Sidebar
+			#offcanvasRight {
+				width: 50vw;
 			}
 		}
 	}

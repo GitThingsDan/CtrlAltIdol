@@ -1,22 +1,14 @@
 /* PORTADA - index.html */
-.portadaIndex {
-	position: relative;
-
-	&-Logo {
-		position: absolute;
-		top: 5%;
-		left: 7%;
-		width: 15%;
-		filter: invert(1);
-	}
-	&-Imagen {
-		width: 100%;
-		border-radius: 20px;
-	}
+.portadaIndex-Video {
+	position: fixed;
+	width: 100%;
+	z-index: -100;
 }
 
 /* MAIN - index.html */
 .mainIndex {
+	background: linear-gradient(90deg, $purple, black, $purple);
+	border-radius: 25px 25px 0 0;
 	&-TextoLlamativo {
 		// Bienvenida y Exclamación resolutiva (con background-color y small-caps)
 		&--Bienvenida,
@@ -28,6 +20,7 @@
 			letter-spacing: 0.15vw;
 			text-align: center;
 			border-radius: 25px;
+			box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
 		}
 		// Preguntas (sin background-color)
 		&--Problema,
@@ -76,12 +69,14 @@
 	/* Abreviación de @media only screen and (max-width: 429px) { */
 	/* PORTADA - index.html */
 	.portadaIndex {
-		margin: 0.5% 0;
+		height: calc(75px + 20vw);
+		&-Video {
+			top: calc(1px + 17.5vw);
+		}
 	}
 	/* MAIN - index.html */
 	.mainIndex {
 		&-TextoLlamativo {
-			
 			&--Bienvenida {
 				font-size: calc(0.9em + 1vw);
 				margin: 4% 0;
@@ -99,8 +94,8 @@
 				"bellring-Video"
 				"babymetal-Video"
 				"atarashii-Video";
-			/* Curiosamente, en mobile este Grid Container se ve parcialmente cubierto por el siguiente (.footerNavzone tapa parte del último video de .mainIndex-VideoGrid), así que la solución que se me ocurrió fue ponerle estos margins que encontré aceptables para resolver el problema de la forma más armónica posible */
-			margin: 12.5% 0 35% 0;
+			/* Curiosamente, en mobile este Grid Container se ve parcialmente cubierto por el siguiente (.footerNavzone tapa parte del último video de .mainIndex-VideoGrid), así que la solución que se me ocurrió fue ponerle estos paddings que encontré aceptables para resolver el problema de la forma más armónica posible */
+			padding: 5% 0 35% 0;
 			/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan manteniendo su PROPORCIÓN de tamaño:  */
 			iframe {
 				height: calc(50px + 50vw);
@@ -114,7 +109,10 @@
 	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
 	/* PORTADA - index.html */
 	.portadaIndex {
-		margin: 1% 20%;
+		height: 40vw;
+		&-Video {
+			top: 7.5%;
+		}
 	}
 	/* MAIN - index.html */
 	.mainIndex {
@@ -136,7 +134,7 @@
 			grid-template-areas:
 				"bis-Video				bellring-Video"
 				"babymetal-Video	atarashii-Video";
-			margin: 5% 0;
+			padding-bottom: 5vw;
 			/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan manteniendo su PROPORCIÓN de tamaño:  */
 			iframe {
 				height: 25vw;
@@ -150,18 +148,19 @@
 	/* Abreviación de @media only screen and (min-width:836px) { */
 	/* PORTADA - index.html */
 	.portadaIndex {
-		margin: 1% 25%;
+		height: 30vw;
+		&-Video {
+			top: 10%;
+		}
 	}
 	/* MAIN - index.html */
 	.mainIndex {
 		&-TextoLlamativo {
-			// Las @reglas de .mainIndex-TextoLlamativo no tienen ninguna razón para existir; sólo están aquí porque las creé para practicar las características de Sass, mientras veía las clases pregrabadas.
-			.mTL-TxtImp,
-			&--Bienvenida {
+			&--Bienvenida,
+			&--Solucion {
 				@include boxmodel(1.5% 0, 1% 3%);
 			}
 			&--Solucion {
-				@extend .mTL-TxtImp;
 				font-size: calc(1rem + 0.5vw);
 			}
 		}
@@ -170,7 +169,7 @@
 			grid-template-areas:
 				"bis-Video				bellring-Video"
 				"babymetal-Video	atarashii-Video";
-			margin: 5% 0;
+			padding-bottom: 5vw;
 			/* Ajuste necesario para que todos los iframes de YouTube, siendo responsive, sigan manteniendo su PROPORCIÓN de tamaño:  */
 			iframe {
 				height: 25vw;

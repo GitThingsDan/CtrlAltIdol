@@ -17,9 +17,9 @@
 	<title>BiS - Ctrl Alt Idol</title>
 </head>
 
-<body class="body">
+<body class="body" data-bs-spy="scroll" data-bs-target="#bisIndice" tabindex="0">
 	<header class="header">
-		<!-- TÍTULO DEL SITIO -->
+		<!-- TÍTULO DEL SITIO - propio - -->
 		<h1 class="headerTituloPrincipal">
 			<a class="headerTituloPrincipal-Link" href="../index.html">
 				<p class="headerTituloPrincipal-Titulo mb-0">
@@ -31,14 +31,14 @@
 				</p>
 			</a>
 		</h1>
-		<!-- NAVBAR -->
+		<!-- NAVBAR - propio - -->
 		<nav class="headerNavbar">
 			<ul class="headerNavbar-List">
 				<li class="headerNavbar-List--Inicio">
 					<a href="../index.html">Inicio</a>
 				</li>
 				<li class="headerNavbar-List--Bis">
-					<a href="bis.html">BiS</a>
+					<a class="currentPage" aria-current="page" href="bis.html">BiS</a>
 				</li>
 				<li class="headerNavbar-List--Wack">
 					<a href="wack.html">WACK</a>
@@ -51,6 +51,39 @@
 				</li>
 			</ul>
 		</nav>
+
+		<!-- NAVBAR - Bootstrap - -->
+		<!-- <nav class="headerNavbar navbar navbar-expand-sm">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="../index.html">Ctrl Alt <span class="text-decoration-line-through">Idol</span></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav headerNavbar-List">
+						<li class="nav-item headerNavbar-List--Inicio">
+							<a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+						</li>
+						<li class="nav-item headerNavbar-List--Bis">
+							<a class="nav-link" href="bis.html">BiS</a>
+						</li>
+						<li class="nav-item headerNavbar-List--Wack">
+							<a class="nav-link" href="wack.html">WACK</a>
+						</li>
+						<li class="nav-item headerNavbar-List--OtrosGrupos">
+							<a class="nav-link" href="otrosGrupos.html">Otros grupos</a>
+						</li>
+						<li class="nav-item headerNavbar-List--Quiz">
+							<a class="nav-link" href="quiz.html">Quiz</a>
+						</li>
+					</ul>
+					<span class="navbar-text">
+						Trayendo a las Idols de regreso al Alt
+					</span>
+				</div>
+			</div>
+		</nav> -->
 	</header>
 
 	<!-- 	PORTADA - bis.html -->
@@ -101,7 +134,7 @@
 						<h5>IDOL is DEAD (2012)</h5>
 						<p>
 							Foto promocional para el sencillo (y segundo álbum) "IDOL is
-							DEAD" (...¡y portada de este sitio web!)
+							DEAD"
 						</p>
 					</div>
 				</div>
@@ -216,11 +249,42 @@
 	</div>
 
 	<main class="main mainBis">
+		<!-- SIDEBAR (barra lateral), A MODO DE 'ÍNDICE' DE CONTENIDO -->
+		<!-- Botón para desplegar barra lateral -->
+		<button aria-controls="offcanvasRight" class="mainSidebarBoton btn btn-primary" data-bs-target="#offcanvasRight"
+			data-bs-toggle="offcanvas" type="button">Índice</button>
+		<!-- La barra lateral en cuestión -->
+		<div aria-labelledby="offcanvasRightLabel" class="mainBis-Sidebar offcanvas offcanvas-end text-start"
+			data-bs-scroll="true" data-bs-theme="dark" id="offcanvasRight" tabindex="-1">
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="offcanvasRightLabel">Índice</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<nav id="bisIndice" class="mainIndice h-100 flex-column align-items-stretch pe-4 border-end">
+					<nav class="nav nav-pills flex-column">
+						<a class="nav-link" href="#que-es-bis">¿Qué es BiS?</a>
+						<a class="nav-link" href="#canciones-esenciales">Canciones esenciales</a>
+						<nav class="nav nav-pills flex-column">
+							<a class="nav-link ms-3 my-1" href="#canciones-esenciales_my-ixxx">My Ixxx</a>
+							<a class="nav-link ms-3 my-1" href="#canciones-esenciales_primal">primal.</a>
+							<a class="nav-link ms-3 my-1" href="#canciones-esenciales_idol">IDOL</a>
+							<a class="nav-link ms-3 my-1" href="#canciones-esenciales_die">DiE</a>
+							<a class="nav-link ms-3 my-1" href="#canciones-esenciales_stupig">STUPiG</a>
+							<a class="nav-link ms-3 my-1" href="#canciones-esenciales_final-dance">FiNAL DANCE</a>
+						</nav>
+						<a class="nav-link" href="#que-fue-de-bis">¿Qué fue de BiS?</a>
+						<a class="nav-link" href="#curiosidades">Curiosidades</a>
+					</nav>
+				</nav>
+			</div>
+		</div>
+
 		<!-- Artículo principal -->
 		<article class="mainBis-Articulo">
 			<!-- INTRODUCCIÓN: síntesis introductoria del tema, a modo de resumen -->
-			<section class="mainBis-Articulo--Intro">
-				<h3 class="mainBis-Articulo--Intro---Titulo">¿Qué es BiS?</h3>
+			<section class="mainBis-Articulo--Intro" id="que-es-bis">
+				<h3 class="mainBis-Articulo--Intro---Titulo ">¿Qué es BiS?</h3>
 				<p>
 					<strong>BiS</strong>
 					<em>(Brand-new Idol Society, 新生アイドル研究会)</em> es un grupo de
@@ -240,46 +304,54 @@
 				</p>
 			</section>
 			<!-- CANCIONES: algunos videos insertados de YouTube, correspondientes a canciones representativas del grupo original -->
-			<section class="mainBis-Canciones">
-				<h3 class="mainBis-Canciones--Titulo">Canciones esenciales:</h3>
-				<div class="mainBis-Canciones--MyIxxx">
+			<section class="mainBis-Articulo--Canciones" id="canciones-esenciales">
+				<h3 class="mainBis-Articulo--Canciones---Titulo ">Canciones esenciales:</h3>
+				<section class="mainBis-Articulo--Canciones---MyIxxx" id="canciones-esenciales_my-ixxx">
+					<h4>
+						<a href="https://www.youtube.com/watch?v=wSI-IJls5Vg">My Ixxx (2011):</a>
+					</h4>
+					<p>
+						Su videoclip rompió todos los
+						esquemas establecidos: idols
+						corriendo "desnudas" (no realmente) en el bosque de Aokigahara
+						hicieron que el video quedara con restricción de contenido en
+						YouTube.
+					</p>
 					<!-- <iframe width="560" height="315"
 						src="https://www.youtube-nocookie.com/embed/wSI-IJls5Vg?si=deSydyG0036hkabo"
 						title="Reproductor de video de YouTube, para la canción de BiS llamada 'My Ixxx'" 
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
 						></iframe> -->
 					<!-- Originalmente iba a insertar el previo iframe de YouTube (al igual que con los otros videos; es para evitar problemas de derechos de autor), pero como tiene restricción de contenido, me arriesgué y puse el video de forma local -->
-					<video class="mainBis-Canciones--Videos" src="../videos/My Ixxx  ⧸ BiS 新生アイドル研究会 [wSI-IJls5Vg].mp4"
+					<video class="mainBis-Articulo--Canciones---Videos" src="../videos/bisMyIxxx.mp4"
 						title="Reproductor de video de YouTube, para la canción de BiS llamada 'My Ixxx'" controls></video>
+				</section>
+				<section class="mainBis-Articulo--Canciones---Primal" id="canciones-esenciales_primal">
+					<h4>
+						<a href="https://www.youtube.com/watch?v=sKnFnhoXiCU">primal. (2011):</a>
+					</h4>
 					<p>
-						<a href="https://www.youtube.com/watch?v=wSI-IJls5Vg">My Ixxx (2011)</a>, cuyo videoclip rompió todos los
-						esquemas establecidos: idols
-						corriendo "desnudas" (no realmente) en el bosque de Aokigahara
-						hicieron que el video quedara con restricción de contenido en
-						YouTube.
-					</p>
-				</div>
-				<div class="mainBis-Canciones--Primal">
-					<iframe class="mainBis-Canciones--Videos"
-						src="https://www.youtube-nocookie.com/embed/sKnFnhoXiCU?si=PPompLyze3dPv8Ce"
-						title="Reproductor de video de YouTube, para la canción de BiS llamada 'primal.'"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
-					<p>
-						<a href="https://www.youtube.com/watch?v=sKnFnhoXiCU">primal. (2011)</a>, la cual considero la canción más
+						Considero a esta la canción más
 						legendaria del grupo, y que
 						(para bien o para mal) simboliza el sonido que eventualmente
 						usaría WACK para muchos temas de sus futuros grupos.
 					</p>
-				</div>
-				<div class="mainBis-Canciones--Idol">
-					<iframe class="mainBis-Canciones--Videos"
-						src="https://www.youtube-nocookie.com/embed/QJh5xAI_6Ig?si=pNl6ch007j24CZ8H"
-						title="Reproductor de video de YouTube, para la canción de BiS llamada 'IDOL'"
+					<iframe class="mainBis-Articulo--Canciones---Videos"
+						src="https://www.youtube-nocookie.com/embed/sKnFnhoXiCU?si=PPompLyze3dPv8Ce"
+						title="Reproductor de video de YouTube, para la canción de BiS llamada 'primal.'"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
+				</section>
+				<section class="mainBis-Articulo--Canciones---Idol" id="canciones-esenciales_idol">
+					<h4>
+						<a href="https://www.youtube.com/watch?v=QJh5xAI_6Ig">IDOL (2012):</a>
+					</h4>
 					<p>
-						<a href="https://www.youtube.com/watch?v=QJh5xAI_6Ig">IDOL (2012)</a>
-						significó el fin de su carrera indie, antes de formar parte del
-						sello discográfico Avex. Sin embargo, en su primera "despedida"
+						Este tema representa el fin de su carrera indie, antes de formar parte del
+						sello discográfico Avex (disquera que alberga a artistas legendarios como
+						<a href="https://www.youtube.com/watch?v=mu2KgmvJCw8">Amuro Namie</a>
+						y
+						<a href="https://www.youtube.com/watch?v=VFSeESRAPKU">Hamasaki Ayumi</a>). Sin embargo, en su primera
+						"despedida"
 						realmente tiraron la casa por la ventana, particularmente en el
 						video, transgresivo y provocador, pero también en el sonido,
 						pesado y muy rockero, en el tiempo en que el "kawaii metal" (del
@@ -288,26 +360,31 @@
 						pasaría a ser uno de sus máximos representantes a nivel mundial)
 						todavía estaba en pañales.
 					</p>
-				</div>
-				<div class="mainBis-Canciones--Die">
-					<iframe class="mainBis-Canciones--Videos"
-						src="https://www.youtube-nocookie.com/embed/P91AD3y6GyM?si=EKkaiQ-yXfIkRXCy"
-						title="Reproductor de video de YouTube, para la canción de BiS llamada 'DiE'"
+					<iframe class="mainBis-Articulo--Canciones---Videos"
+						src="https://www.youtube-nocookie.com/embed/QJh5xAI_6Ig?si=pNl6ch007j24CZ8H"
+						title="Reproductor de video de YouTube, para la canción de BiS llamada 'IDOL'"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
+				</section>
+				<section class="mainBis-Articulo--Canciones---Die" id="canciones-esenciales_die">
+					<h4>
+						<a href="https://www.youtube.com/watch?v=P91AD3y6GyM">DiE (2013):</a>
+					</h4>
 					<p>
-						<a href="https://www.youtube.com/watch?v=P91AD3y6GyM">DiE (2013)</a>
-						fue el sencillo en el que debutaron 3 miembros que eventualmente
+						Este fue el sencillo en el que debutaron 3 miembros que eventualmente
 						alcanzaron también el nivel de "icónicas" en el grupo: First
 						Summer Uika, Tentenko y Kamiya Saki.
 					</p>
-				</div>
-				<div class="mainBis-Canciones--Stupig">
-					<iframe class="mainBis-Canciones--Videos"
-						src="https://www.youtube-nocookie.com/embed/gRaMsDyW-XQ?si=pNUVrmCu5DY2ReZr"
-						title="Reproductor de video de YouTube, para la canción de BiS llamada 'STUPiG'"
+					<iframe class="mainBis-Articulo--Canciones---Videos"
+						src="https://www.youtube-nocookie.com/embed/P91AD3y6GyM?si=EKkaiQ-yXfIkRXCy"
+						title="Reproductor de video de YouTube, para la canción de BiS llamada 'DiE'"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
+				</section>
+				<section class="mainBis-Articulo--Canciones---Stupig" id="canciones-esenciales_stupig">
+					<h4>
+						<a href="https://www.youtube.com/watch?v=gRaMsDyW-XQ">STUPiG (2014):</a>
+					</h4>
 					<p>
-						<a href="https://www.youtube.com/watch?v=gRaMsDyW-XQ">STUPiG (2014)</a>, tema que rescata muchos elementos
+						Un trabajo que rescata muchos elementos
 						del género musical europeo
 						conocido como
 						<a href="https://www.youtube.com/watch?v=plAr3adKbyc">"digital hardcore"</a>. Sonoramente abrasivo y
@@ -315,23 +392,30 @@
 						eventualmente contrastados con el coro, muy "idolesco" y de sonido
 						bastante "pop".
 					</p>
-				</div>
-				<div class="mainBis-Canciones--FinalDance">
-					<iframe class="mainBis-Canciones--Videos"
-						src="https://www.youtube-nocookie.com/embed/Hc8vjprOWLs?si=Wevw81Uy8HKF5bv3"
-						title="Reproductor de video de YouTube, para la canción de BiS llamada 'FiNAL DANCE'"
+					<iframe class="mainBis-Articulo--Canciones---Videos"
+						src="https://www.youtube-nocookie.com/embed/gRaMsDyW-XQ?si=pNUVrmCu5DY2ReZr"
+						title="Reproductor de video de YouTube, para la canción de BiS llamada 'STUPiG'"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
+				</section>
+				<section class="mainBis-Articulo--Canciones---FinalDance" id="canciones-esenciales_final-dance">
+					<h4>
+						<a href="https://www.youtube.com/watch?v=Hc8vjprOWLs">FiNAL DANCE (2014):</a>
+					</h4>
 					<p>
-						<a href="https://www.youtube.com/watch?v=Hc8vjprOWLs">FiNAL DANCE (2014)</a>, la que representa, como su
+						Representa, como su
 						título sugiere, su última canción.
 						Fue el último sencillo de la 1° generación, por lo que sirve de
 						despedida a BiS antes de su separación en julio de 2014.
 					</p>
-				</div>
+					<iframe class="mainBis-Articulo--Canciones---Videos"
+						src="https://www.youtube-nocookie.com/embed/Hc8vjprOWLs?si=Wevw81Uy8HKF5bv3"
+						title="Reproductor de video de YouTube, para la canción de BiS llamada 'FiNAL DANCE'"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"></iframe>
+				</section>
 			</section>
-			<!-- ¿QUÉ FUE DE ELLAS?: dónde y en qué están el día de hoy -->
-			<aside class="mainBis-Presente">
-				<h3>¿Qué fue de ellas?</h3>
+			<!-- ¿QUÉ FUE DE BIS?: dónde y en qué están el día de hoy -->
+			<aside class="mainBis-Articulo--Presente " id="que-fue-de-bis">
+				<h3>¿Qué fue de BiS?</h3>
 				<ul>
 					<li>
 						Pour Lui forma parte en
@@ -364,7 +448,7 @@
 				</ul>
 			</aside>
 			<!-- CURIOSIDADES -->
-			<aside class="mainBis-Trivia">
+			<aside class="mainBis-Articulo--Trivia " id="curiosidades">
 				<h3>Curiosidades</h3>
 				<!-- Películas de BiS -->
 				<p>
@@ -433,7 +517,8 @@
 						alt="ATARASHII GAKKO! en formación tipo Hombre de Vitruvio (¿?), de modo tal que todas parecen compartir la misma falda"
 						id="OtrosGruposImg-atarashiiGakkoFormacion" />
 				</a>
-				<a href="otrosGrupos.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-OtrosGrupos--Box---TxtLink">Otros grupos
+				<a href="otrosGrupos.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-OtrosGrupos--Box---TxtLink">Otros
+					grupos
 				</a>
 			</div>
 			<div class="footerNavzone-Boxes footerNavzone-Quiz--Box">
@@ -492,7 +577,6 @@
 			</a>
 		</div>
 	</footer>
-
 
 	<!-- Script - Bootstrap -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

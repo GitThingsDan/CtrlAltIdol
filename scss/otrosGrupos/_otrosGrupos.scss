@@ -11,8 +11,9 @@
 	&-Titulo {
 		text-align: center;
 	}
-	&-VideoGrid {
+	&-VideoFlexBox {
 		margin: 1vw 0;
+		flex-wrap: wrap;
 	}
 }
 
@@ -26,9 +27,10 @@
 	}
 	/* MAIN - otrosGrupos.html */
 	.mainOtrosGrupos {
-		&-VideoGrid iframe {
+		&-VideoFlexBox iframe {
 			height: calc(50px + 50vw);
 			margin: 1vw 0;
+			width: 100%;
 		}
 	}
 }
@@ -42,9 +44,10 @@
 	}
 	/* MAIN - otrosGrupos.html */
 	.mainOtrosGrupos {
-		&-VideoGrid iframe {
+		&-VideoFlexBox iframe {
 			height: 25vw;
 			margin: 1vw 0;
+			width: 50%;
 		}
 	}
 }
@@ -58,15 +61,10 @@
 	}
 	/* MAIN - otrosGrupos.html */
 	.mainOtrosGrupos {
-		&-VideoGrid iframe {
+		&-VideoFlexBox iframe {
 			height: 25vw;
-			// Lo siguiente fue solamente para practicar Sass mientras veía las clases pregrabadas. El código original es 'margin: 1vw 0;'.
-			$tuberculo: patata;
-			@if $tuberculo == patata {
-				margin: 1vw 0;
-			} @else if $tuberculo == papa {
-				margin: 10vw 0;
-			}
+			margin: 1vw 0;
+			width: 50%;
 		}
 	}
 }
