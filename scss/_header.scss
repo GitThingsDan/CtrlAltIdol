@@ -2,14 +2,18 @@
 .header {
 	background-color: $purple;
 	display: flex;
-	// align-items: center;
 	justify-content: space-between;
 	// Por alguna razón, queriendo configurarlo como 'fixed', el header me tapa parte de la portada, por lo que me veo en la obligación de setearlo como 'sticky', ya que no sé cómo resolver ese problema de otro modo.
-	position: sticky;
+	&:not(.headerIndex) {
+		position: sticky;
+	}
+	// Sin embargo, dado que al desplegar el menú hamburguesa en Mobile se mostraba un espacio en blanco bajo el video hero, decidí aplicar position:fixed sólo para el header de Index, y así solucionar esta situación de una forma medianamente armónica con el resto de los estilos de index.html.
+	&.headerIndex {
+		position: fixed;
+	}
 	top: 0px;
-	z-index: 4;
-	// padding: 2% 5%;
-	padding: 2%;
+	z-index: 10;
+	padding: 1.5%;
 	border: solid black thin;
 	box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
 	border-radius: 0 0 25px 25px;
@@ -18,19 +22,18 @@
 	&TituloPrincipal {
 		text-align: center;
 		font-family: "Montagu Slab", serif;
-		transition: font-weight 0.75s, transform 0.15s;
+		transition: transform 0.15s;
 		font-variant: small-caps;
 		&-Titulo {
+			font-weight: bolder;
 			&:hover {
-				font-weight: 900;
+				transform: scale(1.025, 1.025);
 			}
 			&:active {
-				transform: scale(0.95, 0.95);
+				transform: scale(0.975, 0.975);
 			}
 		}
 		&-Slogan {
-			width: 35%;
-			font-size: 2vw;
 			font-style: italic;
 		}
 	}
@@ -42,145 +45,114 @@
 			display: flex;
 			flex-wrap: wrap;
 			padding-left: 0;
-			li {
-				transition: font-weight 0.75s, transform 0.25s;
+			.nav-item {
+				transition: font-weight 0.75s, transform 0.25s, font-size 0.25s;
 				&:hover {
 					font-weight: 900;
 				}
-			}
-		}
-	}
-}
-
-/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
-/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
-@media only screen and (width <= 429px) {
-	/* Abreviación de @media only screen and (max-width: 429px) { */
-	/* HEADER */
-	.header {
-		// height: 22.5vw;
-		flex-direction: column;
-
-		&TituloPrincipal {
-			// &-Titulo {
-			// 	font-size: smaller;
-			// }
-			&-Slogan {
-				font-size: 10px;
-			}
-		}
-		&Navbar {
-			width: 100%;
-
-			&-List {
-				justify-content: space-around;
-				margin-bottom: 8px;
-				li {
-					/* calc(1px + 1vw) parece ser el mayor margin horizontal en que (para un ancho de dispositivo de 320px) los ítems de la lista del Navbar se ven en 1 fila/renglón */
-					// margin: 0 calc(1px + 1vw);
-					font-size: calc(1px + 3vw);
-					.nav-link {
-						padding: 0.1em 0;
-					}
-					&:active {
-						transform: scale(0.9, 0.9) translateX(-5vw);
-					}
+				.nav-link.active {
+					font-weight: bold;
 				}
 			}
 		}
 	}
 }
 
-/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
-@media only screen and (430px <= width <= 835px) {
-	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+/* REGLAS @MEDIA */
+/* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 575.98px) {
+	/* Abreviación de @media only screen and (max-width: 575.98px) { */
 	/* HEADER */
 	.header {
-		// height: 12vw;
+		flex-direction: column;
+		@include paddingY(2vw);
 		&TituloPrincipal {
-			/* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN TABLET*/
-			// width: calc(40% + 1vw);
+			&-Titulo {
+				font-size: 7.5vw;
+			}
+			&-Slogan {
+				font-size: 4vw;
+			}
+		}
+
+		&Navbar-List {
+			width: 100%;
+			justify-content: space-around;
+			margin-bottom: 8px;
+			.nav-item {
+				font-size: 5.5vw;
+				&:not(:last-child) {
+					border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+				}
+				&:hover {
+					font-size: 6vw;
+				}
+				&:active {
+					font-size: 5vw;
+				}
+			}
+		}
+	}
+}
+
+/* TABLET - upper breakpoint: 834.98px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (575.98px <= width <= 834.98px) {
+	/* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
+	/* HEADER */
+	.header {
+		&TituloPrincipal {
 			margin-bottom: 0;
 
 			&-Titulo {
-				font-size: calc(0.2em + 3vw);
+				font-size: 4vw;
 			}
-			// &-Slogan {
-			// 	font-size: calc(0.09em + 0.9vw);
-			// }
+			&-Slogan {
+				font-size: 2vw;
+				width: 35%;
+			}
 		}
-		&Navbar {
-			&-List {
-				width: 55%;
-				// justify-content: flex-end;
-				justify-content: center;
-				margin-bottom: 0;
-				li {
-					// margin: 0 15px;
-					// margin: 0 7.5px;
-					margin: 0;
-					// line-height: calc(11px + 2.3vw);
-					a {
-						font-size: calc(3.2px + 2.2vw);
-					}
-					.nav-link {
-						padding: 0.1em 0;
-					}
+		&Navbar-List {
+			width: 50%;
+			justify-content: center;
+			margin-bottom: 0;
+			.nav-item {
+				margin: 0;
+				font-size: 2.5vw;
+				&:active {
+					transform: scale(0.9, 0.9);
+				}
+				.nav-link {
+					@include paddingY(0);
 				}
 			}
 		}
-	}
-}
-
-// Los 2 @media siguientes son sólo para arreglar la situación de que (justo en el breakpoint 'sm' de Bootstrap) el efecto de .nav-item:active de reducir su escalado extrañamente también lo movía a la derecha (por tanto, lo compensé con un translateX negativo)  De veras quiero reescribir esto de una forma 'sassy'...
-@media only screen and (width <= 576px) {
-	.nav-item:active {
-		transform: scale(0.9, 0.9) translateX(-2.75vw);
-	}
-}
-@media only screen and (576px <= width) {
-	.nav-item:active {
-		transform: scale(0.9, 0.9);
 	}
 }
 
 /* DESKTOP */
-@media only screen and (836px <= width) {
-	/* Abreviación de @media only screen and (min-width:836px) { */
+@media only screen and (834.98px <= width) {
+	/* Abreviación de @media only screen and (min-width: 834.98px) { */
 	/* HEADER */
 	.header {
 		height: 10vw;
 		&TituloPrincipal {
-			/* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN DESKTOP */
-			// width: calc(35% + 1vw);
-
 			&-Titulo {
-				font-size: calc(0.3em + 2.5vw);
+				font-size: 3.5vw;
 			}
-			// &-Slogan {
-			// 	font-size: calc(0.09em + 0.9vw);
-			// }
+			&-Slogan {
+				font-size: 2vw;
+				width: 35%;
+			}
 		}
-		&Navbar {
-			&-List {
-				// width: calc(10px + 45vw);
-				width: 55%;
-				// justify-content: flex-end;
-				justify-content: center;
-				margin-bottom: 0;
-				li {
-					// margin: 0 calc(0.1px + 0.9vw);
-					// margin: 0 calc(0.01px + 1.15vw);
-					a {
-						font-size: calc(0.1px + 1.75vw);
-						// Para no usar el delimitador '!' seguido de la palabra clave 'importante' en inglés (soy así de críptico para que esto no aparezca en el buscador de VS Code):
-						&.nav-link[href] {
-							padding: 0;
-						}
-					}
-					&:active {
-						transform: scale(0.9, 0.9);
-					}
+
+		&Navbar-List {
+			width: 60%;
+			justify-content: center;
+			margin-bottom: 0;
+			.nav-item {
+				font-size: 1.7vw;
+				&:active {
+					transform: scale(0.9, 0.9);
 				}
 			}
 		}

@@ -56,10 +56,10 @@
 .mainBis-Articulo--Presente ul {
 	list-style: square;
 }
-/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
-/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
-@media only screen and (width <= 429px) {
-	/* Abreviación de @media only screen and (max-width: 429px) { */
+/* REGLAS @MEDIA */
+/* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 575.98px) {
+	/* Abreviación de @media only screen and (max-width: 575.98px) { */
 	/* PORTADA - bis.html */
 	.portadaBis {
 		padding: 0;
@@ -77,9 +77,9 @@
 	}
 }
 
-/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
-@media only screen and (430px <= width <= 835px) {
-	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+/* TABLET - upper breakpoint: 834.98px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (575.98px <= width <= 834.98px) {
+	/* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
 	/* PORTADA - bis.html */
 	.portadaBis {
 		padding: 0 10%;
@@ -98,8 +98,8 @@
 }
 
 /* DESKTOP */
-@media only screen and (836px <= width) {
-	/* Abreviación de @media only screen and (min-width:836px) { */
+@media only screen and (834.98px <= width) {
+	/* Abreviación de @media only screen and (min-width: 834.98px) { */
 	/* PORTADA - bis.html */
 	.portadaBis {
 		padding: 0 27.5%;

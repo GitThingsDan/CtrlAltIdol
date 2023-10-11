@@ -30,9 +30,10 @@
   padding: 0 5%;
 }
 .body .mainSidebarBoton {
-  margin: 2vw 0;
+  z-index: 5;
+  margin-top: 2vw;
+  margin-bottom: 0;
   position: sticky;
-  z-index: 3;
   background-color: rgb(62, 0, 143);
   border: solid black thin;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -42,17 +43,21 @@
 .body .mainSidebarBoton:hover {
   transform: scale(1.2, 1.2);
 }
-.body .main .mainIndice a {
+.body .mainSidebarBoton:active {
+  background-color: rgb(62, 0, 143);
+}
+.body .main .mainIndice .nav-link {
   font-weight: initial;
-  transition: font-weight 0.4s, font-size 0.4s;
+  transition: color 0.2s, font-weight 0.4s, font-size 0.4s;
 }
-.body .main .mainIndice a:hover {
+.body .main .mainIndice .nav-link:hover {
   font-weight: bold;
   font-size: larger;
 }
-.body .main .mainIndice a.active {
+.body .main .mainIndice .nav-link.active {
   font-weight: bold;
   font-size: larger;
+  background-color: rgba(62, 0, 143, 0.5);
 }
 .body .main a {
   color: white;
@@ -94,13 +99,13 @@
   border-bottom-color: black;
 }
 
-/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
-/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
-@media only screen and (width <= 429px) {
-  /* Abreviación de @media only screen and (max-width: 429px) { */
+/* REGLAS @MEDIA */
+/* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 575.98px) {
+  /* Abreviación de @media only screen and (max-width: 575.98px) { */
   /* HTML */
   html {
-    scroll-padding: 30vw 0 0 0;
+    scroll-padding: 120px 0 0 0;
   }
   html h2,
   html h3,
@@ -111,18 +116,21 @@
     text-align: center;
   }
   html .mainSidebarBoton {
-    top: 24vw;
+    font-size: 3.5vw;
+    top: calc(50px + 13vw);
+    margin-left: 72.5vw;
+    margin-right: 0;
   }
   html .main #offcanvasRight {
     width: 85%;
   }
 }
-/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
-@media only screen and (430px <= width <= 835px) {
-  /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+/* TABLET - upper breakpoint: 834.98px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (575.98px <= width <= 834.98px) {
+  /* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
   /* HTML */
   html {
-    scroll-padding: 15vw 0 0 0;
+    scroll-padding: 18.5vw 0 0 0;
   }
   html h2,
   html h3,
@@ -130,18 +138,19 @@
     margin: 2vw 0 1vw 0;
   }
   html .mainSidebarBoton {
-    top: 12.5vw;
+    font-size: 3vw;
+    top: 15.25vw;
   }
   html .main #offcanvasRight {
     width: 50vw;
   }
 }
 /* DESKTOP */
-@media only screen and (836px <= width) {
-  /* Abreviación de @media only screen and (min-width:836px) { */
+@media only screen and (834.98px <= width) {
+  /* Abreviación de @media only screen and (min-width: 834.98px) { */
   /* HTML */
   html {
-    scroll-padding: 12vw 0 0 0;
+    scroll-padding: 12.5vw 0 0 0;
   }
   html h2,
   html h3,
@@ -149,6 +158,7 @@
     margin: 2vw 0 1vw 0;
   }
   html .mainSidebarBoton {
+    font-size: 2vw;
     top: 10.5vw;
   }
   html .main #offcanvasRight {
@@ -1275,30 +1285,36 @@
   background-color: rgb(62, 0, 143);
   display: flex;
   justify-content: space-between;
-  position: sticky;
   top: 0px;
-  z-index: 4;
-  padding: 2%;
+  z-index: 10;
+  padding: 1.5%;
   border: solid black thin;
   box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
   border-radius: 0 0 25px 25px;
   width: 100%;
 }
+.header:not(.headerIndex) {
+  position: sticky;
+}
+.header.headerIndex {
+  position: fixed;
+}
 .headerTituloPrincipal {
   text-align: center;
   font-family: "Montagu Slab", serif;
-  transition: font-weight 0.75s, transform 0.15s;
+  transition: transform 0.15s;
   font-variant: small-caps;
 }
+.headerTituloPrincipal-Titulo {
+  font-weight: bolder;
+}
 .headerTituloPrincipal-Titulo:hover {
-  font-weight: 900;
+  transform: scale(1.025, 1.025);
 }
 .headerTituloPrincipal-Titulo:active {
-  transform: scale(0.95, 0.95);
+  transform: scale(0.975, 0.975);
 }
 .headerTituloPrincipal-Slogan {
-  width: 35%;
-  font-size: 2vw;
   font-style: italic;
 }
 .headerNavbar {
@@ -1310,103 +1326,104 @@
   flex-wrap: wrap;
   padding-left: 0;
 }
-.headerNavbar-List li {
-  transition: font-weight 0.75s, transform 0.25s;
+.headerNavbar-List .nav-item {
+  transition: font-weight 0.75s, transform 0.25s, font-size 0.25s;
 }
-.headerNavbar-List li:hover {
+.headerNavbar-List .nav-item:hover {
   font-weight: 900;
 }
+.headerNavbar-List .nav-item .nav-link.active {
+  font-weight: bold;
+}
 
-/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
-/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
-@media only screen and (width <= 429px) {
-  /* Abreviación de @media only screen and (max-width: 429px) { */
+/* REGLAS @MEDIA */
+/* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 575.98px) {
+  /* Abreviación de @media only screen and (max-width: 575.98px) { */
   /* HEADER */
   .header {
     flex-direction: column;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+  }
+  .headerTituloPrincipal-Titulo {
+    font-size: 7.5vw;
   }
   .headerTituloPrincipal-Slogan {
-    font-size: 10px;
-  }
-  .headerNavbar {
-    width: 100%;
+    font-size: 4vw;
   }
   .headerNavbar-List {
+    width: 100%;
     justify-content: space-around;
     margin-bottom: 8px;
   }
-  .headerNavbar-List li {
-    /* calc(1px + 1vw) parece ser el mayor margin horizontal en que (para un ancho de dispositivo de 320px) los ítems de la lista del Navbar se ven en 1 fila/renglón */
-    font-size: calc(1px + 3vw);
+  .headerNavbar-List .nav-item {
+    font-size: 5.5vw;
   }
-  .headerNavbar-List li .nav-link {
-    padding: 0.1em 0;
+  .headerNavbar-List .nav-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
-  .headerNavbar-List li:active {
-    transform: scale(0.9, 0.9) translateX(-5vw);
+  .headerNavbar-List .nav-item:hover {
+    font-size: 6vw;
+  }
+  .headerNavbar-List .nav-item:active {
+    font-size: 5vw;
   }
 }
-/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
-@media only screen and (430px <= width <= 835px) {
-  /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+/* TABLET - upper breakpoint: 834.98px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (575.98px <= width <= 834.98px) {
+  /* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
   /* HEADER */
   .headerTituloPrincipal {
-    /* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN TABLET*/
     margin-bottom: 0;
   }
   .headerTituloPrincipal-Titulo {
-    font-size: calc(0.2em + 3vw);
+    font-size: 4vw;
+  }
+  .headerTituloPrincipal-Slogan {
+    font-size: 2vw;
+    width: 35%;
   }
   .headerNavbar-List {
-    width: 55%;
+    width: 50%;
     justify-content: center;
     margin-bottom: 0;
   }
-  .headerNavbar-List li {
+  .headerNavbar-List .nav-item {
     margin: 0;
+    font-size: 2.5vw;
   }
-  .headerNavbar-List li a {
-    font-size: calc(3.2px + 2.2vw);
-  }
-  .headerNavbar-List li .nav-link {
-    padding: 0.1em 0;
-  }
-}
-@media only screen and (width <= 576px) {
-  .nav-item:active {
-    transform: scale(0.9, 0.9) translateX(-2.75vw);
-  }
-}
-@media only screen and (576px <= width) {
-  .nav-item:active {
+  .headerNavbar-List .nav-item:active {
     transform: scale(0.9, 0.9);
+  }
+  .headerNavbar-List .nav-item .nav-link {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 /* DESKTOP */
-@media only screen and (836px <= width) {
-  /* Abreviación de @media only screen and (min-width:836px) { */
+@media only screen and (834.98px <= width) {
+  /* Abreviación de @media only screen and (min-width: 834.98px) { */
   /* HEADER */
   .header {
     height: 10vw;
   }
-  .headerTituloPrincipal {
-    /* Mínimo ancho con que el título y el slogan se muestran cada uno en 1 solo renglón EN DESKTOP */
-  }
   .headerTituloPrincipal-Titulo {
-    font-size: calc(0.3em + 2.5vw);
+    font-size: 3.5vw;
+  }
+  .headerTituloPrincipal-Slogan {
+    font-size: 2vw;
+    width: 35%;
   }
   .headerNavbar-List {
-    width: 55%;
+    width: 60%;
     justify-content: center;
     margin-bottom: 0;
   }
-  .headerNavbar-List li a {
-    font-size: calc(0.1px + 1.75vw);
+  .headerNavbar-List .nav-item {
+    font-size: 1.7vw;
   }
-  .headerNavbar-List li a.nav-link[href] {
-    padding: 0;
-  }
-  .headerNavbar-List li:active {
+  .headerNavbar-List .nav-item:active {
     transform: scale(0.9, 0.9);
   }
 }
@@ -1574,6 +1591,7 @@
   bottom: 10px;
   right: 10px;
   transition: transform 0.5s, filter 0.5s;
+  z-index: 10;
 }
 .footer #goToTopBox:hover {
   transform: scale(1.25, 1.25) translate(-10px, -10px);
@@ -1592,10 +1610,10 @@
   }
 }
 
-/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
-/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
-@media only screen and (width <= 429px) {
-  /* Abreviación de @media only screen and (max-width: 429px) { */
+/* REGLAS @MEDIA */
+/* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 575.98px) {
+  /* Abreviación de @media only screen and (max-width: 575.98px) { */
   /* FOOTER */
   .footerNavzone {
     grid-template-areas: "bis" "wack" "otrosGrupos" "quiz";
@@ -1605,6 +1623,9 @@
     grid-template-columns: 1fr 1fr;
     row-gap: 25px;
     margin: 7.5% 5%;
+  }
+  .footerDatosPersonales-Texto {
+    font-size: 4vw;
   }
   .footerDatosPersonales-Texto--EmailYUbicacion #emailAddress:hover::after {
     font-size: 2.3vw;
@@ -1625,9 +1646,9 @@
     width: 20vw;
   }
 }
-/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
-@media only screen and (430px <= width <= 835px) {
-  /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+/* TABLET - upper breakpoint: 834.98px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (575.98px <= width <= 834.98px) {
+  /* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
   /* FOOTER */
   .footerNavzone {
     grid-template-areas: "bis					wack" "otrosGrupos	quiz";
@@ -1659,8 +1680,8 @@
   }
 }
 /* DESKTOP */
-@media only screen and (836px <= width) {
-  /* Abreviación de @media only screen and (min-width:836px) { */
+@media only screen and (834.98px <= width) {
+  /* Abreviación de @media only screen and (min-width: 834.98px) { */
   /* FOOTER */
   .footerNavzone {
     grid-template-areas: "bis					wack" "otrosGrupos	quiz";
@@ -1694,7 +1715,7 @@
 .portadaIndex-Video {
   position: fixed;
   width: 100%;
-  z-index: -100;
+  z-index: -10;
 }
 
 /* MAIN - index.html */
@@ -1744,16 +1765,16 @@
   grid-area: atarashii-Video;
 }
 
-/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
-/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
-@media only screen and (width <= 429px) {
-  /* Abreviación de @media only screen and (max-width: 429px) { */
+/* REGLAS @MEDIA */
+/* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 575.98px) {
+  /* Abreviación de @media only screen and (max-width: 575.98px) { */
   /* PORTADA - index.html */
   .portadaIndex {
-    height: calc(75px + 20vw);
+    height: 65vw;
   }
   .portadaIndex-Video {
-    top: calc(1px + 17.5vw);
+    top: 17.5vw;
   }
   /* MAIN - index.html */
   .mainIndex-TextoLlamativo--Bienvenida {
@@ -1775,15 +1796,15 @@
     height: calc(50px + 50vw);
   }
 }
-/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
-@media only screen and (430px <= width <= 835px) {
-  /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+/* TABLET - upper breakpoint: 834.98px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (575.98px <= width <= 834.98px) {
+  /* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
   /* PORTADA - index.html */
   .portadaIndex {
-    height: 40vw;
+    height: 60vw;
   }
   .portadaIndex-Video {
-    top: 7.5%;
+    top: 8.5%;
   }
   /* MAIN - index.html */
   .mainIndex-TextoLlamativo--Bienvenida {
@@ -1806,11 +1827,11 @@
   }
 }
 /* DESKTOP */
-@media only screen and (836px <= width) {
-  /* Abreviación de @media only screen and (min-width:836px) { */
+@media only screen and (834.98px <= width) {
+  /* Abreviación de @media only screen and (min-width: 834.98px) { */
   /* PORTADA - index.html */
   .portadaIndex {
-    height: 30vw;
+    height: 40vw;
   }
   .portadaIndex-Video {
     top: 10%;
@@ -1880,10 +1901,10 @@
   list-style: square;
 }
 
-/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
-/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
-@media only screen and (width <= 429px) {
-  /* Abreviación de @media only screen and (max-width: 429px) { */
+/* REGLAS @MEDIA */
+/* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 575.98px) {
+  /* Abreviación de @media only screen and (max-width: 575.98px) { */
   /* PORTADA - bis.html */
   .portadaBis {
     padding: 0;
@@ -1900,9 +1921,9 @@
     width: 100%;
   }
 }
-/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
-@media only screen and (430px <= width <= 835px) {
-  /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+/* TABLET - upper breakpoint: 834.98px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (575.98px <= width <= 834.98px) {
+  /* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
   /* PORTADA - bis.html */
   .portadaBis {
     padding: 0 10%;
@@ -1920,8 +1941,8 @@
   }
 }
 /* DESKTOP */
-@media only screen and (836px <= width) {
-  /* Abreviación de @media only screen and (min-width:836px) { */
+@media only screen and (834.98px <= width) {
+  /* Abreviación de @media only screen and (min-width: 834.98px) { */
   /* PORTADA - bis.html */
   .portadaBis {
     padding: 0 27.5%;
@@ -1971,10 +1992,10 @@
   margin: 0.5vw 0;
 }
 
-/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
-/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
-@media only screen and (width <= 429px) {
-  /* Abreviación de @media only screen and (max-width: 429px) { */
+/* REGLAS @MEDIA */
+/* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 575.98px) {
+  /* Abreviación de @media only screen and (max-width: 575.98px) { */
   /* PORTADA - wack.html */
   .portadaWack-Icono {
     width: 100%;
@@ -1991,9 +2012,9 @@
     width: 100%;
   }
 }
-/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
-@media only screen and (430px <= width <= 835px) {
-  /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+/* TABLET - upper breakpoint: 834.98px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (575.98px <= width <= 834.98px) {
+  /* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
   /* PORTADA - wack.html */
   .portadaWack-Icono {
     width: 75%;
@@ -2008,8 +2029,8 @@
   }
 }
 /* DESKTOP */
-@media only screen and (836px <= width) {
-  /* Abreviación de @media only screen and (min-width:836px) { */
+@media only screen and (834.98px <= width) {
+  /* Abreviación de @media only screen and (min-width: 834.98px) { */
   /* PORTADA - wack.html */
   .portadaWack-Icono {
     width: 50%;
@@ -2040,10 +2061,10 @@
   flex-wrap: wrap;
 }
 
-/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
-/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
-@media only screen and (width <= 429px) {
-  /* Abreviación de @media only screen and (max-width: 429px) { */
+/* REGLAS @MEDIA */
+/* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 575.98px) {
+  /* Abreviación de @media only screen and (max-width: 575.98px) { */
   /* PORTADA - otrosGrupos.html */
   .portadaOtrosGrupos {
     width: 100%;
@@ -2055,9 +2076,9 @@
     width: 100%;
   }
 }
-/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
-@media only screen and (430px <= width <= 835px) {
-  /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+/* TABLET - upper breakpoint: 834.98px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (575.98px <= width <= 834.98px) {
+  /* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
   /* PORTADA - otrosGrupos.html */
   .portadaOtrosGrupos {
     width: 75%;
@@ -2070,8 +2091,8 @@
   }
 }
 /* DESKTOP */
-@media only screen and (836px <= width) {
-  /* Abreviación de @media only screen and (min-width:836px) { */
+@media only screen and (834.98px <= width) {
+  /* Abreviación de @media only screen and (min-width: 834.98px) { */
   /* PORTADA - otrosGrupos.html */
   .portadaOtrosGrupos {
     width: 50%;
@@ -2139,26 +2160,26 @@
   --bs-form-select-bg-icon: var(--icono-Incorrecto);
 }
 
-/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
-/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
-@media only screen and (width <= 429px) {
-  /* Abreviación de @media only screen and (max-width: 429px) { */
+/* REGLAS @MEDIA */
+/* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 575.98px) {
+  /* Abreviación de @media only screen and (max-width: 575.98px) { */
   /* PORTADA - quiz.html */
   .portadaQuiz-Icono {
     width: 50%;
   }
 }
-/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
-@media only screen and (430px <= width <= 835px) {
-  /* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+/* TABLET - upper breakpoint: 834.98px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (575.98px <= width <= 834.98px) {
+  /* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
   /* PORTADA - quiz.html */
   .portadaQuiz-Icono {
     width: 25%;
   }
 }
 /* DESKTOP */
-@media only screen and (836px <= width) {
-  /* Abreviación de @media only screen and (min-width:836px) { */
+@media only screen and (834.98px <= width) {
+  /* Abreviación de @media only screen and (min-width: 834.98px) { */
   /* PORTADA - quiz.html */
   .portadaQuiz-Icono {
     width: 25%;

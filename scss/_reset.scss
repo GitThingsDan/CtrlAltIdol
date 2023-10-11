@@ -1,3 +1,5 @@
+// El cambio de breakpoint de mobile a tablet, a algo más acorde con el breakpoint 'sm' de Bootstrap, es sólo para arreglar la situación de que (justo en el breakpoint 'sm') el efecto de .nav-item:active de reducir su escalado extrañamente también lo movía a la derecha (por tanto, lo compensé con un translateX negativo)  De veras quiero reescribirlo de una forma más 'Sass-y'...
+
 // VARIABLES:
 $purple: rgb(62, 0, 143);
 $purple-transparent: rgba(62, 0, 143, 0.5);
@@ -6,6 +8,22 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 @mixin boxmodel($mar, $pad) {
 	margin: $mar;
 	padding: $pad;
+}
+@mixin paddingX($padL, $padR: $padL) {
+	padding-left: $padL;
+	padding-right: $padR;
+}
+@mixin paddingY($padT, $padB: $padT) {
+	padding-top: $padT;
+	padding-bottom: $padB;
+}
+@mixin marginX($marL, $marR: $marL) {
+	margin-left: $marL;
+	margin-right: $marR;
+}
+@mixin marginY($marT, $marB: $marT) {
+	margin-top: $marT;
+	margin-bottom: $marB;
 }
 
 /* REGLAS @FONT-FACE (familias de fuentes descargadas desde Google Fonts) */
@@ -41,9 +59,9 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 		padding: 0 5%;
 
 		&SidebarBoton {
-			margin: 2vw 0;
+			z-index: 5;
+			@include marginY(2vw, 0);
 			position: sticky;
-			z-index: 3;
 			background-color: $purple;
 			border: solid black thin;
 			box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
@@ -52,11 +70,14 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 			&:hover {
 				transform: scale(1.2, 1.2);
 			}
+			&:active {
+				background-color: $purple;
+			}
 		}
 		// Sidebar
-		.mainIndice a {
+		.mainIndice .nav-link {
 			font-weight: initial;
-			transition: font-weight 0.4s, font-size 0.4s;
+			transition: color 0.2s, font-weight 0.4s, font-size 0.4s;
 			&:hover {
 				font-weight: bold;
 				font-size: larger;
@@ -64,6 +85,7 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 			&.active {
 				font-weight: bold;
 				font-size: larger;
+				background-color: $purple-transparent;
 			}
 		}
 
@@ -109,13 +131,13 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 	}
 }
 
-/* REGLAS @MEDIA - a max-width (upper breakpoint), sumar 1px para que al inspeccionar la página en modo Responsive, no haya "px sin cubrir" ("tierra de nadie", le digo yo) por los @media queries al ajustar el tamaño de la pantalla */
-/* MOBILE - upper breakpoint: 428px (iPhone 12/13 Pro Max) - */
-@media only screen and (width <= 429px) {
-	/* Abreviación de @media only screen and (max-width: 429px) { */
+/* REGLAS @MEDIA */
+/* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
+@media only screen and (width <= 575.98px) {
+	/* Abreviación de @media only screen and (max-width: 575.98px) { */
 	/* HTML */
 	html {
-		scroll-padding: 30vw 0 0 0;
+		scroll-padding: 120px 0 0 0;
 		h2,
 		h3,
 		h4 {
@@ -126,7 +148,10 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 		}
 		.main {
 			&SidebarBoton {
-				top: 24vw;
+				font-size: 3.5vw;
+				top: calc(50px + 13vw);
+				// SITUARLO A LA DERECHA SÓLO EN MOBILE:
+				@include marginX(72.5vw, 0);
 			}
 			// Sidebar
 			#offcanvasRight {
@@ -136,12 +161,12 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 	}
 }
 
-/* TABLET - upper breakpoint: 834px (iPad Pro, versión de 11 pulgadas) - */
-@media only screen and (430px <= width <= 835px) {
-	/* Abreviación de @media only screen and (min-width: 430px) and (max-width: 835px) { */
+/* TABLET - upper breakpoint: 834.98px (iPad Pro, versión de 11 pulgadas) - */
+@media only screen and (575.98px <= width <= 834.98px) {
+	/* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
 	/* HTML */
 	html {
-		scroll-padding: 15vw 0 0 0;
+		scroll-padding: 18.5vw 0 0 0;
 		h2,
 		h3,
 		h4 {
@@ -149,7 +174,8 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 		}
 		.main {
 			&SidebarBoton {
-				top: 12.5vw;
+				font-size: 3vw;
+				top: 15.25vw;
 			}
 			// Sidebar
 			#offcanvasRight {
@@ -159,11 +185,11 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 	}
 }
 /* DESKTOP */
-@media only screen and (836px <= width) {
-	/* Abreviación de @media only screen and (min-width:836px) { */
+@media only screen and (834.98px <= width) {
+	/* Abreviación de @media only screen and (min-width: 834.98px) { */
 	/* HTML */
 	html {
-		scroll-padding: 12vw 0 0 0;
+		scroll-padding: 12.5vw 0 0 0;
 		h2,
 		h3,
 		h4 {
@@ -171,6 +197,7 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 		}
 		.main {
 			&SidebarBoton {
+				font-size: 2vw;
 				top: 10.5vw;
 			}
 			// Sidebar
