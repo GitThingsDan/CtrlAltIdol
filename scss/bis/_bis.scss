@@ -2,18 +2,19 @@
 .portadaBis {
 	.carousel-item {
 		img {
-			border-radius: 20px;
+			border-radius: 25px;
 			height: 100%;
 		}
 		.carousel-caption {
 			h5,
 			p {
 				background-color: $purple-transparent;
-				padding: 2%;
-				border-radius: 20px;
+				border-radius: 25px;
 				opacity: 0;
+				padding: 2%;
 				transition: opacity 0.5s;
 			}
+			// Al hacer hover en cualquier parte del caption, que se vuelvan opacos tanto su título como su descripción (cada uno por separado, en lugar de aplicarlo al caption en su conjunto):
 			&:hover {
 				h5,
 				p {
@@ -23,39 +24,49 @@
 		}
 	}
 	.carousel-control-icons {
-		transition: filter 0.5s, transform 0.5s;
+		// Icono de flecha (para cambiar de imagen en el carrusel); se usará el mismo icono para cambiar tanto a la imagen anterior como a la siguiente (el truco está en que rotaré la flecha hacia la izquierda/derecha, respectivamente):
+		background-image: url("../../icons/flecha-Arriba.png");
+		@include transitionMulti((filter, scale), 0.5s);
 		&:hover {
 			filter: invert(1);
-			transform: scale(1.5, 1.5);
+			scale: 1.5;
 		}
 	}
 	.carousel-control-prev-icon {
 		@extend .carousel-control-icons;
-		background-image: url("../icons/flecha-Izquierda.svg");
+		// Rotar icono hacia la izquierda ('imagen anterior'):
+		rotate: -90deg;
 	}
 	.carousel-control-next-icon {
 		@extend .carousel-control-icons;
-		background-image: url("../icons/flecha-Derecha.svg");
+		// Rotar icono hacia la derecha ('imagen siguiente'):
+		rotate: 90deg;
 	}
-	.carousel-indicators {
-		[data-bs-target] {
-			transition: background-color 0.5s, transform 0.5s;
-			background-color: $purple-transparent;
-			&:hover {
-				background-color: $purple;
-				transform: scaleY(2);
-			}
+	// Indicadores del carrusel (1 por cada imagen; indica la imagen actual, y además sirven como atajos a las demás imágenes):
+	.carousel-indicators button {
+		background-color: $purple;
+		opacity: 0.5;
+		@include transitionMulti((opacity, scale), 0.5s);
+		// Hacer más altos tanto al indicador que se le haga :hover como al indicador activo ('imagen actual'):
+		&:hover,
+		&.active {
+			@include scaleY(2);
 		}
-		.active {
-			background-color: $purple;
-			transform: scaleY(2);
+		// Además, intensificar color púrpura sólo al indicador activo:
+		&.active {
+			opacity: 1;
 		}
 	}
 }
 /* MAIN - bis.html */
+// A todo elemento que represente un video (sea <video> o <iframe>), se le puso la siguiente clase:
+.mainBis-Articulo--Canciones---Videos {
+	width: 100%;
+}
 .mainBis-Articulo--Presente ul {
 	list-style: square;
 }
+
 /* REGLAS @MEDIA */
 /* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
 @media only screen and (width <= 575.98px) {
@@ -65,15 +76,16 @@
 		padding: 0;
 		.carousel-item {
 			height: 65vw;
+			// Encontré que era más breve llamar al 'h5' y al 'p' del caption con el selector universal '*' ahorrándome una línea de código adicional, pero por lo visto igual terminé desperdiciándola con este comentario...:
 			.carousel-caption * {
 				font-size: calc(1px + 2vw);
 			}
 		}
 	}
 	/* MAIN - bis.html */
+	// A todo elemento que represente un video (sea <video> o <iframe>), se le puso la siguiente clase:
 	.mainBis-Articulo--Canciones---Videos {
 		height: 50vw;
-		width: 100%;
 	}
 }
 
@@ -82,18 +94,19 @@
 	/* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
 	/* PORTADA - bis.html */
 	.portadaBis {
-		padding: 0 10%;
+		@include paddingX(10%);
 		.carousel-item {
 			height: 55vw;
+			// Encontré que era más breve llamar al 'h5' y al 'p' del caption con el selector universal '*' ahorrándome una línea de código adicional, pero por lo visto igual terminé desperdiciándola con este comentario...:
 			.carousel-caption * {
 				font-size: calc(1px + 1.8vw);
 			}
 		}
 	}
 	/* MAIN - bis.html */
+	// A todo elemento que represente un video (sea <video> o <iframe>), se le puso la siguiente clase:
 	.mainBis-Articulo--Canciones---Videos {
 		height: 50vw;
-		width: 100%;
 	}
 }
 
@@ -102,18 +115,19 @@
 	/* Abreviación de @media only screen and (min-width: 834.98px) { */
 	/* PORTADA - bis.html */
 	.portadaBis {
-		padding: 0 27.5%;
+		@include paddingX(27.5%);
 		.carousel-item {
 			height: 30vw;
+			// Encontré que era más breve llamar al 'h5' y al 'p' del caption con el selector universal '*' ahorrándome una línea de código adicional, pero por lo visto igual terminé desperdiciándola con este comentario...:
 			.carousel-caption * {
 				font-size: calc(3px + 1vw);
 			}
 		}
 	}
 	/* MAIN - bis.html */
+	// A todo elemento que represente un video (sea <video> o <iframe>), se le puso la siguiente clase:
 	.mainBis-Articulo--Canciones---Videos {
-		padding: 0 20%;
 		height: 30vw;
-		width: 100%;
+		@include paddingX(20%);
 	}
 }

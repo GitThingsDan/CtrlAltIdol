@@ -1,42 +1,4 @@
-// El cambio de breakpoint de mobile a tablet, a algo más acorde con el breakpoint 'sm' de Bootstrap, es sólo para arreglar la situación de que (justo en el breakpoint 'sm') el efecto de .nav-item:active de reducir su escalado extrañamente también lo movía a la derecha (por tanto, lo compensé con un translateX negativo)  De veras quiero reescribirlo de una forma más 'Sass-y'...
-
-// VARIABLES:
-$purple: rgb(62, 0, 143);
-$purple-transparent: rgba(62, 0, 143, 0.5);
-
-// MIXINS:
-@mixin boxmodel($mar, $pad) {
-	margin: $mar;
-	padding: $pad;
-}
-@mixin paddingX($padL, $padR: $padL) {
-	padding-left: $padL;
-	padding-right: $padR;
-}
-@mixin paddingY($padT, $padB: $padT) {
-	padding-top: $padT;
-	padding-bottom: $padB;
-}
-@mixin marginX($marL, $marR: $marL) {
-	margin-left: $marL;
-	margin-right: $marR;
-}
-@mixin marginY($marT, $marB: $marT) {
-	margin-top: $marT;
-	margin-bottom: $marB;
-}
-
-/* REGLAS @FONT-FACE (familias de fuentes descargadas desde Google Fonts) */
-/* "Roboto Mono" */
-@font-face {
-	font-family: "Roboto Mono";
-	src: url(../fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
-}
-/* 'Montagu Slab' */
-@font-face {
-	font-family: "Montagu Slab";
-	src: url(../fonts/Montagu_Slab/MontaguSlab-VariableFont_opsz-wght.ttf);
-}
+// El cambio de breakpoint de mobile a tablet (originalmente 428px), a algo más acorde con el breakpoint 'sm' de Bootstrap (576px), surgió exclusivamente a raíz de un intento de resolver la situación de que en el nuevo header (hecho con Bootstrap), alrededor del breakpoint 'sm', el efecto aplicado a .nav-item:active (de reducir su escalado) extrañamente también lo desplazaba a la derecha; se me ocurrió compensarlo con un translateX negativo, pero esto trajo consigo otras consecuencias indeseadas...finalmente, entre seguir complicándome con la tensión entre mi breakpoint y el de Bootstrap, preferí la alternativa de cambiarme al de Bootstrap.
 
 /* RESETEO DE ESTILOS */
 * {
@@ -45,7 +7,7 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 }
 
 .body {
-	background: linear-gradient(90deg, $purple, black, $purple);
+	background: $purple-gradient;
 	color: white;
 	font-family: "Roboto Mono", monospace;
 
@@ -56,67 +18,29 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 	.main {
 		font-size: calc(0.7rem + 1vw);
 		text-align: justify;
-		padding: 0 5%;
-
-		&SidebarBoton {
-			z-index: 5;
-			@include marginY(2vw, 0);
-			position: sticky;
-			background-color: $purple;
-			border: solid black thin;
-			box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
-			animation: parpadeo 2s ease-in-out infinite alternate;
-			transition: transform 0.5s;
-			&:hover {
-				transform: scale(1.2, 1.2);
-			}
-			&:active {
-				background-color: $purple;
-			}
-		}
-		// Sidebar
-		.mainIndice .nav-link {
-			font-weight: initial;
-			transition: color 0.2s, font-weight 0.4s, font-size 0.4s;
-			&:hover {
-				font-weight: bold;
-				font-size: larger;
-			}
-			&.active {
-				font-weight: bold;
-				font-size: larger;
-				background-color: $purple-transparent;
-			}
-		}
-
+		@include paddingX(5%);
 		a {
 			color: white;
-			text-decoration: none;
-			position: relative;
-			transition-property: color, border-bottom-color, border-top-color;
-			transition-duration: 0.2s;
 			font-weight: bolder;
+			position: relative;
+			text-decoration: none;
+			transition: color 0.25s;
+			// Créditos a https://cssanimation.rocks/animating-links/ por la idea del efecto a continuación: ::before(:hover::before), ::after(:hover::after):
 			&::before {
-				position: absolute;
 				content: "";
-				left: 0;
-				top: 0;
-				right: 100%;
-				border-bottom-style: solid;
-				border-bottom-width: 0.02em;
+				position: absolute;
+				border-bottom: 0.02em solid;
+				inset: 0 100% auto 0;
 				transition: right 0.25s;
 			}
 			&:hover::before {
 				right: 0;
 			}
 			&::after {
-				position: absolute;
 				content: "";
-				right: 0;
-				bottom: 0;
-				left: 100%;
-				border-top-style: solid;
-				border-top-width: 0.02em;
+				position: absolute;
+				border-top: 0.02em solid;
+				inset: auto 0 0 100%;
 				transition: left 0.25s;
 			}
 			&:hover::after {
@@ -124,8 +48,41 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 			}
 			&:active {
 				color: black;
-				border-top-color: black;
-				border-bottom-color: black;
+			}
+		}
+		&BotonSidebar {
+			animation: parpadeo 2s ease-in-out infinite alternate;
+			background-color: $purple;
+			border: thin solid black;
+			position: sticky;
+			// Transition también al border-color porque si no, al hacerle clic, el cambio de color del borde a blanco (el cual parece que es culpa de Bootstrap) es muy brusco:
+			transition: border-color 0.2s, scale 0.5s;
+			z-index: 5;
+			@include bxshdw(1px);
+			@include marginY(2vw, 0);
+			&:hover {
+				scale: 1.2;
+			}
+			// Por alguna extraña razón, al hacerle clic, el botón se vuelve transparente, por lo que le repetiré la propiedad de 'background-color: $purple':
+			&:active {
+				background-color: $purple;
+			}
+		}
+		&Sidebar {
+			width: fit-content;
+			// Links del Sidebar:
+			&-IndiceBox--Indice .nav-link {
+				font-weight: normal;
+				// Por alguna razón, el cambio de color de blanco a negro al hacer clic (:active) es brusco, y no reconoce la previa declaración de aplicar a todos los <a> un transition color...así que tuve que repetir 'color' en el siguiente transition mixin:
+				@include transitionMulti((color, font-weight, scale), 0.25s);
+				&:hover,
+				&.active {
+					font-weight: bold;
+					scale: 1.05;
+				}
+				&.active {
+					background-color: $purple-transparent;
+				}
 			}
 		}
 	}
@@ -137,26 +94,23 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 	/* Abreviación de @media only screen and (max-width: 575.98px) { */
 	/* HTML */
 	html {
-		scroll-padding: 120px 0 0 0;
+		// Según https://css-tricks.com/almanac/properties/s/scroll-padding/, las versiones 'longhand' de 'scroll-padding' ('scroll-padding-*') aún no tienen soporte en Chrome; a mí sí me funcionan, pero aún así dejaré comentada la siguiente línea (versión 'shorthand'), por si las moscas:
+		// scroll-padding: 19vw 0 0 0;
+		scroll-padding-top: 19vw;
 		h2,
 		h3,
 		h4 {
-			margin: 4vw 0 2vw 0;
+			@include marginY(4vw, 2vw);
 		}
+		h3,
 		h4 {
 			text-align: center;
 		}
-		.main {
-			&SidebarBoton {
-				font-size: 3.5vw;
-				top: calc(50px + 13vw);
-				// SITUARLO A LA DERECHA SÓLO EN MOBILE:
-				@include marginX(72.5vw, 0);
-			}
-			// Sidebar
-			#offcanvasRight {
-				width: 85%;
-			}
+		.mainBotonSidebar {
+			font-size: 3.5vw;
+			// Para situar el botón a la derecha (más cómodo para personas diestras), sólo en mobile:
+			margin-left: 72vw;
+			top: calc(25px + 13.25vw);
 		}
 	}
 }
@@ -166,44 +120,37 @@ $purple-transparent: rgba(62, 0, 143, 0.5);
 	/* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
 	/* HTML */
 	html {
-		scroll-padding: 18.5vw 0 0 0;
+		// Según https://css-tricks.com/almanac/properties/s/scroll-padding/, las versiones 'longhand' de 'scroll-padding' ('scroll-padding-*') aún no tienen soporte en Chrome; a mí sí me funcionan, pero aún así dejaré comentada la siguiente línea (versión 'shorthand'), por si las moscas:
+		// scroll-padding: 18.5vw 0 0 0;
+		scroll-padding-top: 18.5vw;
 		h2,
 		h3,
 		h4 {
-			margin: 2vw 0 1vw 0;
+			@include marginY(2vw, 1vw);
 		}
-		.main {
-			&SidebarBoton {
-				font-size: 3vw;
-				top: 15.25vw;
-			}
-			// Sidebar
-			#offcanvasRight {
-				width: 50vw;
-			}
+		.mainBotonSidebar {
+			font-size: 3vw;
+			top: 14.5vw;
 		}
 	}
 }
+
 /* DESKTOP */
 @media only screen and (834.98px <= width) {
 	/* Abreviación de @media only screen and (min-width: 834.98px) { */
 	/* HTML */
 	html {
-		scroll-padding: 12.5vw 0 0 0;
+		// Según https://css-tricks.com/almanac/properties/s/scroll-padding/, las versiones 'longhand' de 'scroll-padding' ('scroll-padding-*') aún no tienen soporte en Chrome; a mí sí me funcionan, pero aún así dejaré comentada la siguiente línea (versión 'shorthand'), por si las moscas:
+		// scroll-padding: 12.5vw 0 0 0;
+		scroll-padding-top: 12.5vw;
 		h2,
 		h3,
 		h4 {
-			margin: 2vw 0 1vw 0;
+			@include marginY(2vw, 1vw);
 		}
-		.main {
-			&SidebarBoton {
-				font-size: 2vw;
-				top: 10.5vw;
-			}
-			// Sidebar
-			#offcanvasRight {
-				width: 50vw;
-			}
+		.mainBotonSidebar {
+			font-size: 2vw;
+			top: 10.25vw;
 		}
 	}
 }

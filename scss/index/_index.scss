@@ -1,36 +1,60 @@
 /* PORTADA - index.html */
-.portadaIndex-Video {
-	position: fixed;
-	width: 100%;
-	z-index: -10;
+.portadaIndex {
+	position: relative;
+	// Screenshot de video hero - para '@media (prefers-reduced-motion)', la cual será oculta por defecto, mediante 'display: none':
+	&-Screenshot {
+		display: none;
+		position: fixed;
+		width: 100%;
+		// La siguiente, al parecer, es una mejor alternativa a 'display:none' en cuanto al rendimiento del sitio web, pero es una propiedad experimental, así que por mientras la dejaré comentada no más:
+		// content-visibility: hidden;
+		z-index: -11;
+	}
+	// El video hero en cuestión:
+	&-Video {
+		position: fixed;
+		width: 100%;
+		z-index: -10;
+	}
+	// Logo de BiS, en la esquina superior izquierda de la portada:
+	&-Logo {
+		filter: invert(1);
+		// Shorthand para 'top right bottom left' ('auto' es el valor inicial para cada una):
+		inset: calc(6vw + 9vh) auto auto 3vw;
+		position: fixed;
+		width: 10vw;
+		z-index: -9;
+	}
 }
 
 /* MAIN - index.html */
 .mainIndex {
-	background: linear-gradient(90deg, $purple, black, $purple);
+	// Para que no se vea el video hero detrás del main de index.html:
+	background: $purple-gradient;
 	border-radius: 25px 25px 0 0;
 	&-TextoLlamativo {
-		// Bienvenida y Exclamación resolutiva (con background-color y small-caps)
+		// Bienvenida y Exclamación resolutiva (con FONDO, small-caps, etc.):
 		&--Bienvenida,
 		&--Solucion {
-			font-family: "Montagu Slab", serif;
-			font-variant: small-caps;
+			// La siguiente es una clase ausente de los .html (su razón de existir es sólo para hacer @extend fuera de los @media queries y ahorrarme un par de líneas); es sólo para, en los @media queries, poner un poco de margin vertical y 'ampliar' el fondo de color, todo esto exclusivamente para el 'texto destacado'(Bienvenida, Solución), de modo que no se vea tan 'apretado' en su fondo de color $purple:
+			@extend .mainIndex-TextoLlamativo--TextoConFondo;
 			background-color: $purple;
-			font-weight: 600;
-			letter-spacing: 0.15vw;
-			text-align: center;
 			border-radius: 25px;
-			box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
+			// Estoy considerando reemplazar con la shorthand 'font' todas las propiedades 'longhand' relacionadas al texto...como hago a continuación:
+			font: small-caps bold 100% "Montagu Slab", serif;
+			letter-spacing: 0.1vw;
+			text-align: center;
+			@include bxshdw(1.5px);
 		}
-		// Preguntas (sin background-color)
+		// Preguntas (sin FONDO...):
 		&--Problema,
 		&--Esperanza {
-			text-align: center;
 			font-size: calc(11px + 1vw);
+			text-align: center;
 		}
+		// 'El movimiento "Alt Idol" (o "Anti Idol")'...:
 		&--DefinicionAltIdol {
 			font-size: calc(11px + 1vw);
-			text-align: justify;
 			// IDs de términos definidos:
 			#dfnAlt,
 			#dfnAnti {
@@ -39,52 +63,64 @@
 		}
 	}
 
-	// Grid de Videos de YouTube
+	// Grid de Videos de YouTube:
 	&-VideoGrid {
 		display: grid;
 		gap: 3%;
-		// LOS 4 VIDEOS EN GENERAL
+		// LOS 4 VIDEOS EN GENERAL:
 		iframe {
 			width: 100%;
-		}
-		// Cada uno de los 4 videos, en específico
-		#bis-Video {
-			grid-area: bis-Video;
-		}
-		#bellring-Video {
-			grid-area: bellring-Video;
-		}
-		#babymetal-Video {
-			grid-area: babymetal-Video;
-		}
-		#atarashii-Video {
-			grid-area: atarashii-Video;
+			// Cada uno de los 4 videos, en específico (declaración de grid-areas):
+			&#bis-Video {
+				grid-area: bis-Video;
+			}
+			&#bellring-Video {
+				grid-area: bellring-Video;
+			}
+			&#babymetal-Video {
+				grid-area: babymetal-Video;
+			}
+			&#atarashii-Video {
+				grid-area: atarashii-Video;
+			}
 		}
 	}
 }
 
 /* REGLAS @MEDIA */
+/* PREFIERE REDUCCIÓN DE MOVIMIENTO (para desactivar el video hero de index.html, y mostrar un screenshot del mismo en su lugar) */
+@media only screen and (prefers-reduced-motion: reduce) {
+	.portadaIndex {
+		&-Screenshot {
+			display: initial;
+		}
+		&-Video {
+			display: none;
+		}
+	}
+}
 /* MOBILE - upper breakpoint: 575.98px, breakpoint 'sm' de Bootstrap (originalmente 428px, ancho de pantalla de iPhone 12/13 Pro Max) - */
 @media only screen and (width <= 575.98px) {
 	/* Abreviación de @media only screen and (max-width: 575.98px) { */
 	/* PORTADA - index.html */
 	.portadaIndex {
-		height: 65vw;
+		height: 60vw;
+		&-Screenshot,
 		&-Video {
-			top: 17.5vw;
+			top: 12.5vw;
 		}
 	}
 	/* MAIN - index.html */
 	.mainIndex {
 		&-TextoLlamativo {
+			// La siguiente es una clase ausente de los .html (su razón de existir es sólo para hacer @extend fuera de los @media queries y ahorrarme un par de líneas); es meramente para poner un poco de margin vertical y 'ampliar' el fondo del 'texto destacado'(Bienvenida, Solución), de modo que no se vea tan 'apretado' en su fondo de color $purple:
+			&--TextoConFondo {
+				padding: 12.5px;
+				@include marginY(4%);
+			}
+
 			&--Bienvenida {
 				font-size: calc(0.9em + 1vw);
-				margin: 4% 0;
-				padding: 12.5px;
-			}
-			&--Solucion {
-				margin: 4% 0;
-				padding: 12.5px;
 			}
 		}
 		// Grid de Videos de YouTube
@@ -94,8 +130,9 @@
 				"bellring-Video"
 				"babymetal-Video"
 				"atarashii-Video";
-			/* Curiosamente, en mobile este Grid Container se ve parcialmente cubierto por el siguiente (.footerNavzone tapa parte del último video de .mainIndex-VideoGrid), así que la solución que se me ocurrió fue ponerle estos paddings que encontré aceptables para resolver el problema de la forma más armónica posible */
-			padding: 5% 0 35% 0;
+			/* Curiosamente, en mobile este Grid Container se ve parcialmente cubierto por el siguiente (.footerNavzone tapa parte del último video de .mainIndex-VideoGrid), así que la solución que se me ocurrió fue ponerle estos PADDINGS VERTICALES que encontré aceptables para resolver el problema de la forma más armónica posible Y A LA VEZ TAPAR EL ESPACIO DESCUBIERTO Y QUE EL VIDEO HERO NO SE VEA DONDE NO DEBE (razón por la cual unos MARGINS VERTICALES no habrían resuelto el problema): */
+			@include paddingY(5%, 35%);
+
 			/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan manteniendo su PROPORCIÓN de tamaño:  */
 			iframe {
 				height: calc(50px + 50vw);
@@ -109,23 +146,25 @@
 	/* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
 	/* PORTADA - index.html */
 	.portadaIndex {
-		height: 60vw;
+		height: 55vw;
+		&-Screenshot,
 		&-Video {
-			top: 8.5%;
+			top: 7%;
 		}
 	}
 	/* MAIN - index.html */
 	.mainIndex {
 		&-TextoLlamativo {
-			// Aquí, yo podría "inventar" una clase, sólo para hacer @extend en Bienvenida y en Solución, contribuyendo a repetir menos líneas de código...
-			&--Bienvenida {
-				margin: 1.5% 0;
+			// La siguiente es una clase ausente de los .html (su razón de existir es sólo para hacer @extend fuera de los @media queries y ahorrarme un par de líneas); es meramente para poner un poco de margin vertical y 'ampliar' el fondo del 'texto destacado'(Bienvenida, Solución), de modo que no se vea tan 'apretado' en su fondo de color $purple:
+			&--TextoConFondo {
 				padding: 1% 3%;
+				@include marginY(1.5%);
+			}
+
+			&--Bienvenida {
 				font-size: calc(4px + 2.5vw);
 			}
 			&--Solucion {
-				margin: 1.5% 0;
-				padding: 1% 3%;
 				font-size: calc(1rem + 0.5vw);
 			}
 		}
@@ -134,7 +173,9 @@
 			grid-template-areas:
 				"bis-Video				bellring-Video"
 				"babymetal-Video	atarashii-Video";
+			// Algo parecido a lo que ocurre para mobile, aunque en mucho menor grado; ahora (para tablet), puse un pequeño padding-bottom para resolverlo:
 			padding-bottom: 5vw;
+
 			/* Ajuste necesario para que los iframes de YouTube, siendo responsive, sigan manteniendo su PROPORCIÓN de tamaño:  */
 			iframe {
 				height: 25vw;
@@ -149,6 +190,7 @@
 	/* PORTADA - index.html */
 	.portadaIndex {
 		height: 40vw;
+		&-Screenshot,
 		&-Video {
 			top: 10%;
 		}
@@ -156,10 +198,12 @@
 	/* MAIN - index.html */
 	.mainIndex {
 		&-TextoLlamativo {
-			&--Bienvenida,
-			&--Solucion {
-				@include boxmodel(1.5% 0, 1% 3%);
+			// La siguiente es una clase ausente de los .html (su razón de existir es sólo para hacer @extend fuera de los @media queries y ahorrarme un par de líneas); es meramente para poner un poco de margin vertical y 'ampliar' el fondo del 'texto destacado'(Bienvenida, Solución), de modo que no se vea tan 'apretado' en su fondo de color $purple:
+			&--TextoConFondo {
+				padding: 1% 3%;
+				@include marginY(1.5%);
 			}
+
 			&--Solucion {
 				font-size: calc(1rem + 0.5vw);
 			}
@@ -169,7 +213,9 @@
 			grid-template-areas:
 				"bis-Video				bellring-Video"
 				"babymetal-Video	atarashii-Video";
+			// Lo mismo que para tablet:
 			padding-bottom: 5vw;
+
 			/* Ajuste necesario para que todos los iframes de YouTube, siendo responsive, sigan manteniendo su PROPORCIÓN de tamaño:  */
 			iframe {
 				height: 25vw;

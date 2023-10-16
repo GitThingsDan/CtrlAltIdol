@@ -11,7 +11,7 @@
 	&---Titulo {
 		grid-area: titulo;
 	}
-	// CADA GRUPO DE WACK
+	// CADA GRUPO DE WACK:
 	#cinco-grupos-de-wack {
 		&_asp {
 			grid-area: asp;
@@ -34,9 +34,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		iframe {
-			margin: 0.5vw 0;
-		}
+		row-gap: 1vw;
 	}
 }
 
@@ -51,10 +49,7 @@
 
 	/* MAIN - wack.html */
 	.mainWack-Articulo--Grupos {
-		margin: 9vw 0;
-		&---Titulo {
-			text-align: center;
-		}
+		@include marginY(4.5vw, 9vw);
 		iframe {
 			height: calc(50px + 50vw);
 			width: 100%;
@@ -72,7 +67,7 @@
 
 	/* MAIN - wack.html */
 	.mainWack-Articulo--Grupos {
-		margin: 6vw 0;
+		@include marginY(6vw);
 		iframe {
 			height: 25vw;
 			width: 43vw;
@@ -90,7 +85,7 @@
 
 	/* MAIN - wack.html */
 	.mainWack-Articulo--Grupos {
-		margin: 3vw 0;
+		@include marginY(3vw);
 		iframe {
 			height: 25vw;
 			width: 43vw;

@@ -1,16 +1,17 @@
+// Aquí hay pocos estilos, porque para esta página los hice casi todos con clases de Bootstrap.
+
 // VARIABLES CSS - quiz.html
 :root {
-	// Variables CSS para los nuevos iconos de validación, que sobreescribirán los por defecto de Bootstrap
+	// Variables CSS (no logré que funcionaran con variables Sass, pues al parecer no puedo poner una variable Sass como valor de una variable CSS...) para los nuevos iconos de validación, que sobreescribirán los por defecto de Bootstrap:
 	--icono-Correcto: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%2375b798" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>');
 	--icono-Incorrecto: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ea868f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>');
 }
 
 /* PORTADA - quiz.html */
-.portadaQuiz {
-	&-Icono {
-		filter: invert(1);
-	}
+.portadaQuiz-Icono {
+	filter: invert(1);
 }
+
 /* MAIN - quiz.html */
 .mainQuiz {
 	&-Form {
@@ -22,33 +23,28 @@
 				font-size: calc(0.7rem + 1vw);
 			}
 		}
-		// Contenedor de botón de "ENVIAR"
+		// Contenedor de botón de 'ENVIAR':
 		#submitBox {
-			display: flex;
-			justify-content: center;
-			margin: 25px 0;
-			// Botón de "ENVIAR"
+			@include marginY(25px);
+			// Botón de 'ENVIAR':
 			&-Button {
-				padding: 5%;
 				background-color: $purple;
-				color: white;
 				font-family: "Montagu Slab", serif;
 				font-variant-caps: small-caps;
-				transition-property: color, font-weight, transform;
-				transition-duration: 0.25s;
+				@include transitionMulti((color, font-weight, scale), 0.25s);
 				&:hover {
 					color: black;
 					font-weight: bold;
-					transform: scale(1.05, 1.05);
+					scale: 1.05;
 				}
 				&:active {
-					transform: scale(0.95, 0.95);
+					scale: 0.95;
 				}
 			}
 		}
 	}
-	// Nuevos iconos de validación (no hubo caso...no pude anidarlos dentro de .mainQuiz-Form...)
-	// Respuesta correcta: nuevo icono
+	// NUEVOS ICONOS DE VALIDACIÓN (no hubo caso...no pude anidarlos dentro de .mainQuiz-Form...); los selectores fueron copiados desde DevTools (¡grande DevTools!) y resumidos vía Sass (¡lo cual fue un tremendo rompecabezas!):
+	// Respuesta correcta (nuevo icono):
 	.form-control.is-valid,
 	.was-validated .form-control:valid {
 		background-image: var(--icono-Correcto);
@@ -62,7 +58,7 @@
 			}
 		}
 	}
-	// Respuesta incorrecta: nuevo icono
+	// Respuesta incorrecta (nuevo icono):
 	.form-control.is-invalid,
 	.was-validated .form-control:invalid {
 		background-image: var(--icono-Incorrecto);
@@ -83,10 +79,8 @@
 @media only screen and (width <= 575.98px) {
 	/* Abreviación de @media only screen and (max-width: 575.98px) { */
 	/* PORTADA - quiz.html */
-	.portadaQuiz {
-		&-Icono {
-			width: 50%;
-		}
+	.portadaQuiz-Icono {
+		width: 50%;
 	}
 }
 
@@ -94,10 +88,8 @@
 @media only screen and (575.98px <= width <= 834.98px) {
 	/* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
 	/* PORTADA - quiz.html */
-	.portadaQuiz {
-		&-Icono {
-			width: 25%;
-		}
+	.portadaQuiz-Icono {
+		width: 25%;
 	}
 }
 
@@ -105,9 +97,7 @@
 @media only screen and (834.98px <= width) {
 	/* Abreviación de @media only screen and (min-width: 834.98px) { */
 	/* PORTADA - quiz.html */
-	.portadaQuiz {
-		&-Icono {
-			width: 25%;
-		}
+	.portadaQuiz-Icono {
+		width: 25%;
 	}
 }

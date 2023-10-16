@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="css/style.css" />
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="icons/musica.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="icons/musica.svg" type="image/x-icon" />
 
 	<title>Ctrl Alt Idol: Trayendo a las Idols de regreso al Alt</title>
 </head>
@@ -23,8 +23,8 @@
 		<nav class="navbar navbar-expand-sm w-100 headerNavbar">
 			<div class="container-fluid">
 				<!-- LOGO SITIO WEB -->
-				<a class="navbar-brand headerTituloPrincipal headerTituloPrincipal-Titulo" href="index.html">Ctrl Alt <span
-						class="text-decoration-line-through">Idol</span></a>
+				<a class="navbar-brand headerNavbar-TituloPrincipal headerNavbar-TituloPrincipal--Titulo" href="#">Ctrl
+					Alt <span class="text-decoration-line-through">Idol</span></a>
 				<!-- MENÚ 'HAMBURGUESA' -->
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav headerNavbar-List mx-sm-auto">
 						<li class="nav-item px-0 mx-sm-auto headerNavbar-List--Inicio">
-							<a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+							<a class="nav-link active" aria-current="page" href="#">Inicio</a>
 						</li>
 						<li class="nav-item px-0 mx-sm-auto headerNavbar-List--Bis">
 							<a class="nav-link" href="pages/bis.html">BiS</a>
@@ -49,54 +49,25 @@
 							<a class="nav-link" href="pages/quiz.html">Quiz</a>
 						</li>
 					</ul>
-					<span class="navbar-text headerTituloPrincipal headerTituloPrincipal-Slogan">
+					<span class="navbar-text headerNavbar-TituloPrincipal headerNavbar-TituloPrincipal--Slogan">
 						Trayendo a las Idols de regreso al Alt
 					</span>
 				</div>
 			</div>
 		</nav>
-
-		<!-- TÍTULO DEL SITIO - propio - -->
-		<!-- <h1 class="headerTituloPrincipal">
-			<a class="headerTituloPrincipal-Link" href="../index.html">         
-				<p class="headerTituloPrincipal-Titulo mb-0">
-					Ctrl Alt
-					<span class="text-decoration-line-through">Idol</span>
-				</p>
-				<p class="headerTituloPrincipal-Slogan mb-0">
-					Trayendo a las Idols de regreso al Alt
-				</p>
-			</a>
-		</h1> -->
-		<!-- NAVBAR - propio - -->
-		<!-- <nav class="headerNavbar">
-			<ul class="headerNavbar-List">
-				<li class="headerNavbar-List--Inicio">
-					<a href="../index.html">Inicio</a>
-				</li>
-				<li class="headerNavbar-List--Bis">
-					<a class="currentPage" aria-current="page" href="bis.html">BiS</a>
-				</li>
-				<li class="headerNavbar-List--Wack">
-					<a href="wack.html">WACK</a>
-				</li>
-				<li class="headerNavbar-List--OtrosGrupos">
-					<a href="otrosGrupos.html">Otros grupos</a>
-				</li>
-				<li class="headerNavbar-List--Quiz">
-					<a href="quiz.html">Quiz</a>
-				</li>
-			</ul>
-		</nav> -->
 	</header>
 
 	<!-- PORTADA - index.html -->
 	<div class="portadaIndex">
+		<img class="portadaIndex-Screenshot" src="images/bisSmokinBilly-Screenshot.png"
+			alt="Las cuatro chicas de BiS (3° generación) usando vestidos negros, de espaldas a la cámara, en un cuarto lleno de humo (una de ellas fumando), y en la espalda de sus vestidos cada una tiene estampada una de las siguientes palabras: 'BiTCH', 'FUCK', 'SEX' y 'PRETTY'">
+		<!-- Según https://developer.mozilla.org/en-US/docs/Learn/Performance/video#video_autoplay, '"playsinline" is required for mobile Safari, allowing videos to play without forcing fullscreen mode.': -->
 		<video class="portadaIndex-Video" src="videos/bisSmokinBilly-NoAudio.mp4" playsinline autoplay loop></video>
+		<img class="portadaIndex-Logo" src="icons/bisLogo.svg" alt="Logo de BiS">
 	</div>
 
 	<main class="main mainIndex p-0">
-		<!-- TEXTO PRINCIPAL, llamativo y atractivo, para capturar al lector...no me gusta mucho el "espacio en blanco", vacío, que hay en esta section... -->
+		<!-- TEXTO PRINCIPAL, llamativo y atractivo, para capturar al lector...no me gusta mucho el 'espacio en blanco', vacío, que hay en esta section... -->
 		<section class="mainIndex-TextoLlamativo">
 			<h2 class="mainIndex-TextoLlamativo--Bienvenida">
 				Bienvenid@ a CTRL ALT IDOL, el santuario web dedicado a lo mejor del
@@ -151,7 +122,7 @@
 			</div>
 			<div class="footerNavzone-Boxes footerNavzone-Wack--Box">
 				<a href="pages/wack.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Wack--Box---ImgLink">
-					<img src="icons/wackLogo.png" alt="Logo de WACK" />
+					<img src="icons/wackLogo.svg" alt="Logo de WACK" />
 				</a>
 				<a href="pages/wack.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Wack--Box---TxtLink">WACK</a>
 			</div>
@@ -176,7 +147,7 @@
 			</div>
 			<div class="footerNavzone-Boxes footerNavzone-Quiz--Box">
 				<a href="pages/quiz.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Quiz--Box---ImgLink">
-					<img src="icons/musica.png" alt="Dos notas musicales corcheas, unidas; versión de color negro" />
+					<img src="icons/musica.svg" alt="Dos notas musicales corcheas, unidas; versión de color negro" />
 				</a>
 				<a href="pages/quiz.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Quiz--Box---TxtLink">Quiz</a>
 			</div>
@@ -206,13 +177,13 @@
 			</div>
 			<img class="footerDatosPersonales-FotoPersonal" src="images/danielCuadrado.png" alt="Fotografía de mí" />
 			<div class="footerDatosPersonales-IconosSociales">
-				<a class="footerDatosPersonales-IconosSociales--Links " href="https://github.com/GitThingsDan">
-					<img class="footerDatosPersonales-IconosSociales--Links---Logos " src="icons/githubLogo-White.png"
+				<a class="footerDatosPersonales-IconosSociales--Links" href="https://github.com/GitThingsDan">
+					<img class="footerDatosPersonales-IconosSociales--Links---Logos " src="icons/githubLogo-White.svg"
 						alt="Logo de GitHub" />
 				</a>
-				<a class="footerDatosPersonales-IconosSociales--Links "
+				<a class="footerDatosPersonales-IconosSociales--Links"
 					href="https://www.linkedin.com/in/daniel-ignacio-v-48673557/">
-					<img class="footerDatosPersonales-IconosSociales--Links---Logos " src="icons/linkedinLogo.png"
+					<img class="footerDatosPersonales-IconosSociales--Links---Logos " src="icons/linkedinLogo.svg"
 						alt="Logo de LinkedIn" />
 				</a>
 			</div>
@@ -221,11 +192,10 @@
 		<small class="footerDerechos">
 			Todos los derechos pertenecen a sus respectivos dueños.
 		</small>
-		<!-- Hack para botón "Volver al principio de la página", en la esquina inferior derecha -->
-		<p id="top">.</p>
+		<!-- Botón para "Volver al principio de la página", en la esquina inferior derecha -->
 		<div id="goToTopBox">
 			<a href="#top" id="goToTopBox-Link">
-				<img src="icons/flecha-Arriba.png" alt="Flecha cliqueable para volver al principio de la página"
+				<img src="icons/flecha-Arriba.png" class="w-100" alt="Flecha cliqueable para volver al principio de la página"
 					id="goToTopBox-Link--Img" />
 			</a>
 		</div>

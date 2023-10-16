@@ -12,19 +12,19 @@
 	<link rel="stylesheet" href="../css/style.css" />
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="../icons/musica.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="../icons/musica.svg" type="image/x-icon" />
 
 	<title>WACK - Ctrl Alt Idol</title>
 </head>
 
-<body class="body" data-bs-spy="scroll" data-bs-target="#wackIndice" tabindex="0">
+<body class="body" data-bs-spy="scroll" data-bs-target="#wackIndiceBox" tabindex="0">
 	<header class="header align-items-sm-center" data-bs-theme="dark">
 		<!-- NAVBAR - Bootstrap - -->
 		<nav class="navbar navbar-expand-sm w-100 headerNavbar">
 			<div class="container-fluid">
 				<!-- LOGO SITIO WEB -->
-				<a class="navbar-brand headerTituloPrincipal headerTituloPrincipal-Titulo" href="../index.html">Ctrl Alt <span
-						class="text-decoration-line-through">Idol</span></a>
+				<a class="navbar-brand headerNavbar-TituloPrincipal headerNavbar-TituloPrincipal--Titulo" href="..">Ctrl Alt
+					<span class="text-decoration-line-through">Idol</span></a>
 				<!-- MENÚ 'HAMBURGUESA' -->
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,13 +34,13 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav headerNavbar-List mx-sm-auto">
 						<li class="nav-item px-0 mx-sm-auto headerNavbar-List--Inicio">
-							<a class="nav-link" href="../index.html">Inicio</a>
+							<a class="nav-link" href="..">Inicio</a>
 						</li>
 						<li class="nav-item px-0 mx-sm-auto headerNavbar-List--Bis">
 							<a class="nav-link" href="bis.html">BiS</a>
 						</li>
 						<li class="nav-item px-0 mx-sm-auto headerNavbar-List--Wack">
-							<a class="nav-link active" aria-current="page" href="wack.html">WACK</a>
+							<a class="nav-link active" aria-current="page" href="#">WACK</a>
 						</li>
 						<li class="nav-item px-0 mx-sm-auto headerNavbar-List--OtrosGrupos">
 							<a class="nav-link" href="otrosGrupos.html">Otros grupos</a>
@@ -49,68 +49,37 @@
 							<a class="nav-link" href="quiz.html">Quiz</a>
 						</li>
 					</ul>
-					<span class="navbar-text headerTituloPrincipal headerTituloPrincipal-Slogan">
+					<span class="navbar-text headerNavbar-TituloPrincipal headerNavbar-TituloPrincipal--Slogan">
 						Trayendo a las Idols de regreso al Alt
 					</span>
 				</div>
 			</div>
 		</nav>
 
-		<!-- TÍTULO DEL SITIO - propio - -->
-		<!-- <h1 class="headerTituloPrincipal">
-			<a class="headerTituloPrincipal-Link" href="../index.html">         
-				<p class="headerTituloPrincipal-Titulo mb-0">
-					Ctrl Alt
-					<span class="text-decoration-line-through">Idol</span>
-				</p>
-				<p class="headerTituloPrincipal-Slogan mb-0">
-					Trayendo a las Idols de regreso al Alt
-				</p>
-			</a>
-		</h1> -->
-		<!-- NAVBAR - propio - -->
-		<!-- <nav class="headerNavbar">
-			<ul class="headerNavbar-List">
-				<li class="headerNavbar-List--Inicio">
-					<a href="../index.html">Inicio</a>
-				</li>
-				<li class="headerNavbar-List--Bis">
-					<a class="currentPage" aria-current="page" href="bis.html">BiS</a>
-				</li>
-				<li class="headerNavbar-List--Wack">
-					<a href="wack.html">WACK</a>
-				</li>
-				<li class="headerNavbar-List--OtrosGrupos">
-					<a href="otrosGrupos.html">Otros grupos</a>
-				</li>
-				<li class="headerNavbar-List--Quiz">
-					<a href="quiz.html">Quiz</a>
-				</li>
-			</ul>
-		</nav> -->
+
 	</header>
 
 	<!-- PORTADA - wack.html -->
 	<h2 class="text-center">WACK</h2>
 	<div class="portadaWack d-flex flex-column align-items-center">
-		<img src="../icons/wackLogo.png" alt="Logo de WACK" class="portadaWack-Icono rounded-4" />
+		<img src="../icons/wackLogo.svg" alt="Logo de WACK" class="portadaWack-Icono rounded-4 bg-white" />
 	</div>
 
 	<main class="main mainWack">
 		<!-- SIDEBAR (barra lateral), A MODO DE 'ÍNDICE' DE CONTENIDO -->
 		<!-- Botón para desplegar barra lateral -->
-		<button aria-controls="offcanvasRight" class="mainSidebarBoton btn " data-bs-target="#offcanvasRight"
+		<button aria-controls="offcanvasRight" class="mainBotonSidebar btn " data-bs-target="#offcanvasRight"
 			data-bs-theme="dark" data-bs-toggle="offcanvas" type="button">Índice</button>
 		<!-- La barra lateral en cuestión -->
-		<div aria-labelledby="offcanvasRightLabel" class="mainWack-Sidebar offcanvas offcanvas-end text-start"
+		<div aria-labelledby="offcanvasRightLabel" class="mainWack-Sidebar mainSidebar offcanvas offcanvas-end text-start"
 			data-bs-scroll="true" data-bs-theme="dark" id="offcanvasRight" tabindex="-1">
 			<div class="offcanvas-header">
 				<h5 class="offcanvas-title" id="offcanvasRightLabel">Índice</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 			</div>
 			<div class="offcanvas-body">
-				<nav id="wackIndice" class="mainIndice h-100 flex-column align-items-stretch pe-4 border-end">
-					<nav class="nav nav-pills flex-column">
+				<nav id="wackIndiceBox" class="mainSidebar-IndiceBox h-100 flex-column align-items-stretch pe-4 border-end">
+					<nav class="mainSidebar-IndiceBox--Indice nav nav-pills flex-column">
 						<a class="nav-link" href="#que-es-wack">¿Qué es WACK?</a>
 						<a class="nav-link" href="#cinco-grupos-de-wack">5 grupos de WACK</a>
 						<nav class="nav nav-pills flex-column">
@@ -309,7 +278,7 @@
 			</div>
 			<div class="footerNavzone-Boxes footerNavzone-Wack--Box">
 				<a href="wack.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Wack--Box---ImgLink">
-					<img src="../icons/wackLogo.png" alt="Logo de WACK" />
+					<img src="../icons/wackLogo.svg" alt="Logo de WACK" />
 				</a>
 				<a href="wack.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Wack--Box---TxtLink">WACK</a>
 			</div>
@@ -333,7 +302,7 @@
 			</div>
 			<div class="footerNavzone-Boxes footerNavzone-Quiz--Box">
 				<a href="quiz.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Quiz--Box---ImgLink">
-					<img src="../icons/musica.png" alt="Dos notas musicales corcheas, unidas; versión de color negro" />
+					<img src="../icons/musica.svg" alt="Dos notas musicales corcheas, unidas; versión de color negro" />
 				</a>
 				<a href="quiz.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Quiz--Box---TxtLink">Quiz</a>
 			</div>
@@ -364,12 +333,12 @@
 			<img class="footerDatosPersonales-FotoPersonal" src="../images/danielCuadrado.png" alt="Fotografía de mí" />
 			<div class="footerDatosPersonales-IconosSociales">
 				<a class="footerDatosPersonales-IconosSociales--Links" href="https://github.com/GitThingsDan">
-					<img class="footerDatosPersonales-IconosSociales--Links---Logos" src="../icons/githubLogo-White.png"
+					<img class="footerDatosPersonales-IconosSociales--Links---Logos" src="../icons/githubLogo-White.svg"
 						alt="Logo de GitHub" />
 				</a>
 				<a class="footerDatosPersonales-IconosSociales--Links"
 					href="https://www.linkedin.com/in/daniel-ignacio-v-48673557/">
-					<img class="footerDatosPersonales-IconosSociales--Links---Logos" src="../icons/linkedinLogo.png"
+					<img class="footerDatosPersonales-IconosSociales--Links---Logos" src="../icons/linkedinLogo.svg"
 						alt="Logo de LinkedIn" />
 				</a>
 			</div>
@@ -378,12 +347,11 @@
 		<small class="footerDerechos">
 			Todos los derechos pertenecen a sus respectivos dueños.
 		</small>
-		<!-- Hack para botón "Volver al principio de la página", en la esquina inferior derecha -->
-		<p id="top">.</p>
+		<!-- Botón para "Volver al principio de la página", en la esquina inferior derecha -->
 		<div id="goToTopBox">
 			<a href="#top" id="goToTopBox-Link">
-				<img src="../icons/flecha-Arriba.png" alt="Flecha cliqueable para volver al principio de la página"
-					id="goToTopBox-Link--Img" />
+				<img src="../icons/flecha-Arriba.png" class="w-100"
+					alt="Flecha cliqueable para volver al principio de la página" id="goToTopBox-Link--Img" />
 			</a>
 		</div>
 	</footer>

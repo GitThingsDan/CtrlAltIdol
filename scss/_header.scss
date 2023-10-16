@@ -1,60 +1,60 @@
 /* HEADER */
 .header {
 	background-color: $purple;
+	border: solid black thin;
+	border-radius: 0 0 25px 25px;
 	display: flex;
 	justify-content: space-between;
-	// Por alguna razón, queriendo configurarlo como 'fixed', el header me tapa parte de la portada, por lo que me veo en la obligación de setearlo como 'sticky', ya que no sé cómo resolver ese problema de otro modo.
-	&:not(.headerIndex) {
-		position: sticky;
-	}
-	// Sin embargo, dado que al desplegar el menú hamburguesa en Mobile se mostraba un espacio en blanco bajo el video hero, decidí aplicar position:fixed sólo para el header de Index, y así solucionar esta situación de una forma medianamente armónica con el resto de los estilos de index.html.
-	&.headerIndex {
-		position: fixed;
-	}
 	top: 0px;
-	z-index: 10;
-	padding: 1.5%;
-	border: solid black thin;
-	box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
-	border-radius: 0 0 25px 25px;
 	width: 100%;
-
-	&TituloPrincipal {
-		text-align: center;
-		font-family: "Montagu Slab", serif;
-		transition: transform 0.15s;
-		font-variant: small-caps;
-		&-Titulo {
-			font-weight: bolder;
-			&:hover {
-				transform: scale(1.025, 1.025);
-			}
-			&:active {
-				transform: scale(0.975, 0.975);
-			}
-		}
-		&-Slogan {
-			font-style: italic;
-		}
-	}
+	z-index: 10;
+	@include bxshdw(2px);
+	@include paddingX(1%);
 	&Navbar {
 		display: flex;
-
+		&-TituloPrincipal {
+			font-family: "Montagu Slab", serif;
+			font-variant-caps: small-caps;
+			text-align: center;
+			transition: transform 0.15s;
+			&--Titulo {
+				font-weight: bolder;
+				&:hover {
+					transform: scale(1.025, 1.025);
+				}
+				&:active {
+					transform: scale(0.975, 0.975);
+				}
+			}
+			&--Slogan {
+				font-style: italic;
+			}
+		}
 		&-List {
-			width: 100%;
 			display: flex;
 			flex-wrap: wrap;
 			padding-left: 0;
+			width: 100%;
 			.nav-item {
-				transition: font-weight 0.75s, transform 0.25s, font-size 0.25s;
+				transition: font-size 0.25s, font-weight 0.75s, transform 0.25s;
 				&:hover {
 					font-weight: 900;
 				}
+				// Cuando me encuentre en cierta página del sitio, que su link en el Navbar se muestre en negrita ('página actual'):
 				.nav-link.active {
 					font-weight: bold;
 				}
 			}
 		}
+	}
+
+	// Por alguna razón, queriendo configurarlo como 'fixed', el header me tapa parte de la portada, por lo que me veo en la obligación de setearlo como 'sticky' (SÓLO para headers de las 'pages' - es decir, excluyendo a index.html -; se explica en el siguiente comentario), ya que no sé cómo resolver este problema de otro modo.
+	&:not(&Index) {
+		position: sticky;
+	}
+	// Sin embargo, dado que al desplegar el menú hamburguesa en Mobile se mostraba un espacio en blanco bajo el video hero, decidí aplicar 'position:fixed' sólo para el header de index.html, y así solucionar esta situación de una forma medianamente armónica con el resto de los estilos.
+	&Index {
+		position: fixed;
 	}
 }
 
@@ -65,30 +65,31 @@
 	/* HEADER */
 	.header {
 		flex-direction: column;
-		@include paddingY(2vw);
-		&TituloPrincipal {
-			&-Titulo {
-				font-size: 7.5vw;
-			}
-			&-Slogan {
-				font-size: 4vw;
-			}
-		}
-
-		&Navbar-List {
-			width: 100%;
-			justify-content: space-around;
-			margin-bottom: 8px;
-			.nav-item {
-				font-size: 5.5vw;
-				&:not(:last-child) {
-					border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+		&Navbar {
+			&-TituloPrincipal {
+				&--Titulo {
+					font-size: 7.5vw;
 				}
-				&:hover {
-					font-size: 6vw;
+				&--Slogan {
+					font-size: 4vw;
 				}
-				&:active {
-					font-size: 5vw;
+			}
+			&-List {
+				justify-content: space-around;
+				margin-bottom: 8px;
+				width: 100%;
+				.nav-item {
+					font-size: 5.5vw;
+					&:hover {
+						font-size: 6vw;
+					}
+					&:active {
+						font-size: 5vw;
+					}
+					// Para tener líneas divisoras entre cada ítems/links del Navbar, poner 'border-bottom' a todas EXCEPTO al último ítem/link:
+					&:not(:last-child) {
+						border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+					}
 				}
 			}
 		}
@@ -100,29 +101,32 @@
 	/* Abreviación de @media only screen and (min-width: 575.98px) and (max-width: 834.98px) { */
 	/* HEADER */
 	.header {
-		&TituloPrincipal {
-			margin-bottom: 0;
-
-			&-Titulo {
-				font-size: 4vw;
-			}
-			&-Slogan {
-				font-size: 2vw;
-				width: 35%;
-			}
-		}
-		&Navbar-List {
-			width: 50%;
-			justify-content: center;
-			margin-bottom: 0;
-			.nav-item {
-				margin: 0;
-				font-size: 2.5vw;
-				&:active {
-					transform: scale(0.9, 0.9);
+		@include paddingY(1%);
+		&Navbar {
+			&-TituloPrincipal {
+				margin-bottom: 0;
+				&--Titulo {
+					font-size: 4vw;
 				}
-				.nav-link {
-					@include paddingY(0);
+				&--Slogan {
+					font-size: 1.9vw;
+					width: 35%;
+				}
+			}
+			&-List {
+				justify-content: center;
+				margin-bottom: 0;
+				width: 50%;
+				.nav-item {
+					font-size: 2.5vw;
+					margin: 0;
+					&:active {
+						transform: scale(0.9, 0.9);
+					}
+					// Ya que los links del Navbar se muestran en 2 filas/renglones, procurar que no sean filas/renglones muy 'altas'/'gruesos', quitándoles el padding vertical:
+					.nav-link {
+						@include paddingY(0);
+					}
 				}
 			}
 		}
@@ -134,25 +138,25 @@
 	/* Abreviación de @media only screen and (min-width: 834.98px) { */
 	/* HEADER */
 	.header {
-		height: 10vw;
-		&TituloPrincipal {
-			&-Titulo {
-				font-size: 3.5vw;
+		&Navbar {
+			&-TituloPrincipal {
+				&--Titulo {
+					font-size: 3.5vw;
+				}
+				&--Slogan {
+					font-size: 2vw;
+					width: 35%;
+				}
 			}
-			&-Slogan {
-				font-size: 2vw;
-				width: 35%;
-			}
-		}
-
-		&Navbar-List {
-			width: 60%;
-			justify-content: center;
-			margin-bottom: 0;
-			.nav-item {
-				font-size: 1.7vw;
-				&:active {
-					transform: scale(0.9, 0.9);
+			&-List {
+				justify-content: center;
+				margin-bottom: 0;
+				width: 60%;
+				.nav-item {
+					font-size: 1.7vw;
+					&:active {
+						transform: scale(0.9, 0.9);
+					}
 				}
 			}
 		}

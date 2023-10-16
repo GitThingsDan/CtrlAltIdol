@@ -1,20 +1,16 @@
 // Aquí hay pocos estilos, porque para esta página los hice casi todos con clases de Bootstrap.
 /* PORTADA - otrosGrupos.html */
 .portadaOtrosGrupos {
-	margin: 0 auto;
+	@include marginX(auto);
 	img {
 		padding: 0;
 	}
 }
 /* MAIN - otrosGrupos.html */
-.mainOtrosGrupos {
-	&-Titulo {
-		text-align: center;
-	}
-	&-VideoFlexBox {
-		margin: 1vw 0;
-		flex-wrap: wrap;
-	}
+// El Flex Container ('Flex Box' para clases más abreviadas) que contiene a los videos:
+.mainOtrosGrupos-VideoFlexBox {
+	row-gap: 2vw;
+	@include marginY(6.25vw);
 }
 
 /* REGLAS @MEDIA */
@@ -26,12 +22,9 @@
 		width: 100%;
 	}
 	/* MAIN - otrosGrupos.html */
-	.mainOtrosGrupos {
-		&-VideoFlexBox iframe {
-			height: calc(50px + 50vw);
-			margin: 1vw 0;
-			width: 100%;
-		}
+	.mainOtrosGrupos-VideoFlexBox iframe {
+		height: calc(50px + 50vw);
+		width: 100%;
 	}
 }
 
@@ -43,12 +36,9 @@
 		width: 75%;
 	}
 	/* MAIN - otrosGrupos.html */
-	.mainOtrosGrupos {
-		&-VideoFlexBox iframe {
-			height: 25vw;
-			margin: 1vw 0;
-			width: 50%;
-		}
+	.mainOtrosGrupos-VideoFlexBox iframe {
+		height: 25vw;
+		width: 50%;
 	}
 }
 
@@ -60,11 +50,8 @@
 		width: 50%;
 	}
 	/* MAIN - otrosGrupos.html */
-	.mainOtrosGrupos {
-		&-VideoFlexBox iframe {
-			height: 25vw;
-			margin: 1vw 0;
-			width: 50%;
-		}
+	.mainOtrosGrupos-VideoFlexBox iframe {
+		height: 25vw;
+		width: 50%;
 	}
 }

@@ -1,30 +1,90 @@
-// Primero, con @import:
-// RESET IMPORTS:
+// VARIABLES:
+$purple: rgb(62, 0, 143);
+$purple-transparent: rgba($purple, 0.5);
+// Para las box-shadows:
+$black-transparent: rgba(black, 0.5);
+// Fondo de sitio: 
+$purple-gradient: linear-gradient(90deg, $purple, black, $purple);
+
+// MIXINS:
+// 'box-shadow' de forma RÁPIDA (¡al fin!):
+@mixin bxshdw($len, $col: $black-transparent) {
+	box-shadow: $len $len $len $len $col;
+}
+// 'margin' específico para cada eje:
+@mixin marginX($marL, $marR: $marL) {
+	margin-left: $marL;
+	margin-right: $marR;
+}
+@mixin marginY($marT, $marB: $marT) {
+	margin-top: $marT;
+	margin-bottom: $marB;
+}
+// 'padding' específico para cada eje:
+@mixin paddingX($padL, $padR: $padL) {
+	padding-left: $padL;
+	padding-right: $padR;
+}
+@mixin paddingY($padT, $padB: $padT) {
+	padding-top: $padT;
+	padding-bottom: $padB;
+}
+// 'scale' específico para cada eje (excluye eje Z):
+@mixin scaleX($valueX) {
+	scale: $valueX 1;
+}
+@mixin scaleY($valueY) {
+	scale: 1 $valueY;
+}
+// A múltiples propiedades, aplicarles los mismos valores de 'transition', de forma menos verbosa (si no se especifica algún argumento, usar su valor por defecto - 'valor inicial' -, indicado en el sitio web de MDN):
+@mixin transitionMulti($tPro: all, $tDur: 0s, $tTF: ease, $tDel: 0s) {
+	transition-property: $tPro;
+	transition-duration: $tDur;
+	transition-timing-function: $tTF;
+	transition-delay: $tDel;
+}
+
+/* REGLAS @FONT-FACE (familias de fuentes descargadas desde Google Fonts) */
+/* 'Montagu Slab' */
+@font-face {
+	font-family: "Montagu Slab";
+	src: local("Montagu Slab"),
+		url(../fonts/Montagu_Slab/MontaguSlab-VariableFont_opsz-wght.ttf);
+}
+/* "Roboto Mono" */
+@font-face {
+	font-family: "Roboto Mono";
+	src: local("Roboto Mono"),
+		url(../fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
+}
+
+// @IMPORTS:
+// RESET import:
 @import "reset"; // Para que los 'miembros' (mixins, variables, etc.) sean reconocidos GLOBALmente (nótense las mayúsculas) en TODOS los .scss, la regla @import correspondiente ("@import 'reset'", en este caso) debe estar ubicada AL PRINCIPIO, *antes* de los @import de los demás .scss.
 
-// IMAGEHOVER.IO IMPORT:
-@import "imagehover/imagehover.scss";
+// IMAGEHOVER.IO import (estoy considerando utilizarlo para el footerNavzone):
+// @import "imagehover/imagehover.scss";
 
-// GENERAL IMPORTS:
+// GENERAL imports:
 @import "header";
 @import "footer";
 
-// SPECIFIC IMPORTS:
+// SPECIFIC imports:
 @import "index/index"; // 						index.html
 @import "bis/bis"; // 								bis.html
 @import "wack/wack"; // 							wack.html
 @import "otrosGrupos/otrosGrupos"; // otrosGrupos.html
 @import "quiz/quiz"; // 							quiz.html
 
-// Ahora, con @use:
-// RESET USES:
+// @USES:
+// RESET use:
 // @use "reset" as *; //AÑADIR ESTA LÍNEA EN TODOS LOS .scss (por si acaso)
 
-// GENERAL USES:
+// GENERAL uses:
 // @use "header";
 // @use "footer";
 
-// SPECIFIC USES:
+// SPECIFIC uses:
 // @use "index/index";	// 							index.html
 // @use "bis/bis";	// 									bis.html
 // @use "wack/wack";	// 								wack.html

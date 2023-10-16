@@ -4,81 +4,93 @@
 		color: white;
 		text-decoration: none;
 	}
-	&Index {
-		background: linear-gradient(90deg, $purple, black, $purple);
-	}
+
 	&Navzone {
 		background-color: $purple;
-		display: grid;
 		border-radius: 25px;
-		justify-items: center;
-		// LAS 4 CAJAS (cada una contiene: una imagen en un link, y un texto en un link)
+		display: grid;
+		// 'gap' en vw en lugar de % porque si no, se rompe el navzone (la caja de 'Quiz' hace 'underflow' fuera del Grid):
+		gap: 5vw;
+		padding: 5vw;
+		// LAS 4 CAJAS (cada una contiene: una imagen en un link, y un texto en un link):
 		&-Boxes {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			justify-content: center;
-			padding: 3%;
-			// LOS LINKS DE IMÁGENES
+			// LOS LINKS DE IMÁGENES:
 			&--ImgLinks {
 				border-radius: 25px;
-				box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
-				transition: box-shadow 0.25s, transform 0.25s;
+				@include bxshdw(4px);
+				@include transitionMulti((box-shadow, scale), 0.25s);
 				&:hover {
-					box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
-					transform: scale(1.025, 1.025);
+					@include bxshdw(8px);
+					scale: 1.025;
 				}
 				&:active {
-					transform: scale(0.975, 0.975);
+					scale: 0.975;
 				}
-				// Las imágenes.
+				// Las imágenes:
 				img {
-					height: 100%;
-					max-width: 100%;
 					border-radius: 25px;
+					max-width: 100%;
+					// Para que el logo de WACK se estire verticalmente y rellene por completo el eje Y de su link contenedor:
+					height: 100%;
 				}
 			}
-			// LOS LINKS DE TEXTO
+			// LOS LINKS DE TEXTO:
 			&--TxtLinks {
 				background-color: black;
-				padding: 15px;
-				margin-top: 1.5%;
 				border-radius: 25px;
-				transition-property: box-shadow, color, font-weight, transform;
-				transition-duration: 0.25s;
-				box-shadow: 1.5px 1.5px 1.5px 1.5px rgba(0, 0, 0, 0.5);
+				margin-top: 1.5%;
+				padding: 15px;
+				@include bxshdw(1.5px);
+				@include transitionMulti(
+					(box-shadow, color, font-weight, scale),
+					0.25s
+				);
 				&:hover {
-					box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+					@include bxshdw(3px);
 					color: $purple;
-					font-weight: 900;
-					transform: scale(1.05, 1.05);
+					font-weight: bolder;
+					scale: 1.05;
 				}
 				&:active {
-					transform: scale(0.95, 0.95);
+					scale: 0.95;
 				}
 			}
 		}
 
-		// CADA CAJA EN ESPECÍFICO
+		// CADA CAJA EN ESPECÍFICO (no las anidé dentro de '&-Boxes' como lo hice en _index.scss - dentro de 'iframe' - porque en general esta grilla - .footerNavzone - es más compleja - con ajustes 'hacky' de height/width, flexbox, e incluso una subgrilla  - que la de index.html - 4 iframes, sin texto ni nada del otro mundo - ):
 		&-Bis--Box {
 			grid-area: bis;
 		}
 		&-Wack--Box {
 			grid-area: wack;
-			/* Lo que sigue es un arreglo algo "hacky" de la propiedad "height", pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px más pequeña que la de BiS (su contigua a la izquierda). height: 83.375% */
+			/* Lo que sigue es un arreglo algo 'hacky' ('a lo bruto') de la propiedad 'height', pero es para salir del paso y que las dos imágenes (BiS y WACK) queden similares en alto; es una solución rápida al problema de que la imagen de WACK salió casi 40px (en escritorio) más pequeña que la de BiS (su contigua a la izquierda). height: 88.61% */
 			&---ImgLink {
-				height: 83.375%;
+				height: 88.61%;
+				background-color: white;
+
+				//	FAVOR IGNORAR LA SIGUIENTE 'TABLA':
+
+				//	TABLET		576px			834px
+				//	height: 	75.845%; 	81.375%;
+				//	------------------------------------------------
+				//	DESKTOP		835px			1440px		MiPC			1920px
+				//	height: 	78.785%;	84.073%;	84.596%;	86.195%;
 			}
 		}
 		&-OtrosGrupos--Box {
 			grid-area: otrosGrupos;
-			// Esta es la única caja que tiene más de 1 imagen (4, para ser exactos), por lo que toca aplicarle display:grid al link que las envuelve
+			// Esta es la única caja que tiene más de 1 imagen (4, para ser exactos), por lo que toca aplicarle display:grid al link que las envuelve:
 			&---ImgLink {
+				// Para cubrir el espacio formado por los border-radius de las imágenes (aquellos que convergen en el centro de esta sub-grilla), y así no contraste con la box-shadow aplicada:
+				background-color: $black-transparent;
 				display: grid;
 				grid-template-areas:
 					"bisBikini			bellringPlaya"
 					"babymetalFuego	atarashiiGakkoFormacion";
-				background-color: rgba(0, 0, 0, 0.5);
+				// Las 4 imágenes de esta sub-grilla (declaración de grid-areas):
 				#OtrosGruposImg {
 					&-bisBikini {
 						grid-area: bisBikini;
@@ -97,10 +109,9 @@
 		}
 		&-Quiz--Box {
 			grid-area: quiz;
-
 			&---ImgLink {
-				display: flex;
 				width: 100%;
+				display: flex;
 				justify-content: center;
 				/* Lo siguiente es para que la imagen en cuestión no quede gigante y se encasille en su celda grid (es la única imagen cuadrada en todo el Navzone). width: 56.25% */
 				img {
@@ -111,25 +122,24 @@
 	}
 	&DatosPersonales {
 		display: grid;
-
 		&-Texto {
 			grid-area: textoDP;
-			// Para no usar el delimitador '!' seguido de la palabra clave 'importante' en inglés (soy así de críptico para que esto no aparezca en el buscador de VS Code):
+			// Lo siguiente es para no usar el delimitador '!' seguido de la palabra clave 'importante' en inglés (soy así de críptico para que esto no aparezca en el buscador de VS Code):
 			&--Curiosidades[id] {
 				list-style: disc;
 			}
 			&--EmailYUbicacion {
 				font-style: italic;
 				#emailAddress {
+					animation: parpadeo 1s ease-in-out infinite alternate;
 					@keyframes parpadeo {
 						from {
-							font-weight: 100;
+							font-weight: lighter;
 						}
 						to {
-							font-weight: 900;
+							font-weight: bolder;
 						}
 					}
-					animation: parpadeo 1s linear infinite alternate;
 					&::after {
 						content: " Dirección de e-mail: dvillarroela@pm.me";
 						vertical-align: middle;
@@ -141,15 +151,16 @@
 		}
 		&-FotoPersonal {
 			grid-area: fotoDP;
-			border-radius: 100%;
 			max-width: 100%;
+			// Para hacer que mi foto sea redonda, 'border-radius:25px' no es la solución; por tanto, subí los pixeles:
+			border-radius: 250px;
 		}
-		// UNA CAJA QUE ENCIERRA A LOS ENLACES DE LOS LOGOS SOCIALES
+		// UNA CAJA QUE ENCIERRA A LOS LINKS DE LOS LOGOS SOCIALES:
 		&-IconosSociales {
 			grid-area: socialDP;
 			display: flex;
 			justify-content: space-around;
-			// LOS 2 LOGOS
+			// LOS 2 LOGOS:
 			&--Links---Logos {
 				max-width: 100%;
 				transition: transform 0.25s;
@@ -164,43 +175,41 @@
 	}
 	&Derechos {
 		background-color: $purple;
-		text-align: center;
-		display: block;
 		border-radius: 25px;
+		display: block;
 		padding: 0.5% 7.5%;
+		text-align: center;
 	}
 
-	// Hack para botón "Volver al principio de la página", en la esquina inferior derecha
-	#top {
-		visibility: hidden;
-		position: absolute;
-		top: 0;
-	}
-	// SE TRATA DE UNA CAJA QUE ENCIERRA A UN ENLACE, EL CUAL A SU VEZ ENVUELVE A UNA IMAGEN EN SU INTERIOR. PARA QUE SIMULTÁNEAMENTE HAYA (1) TRANSICIÓN - al hacer :hover - DE transform:scale, Y (2) ANIMACIÓN - infinita - DE transform:rotateY  (se genera un conflicto, me imagino que porque ambos usan 'transform'), TOCA APLICAR LA TRANSICIÓN Y LA ANIMACIÓN A DISTINTOS NIVELES DEL ELEMENTO:
-	// transición transform:scale a la caja...
+	// Botón para 'Volver al principio de la página', en la esquina inferior derecha (se trata de una caja que encierra a un link, el cual a su vez envuelve a una imagen en su interior):
 	#goToTopBox {
 		position: fixed;
-		bottom: 10px;
-		right: 10px;
-		transition: transform 0.5s, filter 0.5s;
+		inset: auto 10px 10px auto;
 		z-index: 10;
+		transform-origin: bottom right;
+		// Para que simultáneamente haya (1) transición - al hacer :hover - de 'scale', y (2) animación - infinita - de 'rotate:y' (se genera un conflicto al usar 'transform-origin: bottom right', me imagino que porque el tipo de animación de ambas propiedades - 'rotate' y 'scale' - es 'transform'), toca aplicar la transición y la animación a distintos niveles del elemento:
+		// transición 'scale' a la caja:hover...
+		@include transitionMulti((filter, scale), 0.5s);
 		&:hover {
-			transform: scale(1.25, 1.25) translate(-10px, -10px);
 			filter: invert(1);
+			scale: 1.25;
 		}
-		// ...y animación transform:rotateY a la imagen
+		// ...y animación 'rotate:y' a la imagen dentro de la caja ('linear' para velocidad constante, y 'alternate' me sirvió como hack para que no tuviera saltos la animación al terminar):
 		&-Link--Img {
-			width: 100%;
 			animation: rotacion 4s linear infinite alternate;
 			@keyframes rotacion {
 				from {
-					transform: rotateY(0deg);
+					rotate: y 0deg;
 				}
 				to {
-					transform: rotateY(180deg);
+					rotate: y 180deg;
 				}
 			}
 		}
+	}
+	// Para que no se vea el video hero en el footer de index.html (específicamente, en la sección de 'Datos Personales'):
+	&Index {
+		background: $purple-gradient;
 	}
 }
 
@@ -216,6 +225,9 @@
 				"wack"
 				"otrosGrupos"
 				"quiz";
+			&-Wack--Box---ImgLink img {
+				width: 100vw;
+			}
 		}
 		&DatosPersonales {
 			grid-template-areas:
@@ -227,28 +239,26 @@
 
 			&-Texto {
 				font-size: 4vw;
-				&--EmailYUbicacion {
-					#emailAddress:hover::after {
-						font-size: 2.3vw;
-					}
+				&--EmailYUbicacion #emailAddress:hover::after {
+					font-size: 2.3vw;
 				}
 			}
 			&-FotoPersonal {
-				width: 100%;
 				margin-left: 5vw;
+				width: 100%;
 			}
 			&-IconosSociales {
 				flex-direction: column;
 				align-items: center;
 				margin-left: 5vw;
 				&--Links {
-					width: 37.5%;
+					width: 40%;
 				}
 			}
 		}
-		// Hack para botón "Volver al principio de la página", en la esquina inferior derecha
+		// Botón para 'Volver al principio de la página', en la esquina inferior derecha:
 		#goToTopBox {
-			width: 20vw;
+			width: 15vw;
 		}
 	}
 }
@@ -262,6 +272,9 @@
 			grid-template-areas:
 				"bis					wack"
 				"otrosGrupos	quiz";
+			&-Wack--Box---ImgLink img {
+				width: 50vw;
+			}
 		}
 		&DatosPersonales {
 			grid-template-areas:
@@ -270,29 +283,23 @@
 			grid-template-columns: 3.5fr 1.5fr;
 			grid-template-rows: 2fr 1fr;
 			align-items: center;
-			margin: 2% 5%;
 			column-gap: 75px;
+			margin: 2% 5%;
 
 			&-Texto {
 				/* font-size: calc(0.5px + 2.5vw), la solución que se me ocurrió para que el texto sea medianamente responsive */
 				font-size: calc(0.5px + 2.5vw);
-				&--EmailYUbicacion {
-					#emailAddress:hover::after {
-						font-size: 1.9vw;
-					}
+				&--EmailYUbicacion #emailAddress:hover::after {
+					font-size: 1.5vw;
 				}
 			}
-			&-IconosSociales {
-				align-self: flex-start;
-				&--Links {
-					margin-top: 5%;
-					width: 35%;
-				}
+			&-IconosSociales--Links {
+				width: 40%;
 			}
 		}
-		// Hack para botón "Volver al principio de la página", en la esquina inferior derecha
+		// Botón para 'Volver al principio de la página', en la esquina inferior derecha:
 		#goToTopBox {
-			width: 10vw;
+			width: 7.5vw;
 		}
 	}
 }
@@ -309,6 +316,9 @@
 			&-Boxes--TxtLinks {
 				font-size: calc(15px + 1vw);
 			}
+			&-Wack--Box---ImgLink img {
+				width: 50vw;
+			}
 		}
 		&DatosPersonales {
 			grid-template-areas:
@@ -316,24 +326,22 @@
 				"textoDP	socialDP";
 			grid-template-columns: 4fr 1fr;
 			grid-template-rows: 2fr 1fr;
-			column-gap: 100px;
 			align-items: center;
+			column-gap: 100px;
 			margin: 2% 5%;
 
 			&-Texto {
 				/* font-size: 2vw, la solución que se me ocurrió para que el texto sea medianamente responsive */
 				font-size: 2vw;
-				&--EmailYUbicacion {
-					#emailAddress:hover::after {
-						font-size: 1.5vw;
-					}
+				&--EmailYUbicacion #emailAddress:hover::after {
+					font-size: 1.5vw;
 				}
 			}
 			&-IconosSociales--Links {
 				width: 37.5%;
 			}
 		}
-		// Hack para botón "Volver al principio de la página", en la esquina inferior derecha
+		// Botón para 'Volver al principio de la página', en la esquina inferior derecha:
 		#goToTopBox {
 			width: 5vw;
 		}
