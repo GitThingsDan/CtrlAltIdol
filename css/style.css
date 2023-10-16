@@ -780,7 +780,8 @@
   opacity: 1;
 }
 .portadaBis .carousel-control-icons, .portadaBis .carousel-control-next-icon, .portadaBis .carousel-control-prev-icon {
-  background-image: url("../../icons/flecha-Arriba.png");
+  /* ***ALARMA: importante***: LA RUTA CORRECTA ES "../icons/flecha-Arriba.png"...DA IGUAL LO QUE VS CODE, LIVE SERVER O (LO MÁS IMPORTANTE) _bis.scss DIGAN...LO ÚNICO CORRECTO ES LA RUTA DESDE EL PUNTO DE VISTA DE bis.HTML, O MEJOR DICHO, DE STYLE.CSS YA QUE ESE SERÁ EL ARCHIVO QUE RECUPERARÁ LA IMAGEN (no importa si la ruta se autocompleta o no). */
+  background-image: url("../icons/flecha-Arriba.png");
   transition-property: filter, scale;
   transition-duration: 0.5s;
   transition-timing-function: ease;
@@ -815,7 +816,6 @@
 .mainBis-Articulo--Canciones---Videos {
   width: 100%;
 }
-
 .mainBis-Articulo--Presente ul {
   list-style: square;
 }
