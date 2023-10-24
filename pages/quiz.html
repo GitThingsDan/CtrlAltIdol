@@ -2,17 +2,25 @@
 <html lang="es">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <meta> 'description': no superar 155 caracteres -->
+	<meta name="description"
+		content="Pregunta random: ¿cuánto sabes sobre idols alternativas de Japón? ¡Pon a prueba tus conocimientos en este quiz sobre la escena ALT IDOL!">
+	<!-- De MDN (https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#active_learning_the_descriptions_use_in_search_engines): 'Note: Many <meta> features just aren't used anymore. For example, the keyword <meta> element (<meta name="keywords" content="fill, in, your, keywords, here">) — which is supposed to provide keywords for search engines to determine relevance of that page for different search terms — is ignored by search engines, because spammers were just filling the keyword list with hundreds of keywords, biasing results.'  -->
+	<meta name="keywords"
+		content="alt idol, japón, idol, jpop, quiz, cuestionario, preguntas, bis, wack, conocimiento, alternativo">
+	<meta name="author" content="Daniel V. A.">
+	<meta name="copyright" content="Todos los derechos pertenecen a sus respectivos dueños.">
 
 	<!-- CSS - Bootstrap -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 	<!-- CSS - Style -->
-	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/style.css">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="../icons/musica.svg" type="image/x-icon" />
+	<link rel="shortcut icon" href="../icons/musica.svg" type="image/x-icon">
 
 	<title>Quiz - Ctrl Alt Idol</title>
 </head>
@@ -63,7 +71,7 @@
 	<h2 class="text-center">Quiz</h2>
 	<div class="portadaQuiz d-flex justify-content-center my-4">
 		<img src="../icons/musica.svg" alt="Dos notas musicales corcheas, unidas; versión de color negro"
-			class="portadaQuiz-Icono" />
+			class="portadaQuiz-Icono">
 	</div>
 
 	<main class="main mainQuiz d-flex flex-column align-items-center">
@@ -84,14 +92,13 @@
 				</legend>
 				<!-- ¿En qué año se formó BiS? "2010" -->
 				<label class="form-label" for="bisFormacion" id="bisFormacion-Label">¿En qué año se formó BiS?
-					<input class="form-control" id="bisFormacion" max="2010" min="2010" placeholder="20XX" type="number"
-						required />
+					<input class="form-control" id="bisFormacion" max="2010" min="2010" placeholder="20XX" type="number" required>
 					<div class="invalid-feedback">Respuesta correcta: 2010</div>
 				</label>
 				<!-- ¿Cómo se llama la líder de BiS (1° generación)? "Pour Lui" -->
 				<label class="form-label" for="bisLider" id="bisLider-Label">¿Cómo se llama la líder de BiS (1° generación)?
 					<input class="form-control" id="bisLider" pattern="Pour Lui" placeholder="Sus iniciales son P.L." type="text"
-						required />
+						required>
 					<div class="invalid-feedback">Respuesta correcta: Pour Lui</div>
 				</label>
 				<!-- ¿De cuántos kilómetros fue la maratón que corrieron Pour
@@ -100,7 +107,7 @@
 					corrieron Pour Lui y
 					Wakisaka Yurika?
 					<input class="form-control" id="bisMaraton" max="100" min="100" placeholder="Pista: son más de 2..."
-						type="number" required />
+						type="number" required>
 					<div class="invalid-feedback">Respuesta correcta: 100</div>
 				</label>
 				<!-- ¿Qué significa "BiS"? "Brand-new Idol Society" -->
@@ -123,21 +130,21 @@
 					<div class="d-flex w-50 flex-column">
 						<div class="form-check" id="bisLegendaria-Stupig">
 							<input class="form-check-input" id="bisLegendaria-Stupig--Input" name="bisLegendaria" type="radio"
-								value="STUPiG" required />
+								value="STUPiG" required>
 							<label class="form-check-label" for="bisLegendaria-Stupig--Input" id="bisLegendaria-Stupig--Label">
 								STUPiG
 							</label>
 						</div>
 						<div class="form-check" id="bisLegendaria-Primal">
 							<input class="form-check-input" id="bisLegendaria-Primal--Input" name="bisLegendaria" type="radio"
-								value="primal." required />
+								value="primal." required>
 							<label class="form-check-label" for="bisLegendaria-Primal--Input" id="bisLegendaria-Primal--Label">
 								primal.
 							</label>
 						</div>
 						<div class="form-check" id="bisLegendaria-Die">
 							<input class="form-check-input" id="bisLegendaria-Die--Input" name="bisLegendaria" type="radio"
-								value="DiE" required />
+								value="DiE" required>
 							<label class="form-check-label" for="bisLegendaria-Die--Input" id="bisLegendaria-Die--Label">
 								DiE
 							</label>
@@ -154,14 +161,14 @@
 				<!-- ¿En qué año se fundó WACK? "2014" -->
 				<label class="form-label" for="wackFundacion" id="wackFundacion-Label">¿En qué año se fundó WACK?
 					<input class="form-control" id="wackFundacion" max="2014" min="2014" placeholder="20XX" type="number"
-						required />
+						required>
 					<div class="invalid-feedback">Respuesta correcta: 2014</div>
 				</label>
 				<!-- ¿Cómo se llama el director de WACK (también manager de BiS)? "Watanabe Junnosuke" -->
 				<label class="form-label" for="wackDirector" id="wackDirector-Label">¿Cómo se llama el director de WACK
 					(también manager de BiS)?
 					<input class="form-control" id="wackDirector" pattern="Watanabe Junnosuke"
-						placeholder="Sus iniciales son W.J." type="text" required />
+						placeholder="Sus iniciales son W.J." type="text" required>
 					<div class="invalid-feedback">
 						Respuesta correcta: Watanabe Junnosuke
 					</div>
@@ -169,7 +176,7 @@
 				<!-- ¿Cuántas idols forman parte de WACK? "50" -->
 				<label class="form-label" for="wackIdols" id="wackIdols-Label">¿Cuántas idols forman parte de WACK?
 					<input class="form-control" id="wackIdols" max="50" min="50" placeholder="Pista: son más de 2..."
-						type="number" required />
+						type="number" required>
 					<div class="invalid-feedback">Respuesta correcta: 50</div>
 				</label>
 				<!-- ¿Qué significa "WACK"? "Watanabe Artists Creative Kabushikigaisha" -->
@@ -194,21 +201,21 @@
 					<div class="d-flex w-50 flex-column">
 						<div class="form-check" id="wackImpostoras-Piggs">
 							<input class="form-check-input" id="wackImpostoras-Piggs--Input" name="wackImpostoras" type="radio"
-								value="PIGGS" required />
+								value="PIGGS" required>
 							<label class="form-check-label" for="wackImpostoras-Piggs--Input" id="wackImpostoras-Piggs--Label">
 								PIGGS
 							</label>
 						</div>
 						<div class="form-check" id="wackImpostoras-Asp">
 							<input class="form-check-input" id="wackImpostoras-Asp--Input" name="wackImpostoras" type="radio"
-								value="ASP" required />
+								value="ASP" required>
 							<label class="form-check-label" for="wackImpostoras-Asp--Input" id="wackImpostoras-Asp--Label">
 								ASP
 							</label>
 						</div>
 						<div class="form-check" id="wackImpostoras-Exwhyz">
 							<input class="form-check-input" id="wackImpostoras-Exwhyz--Input" name="wackImpostoras" type="radio"
-								value="ExWHYZ" required />
+								value="ExWHYZ" required>
 							<label class="form-check-label" for="wackImpostoras-Exwhyz--Input" id="wackImpostoras-Exwhyz--Label">
 								ExWHYZ
 							</label>
@@ -234,29 +241,29 @@
 			<div class="footerNavzone-Boxes footerNavzone-Bis--Box">
 				<a href="bis.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Bis--Box---ImgLink">
 					<img src="../images/bis/bisIdolIsDead-2012.png"
-						alt="BiS con vestidos de reo, fumando en el patio de la cárcel" />
+						alt="BiS con vestidos de reo, fumando en el patio de la cárcel">
 				</a>
 				<a href="bis.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Bis--Box---TxtLink">BiS</a>
 			</div>
 			<div class="footerNavzone-Boxes footerNavzone-Wack--Box">
 				<a href="wack.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Wack--Box---ImgLink">
-					<img src="../icons/wackLogo.svg" alt="Logo de WACK" />
+					<img src="../icons/wackLogo.svg" alt="Logo de WACK">
 				</a>
 				<a href="wack.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Wack--Box---TxtLink">WACK</a>
 			</div>
 			<div class="footerNavzone-Boxes footerNavzone-OtrosGrupos--Box">
 				<a href="otrosGrupos.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-OtrosGrupos--Box---ImgLink">
 					<img src="../images/bis/bisFinalDance-2014_crop.png" alt="BiS en bikini, sosteniendo bates con púas"
-						id="OtrosGruposImg-bisBikini" />
+						id="OtrosGruposImg-bisBikini">
 					<img src="../images/bellring.png"
 						alt="BELLRING Shoujo Heart, con sus vestidos tipo cuervo, en la playa, descalzas"
-						id="OtrosGruposImg-bellringPlaya" />
+						id="OtrosGruposImg-bellringPlaya">
 					<img src="../images/babymetal-Crop.png"
 						alt="BABYMETAL frente a un anillo dorado gigante y resplandeciente, sobre un fondo con rayos de luces rojas"
-						id="OtrosGruposImg-babymetalFuego" />
+						id="OtrosGruposImg-babymetalFuego">
 					<img src="../images/atarashiiGakko.png"
 						alt="ATARASHII GAKKO! en formación tipo Hombre de Vitruvio (¿?), de modo tal que todas parecen compartir la misma falda"
-						id="OtrosGruposImg-atarashiiGakkoFormacion" />
+						id="OtrosGruposImg-atarashiiGakkoFormacion">
 				</a>
 				<a href="otrosGrupos.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-OtrosGrupos--Box---TxtLink">Otros
 					grupos
@@ -264,7 +271,7 @@
 			</div>
 			<div class="footerNavzone-Boxes footerNavzone-Quiz--Box">
 				<a href="quiz.html" class="footerNavzone-Boxes--ImgLinks footerNavzone-Quiz--Box---ImgLink">
-					<img src="../icons/musica.svg" alt="Dos notas musicales corcheas, unidas; versión de color negro" />
+					<img src="../icons/musica.svg" alt="Dos notas musicales corcheas, unidas; versión de color negro">
 				</a>
 				<a href="quiz.html" class="footerNavzone-Boxes--TxtLinks footerNavzone-Quiz--Box---TxtLink">Quiz</a>
 			</div>
@@ -288,20 +295,20 @@
 					</li>
 				</ul>
 				<address class="footerDatosPersonales-Texto--EmailYUbicacion">
-					<a id="emailAddress" href="mailto:dvillarroela@pm.me">¡Escríbeme!</a><br />
+					<a id="emailAddress" href="mailto:dvillarroela@pm.me">¡Escríbeme!</a><br>
 					Vivo en Temuco, Chile.
 				</address>
 			</div>
-			<img class="footerDatosPersonales-FotoPersonal" src="../images/danielCuadrado.png" alt="Fotografía de mí" />
+			<img class="footerDatosPersonales-FotoPersonal" src="../images/danielCuadrado.png" alt="Fotografía de mí">
 			<div class="footerDatosPersonales-IconosSociales">
 				<a class="footerDatosPersonales-IconosSociales--Links " href="https://github.com/GitThingsDan">
 					<img class="footerDatosPersonales-IconosSociales--Links---Logos " src="../icons/githubLogo-White.svg"
-						alt="Logo de GitHub" />
+						alt="Logo de GitHub">
 				</a>
 				<a class="footerDatosPersonales-IconosSociales--Links "
 					href="https://www.linkedin.com/in/daniel-ignacio-v-48673557/">
 					<img class="footerDatosPersonales-IconosSociales--Links---Logos " src="../icons/linkedinLogo.svg"
-						alt="Logo de LinkedIn" />
+						alt="Logo de LinkedIn">
 				</a>
 			</div>
 		</div>
@@ -313,7 +320,7 @@
 		<div id="goToTopBox">
 			<a href="#top" id="goToTopBox-Link">
 				<img src="../icons/flecha-Arriba.png" class="w-100"
-					alt="Flecha cliqueable para volver al principio de la página" id="goToTopBox-Link--Img" />
+					alt="Flecha cliqueable para volver al principio de la página" id="goToTopBox-Link--Img">
 			</a>
 		</div>
 	</footer>
