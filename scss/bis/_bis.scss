@@ -25,8 +25,8 @@
 	}
 	.carousel-control-icons {
 		// Icono de flecha (para cambiar de imagen en el carrusel); se usará el mismo icono para cambiar tanto a la imagen anterior como a la siguiente (el truco está en que rotaré la flecha hacia la izquierda/derecha, respectivamente):
-		/* ***ALARMA: importante***: LA RUTA CORRECTA ES "../icons/flecha-Arriba.png"...DA IGUAL LO QUE VS CODE, LIVE SERVER O (LO MÁS IMPORTANTE) _bis.scss DIGAN...LO ÚNICO CORRECTO ES LA RUTA DESDE EL PUNTO DE VISTA DE bis.HTML, O MEJOR DICHO, DE STYLE.CSS YA QUE ESE SERÁ EL ARCHIVO QUE RECUPERARÁ LA IMAGEN (no importa si la ruta se autocompleta o no). */
-		background-image: url("../icons/flecha-Arriba.png");
+		/* ***ALARMA: importante***: LA RUTA CORRECTA ES "../icons/flecha-Arriba.avif"...DA IGUAL LO QUE VS CODE, LIVE SERVER O (LO MÁS IMPORTANTE) _bis.scss DIGAN...LO ÚNICO CORRECTO ES LA RUTA DESDE EL PUNTO DE VISTA DE bis.HTML, O MEJOR DICHO, DE STYLE.CSS YA QUE ESE SERÁ EL ARCHIVO QUE RECUPERARÁ LA IMAGEN (no importa si la ruta se autocompleta o no). */
+		background-image: url("../icons/flecha-Arriba.avif");
 		@include transitionMulti((filter, scale), 0.5s);
 		&:hover {
 			filter: invert(1);
