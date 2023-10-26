@@ -8,7 +8,8 @@
 	<meta name="description"
 		content="Descubre más de 10 grupos de idols japonesas alternativas...¡ven a escuchar sus canciones y conoce la diversidad de sonidos en la escena ALT IDOL!">
 	<!-- <meta> 'keywords': al parecer, actualmente es ignorado por los motores de búsqueda, debido a su mal uso de parte de spammers. De MDN (https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#active_learning_the_descriptions_use_in_search_engines).-->
-	<meta name="keywords" content="alt idol, japón, idol, jpop, NEO JAPONISM, PIGGS, RAY, TEAM SHACHI, グーグールル, CROSSNOESIS, ZENBUKIMINOSEIDA., BATTEN GIRLS, YANAKOTOSOTTOMUTE, WAGAMAMARAKIA">
+	<meta name="keywords"
+		content="alt idol, japón, idol, jpop, NEO JAPONISM, PIGGS, RAY, TEAM SHACHI, グーグールル, CROSSNOESIS, ZENBUKIMINOSEIDA., BATTEN GIRLS, YANAKOTOSOTTOMUTE, WAGAMAMARAKIA">
 	<meta name="author" content="Daniel V. A.">
 	<meta name="copyright" content="Todos los derechos pertenecen a sus respectivos dueños.">
 
@@ -19,7 +20,8 @@
 	<link rel="stylesheet" href="../css/style.css">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="../icons/musica.svg" type="image/x-icon">
+	<!-- <link rel> 'shortcut icon': según leí en MDN, 'shortcut' NO DEBE SER USADO, y en su lugar debe usarse sólo 'icon'. De MDN (https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel#icon). -->
+	<link rel="icon" href="../icons/musica.svg" type="image/x-icon">
 
 	<title>Otros grupos - Ctrl Alt Idol</title>
 </head>
@@ -82,11 +84,11 @@
 	</div>
 
 	<main class="main mainOtrosGrupos">
-		<h3 class="mainOtrosGrupos-Titulo text-center">
-			¡Aquí te recomiendo otros grupos Alt Idol que merecen tu interés!
-		</h3>
 		<!-- VIDEOS DE OTROS GRUPOS ALT IDOL -->
 		<section class="mainOtrosGrupos-VideoFlexBox d-flex flex-wrap row row-cols-sm-2">
+			<h3 class="mainOtrosGrupos-VideoFlexBox--Titulo text-center w-100">
+				¡Aquí te recomiendo otros grupos Alt Idol que merecen tu interés!
+			</h3>
 			<!-- Le quité "class='col'" a todos los iframe, ya que hacía que los iframes se rompieran visualmente en pantallas más pequeñas en Firefox. -->
 			<!-- NEO JAPONISM - BUSTER BUSTER -->
 			<iframe src="https://www.youtube-nocookie.com/embed/Bso8ix0KT6s?si=OwVVFznS7uwJQtod"

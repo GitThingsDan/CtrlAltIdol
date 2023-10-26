@@ -20,7 +20,8 @@
 	<link rel="stylesheet" href="../css/style.css">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="../icons/musica.svg" type="image/x-icon">
+	<!-- <link rel> 'shortcut icon': según leí en MDN, 'shortcut' NO DEBE SER USADO, y en su lugar debe usarse sólo 'icon'. De MDN (https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel#icon). -->
+	<link rel="icon" href="../icons/musica.svg" type="image/x-icon">
 
 	<title>Quiz - Ctrl Alt Idol</title>
 </head>
@@ -82,7 +83,7 @@
 			<strong>¡Ponte a prueba con este cuestionario!</strong>
 		</p>
 		<!-- QUIZ: cuestionario -->
-		<form action=""
+		<form action="quiz.php"
 			class="mainQuiz-Form needs-validation d-flex flex-column flex-md-row align-items-baseline justify-content-around w-100"
 			data-bs-theme="dark" id="mainQuiz-Form" method="get" novalidate>
 			<!-- BiS - sección -->
@@ -93,13 +94,13 @@
 				<!-- ¿En qué año se formó BiS? "2010" -->
 				<label class="form-label" for="bisFormacion" id="bisFormacion-Label">¿En qué año se formó BiS?
 					<input class="form-control" id="bisFormacion" max="2010" min="2010" placeholder="20XX" type="number" required>
-					<div class="invalid-feedback">Respuesta correcta: 2010</div>
+					<span class="invalid-feedback">Respuesta correcta: 2010</span>
 				</label>
 				<!-- ¿Cómo se llama la líder de BiS (1° generación)? "Pour Lui" -->
 				<label class="form-label" for="bisLider" id="bisLider-Label">¿Cómo se llama la líder de BiS (1° generación)?
 					<input class="form-control" id="bisLider" pattern="Pour Lui" placeholder="Sus iniciales son P.L." type="text"
 						required>
-					<div class="invalid-feedback">Respuesta correcta: Pour Lui</div>
+					<span class="invalid-feedback">Respuesta correcta: Pour Lui</span>
 				</label>
 				<!-- ¿De cuántos kilómetros fue la maratón que corrieron Pour
 					Lui y Wakisaka Yurika? "100" -->
@@ -108,7 +109,7 @@
 					Wakisaka Yurika?
 					<input class="form-control" id="bisMaraton" max="100" min="100" placeholder="Pista: son más de 2..."
 						type="number" required>
-					<div class="invalid-feedback">Respuesta correcta: 100</div>
+					<span class="invalid-feedback">Respuesta correcta: 100</span>
 				</label>
 				<!-- ¿Qué significa "BiS"? "Brand-new Idol Society" -->
 				<label class="form-label" for="bisSignificado" id="bisSignificado-Label">¿Qué significa "BiS"?
@@ -116,9 +117,9 @@
 						<option selected value="">Brand-new Idol Shit</option>
 						<option value="BiS">Brand-new Idol Society</option>
 					</select>
-					<div class="invalid-feedback">
+					<span class="invalid-feedback">
 						Respuesta correcta: Brand-new Idol Society
-					</div>
+					</span>
 				</label>
 				<!-- De estas 3 canciones de BiS, ¿cuál es la que yo
 						considero la más legendaria? "primal." -->
@@ -162,22 +163,22 @@
 				<label class="form-label" for="wackFundacion" id="wackFundacion-Label">¿En qué año se fundó WACK?
 					<input class="form-control" id="wackFundacion" max="2014" min="2014" placeholder="20XX" type="number"
 						required>
-					<div class="invalid-feedback">Respuesta correcta: 2014</div>
+					<span class="invalid-feedback">Respuesta correcta: 2014</span>
 				</label>
 				<!-- ¿Cómo se llama el director de WACK (también manager de BiS)? "Watanabe Junnosuke" -->
 				<label class="form-label" for="wackDirector" id="wackDirector-Label">¿Cómo se llama el director de WACK
 					(también manager de BiS)?
 					<input class="form-control" id="wackDirector" pattern="Watanabe Junnosuke"
 						placeholder="Sus iniciales son W.J." type="text" required>
-					<div class="invalid-feedback">
+					<span class="invalid-feedback">
 						Respuesta correcta: Watanabe Junnosuke
-					</div>
+					</span>
 				</label>
 				<!-- ¿Cuántas idols forman parte de WACK? "50" -->
 				<label class="form-label" for="wackIdols" id="wackIdols-Label">¿Cuántas idols forman parte de WACK?
 					<input class="form-control" id="wackIdols" max="50" min="50" placeholder="Pista: son más de 2..."
 						type="number" required>
-					<div class="invalid-feedback">Respuesta correcta: 50</div>
+					<span class="invalid-feedback">Respuesta correcta: 50</span>
 				</label>
 				<!-- ¿Qué significa "WACK"? "Watanabe Artists Creative Kabushikigaisha" -->
 				<label class="form-label" for="wackSignificado">¿Qué significa "WACK"?
@@ -189,9 +190,9 @@
 							Watanabe Artists Creative Kabushikigaisha
 						</option>
 					</select>
-					<div class="invalid-feedback">
+					<span class="invalid-feedback">
 						Respuesta correcta: Watanabe Artists Creative Kabushikigaisha
-					</div>
+					</span>
 				</label>
 				<!-- De estos 3 grupos, 1 NO forma parte de WACK. ¿Cuál es? "PIGGS" -->
 				<fieldset class="d-flex flex-column align-items-center" id="wackImpostoras">

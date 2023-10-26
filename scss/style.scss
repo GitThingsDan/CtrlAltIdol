@@ -62,7 +62,7 @@ $purple-gradient: linear-gradient(90deg, $purple, black, $purple);
 // RESET import:
 @import "reset"; // Para que los 'miembros' (mixins, variables, etc.) sean reconocidos GLOBALmente (nótense las mayúsculas) en TODOS los .scss, la regla @import correspondiente ("@import 'reset'", en este caso) debe estar ubicada AL PRINCIPIO, *antes* de los @import de los demás .scss.
 
-// IMAGEHOVER.IO import (estoy considerando utilizarlo para el footerNavzone):
+// IMAGEHOVER.IO import (estoy considerando usarlo, pero mientras no lo haga, lo comentaré aquí y lo ignoraré en .gitignore):
 // @import "imagehover/imagehover.scss";
 
 // GENERAL imports:

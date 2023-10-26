@@ -15,6 +15,10 @@
 /* MAIN - quiz.html */
 .mainQuiz {
 	&-Form {
+		.valid-feedback,
+		.invalid-feedback {
+			text-align: start;
+		}
 		// Este formulario tiene 2 secciones (<fieldset>): "BiS" y "WACK". Cada una tiene anidado, al final, un pequeño <fieldset> con tres <input type="radio">; las clases de estos <fieldset> anidados son, respectivamente: .bisLegendaria ('De estas 3 canciones de BiS, ¿cuál es la que yo considero la más legendaria?') y .wackImpostoras ('De estos 3 grupos, 1 NO forma parte de WACK. ¿Cuál es?').
 		#bisLegendaria,
 		#wackImpostoras {
