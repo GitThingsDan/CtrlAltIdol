@@ -4,4 +4,4 @@ node_modules
 package.json
 # Estoy considerando usar imagehover, pero mientras no lo haga, lo comentaré en style.scss y lo ignoraré aquí:
 scss/imagehover
-toDo.txt
+toDo.md
